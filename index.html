@@ -30,6 +30,55 @@
   box-sizing: border-box;
 }
 
+/* Style for mobile devices */
+body.mobile-device *:not(#mobile-message) {
+  display: none !important;
+}
+
+body.mobile-device #mobile-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: white;
+}
+
+#mobile-message {
+  display: none; /* Hidden by default */
+}
+
+#mobile-message h2,
+#mobile-message p {
+  margin: 0;
+}
+
+
+/* Style for mobile devices */
+body.mobile-device *:not(#mobile-message) {
+  display: none !important;
+}
+
+body.mobile-device #mobile-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: white;
+}
+
+#mobile-message {
+  display: none; /* Hidden by default */
+}
+
+#mobile-message h2,
+#mobile-message p {
+  margin: 0;
+}
+
+
+
 #download-png {
   display: none;
 }
@@ -1155,6 +1204,8 @@ a:link {
 <title>Lax.Ink Color Changer</title>
 </head>
 <body>
+
+
 <div class="navigation">
 <div>
 <div class="logo">LAX.INK</div>
@@ -2101,6 +2152,16 @@ function loadSVGFromURLParameter() {
 
 // Call the function to check the URL and load the SVG if applicable
 loadSVGFromURLParameter();
+
+// Detect mobile devices and add a class to the body if on mobile
+if (/Mobi|Android/i.test(navigator.userAgent)) {
+  document.body.classList.add('mobile-device');
+}
+
+if (/Mobi|Android/i.test(navigator.userAgent)) {
+  window.location.href = 'mobile.html'; // Redirect to the mobile HTML file
+}
+
 
 
 </script>
