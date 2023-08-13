@@ -2113,35 +2113,29 @@ greyToneValueSelect.addEventListener("input", onGrayToneValueChange);
 grayToneDefaultColor.addEventListener("click", onGrayToneDefaultColorHandler);
 artboard.addEventListener("click", onSvgElementClick);
 
-// Function to fetch and load the SVG
-function loadSVGFromURL(svgURL) {
-  fetch(svgURL)
-    .then((response) => response.text())
-    .then((svgContent) => {
-      document.getElementById('b').innerHTML = svgContent; // 'b' is the SVG container ID
+
+
+// Get the URL parameter for the SVG
+const urlParams = new URLSearchParams(window.location.search);
+const svgUrl = urlParams.get('logo');
+
+if (svgUrl) {
+  // Fetch the SVG from the URL
+  fetch(svgUrl)
+    .then(response => response.text())
+    .then(svgText => {
+      // Insert the SVG into the canvas (assuming you have a function to handle this)
+      loadSVGIntoCanvas(svgText);
     })
-    .catch((error) => {
+    .catch(error => {
       console.error('Error loading SVG:', error);
     });
 }
 
-// Function to parse the URL and load the SVG if a logo parameter is found
-function loadSVGFromURLParameter() {
-  var urlParams = new URLSearchParams(window.location.search);
-  var svgURL = urlParams.get('logo');
-  if (svgURL) {
-    loadSVGFromURL(svgURL);
-  }
+// Function to load SVG into canvas (this should be customized to your specific implementation)
+function loadSVGIntoCanvas(svgText) {
+  // Logic to insert the SVG into the canvas
 }
-
-// Call the function to check the URL and load the SVG if applicable
-loadSVGFromURLParameter();
-
-
-if (/Mobi|Android/i.test(navigator.userAgent)) {
-  window.location.href = 'mobile.html'; // Redirect to the mobile HTML file
-}
-
 
 
 </script>
