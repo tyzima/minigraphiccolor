@@ -2115,10 +2115,6 @@ artboard.addEventListener("click", onSvgElementClick);
 
 
 
-// Get the URL parameter for the SVG
-const urlParams = new URLSearchParams(window.location.search);
-const svgUrl = urlParams.get('logo');
-
 if (svgUrl) {
   // Fetch the SVG from the URL
   fetch(svgUrl)
