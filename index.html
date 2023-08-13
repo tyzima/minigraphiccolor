@@ -2153,10 +2153,6 @@ function loadSVGFromURLParameter() {
 // Call the function to check the URL and load the SVG if applicable
 loadSVGFromURLParameter();
 
-// Detect mobile devices and add a class to the body if on mobile
-if (/Mobi|Android/i.test(navigator.userAgent)) {
-  document.body.classList.add('mobile-device');
-}
 
 if (/Mobi|Android/i.test(navigator.userAgent)) {
   window.location.href = 'mobile.html'; // Redirect to the mobile HTML file
