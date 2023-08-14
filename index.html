@@ -1220,6 +1220,24 @@ a:link {
 <script src="script.js"></script>
 <script>
 let initialSVG = "";
+
+// Function to get URL parameters
+function getURLParameter(name) {
+    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+}
+
+// Check if there's an SVG URL parameter
+let svgURL = getURLParameter('svgURL');
+
+if (svgURL) {
+    // Fetch the SVG from the URL
+    fetch(svgURL)
+    .then(response => response.text())
+    .then(data => {
+        // Process the SVG using the existing functions
+        setSVG(data);
+    });
+}
 let updatedSVG = "";
 
 let colorArr = [];
@@ -1996,19 +2014,8 @@ if (svgUrl) {
 
 // Function to load SVG into canvas (this should be customized to your specific implementation)
 function loadSVGIntoCanvas(svgText) {
-    const parser = new DOMParser();
-    const parsedSvg = parser.parseFromString(svgText, 'image/svg+xml').documentElement;
-
-    const artboard = document.getElementById('artboard');
-    const existingSVG = artboard.querySelector('svg');
-
-    if (existingSVG) {
-        artboard.replaceChild(parsedSvg, existingSVG);
-    } else {
-        artboard.appendChild(parsedSvg);
-    }
+  // Logic to insert the SVG into the canvas
 }
-
 
 
 </script>
