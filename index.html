@@ -2007,7 +2007,12 @@ function loadSVGIntoCanvas(svgText) {
     parsedSvg.setAttribute("width", "288");
     parsedSvg.setAttribute("height", "288");
     parsedSvg.style.visibility = "visible";
+
+    // Extract colors and display them
+    getSVGColors(parsedSvg.outerHTML);
+    setItemColor(colorArr);
 }
+
 
 
 
