@@ -1999,7 +1999,7 @@ function loadSVGIntoCanvas(svgText) {
     const parser = new DOMParser();
     const parsedSvg = parser.parseFromString(svgText, 'image/svg+xml').documentElement;
     
-    const container = document.getElementById('svgContainer');  // assuming you have an element with this id to hold the SVG
+    const container = document.getElementById('artboard');  // Targeting the 'artboard' container
     container.innerHTML = '';  // Clear any existing content
     container.appendChild(parsedSvg);
 }
