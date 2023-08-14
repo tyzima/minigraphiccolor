@@ -1999,10 +1999,16 @@ function loadSVGIntoCanvas(svgText) {
     const parser = new DOMParser();
     const parsedSvg = parser.parseFromString(svgText, 'image/svg+xml').documentElement;
     
-    const container = document.getElementById('artboard');  // Targeting the 'artboard' container
+    const container = document.getElementById('artboard');
     container.innerHTML = '';  // Clear any existing content
     container.appendChild(parsedSvg);
+    
+    // Sizing mechanism based on the setSVG function
+    parsedSvg.setAttribute("width", "288");
+    parsedSvg.setAttribute("height", "288");
+    parsedSvg.style.visibility = "visible";
 }
+
 
 
 
