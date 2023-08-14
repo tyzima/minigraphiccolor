@@ -2014,3 +2014,27 @@ function loadSVGIntoCanvas(svgText) {
 </script>
 </body>
 </html>
+<script>
+
+const urlParams = new URLSearchParams(window.location.search);
+const svgUrl = urlParams.get('svgUrl');
+
+
+if (svgUrl) {
+  fetch(svgUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.text();
+    })
+    .then(svgText => {
+      loadSVGIntoCanvas(svgText);
+    })
+    .catch(error => {
+      console.error('Error loading SVG:', error);
+    });
+}
+
+</script>
+
