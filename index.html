@@ -1996,8 +1996,14 @@ if (svgUrl) {
 
 // Function to load SVG into canvas (this should be customized to your specific implementation)
 function loadSVGIntoCanvas(svgText) {
-  // Logic to insert the SVG into the canvas
+    const parser = new DOMParser();
+    const parsedSvg = parser.parseFromString(svgText, 'image/svg+xml').documentElement;
+    
+    const container = document.getElementById('svgContainer');  // assuming you have an element with this id to hold the SVG
+    container.innerHTML = '';  // Clear any existing content
+    container.appendChild(parsedSvg);
 }
+
 
 
 </script>
