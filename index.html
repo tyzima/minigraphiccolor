@@ -1418,6 +1418,14 @@ function changeColor(color) {
       state.selectedColor +
       updatedSVG.substring(colorArr[state.itemColorIndex][1][i] + 7);
   }
+  
+  // Re-render the updated SVG in the artboard
+  const container = document.getElementById('artboard');
+  const newSvg = new DOMParser().parseFromString(updatedSVG, 'image/svg+xml').documentElement;
+  container.innerHTML = '';
+  container.appendChild(newSvg);
+}
+
   colorArr[state.itemColorIndex][0] = state.selectedColor;
 
   document.querySelector(
