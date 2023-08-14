@@ -1418,10 +1418,6 @@ function changeColor(color) {
       state.selectedColor +
       updatedSVG.substring(colorArr[state.itemColorIndex][1][i] + 7);
   }
-  
- 
-}
-
   colorArr[state.itemColorIndex][0] = state.selectedColor;
 
   document.querySelector(
@@ -1435,11 +1431,6 @@ function changeColor(color) {
     tiles.tileColor,
     tiles.borderSize
   );
-const container = document.getElementById('artboard');
-const newSvg = new DOMParser().parseFromString(updatedSVG, 'image/svg+xml').documentElement;
-container.innerHTML = '';
-container.appendChild(newSvg);
-
 }
 
 function onItemColorClickHandler(event) {
@@ -2005,25 +1996,8 @@ if (svgUrl) {
 
 // Function to load SVG into canvas (this should be customized to your specific implementation)
 function loadSVGIntoCanvas(svgText) {
-    const parser = new DOMParser();
-    const parsedSvg = parser.parseFromString(svgText, 'image/svg+xml').documentElement;
-    
-    const container = document.getElementById('artboard');
-    container.innerHTML = '';  // Clear any existing content
-    container.appendChild(parsedSvg);
-    
-    // Sizing mechanism based on the setSVG function
-    parsedSvg.setAttribute("width", "288");
-    parsedSvg.setAttribute("height", "288");
-    parsedSvg.style.visibility = "visible";
-
-    // Extract colors and display them
-    getSVGColors(parsedSvg.outerHTML);
-    setItemColor(colorArr);
+  // Logic to insert the SVG into the canvas
 }
-
-
-
 
 
 </script>
