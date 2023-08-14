@@ -1431,6 +1431,11 @@ function changeColor(color) {
     tiles.tileColor,
     tiles.borderSize
   );
+const container = document.getElementById('artboard');
+const newSvg = new DOMParser().parseFromString(updatedSVG, 'image/svg+xml').documentElement;
+container.innerHTML = '';
+container.appendChild(newSvg);
+
 }
 
 function onItemColorClickHandler(event) {
