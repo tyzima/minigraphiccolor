@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vectorize Logo</title>
+</head>
+<body>
+    <h1>Vectorize your logo</h1>
+    <form id="vectorizeForm">
+        <label for="logo">Logo Upload:</label>
+        <input type="file" id="logo" name="logo" accept="image/*" required>
+        <br>
+        <label for="colors">Number of Colors:</label>
+        <input type="number" id="colors" name="colors" min="1" required>
+        <br>
+        <button type="submit">Vectorize</button>
+    </form>
+    <script>
+        document.getElementById('vectorizeForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+            const response = await fetch('/.netlify/functions/vectorize', {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+            if (data.svgURL) {
+                window.location.href = `https://www.lax.ink/index.html?svgURL=${data.svgURL}`;
+            } else {
+                alert('Error in vectorizing the logo. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
