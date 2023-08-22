@@ -1,0 +1,8 @@
+
+{
+  "name": "vectorize_app",
+  "version": "1.0.0",
+  "dependencies": {
+    "cloudinary": "^1.26.0"
+  }
+}
