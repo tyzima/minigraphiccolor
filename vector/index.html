@@ -71,7 +71,7 @@
             formData.append('numColors', numColors);
 
             try {
-                const response = await fetch('/.netlify/functions/vectorize', {
+                const response = await fetch('/vector/.netlify/functions/vectorize', {
                     method: 'POST',
                     body: formData
                 });
