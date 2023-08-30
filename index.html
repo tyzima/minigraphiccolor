@@ -1388,7 +1388,7 @@ function onOpenFileHandler(event) {
     initialSVG = e.target.result;
     updatedSVG = e.target.result;
 
-    setSVG(initialSVG);
+    (initialSVG);
   };
   reader.readAsText(file);
 }
@@ -1414,7 +1414,10 @@ function setSVG(img) {
       updatedSVG = svgTag.outerHTML;
       getSVGColors(updatedSVG);
       setItemColor(colorArr);
-      setDefaultFillColor(svgTag); // Call setDefaultFillColor here
+      if (!hasNoFill) {
+        const blackSwatch = document.getElementById("black-swatch");
+        blackSwatch.style.display = "none";
+      }
     };
     svgImage.src = svgURL;
   } else {
