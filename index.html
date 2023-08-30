@@ -1403,6 +1403,9 @@ function setSVG(img) {
   updatedSVG = svgTag.outerHTML;
   getSVGColors(updatedSVG);
   setItemColor(colorArr);
+   if (svgURL) {
+    hasNoFill = false;
+  }
 }
 
 function getSVGColors(initialSVG) {
@@ -2061,15 +2064,15 @@ function setDefaultFillColor(svg) {
 
   paths.forEach(path => {
     if (!path.getAttribute('fill')) {
-      path.setAttribute('fill', '#000000');
       hasNoFill = true;
+      path.setAttribute('fill', '#000000');
     }
   });
 
-  // Hide the black swatch if all paths have fill colors
+  // Hide the black swatch if all paths have fill colors and SVG is not imported via URL parameter
   const blackSwatch = document.getElementById('black-swatch');
   if (blackSwatch) {
-    blackSwatch.style.display = hasNoFill ? 'block' : 'none';
+    blackSwatch.style.display = hasNoFill && !svgURL ? 'block' : 'none';
   }
 }
   
