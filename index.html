@@ -1403,8 +1403,30 @@ function setSVG(img) {
   updatedSVG = svgTag.outerHTML;
   getSVGColors(updatedSVG);
   setItemColor(colorArr);
-   if (svgURL) {
-    hasNoFill = false;
+    if (svgURL) {
+    const svgImage = new Image();
+    svgImage.onload = function () {
+      artboard.innerHTML = svgImage.outerHTML;
+      svgTag = document.querySelector("svg");
+      svgTag.setAttribute("width", "288");
+      svgTag.setAttribute("height", "288");
+      svgTag.style.visibility = "visible";
+      updatedSVG = svgTag.outerHTML;
+      setDefaultFillColor(svgTag); // Call setDefaultFillColor here
+      getSVGColors(updatedSVG);
+      setItemColor(colorArr);
+    };
+    svgImage.src = svgURL;
+  } else {
+    artboard.innerHTML = img;
+    svgTag = document.querySelector("svg");
+    svgTag.setAttribute("width", "288");
+    svgTag.setAttribute("height", "288");
+    svgTag.style.visibility = "visible";
+    updatedSVG = svgTag.outerHTML;
+    setDefaultFillColor(svgTag); // Call setDefaultFillColor here
+    getSVGColors(updatedSVG);
+    setItemColor(colorArr);
   }
 }
 
