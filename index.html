@@ -1230,14 +1230,55 @@ function getURLParameter(name) {
 // Check if there's an SVG URL parameter
 let svgURL = getURLParameter('svgURL');
 
-if (svgURL) {
-    // Fetch the SVG from the URL
-    fetch(svgURL)
-    .then(response => response.text())
-    .then(data => {
-        // Process the SVG using the existing functions
-        setSVG(data);
+if (svgUrl) {
+  fetch(svgUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.text();
+    })
+    .then(svgText => {
+      // Load the fetched SVG into the canvas and set default fill color
+      loadSVGIntoCanvas(svgText);
+    })
+    .catch(error => {
+      console.error('Error loading SVG:', error);
     });
+}
+
+function loadSVGIntoCanvas(svgText) {
+  // Assuming 'artboard' is the container for the SVG
+  const artboard = document.getElementById('artboard');
+  artboard.innerHTML = svgText;
+
+  // Get the loaded SVG element
+  const loadedSvg = artboard.querySelector('svg');
+
+  // Call the setDefaultFillColor function to handle fill colors and black swatch visibility
+  setDefaultFillColor(loadedSvg);
+}
+
+function setDefaultFillColor(svg) {
+  const paths = svg.querySelectorAll('path');
+  let hasNoFill = false;
+
+  paths.forEach(path => {
+    if (!path.getAttribute('fill')) {
+      hasNoFill = true;
+      path.setAttribute('fill', '#000000');
+    }
+  });
+
+  // Control the visibility of the black swatch based on paths' fill colors
+  const blackSwatch = document.getElementById('black-swatch');
+  if (blackSwatch) {
+    blackSwatch.style.display = hasNoFill ? 'block' : 'none';
+  }
+
+  // Resize the SVG to fit its container
+  svg.setAttribute('width', '100%');
+  svg.setAttribute('height', '100%');
 }
 let updatedSVG = "";
 
