@@ -1403,14 +1403,9 @@ function setSVG(img) {
   updatedSVG = svgTag.outerHTML;
   getSVGColors(updatedSVG);
   setItemColor(colorArr);
- if (svgURL) {
-  fetch(svgURL)
-    .then(response => response.text())
-    .then(data => {
-      const hasNoFill = false;
-      setSVG(data, hasNoFill);
-    });
-}
+   if (svgURL) {
+    hasNoFill = false;
+  }
 
 }
 
@@ -1421,16 +1416,17 @@ function getSVGColors(initialSVG) {
   ]);
 }
 
-function setItemColor(colorArr, allPathsHaveFill) {
-  itemColorList.innerHTML = colorArr.reduce((list, color, i) => {
-    if (i === 0 && allPathsHaveFill) {
-      return list;
-    }
-    return (
+function setItemColor(colorArr) {
+  itemColorList.innerHTML = colorArr.reduce(
+    (list, color, i) =>
       list +
-      `<li ${i === 0 ? 'class="selectedItemColor"' : ""} id="item-color" itemColorIndex="${i}" style="background-color: ${color}"></li>`
-    );
-  }, "");
+      `<li ${
+        i == 0 ? 'class="selectedItemColor"' : ""
+      } id="item-color" itemColorIndex="${i}" style="background-color: ${
+        color[0]
+      }"></li>`,
+    ""
+  );
 }
 
 function onColorInputHandler(event) {
@@ -2063,32 +2059,26 @@ if (svgUrl) {
     });
 }
 
-function setDefaultFillColor(svg, hasNoFill) {
+function setDefaultFillColor(svg) {
   const paths = svg.querySelectorAll('path');
-  let allPathsHaveFill = true;
+  let hasNoFill = false; // Flag to check if any path has no fill color
 
   paths.forEach(path => {
     if (!path.getAttribute('fill')) {
-      allPathsHaveFill = false;
-      if (hasNoFill) {
-        path.setAttribute('fill', '#000000');
-      }
+      hasNoFill = true;
+      path.setAttribute('fill', '#000000');
     }
   });
 
-  return allPathsHaveFill;
-}
+  // Hide the black swatch if all paths have fill colors
+  const blackSwatch = document.getElementById('black-swatch');
+  if (blackSwatch) {
+    blackSwatch.style.display = hasNoFill ? 'block' : 'none';
+  }
 
-function setSVG(img, hasNoFill) {
-  artboard.innerHTML = img;
-  svgTag = document.querySelector("svg");
-  svgTag.setAttribute("width", "288");
-  svgTag.setAttribute("height", "288");
-  svgTag.style.visibility = "visible";
-  const allPathsHaveFill = setDefaultFillColor(svgTag, hasNoFill);
-  updatedSVG = svgTag.outerHTML;
-  getSVGColors(updatedSVG);
-  setItemColor(colorArr, allPathsHaveFill);
+  // Resize the SVG to fit the artboard
+  svg.setAttribute('width', '100%');
+  svg.setAttribute('height', '100%');
 }
   
 </script>
