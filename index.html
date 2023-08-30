@@ -2055,14 +2055,23 @@ if (svgUrl) {
     });
 }
 
-  function setDefaultFillColor(svg) {
-    const paths = svg.querySelectorAll('path');
-    paths.forEach(path => {
-      if (!path.getAttribute('fill')) {
-        path.setAttribute('fill', '#000000');
-      }
-    });
+function setDefaultFillColor(svg) {
+  const paths = svg.querySelectorAll('path');
+  let hasNoFill = false; // Flag to check if any path has no fill color
+
+  paths.forEach(path => {
+    if (!path.getAttribute('fill')) {
+      path.setAttribute('fill', '#000000');
+      hasNoFill = true;
+    }
+  });
+
+  // Hide the black swatch if all paths have fill colors
+  const blackSwatch = document.getElementById('black-swatch');
+  if (blackSwatch) {
+    blackSwatch.style.display = hasNoFill ? 'block' : 'none';
   }
+}
   
 </script>
 
