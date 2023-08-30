@@ -1399,7 +1399,7 @@ function setSVG(img) {
   svgTag.setAttribute("width", "288");
   svgTag.setAttribute("height", "288");
   svgTag.style.visibility = "visible";
-
+  setDefaultFillColor(svgTag);
   updatedSVG = svgTag.outerHTML;
   getSVGColors(updatedSVG);
   setItemColor(colorArr);
@@ -2055,5 +2055,14 @@ if (svgUrl) {
     });
 }
 
+  function setDefaultFillColor(svg) {
+    const paths = svg.querySelectorAll('path');
+    paths.forEach(path => {
+      if (!path.getAttribute('fill')) {
+        path.setAttribute('fill', '#000000');
+      }
+    });
+  }
+  
 </script>
 
