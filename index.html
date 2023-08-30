@@ -2069,11 +2069,15 @@ function setDefaultFillColor(svg) {
     }
   });
 
-  // Hide the black swatch if all paths have fill colors and SVG is not imported via URL parameter
+  // Hide the black swatch if all paths have fill colors
   const blackSwatch = document.getElementById('black-swatch');
   if (blackSwatch) {
-    blackSwatch.style.display = hasNoFill && !svgURL ? 'block' : 'none';
+    blackSwatch.style.display = hasNoFill ? 'block' : 'none';
   }
+
+  // Resize the SVG to fit the artboard
+  svg.setAttribute('width', '100%');
+  svg.setAttribute('height', '100%');
 }
   
 </script>
