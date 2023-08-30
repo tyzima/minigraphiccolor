@@ -1401,12 +1401,11 @@ function setSVG(img) {
   svgTag.style.visibility = "visible";
   updatedSVG = svgTag.outerHTML;
   getSVGColors(updatedSVG);
-     if (svgURL) {
+  setDefaultFillColor(svgTag);
+  setItemColor(colorArr);
+       if (svgURL) {
     hasNoFill = false;
   }
-    setDefaultFillColor(svgTag);
-    setItemColor(colorArr);
-
 }
 
 function getSVGColors(initialSVG) {
