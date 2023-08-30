@@ -2052,14 +2052,7 @@ if (svgUrl) {
       return response.text();
     })
     .then(svgText => {
-      // Assuming you have a container to load SVG, e.g., a div with id 'svgContainer'
-    document.getElementById('artboard').innerHTML = svgText;
-
-      // Get the loaded SVG element
-      const loadedSvg = document.querySelector('svg');
-
-      // Call the setDefaultFillColor function to handle fill colors and black swatch visibility
-      setDefaultFillColor(loadedSvg);
+      loadSVGIntoCanvas(svgText);
     })
     .catch(error => {
       console.error('Error loading SVG:', error);
