@@ -1399,13 +1399,14 @@ function setSVG(img) {
   svgTag.setAttribute("width", "288");
   svgTag.setAttribute("height", "288");
   svgTag.style.visibility = "visible";
+  setDefaultFillColor(svgTag);
   updatedSVG = svgTag.outerHTML;
   getSVGColors(updatedSVG);
-  setDefaultFillColor(svgTag);
   setItemColor(colorArr);
-       if (svgURL) {
+   if (svgURL) {
     hasNoFill = false;
   }
+
 }
 
 function getSVGColors(initialSVG) {
