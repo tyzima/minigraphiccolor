@@ -1403,7 +1403,7 @@ function setSVG(img) {
   updatedSVG = svgTag.outerHTML;
   getSVGColors(updatedSVG);
   setItemColor(colorArr);
-    if (svgURL) {
+  if (svgURL) {
     const svgImage = new Image();
     svgImage.onload = function () {
       artboard.innerHTML = svgImage.outerHTML;
@@ -1412,12 +1412,11 @@ function setSVG(img) {
       svgTag.setAttribute("height", "288");
       svgTag.style.visibility = "visible";
       updatedSVG = svgTag.outerHTML;
+      setDefaultFillColor(svgTag); // Call setDefaultFillColor here
       getSVGColors(updatedSVG);
       setItemColor(colorArr);
-      if (!hasNoFill) {
-        const blackSwatch = document.getElementById("black-swatch");
-        blackSwatch.style.display = "none";
-      }
+      const blackSwatch = document.getElementById("black-swatch");
+      blackSwatch.style.display = hasNoFill ? "block" : "none";
     };
     svgImage.src = svgURL;
   } else {
@@ -1427,10 +1426,13 @@ function setSVG(img) {
     svgTag.setAttribute("height", "288");
     svgTag.style.visibility = "visible";
     updatedSVG = svgTag.outerHTML;
+    setDefaultFillColor(svgTag); // Call setDefaultFillColor here
     getSVGColors(updatedSVG);
     setItemColor(colorArr);
-    setDefaultFillColor(svgTag); // Call setDefaultFillColor here
+    const blackSwatch = document.getElementById("black-swatch");
+    blackSwatch.style.display = hasNoFill ? "block" : "none";
   }
+
 }
 
 function getSVGColors(initialSVG) {
