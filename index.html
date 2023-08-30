@@ -1400,12 +1400,13 @@ function setSVG(img) {
   svgTag.setAttribute("height", "288");
   svgTag.style.visibility = "visible";
   setDefaultFillColor(svgTag);
+    if (svgURL) {
+    hasNoFill = false;
+  }
   updatedSVG = svgTag.outerHTML;
   getSVGColors(updatedSVG);
   setItemColor(colorArr);
-   if (svgURL) {
-    hasNoFill = false;
-  }
+ 
 
 }
 
