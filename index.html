@@ -1222,6 +1222,8 @@ a:link {
 <script>
 let initialSVG = "";
 
+let hasNoFill = false;
+
 // Function to get URL parameters
 function getURLParameter(name) {
     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
@@ -1399,6 +1401,13 @@ function setSVG(img) {
   svgTag.setAttribute("width", "288");
   svgTag.setAttribute("height", "288");
   svgTag.style.visibility = "visible";
+  const paths = svgTag.getElementsByTagName("path");
+for (let i = 0; i < paths.length; i++) {
+  if (!paths[i].hasAttribute("fill")) {
+    hasNoFill = true;
+    break;
+  }
+}
   setDefaultFillColor(svgTag);
   updatedSVG = svgTag.outerHTML;
   getSVGColors(updatedSVG);
@@ -1417,16 +1426,15 @@ function getSVGColors(initialSVG) {
 }
 
 function setItemColor(colorArr) {
-  itemColorList.innerHTML = colorArr.reduce(
-    (list, color, i) =>
+itemColorList.innerHTML = colorArr.reduce((list, color, i) => {
+  if (hasNoFill || color !== "#000000") {
+    return (
       list +
-      `<li ${
-        i == 0 ? 'class="selectedItemColor"' : ""
-      } id="item-color" itemColorIndex="${i}" style="background-color: ${
-        color[0]
-      }"></li>`,
-    ""
-  );
+      `<li ${i == 0 ? 'class="selectedItemColor"' : ""} id="item-color" itemColorIndex="${i}" style="background-color: ${color}"></li>`
+    );
+  }
+  return list;
+}, "");
 }
 
 function onColorInputHandler(event) {
