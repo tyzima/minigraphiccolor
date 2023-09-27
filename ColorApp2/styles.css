@@ -9,6 +9,51 @@ body, html {
     height: 100vh;
 }
 
+/* Drop area */
+#dropArea{
+ height:55px;
+ border-top-left-radius:10px;
+ border-top-right-radius:10px;
+ border-bottom-left-radius:10px;
+ border-bottom-right-radius:10px;
+ transform:translatex(0px) translatey(0px);
+ line-height:54.6px;
+}
+
+/* Logo canvas */
+#logoCanvas{
+ width:427px;
+}
+
+/* Result */
+#result{
+ padding-right:18px;
+ padding-left:218px;
+ height:271px;
+ margin-left:22px;
+}
+
+/* Hex input */
+#hexInput{
+ transform:translatex(0px) translatey(-16px);
+ margin-left:4px;
+ width:264px;
+ float:left;
+}
+
+/* Left section */
+.container .left-section{
+ transform:translatex(0px) translatey(0px);
+}
+
+/* Container */
+.container{
+ min-height:611px;
+ padding-top:14px;
+}
+
+
+
 .container {
     text-align: center;
     background-color: #ffffff;
