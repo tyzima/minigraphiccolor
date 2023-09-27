@@ -50,6 +50,14 @@ body {
     display: inline-block;
   }
 
+.color-pill.brands-pill {
+  min-width: 50px;  /* Set minimum width */
+  min-height: 20px;  /* Set minimum height */
+  display: inline-block;  /* Make sure it's block-level */
+  /* ...other existing styles... */
+}
+
+
   #paginationControls {
     display: flex;
     justify-content: center;
