@@ -10,6 +10,11 @@ body, html {
     padding: 20px;
 }
 
+.upload-container.reset-background {
+    background: none;
+}
+
+
 .row {
     display: flex;
     justify-content: space-between;
