@@ -4,6 +4,41 @@ body, html {
     padding: 0;
 }
 
+/* Result */
+#result{
+ display:inline-block;
+ transform:translatex(303px) translatey(-226px);
+ max-width:651px;
+ float:none;
+ position:absolute;
+ top:268px;
+ left:400px;
+ bottom:53px;
+}
+
+/* Logo canvas */
+#logoCanvas{
+ display:inline-block;
+ transform:translatex(-600px) translatey(177px);
+}
+
+/* Drop area */
+#dropArea{
+ width:353px;
+}
+
+/* Input container */
+.container .row .column .input-container{
+ width:70% !important;
+}
+
+/* Label */
+.row label{
+ padding-top:9px;
+}
+
+
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
