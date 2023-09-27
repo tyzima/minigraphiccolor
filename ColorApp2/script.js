@@ -20,25 +20,68 @@ document.addEventListener("DOMContentLoaded", function () {
         displayResult(closestPantone);
     });
 
-    // Display uploaded image on canvas
-    logoUpload.addEventListener('change', function () {
-        const file = this.files[0];
-        const reader = new FileReader();
+const dropArea = document.getElementById('dropArea');
+const clickUpload = document.getElementById('clickUpload');
 
-        reader.onload = function (e) {
-            const img = new Image();
-            img.src = e.target.result;
+// Handle drag and drop
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    dropArea.addEventListener(eventName, preventDefaults, false);
+});
 
-            img.onload = function () {
-                logoCanvas.width = img.width;
-                logoCanvas.height = img.height;
-                ctx.drawImage(img, 0, 0);
-            };
+function preventDefaults(e) {
+    e.preventDefault();
+    e.stopPropagation();
+}
+
+['dragenter', 'dragover'].forEach(eventName => {
+    dropArea.addEventListener(eventName, highlight, false);
+});
+
+['dragleave', 'drop'].forEach(eventName => {
+    dropArea.addEventListener(eventName, unhighlight, false);
+});
+
+dropArea.addEventListener('drop', handleDrop, false);
+
+function highlight() {
+    dropArea.classList.add('highlight');
+}
+
+function unhighlight() {
+    dropArea.classList.remove('highlight');
+}
+
+function handleDrop(e) {
+    const dt = e.dataTransfer;
+    const file = dt.files[0];
+
+    uploadImage(file);
+}
+
+clickUpload.addEventListener('click', function () {
+    logoUpload.click();
+});
+
+logoUpload.addEventListener('change', function () {
+    uploadImage(this.files[0]);
+});
+
+function uploadImage(file) {
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+        const img = new Image();
+        img.src = e.target.result;
+
+        img.onload = function () {
+            logoCanvas.width = img.width;
+            logoCanvas.height = img.height;
+            ctx.drawImage(img, 0, 0);
         };
-        
-        reader.readAsDataURL(file);
-    });
+    };
 
+    reader.readAsDataURL(file);
+}
     // Color picker
     logoCanvas.addEventListener('mousemove', function (e) {
         const x = e.clientX - logoCanvas.getBoundingClientRect().left;
