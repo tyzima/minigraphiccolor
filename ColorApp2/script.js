@@ -66,7 +66,7 @@ logoUpload.addEventListener('change', function () {
     uploadImage(this.files[0]);
 });
 
-    function uploadImage(file) {
+  function uploadImage(file) {
     const reader = new FileReader();
 
     reader.onload = function (e) {
@@ -83,9 +83,14 @@ logoUpload.addEventListener('change', function () {
         img.onload = function () {
             logoCanvas.width = img.width;
             logoCanvas.height = img.height;
+            ctx.clearRect(0, 0, logoCanvas.width, logoCanvas.height); // Clear previous image
             ctx.drawImage(img, 0, 0);
         };
     };
+
+    reader.readAsDataURL(file);
+}
+
 
 
     reader.readAsDataURL(file);
