@@ -62,4 +62,46 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+document.getElementById('imageInput').addEventListener('change', function() {
+    const file = this.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const img = new Image();
+            img.onload = function() {
+                // Draw the image on a canvas and analyze it
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+                
+                // Get dominant colors (this can be optimized for performance)
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+                const colors = [];
+                for (let i = 0; i < imageData.length; i += 4) {
+                    const colorHex = rgbToHex(imageData[i], imageData[i + 1], imageData[i + 2]);
+                    colors.push(colorHex);
+                }
+
+                // Find unique colors and their closest Pantone colors
+                const uniqueColors = Array.from(new Set(colors));
+                uniqueColors.forEach(color => {
+                    const closestPantone = findClosestPantone(color);
+                    displayResult(closestPantone);
+                });
+            };
+            img.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+// Function to convert RGB to Hex
+function rgbToHex(r, g, b) {
+    return '#' + [r, g, b].map(x => {
+        const hex = x.toString(16);
+        return hex.length === 1 ? '0' + hex : hex;
+    }).join('');
+}
 
