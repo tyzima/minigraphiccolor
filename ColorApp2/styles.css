@@ -1,118 +1,247 @@
-body, html {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
 }
-
-/* Drop area */
-#dropArea{
- height:55px;
- border-top-left-radius:10px;
- border-top-right-radius:10px;
- border-bottom-left-radius:10px;
- border-bottom-right-radius:10px;
- transform:translatex(0px) translatey(0px);
- line-height:54.6px;
-}
-
-/* Logo canvas */
-#logoCanvas{
- width:427px;
-}
-
-/* Result */
-#result{
- padding-right:18px;
- padding-left:218px;
- height:271px;
- margin-left:22px;
-}
-
-/* Hex input */
-#hexInput{
- transform:translatex(0px) translatey(-16px);
- margin-left:4px;
- width:264px;
- float:left;
-}
-
-/* Left section */
-.container .left-section{
- transform:translatex(0px) translatey(0px);
-}
-
-/* Container */
-.container{
- min-height:611px;
- padding-top:14px;
-}
-
-
 
 .container {
-    text-align: center;
-    background-color: #ffffff;
-    padding: 2em;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  margin: 20px;
 }
 
-.left-section, .right-section {
-    flex: 1;
+#colorGrid .middle-div{
+ max-width:180px;
 }
 
-.drop-area {
-    width: 400px;
-    height: 400px;
-    border: 2px dashed #ccc;
-    text-align: center;
-    cursor: pointer;
-    margin: 1em auto;
-    padding: 1em;
+.container .svg-placeholder{
+ min-height:0px;
+ max-height:43px;
+ transform:translatex(0px) translatey(0px);
+ top:-8px;
+ padding-left:0px;
+ padding-top:0px;
+ padding-bottom:0px;
 }
 
-.logo-canvas {
-    width: 400px;
-    height: 400px;
-    border: 1px solid #ccc;
-    margin: 1em auto;
-    display: block;
+#a{
+ display:inline-block;
+ transform:translatex(0px) translatey(0px) !important;
+ height:37px;
 }
 
-.hex-input {
-    width: 80%;
-    padding: 10px;
-    margin: 1em auto;
-    display: block;
+
+/* Heading */
+#colorGrid h2{
+ font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+ text-align:center;
+ font-size:20px;
 }
 
-.search-btn {
-    padding: 10px 20px;
-    background-color: #6200ea;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin: 1em auto;
-    display: block;
+
+
+.icon-container {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  height: auto;
 }
 
-.result {
-    padding: 20px;
-    background-color: #f1f1f1;
-    border-radius: 4px;
-    margin: 1em auto;
+
+.printability-icon {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  background-color: lightgray;
+  color: black;
+  text-align: center;
+  border-radius: 12px;
+  padding: 4px 8px;
+  z-index: 1;
+  top: 50%; /* Positions the tooltip in the middle of the parent element */
+  left: 50%; /* Positions the tooltip in the middle of the parent element */
+  transform: translate(-50%, -50%); /* Necessary for exact centering */
+}
+
+.icon-with-tooltip:hover .tooltip-text {
+  visibility: visible;
+}
+
+.tooltip-holder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: lightgray;
+  color: black;
+  text-align: center;
+  border-radius: 12px;
+  padding: 4px 8px;
+  z-index: 2;
+  visibility: hidden;
+}
+
+.icon-container:hover .tooltip-holder {
+  visibility: visible; /* make it visible when the icon container is hovered */
+}
+
+.icon-with-tooltip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;  /* Explicitly set the height */
+  overflow: hidden;  /* Hide any overflow */
+}
+
+
+.icon-container {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Ensures the icons are centered vertically */
+  height: auto; /* Adjusts the height automatically based on content */
+}
+
+
+.printability-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.printability-icon:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -1.5em;
+  left: 0;
+  background-color: #333;
+  color: white;
+  padding: 0.2em 0.5em;
+  border-radius: 0.2em;
+  z-index: 100;
+}
+
+
+
+.printability-icon:hover::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: lightblue;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+#searchInput {
+  width: 50%;
+  padding: 12px;
+  margin: 24px auto;
+  border-radius: 8px;
+  border: 1px solid lightgray;
+  float:none;
+ display:block;
+}
+
+
+.color-name {
+  text-align: center; /* Centers the text */
+  width: 100%; /* Takes the full width */
+}
+
+#colorGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  #colorGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+
+.color-card {
+  border: 1px solid lightgray;
+  border-radius: 12px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.11);
+  padding: 16px;
+  margin: 8px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column; /* Keeps it column-based */
+  align-items: center; /* Aligns items in the center */
+  max-height: 450px; /* Set a maximum height */
+  overflow: auto; /* Makes the card scrollable in case of overflow */
+}
+
+.color-card img {
+  max-width: 100%;
+  height: auto;
+  min-height: 150px;
+}
+
+.middle-div, .brands-overlay {
+  position: relative;
+}
+
+.brands-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.color-pill {
+  border-radius: 12px;
+  padding: 4px; /* Reduced padding */
+  margin: 4px;
+  display: inline-block;
+  font-size: 0.6em; /* Reduced font size */
+}
+
+.printability-pill {
+  background-color: lightblue;
+  display: block; /* New: Each on their own line */
+  color: black;
+}
+
+.brands-pill {
+  background-color: white;
+  color: darkgray;
+}
+
+#paginationControls {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  overflow-x: auto;
+}
+
+.page-button {
+  padding: 12px;
+  margin: 4px;
+  border: none;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  flex-shrink: 0;
 }
