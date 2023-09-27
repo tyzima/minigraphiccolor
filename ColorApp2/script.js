@@ -2,7 +2,7 @@
 let pantoneColors = [];
 
 // Fetch the Pantone colors from the root directory JSON file
-fetch('/ColorApp2/pantone_CMYK_RGB_Hex.json')
+fetch('/pantone_CMYK_RGB_Hex.json')
   .then(response => response.json())
   .then(data => {
     pantoneColors = data;
@@ -41,8 +41,10 @@ function displayColors(palette) {
     const [r, g, b] = color;
     const hex = rgbToHex(r, g, b);
     const closestPantone = findSimilarPantone(color);
+    const pantoneSwatchUrl = `https://www.pantone.com/media/wysiwyg/color-finder/img/pantone-color-chip-${closestPantone.replace(' ', '-').toLowerCase()}.webp`;
     return `<div style="background-color: ${hex}; width: 50px; height: 50px; border-radius: 50%; margin: 5px; display: inline-block;">
               <span style="font-size: 10px">${closestPantone}</span>
+              <img src="${pantoneSwatchUrl}" alt="${closestPantone}" style="width: 20px; height: 20px;">
             </div>`;
   }).join('');
 
