@@ -270,3 +270,21 @@ body {
   #colorGrid {
     grid-template-columns: repeat(5, 1fr); /* 5 columns for larger screens */
   }
+
+  /* Default styles (for Mobile) */
+#colorGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns by default for mobile */
+  gap: 16px;
+}
+
+/* Styles for larger screens */
+@media (min-width: 768px) {
+  #colorGrid {
+    grid-template-columns: repeat(5, 1fr); /* 5 columns for larger screens */
+  }
+  #searchInput {
+    width: 50%;
+  }
+}
+
