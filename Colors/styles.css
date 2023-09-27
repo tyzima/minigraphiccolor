@@ -180,6 +180,11 @@ body {
   visibility: hidden;
 }
 
+#colorGrid .color-card .icon-container div img{
+ padding-left:5px;
+ padding-right:5px;
+}
+
 .icon-container:hover .tooltip-holder {
   visibility: visible;
 }
