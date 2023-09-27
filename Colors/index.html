@@ -40,11 +40,30 @@
   <input id="searchInput" type="text" placeholder="Search colors...">
 </div>
     <!-- Filtering buttons -->
-<div id="filterButtons">
-  <button id="filterPrintability">Filter by Printability</button>
-  <button id="filterBrands">Filter by Brands</button>
-  <button id="filterColor">Filter by Color Spectrum</button>
+<!-- Dropdown Filters -->
+<div id="filterDropdowns">
+  <select id="filterPrintability">
+    <option value="">Select Printability</option>
+    <option value="Embroidery">Embroidery</option>
+    <option value="Screen Print">Screen Print</option>
+    <option value="Decals">Decals</option>
+    <option value="Heat Press">Heat Press</option>
+  </select>
+
+  <select id="filterBrands">
+    <option value="">Select Brands</option>
+    <option value="Cascade">Cascade</option>
+    <option value="Nike">Nike</option>
+  </select>
+
+  <select id="filterColor">
+    <option value="">Select Color Spectrum</option>
+    <option value="#FF0000">Red</option>
+    <option value="#00FF00">Green</option>
+    <option value="#0000FF">Blue</option>
+  </select>
 </div>
+
 
 
     <!-- SVG Placeholder below search bar -->
