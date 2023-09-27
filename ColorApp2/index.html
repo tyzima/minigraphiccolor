@@ -9,19 +9,22 @@
 <body>
 
     <div class="container">
-        <!-- Drag and Drop Area -->
-        <div id="dropArea" class="drop-area">Drag and Drop Logo Here</div>
+        <div class="left-section">
+            <!-- Drag and Drop Area -->
+            <div id="dropArea" class="drop-area">Drag and Drop Logo Here</div>
 
-        <!-- Hidden File Input -->
-        <input type="file" id="logoUpload" style="display:none;" />
+            <!-- Hidden File Input -->
+            <input type="file" id="logoUpload" style="display:none;" />
 
-        <!-- Preview and Color Picker Area -->
-        <canvas id="logoCanvas" class="logo-canvas"></canvas>
+            <!-- Preview and Color Picker Area -->
+            <canvas id="logoCanvas" class="logo-canvas"></canvas>
 
-        <!-- Other elements like search button and result display -->
-        <input type="text" id="hexInput" class="hex-input" placeholder="Enter HEX Code">
-        <button id="searchBtn" class="search-btn">Search</button>
-        <div id="result" class="result"></div>
+            <!-- Other elements like search button and result display -->
+            <input type="text" id="hexInput" class="hex-input" placeholder="Enter HEX Code">
+            <button id="searchBtn" class="search-btn">Search</button>
+        </div>
+
+        <div id="result" class="right-section result"></div>
     </div>
 
     <!-- JavaScript -->
