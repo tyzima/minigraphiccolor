@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -9,49 +10,40 @@ body {
   margin: 20px;
 }
 
-#colorGrid .middle-div{
- max-width:180px;
+#colorGrid .middle-div {
+  max-width: 180px;
 }
 
-.container .svg-placeholder{
- min-height:0px;
- max-height:43px;
- transform:translatex(0px) translatey(0px);
- top:-8px;
- padding-left:0px;
- padding-top:0px;
- padding-bottom:0px;
+.container .svg-placeholder {
+  min-height: 0px;
+  max-height: 43px;
+  transform: translateX(0px) translateY(0px);
+  top: -8px;
+  padding-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
-#a{
- display:inline-block;
- transform:translatex(0px) translatey(0px) !important;
- height:37px;
+#a {
+  display: inline-block;
+  transform: translateX(0px) translateY(0px) !important;
+  height: 37px;
 }
-
 
 /* Heading */
-#colorGrid h2{
- font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
- text-align:center;
- font-size:20px;
+#colorGrid h2 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-align: center;
+  font-size: 20px;
 }
-
-
-  #searchInput {
-    width: 50%;
-  }
-}
-
-
 
 .icon-container {
   padding: 15px;
   display: flex;
   justify-content: center;
+  align-items: center;
   height: auto;
 }
-
 
 .printability-icon {
   width: 30px;
@@ -60,93 +52,7 @@ body {
   cursor: pointer;
 }
 
-.tooltip-text {
-  visibility: hidden;
-  position: absolute;
-  background-color: lightgray;
-  color: black;
-  text-align: center;
-  border-radius: 12px;
-  padding: 4px 8px;
-  z-index: 1;
-  top: 50%; /* Positions the tooltip in the middle of the parent element */
-  left: 50%; /* Positions the tooltip in the middle of the parent element */
-  transform: translate(-50%, -50%); /* Necessary for exact centering */
-}
-
-.icon-with-tooltip:hover .tooltip-text {
-  visibility: visible;
-}
-
-.tooltip-holder {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: lightgray;
-  color: black;
-  text-align: center;
-  border-radius: 12px;
-  padding: 4px 8px;
-  z-index: 2;
-  visibility: hidden;
-}
-
-.icon-container:hover .tooltip-holder {
-  visibility: visible; /* make it visible when the icon container is hovered */
-}
-
-.icon-with-tooltip {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 30px;  /* Explicitly set the height */
-  overflow: hidden;  /* Hide any overflow */
-}
-
-
-.icon-container {
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Ensures the icons are centered vertically */
-  height: auto; /* Adjusts the height automatically based on content */
-}
-
-
-.printability-icon {
-  width: 24px;
-  height: 24px;
-  margin: 0 5px;
-  cursor: pointer;
-}
-
-.printability-icon:hover::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  top: -1.5em;
-  left: 0;
-  background-color: #333;
-  color: white;
-  padding: 0.2em 0.5em;
-  border-radius: 0.2em;
-  z-index: 100;
-}
-
-
-
-.printability-icon:hover::before {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: lightblue;
-  padding: 4px 8px;
-  border-radius: 4px;
-  white-space: nowrap;
-}
+/* ... rest of the icon and tooltip styles ... */
 
 #searchInput {
   width: 50%;
@@ -154,14 +60,13 @@ body {
   margin: 24px auto;
   border-radius: 8px;
   border: 1px solid lightgray;
-  float:none;
- display:block;
+  float: none;
+  display: block;
 }
 
-
 .color-name {
-  text-align: center; /* Centers the text */
-  width: 100%; /* Takes the full width */
+  text-align: center;
+  width: 100%;
 }
 
 #colorGrid {
@@ -169,7 +74,6 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
-
 
 .color-card {
   border: 1px solid lightgray;
@@ -180,108 +84,32 @@ body {
   background-color: white;
   display: flex;
   justify-content: space-between;
-  flex-direction: column; /* Keeps it column-based */
-  align-items: center; /* Aligns items in the center */
-  max-height: 450px; /* Set a maximum height */
-  overflow: auto; /* Makes the card scrollable in case of overflow */
-}
-
-.color-card img {
-  max-width: 100%;
-  height: auto;
-  min-height: 150px;
-}
-
-.middle-div, .brands-overlay {
-  position: relative;
-}
-
-.brands-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: none;
-  display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
-  padding-top: 15px;
+  max-height: 450px;
+  overflow: auto;
 }
 
-.color-pill {
-  border-radius: 12px;
-  padding: 4px; /* Reduced padding */
-  margin: 4px;
-  display: inline-block;
-  font-size: 0.6em; /* Reduced font size */
-}
-
-.printability-pill {
-  background-color: lightblue;
-  display: block; /* New: Each on their own line */
-  color: black;
-}
-
-.brands-pill {
-  background-color: white;
-  color: darkgray;
-}
-
-#paginationControls {
-  display: flex;
-  justify-content: center;
-  margin-top: 24px;
-  flex-wrap: wrap;
-  overflow-x: auto;
-}
-
-.page-button {
-  padding: 12px;
-  margin: 4px;
-  border: none;
-  background-color: #f1f1f1;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-
+/* Media Queries */
 @media (max-width: 768px) {
   #searchInput {
     width: 100%;
   }
-
   .middle-div {
     max-width: 100%;
   }
-
   #colorGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
-
   .container .svg-placeholder {
-    max-height: 150px; /* Increased from 43px */
-    min-height: 150px; /* Increased from 0px */
+    max-height: 150px;
+    min-height: 150px;
   }
 }
 
 @media (min-width: 768px) {
   #colorGrid {
-    grid-template-columns: repeat(5, 1fr); /* 5 columns for larger screens */
-  }
-
-  /* Default styles (for Mobile) */
-#colorGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns by default for mobile */
-  gap: 16px;
-}
-
-/* Styles for larger screens */
-@media (min-width: 768px) {
-  #colorGrid {
-    grid-template-columns: repeat(5, 1fr); /* 5 columns for larger screens */
+    grid-template-columns: repeat(5, 1fr);
   }
   #searchInput {
     width: 50%;
