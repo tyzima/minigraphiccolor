@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Find Closest Pantone Color</title>
-    <!-- Material Icons and Google Web Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -11,21 +10,24 @@
 <body>
     <div class="container">
         <h1>Find Closest Pantone Color</h1>
-        <div class="input-container">
-            <label for="hexInput">Enter HEX Code:</label>
-            <input id="hexInput" type="text" placeholder="#RRGGBB">
-<div class="upload-container">
-    <label for="logoUpload">Upload Logo:</label>
-<div id="dropArea" class="upload-container">
-    <p>Drag & Drop your logo here or <span id="clickUpload">Click to Upload</span></p>
-    <input id="logoUpload" type="file" accept="image/*" hidden>
-</div>
-</div>
-<canvas id="logoCanvas"></canvas>
-            <button id="searchBtn">Search</button>
-        </div>
-        <div id="result">
-            <!-- Results will be displayed here -->
+        <div class="row">
+            <div class="column">
+                <div class="input-container">
+                    <label for="hexInput">Enter HEX Code:</label>
+                    <input id="hexInput" type="text" placeholder="#RRGGBB">
+                    <button id="searchBtn">Search</button>
+                </div>
+                <div id="dropArea" class="upload-container">
+                    <p>Drag & Drop your logo here or <span id="clickUpload">Click to Upload</span></p>
+                    <input id="logoUpload" type="file" accept="image/*" hidden>
+                </div>
+            </div>
+            <div class="column">
+                <canvas id="logoCanvas"></canvas>
+                <div id="result">
+                    <!-- Results will be displayed here -->
+                </div>
+            </div>
         </div>
     </div>
     <script src="pantone_CMYK_RGB_Hex.json"></script>
