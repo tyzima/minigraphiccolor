@@ -2,7 +2,7 @@
 let pantoneColors = [];
 
 // Fetch the Pantone colors from the root directory JSON file
-fetch('ColorApp2/pantone_CMYK_RGB_Hex.json')
+fetch('pantone_CMYK_RGB_Hex.json')
   .then(response => response.json())
   .then(data => {
     pantoneColors = data;
