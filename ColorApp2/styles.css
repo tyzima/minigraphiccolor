@@ -4,6 +4,15 @@ body, html {
     padding: 0;
 }
 
+.upload-container {
+    /* ...existing styles... */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
 
 .container {
     max-width: 1200px;
