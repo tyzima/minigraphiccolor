@@ -170,24 +170,6 @@ body {
   gap: 16px;
 }
 
-@media (max-width: 768px) {
-  #searchInput {
-    width: 100%;
-  }
-
-  .middle-div {
-    max-width: 100%;
-  }
-
-  #colorGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .container .svg-placeholder {
-    max-height: 150px; /* Increased from 43px */
-    min-height: 150px; /* Increased from 0px */
-  }
-}
 
 .color-card {
   border: 1px solid lightgray;
@@ -262,6 +244,26 @@ body {
   background-color: #f1f1f1;
   cursor: pointer;
   flex-shrink: 0;
+}
+
+
+@media (max-width: 768px) {
+  #searchInput {
+    width: 100%;
+  }
+
+  .middle-div {
+    max-width: 100%;
+  }
+
+  #colorGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .container .svg-placeholder {
+    max-height: 150px; /* Increased from 43px */
+    min-height: 150px; /* Increased from 0px */
+  }
 }
 
 @media (min-width: 768px) {
