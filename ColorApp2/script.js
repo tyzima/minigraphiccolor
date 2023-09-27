@@ -1,14 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     const searchBtn = document.getElementById('searchBtn');
     const resultDiv = document.getElementById('result');
-    const logoCanvas = document.getElementById('logoCanvas');
     const logoUpload = document.getElementById('logoUpload');
+    const logoCanvas = document.getElementById('logoCanvas');
     const dropArea = document.getElementById('dropArea');
     const ctx = logoCanvas.getContext('2d');
     
     let pantoneData = [];
-
-    // Company colors
+    // Initialize with sample company colors; replace with your actual colors
     const companyColors = [
         {name: 'White', hex: '#FFFFFF'},
         // ... add your other colors here
@@ -28,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         displayResult(closestPantone, closestCompanyColor);
     });
 
-    // Drag and drop for the drop area
+    // Handling drag and drop
     ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
         dropArea.addEventListener(eventName, preventDefaults, false);
     });
@@ -42,55 +41,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function handleDrop(e) {
         const dt = e.dataTransfer;
-        const file = dt.files[0];
-        uploadImage(file);
+        const files = dt.files;
+        handleFiles(files);
     }
 
-    logoUpload.addEventListener('change', function () {
-        uploadImage(this.files[0]);
-    });
+    function handleFiles(files) {
+        const file = files[0];
+        const imageType = /^image\//;
 
-    function uploadImage(file) {
+        if (!imageType.test(file.type)) {
+            return;
+        }
+
         const reader = new FileReader();
-        reader.onload = function (e) {
+        reader.onloadend = function(event) {
             const img = new Image();
-            img.src = e.target.result;
-
-            img.onload = function () {
-                logoCanvas.width = 400; // Adjusted dimensions
-                logoCanvas.height = 400; // Adjusted dimensions
-                ctx.drawImage(img, 0, 0, 400, 400); // Adjusted dimensions
+            img.src = event.target.result;
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0, logoCanvas.width, logoCanvas.height);
             };
         };
-
         reader.readAsDataURL(file);
     }
-// ... (previous parts of the code remain the same)
 
-// Color picker
-logoCanvas.addEventListener('mousemove', function (e) {
-    const x = e.clientX - logoCanvas.getBoundingClientRect().left;
-    const y = e.clientY - logoCanvas.getBoundingClientRect().top;
-    
-    // Make sure to scale the coordinates relative to the original image dimensions
-    const scaledX = Math.floor(x * (logoCanvas.width / logoCanvas.clientWidth));
-    const scaledY = Math.floor(y * (logoCanvas.height / logoCanvas.clientHeight));
-    
-    const pixel = ctx.getImageData(scaledX, scaledY, 1, 1).data;
-    const hex = "#" + ("000000" + rgbToHex(pixel[0], pixel[1], pixel[2])).slice(-6);
-
-    const closestPantone = findClosestPantone(hex);
-    const closestCompanyColor = findClosestCompanyColor(hex);
-    displayResult(closestPantone, closestCompanyColor);
-});
-
-// ... (rest of the code remains the same, including findClosestPantone, findClosestCompanyColor, and displayResult functions)
-
+    // Color picker logic
+    logoCanvas.addEventListener('mousemove', function (e) {
+        const x = e.clientX - logoCanvas.getBoundingClientRect().left;
+        const y = e.clientY - logoCanvas.getBoundingClientRect().top;
+        const pixel = ctx.getImageData(x, y, 1, 1).data;
+        const hex = "#" + ("000000" + rgbToHex(pixel[0], pixel[1], pixel[2])).slice(-6);
+        
+        const closestPantone = findClosestPantone(hex);
+        const closestCompanyColor = findClosestCompanyColor(hex);
+        displayResult(closestPantone, closestCompanyColor);
+    });
 
     function findClosestPantone(hex) {
         let closestDistance = Infinity;
         let closestPantone = null;
-
+        
         for (const color of pantoneData) {
             const distance = colorDistance(hexToRgb(hex), hexToRgb(color.Hex));
             if (distance < closestDistance) {
@@ -115,8 +104,6 @@ logoCanvas.addEventListener('mousemove', function (e) {
         return closestCompanyColor;
     }
 
-    // ... (rest of the code remains the same, including hexToRgb, colorDistance, and rgbToHex functions)
-
     function displayResult(pantone, closestCompanyColor) {
         const imgSrc = `https://www.pantone.com/media/wysiwyg/color-finder/img/pantone-color-chip-${pantone.Code.replace(' ', '-').toLowerCase()}-c.webp`;
         resultDiv.innerHTML = `
@@ -126,9 +113,29 @@ logoCanvas.addEventListener('mousemove', function (e) {
                 <div class="company-color-label" style="background-color: ${closestCompanyColor.hex};">
                     Closest Company Color: ${closestCompanyColor.name}
                 </div>
-                <!-- ... rest of your existing code ... -->
             </div>
         `;
     }
-});
 
+    // Helper functions (color conversion and distance calculation)
+    function hexToRgb(hex) {
+        const bigint = parseInt(hex.replace('#', ''), 16);
+        return {
+            r: (bigint >> 16) & 255,
+            g: (bigint >> 8) & 255,
+            b: bigint & 255,
+        };
+    }
+
+    function colorDistance(color1, color2) {
+        return Math.sqrt(
+            Math.pow((color1.r - color2.r), 2) +
+            Math.pow((color1.g - color2.g), 2) +
+            Math.pow((color1.b - color2.b), 2)
+        );
+    }
+
+    function rgbToHex(r, g, b) {
+        return ((r << 16) | (g << 8) | b).toString(16);
+    }
+});
