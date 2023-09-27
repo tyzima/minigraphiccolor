@@ -41,14 +41,16 @@ body {
   display: none !important;
 }
 
+.color-pill {
+  border-radius: 16px;
+  background-color: #e0e0e0;
+  padding: 8px;
+  margin: 4px;
+  display: inline-block;
+  min-width: 50px;  /* Add this line */
+  min-height: 20px;  /* And this line */
+}
 
-  .color-pill {
-    border-radius: 16px;
-    background-color: #e0e0e0;
-    padding: 8px;
-    margin: 4px;
-    display: inline-block;
-  }
 
 .color-pill.brands-pill {
   min-width: 50px;  /* Set minimum width */
