@@ -149,17 +149,42 @@ document.getElementById('filterBrands').addEventListener('click', () => {
 document.getElementById('filterColor').addEventListener('click', () => {
   applyFilters('Color Name', 'Red');
 });
+// Place this code after your existing code
 
 // Function to Apply Filters
-function applyFilters(attribute, value) {
+function applyFilters() {
+  const printabilityValue = document.getElementById('filterPrintability').value;
+  const brandsValue = document.getElementById('filterBrands').value;
+  const colorValue = document.getElementById('filterColor').value;
+
   filteredData = colorData.filter(item => {
-    if (item[attribute]) {
-      return item[attribute].toLowerCase().includes(value.toLowerCase());
+    let valid = true;
+
+    if (printabilityValue && !item['Printability'].includes(printabilityValue)) {
+      valid = false;
     }
-    return false;
+
+    if (brandsValue && !item['Brands'].includes(brandsValue)) {
+      valid = false;
+    }
+
+    if (colorValue) {
+      // Calculate color similarity here, you may use Hex values in item['Hex']
+      const colorDistance = Math.abs(parseInt(item['Hex'].replace('#', ''), 16) - parseInt(colorValue.replace('#', ''), 16));
+      if (colorDistance > 50000) { // This is a simplified example, you can use a more complex algorithm
+        valid = false;
+      }
+    }
+
+    return valid;
   });
 
   currentPage = 1; // Reset to the first page
   renderCurrentPage(); // Re-render the grid
 }
+
+// Event Listeners for Filter Dropdowns
+document.getElementById('filterPrintability').addEventListener('change', applyFilters);
+document.getElementById('filterBrands').addEventListener('change', applyFilters);
+document.getElementById('filterColor').addEventListener('change', applyFilters);
 
