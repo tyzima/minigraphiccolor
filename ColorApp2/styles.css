@@ -11,6 +11,23 @@ body, html {
     background-position: center;
 }
 
+.company-color-label {
+    display: inline-block;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 3px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+#logoCanvas {
+    max-width: 250px;
+    border: 2px dashed #ccc;
+    text-align: center;
+    cursor: pointer;
+}
+
+
 #logoCanvas {
     border: 2px dashed #ccc;
     text-align: center;
