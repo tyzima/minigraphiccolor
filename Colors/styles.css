@@ -17,6 +17,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index:756;
+
 }
 
 .color-pill.brands-pill:empty {
@@ -225,6 +227,7 @@ body {
   border-radius: 8px;
   border: 1px solid lightgray;
   display: block;
+   z-index:756;
 }
 
 .color-name {
