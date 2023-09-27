@@ -134,3 +134,32 @@ function filterData(query) {
 document.getElementById('searchInput').addEventListener('input', (e) => {
   filterData(e.target.value);
 });
+
+// Place this code after your existing code
+
+// Event Listeners for Filter Buttons
+document.getElementById('filterPrintability').addEventListener('click', () => {
+  applyFilters('Printability', 'Embroidery');
+});
+
+document.getElementById('filterBrands').addEventListener('click', () => {
+  applyFilters('Brands', 'Nike');
+});
+
+document.getElementById('filterColor').addEventListener('click', () => {
+  applyFilters('Color Name', 'Red');
+});
+
+// Function to Apply Filters
+function applyFilters(attribute, value) {
+  filteredData = colorData.filter(item => {
+    if (item[attribute]) {
+      return item[attribute].toLowerCase().includes(value.toLowerCase());
+    }
+    return false;
+  });
+
+  currentPage = 1; // Reset to the first page
+  renderCurrentPage(); // Re-render the grid
+}
+
