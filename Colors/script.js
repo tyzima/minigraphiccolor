@@ -41,7 +41,7 @@ if (item['Brands']) {
     pill.className = 'color-pill brands-pill';
     if (b.trim() === '') {
       pill.className += ' empty-pill'; // Add extra class for empty pill
-      pill.textContent = '\u00A0';  // Unicode for non-breaking space
+      pill.textContent = '';  // Unicode for non-breaking space
     } else {
       pill.textContent = b;
     }
