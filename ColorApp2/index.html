@@ -16,7 +16,10 @@
             <input id="hexInput" type="text" placeholder="#RRGGBB">
 <div class="upload-container">
     <label for="logoUpload">Upload Logo:</label>
-    <input id="logoUpload" type="file" accept="image/*">
+<div id="dropArea" class="upload-container">
+    <p>Drag & Drop your logo here or <span id="clickUpload">Click to Upload</span></p>
+    <input id="logoUpload" type="file" accept="image/*" hidden>
+</div>
 </div>
 <canvas id="logoCanvas"></canvas>
             <button id="searchBtn">Search</button>
