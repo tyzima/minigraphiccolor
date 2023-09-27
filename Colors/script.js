@@ -50,7 +50,7 @@ if (item['Brands']) {
 } else {
   // If no brands data, add an empty pill to occupy space
   const emptyPill = document.createElement('span');
-  emptyPill.className = 'color-pill brands-pill';
+  emptyPill.className = 'color-pill brands-pill empty-pill'; // Add a class to empty pills
   emptyPill.textContent = '\u00A0';  // Unicode for non-breaking space
   brandsOverlay.appendChild(emptyPill);
 }
@@ -245,3 +245,7 @@ function cie76(color1, color2){
 document.getElementById('filterPrintability').addEventListener('change', applyFilters);
 document.getElementById('filterBrands').addEventListener('change', applyFilters);
 document.getElementById('filterColor').addEventListener('change', applyFilters);
+
+.empty-pill {
+  display: none;
+}
