@@ -6,8 +6,16 @@ body {
   background-color: #f1f1f1;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .container {
   margin: 20px;
+}
+
+#a, .svg-placeholder, #searchInput {
+  max-width: 100%;
 }
 
 #colorGrid .middle-div {
@@ -165,6 +173,13 @@ body {
 
 /* Media Queries */
 @media (max-width: 768px) {
+
+  .printability-icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 2px;
+  }
+  
   #searchInput {
     width: 100%;
   }
