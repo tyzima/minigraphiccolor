@@ -7,11 +7,29 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!-- Material Design CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        /* Custom CSS for rounded color display */
+        .color-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            margin: 5px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body style="font-family: 'Roboto', sans-serif;">
     <div class="container">
         <h1>Upload Your Logo</h1>
-        <input type="file" id="logoUpload" accept="image/*">
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>Browse</span>
+                <input type="file" id="logoUpload" accept="image/*">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Upload your logo">
+            </div>
+        </div>
         <canvas id="canvas" style="display:none;"></canvas>
         <h2>Matched Colors:</h2>
         <div id="matchedColors"></div>
