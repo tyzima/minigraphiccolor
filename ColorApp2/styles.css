@@ -5,24 +5,20 @@ body, html {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-.upload-container {
-    border: 2px dashed #ccc;
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 20px;
-    cursor: pointer;
+.row {
+    display: flex;
+    justify-content: space-between;
 }
 
-.upload-container:hover {
-    border-color: #007bff;
+.column {
+    flex: 1;
+    padding: 15px;
 }
-
-
 
 .input-container {
     display: flex;
@@ -34,6 +30,8 @@ body, html {
     flex: 1;
     margin-right: 10px;
     padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 #searchBtn {
@@ -42,17 +40,28 @@ body, html {
     background-color: #007bff;
     color: white;
     border: none;
-}
-
-#result {
-    margin-top: 20px;
+    border-radius: 4px;
 }
 
 .upload-container {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
     margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.upload-container:hover {
+    border-color: #007bff;
 }
 
 #logoCanvas {
     border: 1px solid #ccc;
     cursor: crosshair;
+    margin-bottom: 20px;
+}
+
+#result {
+    margin-top: 20px;
 }
