@@ -12,6 +12,11 @@ body {
   align-items: center;
 }
 
+.empty-pill {
+  display: none;
+}
+
+
 .filter-button {
   background-color: #6200ea;
   color: white;
