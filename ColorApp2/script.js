@@ -1,7 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
     const searchBtn = document.getElementById('searchBtn');
     const resultDiv = document.getElementById('result');
-    
+    let pantoneData = [];
+
+    // Fetch Pantone data from the JSON file
+    fetch('./pantone_CMYK_RGB_Hex.json')
+        .then(response => response.json())
+        .then(data => {
+            pantoneData = data;
+        });
+
     searchBtn.addEventListener('click', function () {
         const hexInput = document.getElementById('hexInput').value;
         const closestPantone = findClosestPantone(hexInput);
@@ -53,3 +61,5 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
     }
 });
+
+
