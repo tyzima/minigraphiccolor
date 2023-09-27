@@ -150,7 +150,44 @@ document.getElementById('filterColor').addEventListener('click', () => {
   applyFilters('Color Name', 'Red');
 });
 
-function rgbToLab(r, g, b){
+
+
+// RGB to Lab conversion and CIE76 distance calculation functions
+// ... (Include the rgbToLab and cie76 functions here)
+
+// Function to Apply Filters
+function applyFilters() {
+  const printabilityValue = document.getElementById('filterPrintability').value;
+  const brandsValue = document.getElementById('filterBrands').value;
+  const colorValue = document.getElementById('filterColor').value;
+
+  // Filtering based on printability and brands
+  filteredData = colorData.filter(item => {
+    let valid = true;
+
+    if (printabilityValue && !item['Printability'].includes(printabilityValue)) {
+      valid = false;
+    }
+
+    if (brandsValue && !item['Brands'].includes(brandsValue)) {
+      valid = false;
+    }
+
+    return valid;
+  });
+
+  // Additional filtering based on color
+  if (colorValue) {
+    const selectedColorName = colorValue.toLowerCase();
+
+    filteredData = filteredData.map(item => {
+      let similarity = 0; // Initialize a similarity score
+
+      // Check if the color name contains the selected color name
+      if (item['Color Name'].toLowerCase().includes(selectedColorName)) {
+        similarity = 100; // Max similarity score for exact matches in name
+      } else {
+     function rgbToLab(r, g, b){
   let x, y, z;
 
   r /= 255, g /= 255, b /= 255;
@@ -176,52 +213,17 @@ function cie76(color1, color2){
     Math.pow(color1[2] - color2[2], 2)
   );
 }
-
-// RGB to Lab conversion and CIE76 distance calculation functions
-// ... (Include the rgbToLab and cie76 functions here)
-
-// Function to Apply Filters
-function applyFilters() {
-  const printabilityValue = document.getElementById('filterPrintability').value;
-  const brandsValue = document.getElementById('filterBrands').value;
-  const colorValue = document.getElementById('filterColor').value;
-
-  filteredData = colorData.filter(item => {
-    let valid = true;
-
-    if (printabilityValue && !item['Printability'].includes(printabilityValue)) {
-      valid = false;
-    }
-
-    if (brandsValue && !item['Brands'].includes(brandsValue)) {
-      valid = false;
-    }
-
-    if (colorValue) {
-      // Sophisticated color similarity check
-      const selectedRgb = [
-        parseInt(colorValue.substring(1, 3), 16),
-        parseInt(colorValue.substring(3, 5), 16),
-        parseInt(colorValue.substring(5, 7), 16)
-      ];
-
-      const selectedLab = rgbToLab(...selectedRgb);
-
-      const itemRgb = [
-        parseInt(item['Hex'].substring(1, 3), 16),
-        parseInt(item['Hex'].substring(3, 5), 16),
-        parseInt(item['Hex'].substring(5, 7), 16)
-      ];
-      
-      const itemLab = rgbToLab(...itemRgb);
-
-      if (cie76(selectedLab, itemLab) > 50) { // Threshold can be adjusted
-        valid = false;
       }
-    }
 
-    return valid;
-  });
+      return { ...item, similarity }; // Append the similarity score to the item
+    });
+
+    // Sort by similarity score in descending order
+    filteredData.sort((a, b) => b.similarity - a.similarity);
+
+    // Remove items with a similarity score of 0
+    filteredData = filteredData.filter(item => item.similarity > 0);
+  }
 
   currentPage = 1; // Reset to the first page
   renderCurrentPage(); // Re-render the grid
@@ -231,5 +233,10 @@ function applyFilters() {
 document.getElementById('filterPrintability').addEventListener('change', applyFilters);
 document.getElementById('filterBrands').addEventListener('change', applyFilters);
 document.getElementById('filterColor').addEventListener('change', applyFilters);
+
+
+
+
+
 
 
