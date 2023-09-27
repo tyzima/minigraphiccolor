@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         img.crossOrigin = 'Anonymous'; // To handle CORS
         img.src = reader.result;
         img.onload = function() {
-          // Extract the palette of colors
+          document.getElementById('imageBox').innerHTML = `<img src="${img.src}" style="width: 100px; height: 100px; border-radius: 12px;"/>`;
           const palette = colorThief.getPalette(img, 5);
           displayColors(palette);
         };
