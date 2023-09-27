@@ -1,81 +1,67 @@
-// Initialize an empty array to store the Pantone colors
-let pantoneColors = [];
-
-// Fetch the Pantone colors from the root directory JSON file
-fetch('pantone_CMYK_RGB_Hex.json')
-  .then(response => response.json())
-  .then(data => {
-    pantoneColors = data;
-  });
-
 document.addEventListener('DOMContentLoaded', function() {
-  const inputElement = document.getElementById('logoInput');
-  const colorResults = document.getElementById('colorResults');
-  const imageBox = document.getElementById('imageBox');
-  const colorThief = new ColorThief();
+    const colorThief = new ColorThief();
+    const logoUpload = document.getElementById('logoUpload');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const matchedColorsDiv = document.getElementById('matchedColors');
 
-  inputElement.addEventListener('change', function() {
-    const file = this.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = function() {
+    const colorSpectrum = {
+        "White": "#FFFFFF",
+        "Scarlet Red": "#c10230",
+        // ... (add all your other colors here)
+    };
+
+    logoUpload.addEventListener('change', function(e) {
+        const file = e.target.files[0];
         const img = new Image();
-        img.crossOrigin = 'Anonymous';
-        img.src = reader.result;
+        img.src = URL.createObjectURL(file);
         img.onload = function() {
-          // Display the image
-          imageBox.innerHTML = `<img src="${img.src}" style="width: 100px; height: 100px; border-radius: 12px;"/>`;
-          
-          // Extract the palette of colors
-          const palette = colorThief.getPalette(img, 5);
-          displayColors(palette);
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0, img.width, img.height);
+            const dominantColor = colorThief.getColor(canvas);
+            const dominantHex = rgbToHex(dominantColor[0], dominantColor[1], dominantColor[2]);
+            const closestColor = findClosestColor(dominantHex);
+            matchedColorsDiv.innerHTML = `<div style="background-color: ${closestColor}; padding: 20px;">${closestColor}</div>`;
         };
-      };
+    });
+
+    function rgbToHex(r, g, b) {
+        return "#" + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
     }
-  });
+
+    function findClosestColor(hex) {
+        let closestColor = null;
+        let closestDistance = Infinity;
+
+        for (const [name, color] of Object.entries(colorSpectrum)) {
+            const distance = colorDistance(hex, color);
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestColor = name;
+            }
+        }
+
+        return closestColor;
+    }
+
+    function colorDistance(hex1, hex2) {
+        const rgb1 = hexToRgb(hex1);
+        const rgb2 = hexToRgb(hex2);
+
+        const dr = rgb1.r - rgb2.r;
+        const dg = rgb1.g - rgb2.g;
+        const db = rgb1.b - rgb2.b;
+
+        return Math.sqrt(dr * dr + dg * dg + db * db);
+    }
+
+    function hexToRgb(hex) {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16)
+        } : null;
+    }
 });
-
-function displayColors(palette) {
-  const colorList = palette.map(color => {
-    const [r, g, b] = color;
-    const hex = rgbToHex(r, g, b);
-    const closestPantone = findSimilarPantone(color);
-    const pantoneSwatchUrl = `https://www.pantone.com/media/wysiwyg/color-finder/img/pantone-color-chip-${closestPantone.replace(' ', '-').toLowerCase()}.webp`;
-    return `<div style="background-color: ${hex}; width: 50px; height: 50px; border-radius: 50%; margin: 5px; display: inline-block;">
-              <span style="font-size: 10px">${closestPantone}</span>
-              <img src="${pantoneSwatchUrl}" alt="${closestPantone}" style="width: 20px; height: 20px;">
-            </div>`;
-  }).join('');
-
-  colorResults.innerHTML = colorList;
-}
-
-function rgbToHex(r, g, b) {
-  const hex = ((r << 16) | (g << 8) | b).toString(16);
-  return "#" + ("000000" + hex).slice(-6);
-}
-
-// Function to find the most similar PANTONE color
-function findSimilarPantone(rgb) {
-  let minDistance = Number.MAX_VALUE;
-  let closestPantone;
-
-  pantoneColors.forEach(pantone => {
-    const distance = colorDistance(rgb, [parseInt(pantone.R), parseInt(pantone.G), parseInt(pantone.B)]);
-    if (distance < minDistance) {
-      minDistance = distance;
-      closestPantone = pantone;
-    }
-  });
-
-  return closestPantone ? closestPantone.Code : "N/A";
-}
-
-// Function to calculate Euclidean distance between two colors
-function colorDistance(color1, color2) {
-  const [r1, g1, b1] = color1;
-  const [r2, g2, b2] = color2;
-
-  return Math.sqrt((r1 - r2) ** 2 + (g1 - g2) ** 2 + (b1 - b2) ** 2);
-}
