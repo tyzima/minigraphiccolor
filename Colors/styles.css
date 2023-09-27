@@ -16,6 +16,20 @@ body {
   display: none;
 }
 
+.container .svg-placeholder2{
+ flex-direction:row;
+ float:none;
+ transform:scale(1.7);
+ justify-content:center;
+ align-items:center;
+ display:flex;
+ perspective:0px;
+ position:relative;
+ top:4px;
+ padding-bottom:18px;
+}
+
+
 
 .filter-button {
   background-color: #6200ea;
