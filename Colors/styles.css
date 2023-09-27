@@ -6,6 +6,29 @@ body {
   background-color: #f1f1f1;
 }
 
+#searchBarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-button {
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.filter-button:hover {
+  background-color: #3700b3;
+}
+
+
 * {
   box-sizing: border-box;
 }
