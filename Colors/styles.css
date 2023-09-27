@@ -68,7 +68,7 @@ body {
 }
 
 .printability-icon {
-  display: none !important;
+  display: none;
 }
 
 .color-pill {
