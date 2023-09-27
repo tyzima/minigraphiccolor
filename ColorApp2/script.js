@@ -1,9 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     const searchBtn = document.getElementById('searchBtn');
     const resultDiv = document.getElementById('result');
+    const logoUpload = document.getElementById('logoUpload');
+    const logoCanvas = document.getElementById('logoCanvas');
+    const ctx = logoCanvas.getContext('2d');
+    
     let pantoneData = [];
 
-    // Fetch Pantone data from the JSON file
+    // Fetch Pantone data from JSON
     fetch('./pantone_CMYK_RGB_Hex.json')
         .then(response => response.json())
         .then(data => {
@@ -13,6 +17,36 @@ document.addEventListener("DOMContentLoaded", function () {
     searchBtn.addEventListener('click', function () {
         const hexInput = document.getElementById('hexInput').value;
         const closestPantone = findClosestPantone(hexInput);
+        displayResult(closestPantone);
+    });
+
+    // Display uploaded image on canvas
+    logoUpload.addEventListener('change', function () {
+        const file = this.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            const img = new Image();
+            img.src = e.target.result;
+
+            img.onload = function () {
+                logoCanvas.width = img.width;
+                logoCanvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+            };
+        };
+        
+        reader.readAsDataURL(file);
+    });
+
+    // Color picker
+    logoCanvas.addEventListener('mousemove', function (e) {
+        const x = e.clientX - logoCanvas.getBoundingClientRect().left;
+        const y = e.clientY - logoCanvas.getBoundingClientRect().top;
+        const pixel = ctx.getImageData(x, y, 1, 1).data;
+        const hex = "#" + ("000000" + rgbToHex(pixel[0], pixel[1], pixel[2])).slice(-6);
+
+        const closestPantone = findClosestPantone(hex);
         displayResult(closestPantone);
     });
 
@@ -60,48 +94,8 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         `;
     }
-});
 
-document.getElementById('imageInput').addEventListener('change', function() {
-    const file = this.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(event) {
-            const img = new Image();
-            img.onload = function() {
-                // Draw the image on a canvas and analyze it
-                const canvas = document.createElement('canvas');
-                const ctx = canvas.getContext('2d');
-                canvas.width = img.width;
-                canvas.height = img.height;
-                ctx.drawImage(img, 0, 0);
-                
-                // Get dominant colors (this can be optimized for performance)
-                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
-                const colors = [];
-                for (let i = 0; i < imageData.length; i += 4) {
-                    const colorHex = rgbToHex(imageData[i], imageData[i + 1], imageData[i + 2]);
-                    colors.push(colorHex);
-                }
-
-                // Find unique colors and their closest Pantone colors
-                const uniqueColors = Array.from(new Set(colors));
-                uniqueColors.forEach(color => {
-                    const closestPantone = findClosestPantone(color);
-                    displayResult(closestPantone);
-                });
-            };
-            img.src = event.target.result;
-        };
-        reader.readAsDataURL(file);
+    function rgbToHex(r, g, b) {
+        return ((r << 16) | (g << 8) | b).toString(16);
     }
 });
-
-// Function to convert RGB to Hex
-function rgbToHex(r, g, b) {
-    return '#' + [r, g, b].map(x => {
-        const hex = x.toString(16);
-        return hex.length === 1 ? '0' + hex : hex;
-    }).join('');
-}
-
