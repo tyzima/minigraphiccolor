@@ -17,13 +17,13 @@
                     <input id="hexInput" type="text" placeholder="#RRGGBB">
                     <button id="searchBtn">Search</button>
                 </div>
-                <div id="dropArea" class="upload-container">
-                    <p>Drag & Drop your logo here or <span id="clickUpload">Click to Upload</span></p>
-                    <input id="logoUpload" type="file" accept="image/*" hidden>
+     
                 </div>
             </div>
             <div class="column">
-                <canvas id="logoCanvas"></canvas>
+<canvas id="logoCanvas" class="upload-container"></canvas>
+<input id="logoUpload" type="file" accept="image/*" hidden>
+
                 <div id="result">
                     <!-- Results will be displayed here -->
                 </div>
