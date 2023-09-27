@@ -8,6 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
     
     let pantoneData = [];
 
+    // Company colors
+    const companyColors = [
+        {name: 'White', hex: '#FFFFFF'},
+        // ... add your other colors here
+    ];
+
     // Fetch Pantone data from JSON
     fetch('./pantone_CMYK_RGB_Hex.json')
         .then(response => response.json())
@@ -18,7 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
     searchBtn.addEventListener('click', function () {
         const hexInput = document.getElementById('hexInput').value;
         const closestPantone = findClosestPantone(hexInput);
-        displayResult(closestPantone);
+        const closestCompanyColor = findClosestCompanyColor(hexInput);
+        displayResult(closestPantone, closestCompanyColor);
     });
 
     // Drag and drop for the drop area
@@ -50,9 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
             img.src = e.target.result;
 
             img.onload = function () {
-                logoCanvas.width = img.width;
-                logoCanvas.height = img.height;
-                ctx.drawImage(img, 0, 0);
+                logoCanvas.width = 400; // Adjusted dimensions
+                logoCanvas.height = 400; // Adjusted dimensions
+                ctx.drawImage(img, 0, 0, 400, 400); // Adjusted dimensions
             };
         };
 
@@ -67,7 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const hex = "#" + ("000000" + rgbToHex(pixel[0], pixel[1], pixel[2])).slice(-6);
 
         const closestPantone = findClosestPantone(hex);
-        displayResult(closestPantone);
+        const closestCompanyColor = findClosestCompanyColor(hex);
+        displayResult(closestPantone, closestCompanyColor);
     });
 
     function findClosestPantone(hex) {
@@ -84,40 +92,34 @@ document.addEventListener("DOMContentLoaded", function () {
         return closestPantone;
     }
 
-    function hexToRgb(hex) {
-        const bigint = parseInt(hex.replace('#', ''), 16);
-        return {
-            r: (bigint >> 16) & 255,
-            g: (bigint >> 8) & 255,
-            b: bigint & 255,
-        };
+    function findClosestCompanyColor(hex) {
+        let closestDistance = Infinity;
+        let closestCompanyColor = null;
+
+        for (const color of companyColors) {
+            const distance = colorDistance(hexToRgb(hex), hexToRgb(color.hex));
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestCompanyColor = color;
+            }
+        }
+        return closestCompanyColor;
     }
 
-    function colorDistance(color1, color2) {
-        return Math.sqrt(
-            Math.pow((color1.r - color2.r), 2) +
-            Math.pow((color1.g - color2.g), 2) +
-            Math.pow((color1.b - color2.b), 2)
-        );
-    }
+    // ... (rest of the code remains the same, including hexToRgb, colorDistance, and rgbToHex functions)
 
-    function displayResult(pantone) {
+    function displayResult(pantone, closestCompanyColor) {
         const imgSrc = `https://www.pantone.com/media/wysiwyg/color-finder/img/pantone-color-chip-${pantone.Code.replace(' ', '-').toLowerCase()}-c.webp`;
         resultDiv.innerHTML = `
             <h2>Closest Pantone Color</h2>
             <div>
                 <img src="${imgSrc}" alt="${pantone.Code}" style="width: 80px;">
-            </div>
-            <div>
-                <p><strong>Code:</strong> ${pantone.Code}</p>
-                <p><strong>HEX:</strong> ${pantone.Hex}</p>
-                <p><strong>RGB:</strong> (${pantone.R}, ${pantone.G}, ${pantone.B})</p>
-                <p><strong>CMYK:</strong> C${pantone.C} M${pantone.M} Y${pantone.Y} K${pantone.K}</p>
+                <div class="company-color-label" style="background-color: ${closestCompanyColor.hex};">
+                    Closest Company Color: ${closestCompanyColor.name}
+                </div>
+                <!-- ... rest of your existing code ... -->
             </div>
         `;
     }
-
-    function rgbToHex(r, g, b) {
-        return ((r << 16) | (g << 8) | b).toString(16);
-    }
 });
+
