@@ -88,8 +88,6 @@ logoUpload.addEventListener('change', function () {
         };
     };
 
-    reader.readAsDataURL(file);
-}
 
 
 
