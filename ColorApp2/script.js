@@ -66,24 +66,16 @@ logoUpload.addEventListener('change', function () {
     uploadImage(this.files[0]);
 });
 
-  function uploadImage(file) {
+function uploadImage(file) {
     const reader = new FileReader();
 
     reader.onload = function (e) {
-        // Set the uploaded image as the background of the drop area
-        dropArea.style.backgroundImage = `url(${e.target.result})`;
-        dropArea.style.backgroundSize = 'contain';
-        dropArea.style.backgroundRepeat = 'no-repeat';
-        dropArea.style.backgroundPosition = 'center';
-
-        // Draw the image on the canvas for color picking
         const img = new Image();
         img.src = e.target.result;
 
         img.onload = function () {
             logoCanvas.width = img.width;
             logoCanvas.height = img.height;
-            ctx.clearRect(0, 0, logoCanvas.width, logoCanvas.height); // Clear previous image
             ctx.drawImage(img, 0, 0);
         };
     };
