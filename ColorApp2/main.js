@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const colorThief = new ColorThief();
     const logoUpload = document.getElementById('logoUpload');
@@ -55,10 +57,14 @@ const colorSpectrum = {
             canvas.width = img.width;
             canvas.height = img.height;
             ctx.drawImage(img, 0, 0, img.width, img.height);
-            const dominantColor = colorThief.getColor(canvas);
-            const dominantHex = rgbToHex(dominantColor[0], dominantColor[1], dominantColor[2]);
-            const closestColor = findClosestColor(dominantHex);
-            matchedColorsDiv.innerHTML = `<div style="background-color: ${closestColor}; padding: 20px;">${closestColor}</div>`;
+            const palette = colorThief.getPalette(canvas, 3); // Extract up to 3 dominant colors
+            matchedColorsDiv.innerHTML = ""; // Reset previous matched colors
+            palette.forEach((color, index) => {
+                const hex = rgbToHex(color[0], color[1], color[2]);
+                const closestColor = findClosestColor(hex);
+                matchedColorsDiv.innerHTML += `<div class="color-box" style="background-color: ${colorSpectrum[closestColor]};"></div>`;
+                matchedColorsDiv.innerHTML += `<p>Color ${index + 1}: ${closestColor} (${colorSpectrum[closestColor]})</p>`;
+            });
         };
     });
 
@@ -69,7 +75,6 @@ const colorSpectrum = {
     function findClosestColor(hex) {
         let closestColor = null;
         let closestDistance = Infinity;
-
         for (const [name, color] of Object.entries(colorSpectrum)) {
             const distance = colorDistance(hex, color);
             if (distance < closestDistance) {
@@ -77,18 +82,15 @@ const colorSpectrum = {
                 closestColor = name;
             }
         }
-
         return closestColor;
     }
 
     function colorDistance(hex1, hex2) {
         const rgb1 = hexToRgb(hex1);
         const rgb2 = hexToRgb(hex2);
-
         const dr = rgb1.r - rgb2.r;
         const dg = rgb1.g - rgb2.g;
         const db = rgb1.b - rgb2.b;
-
         return Math.sqrt(dr * dr + dg * dg + db * db);
     }
 
