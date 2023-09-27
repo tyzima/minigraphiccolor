@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const searchBtn = document.getElementById('searchBtn');
     const resultDiv = document.getElementById('result');
-    const logoUpload = document.getElementById('logoUpload');
     const logoCanvas = document.getElementById('logoCanvas');
+    const logoUpload = document.getElementById('logoUpload');
     const ctx = logoCanvas.getContext('2d');
     
     let pantoneData = [];
@@ -20,78 +20,56 @@ document.addEventListener("DOMContentLoaded", function () {
         displayResult(closestPantone);
     });
 
-const dropArea = document.getElementById('dropArea');
-const clickUpload = document.getElementById('clickUpload');
+    // Event listeners for drag-and-drop
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        logoCanvas.addEventListener(eventName, preventDefaults, false);
+    });
 
-// Handle drag and drop
-['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-    dropArea.addEventListener(eventName, preventDefaults, false);
-});
+    function preventDefaults(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
 
-function preventDefaults(e) {
-    e.preventDefault();
-    e.stopPropagation();
-}
+    logoCanvas.addEventListener('drop', handleDrop, false);
 
-['dragenter', 'dragover'].forEach(eventName => {
-    dropArea.addEventListener(eventName, highlight, false);
-});
+    function handleDrop(e) {
+        const dt = e.dataTransfer;
+        const file = dt.files[0];
+        uploadImage(file);
+    }
 
-['dragleave', 'drop'].forEach(eventName => {
-    dropArea.addEventListener(eventName, unhighlight, false);
-});
+    logoCanvas.addEventListener('click', function () {
+        logoUpload.click();
+    });
 
-dropArea.addEventListener('drop', handleDrop, false);
+    logoUpload.addEventListener('change', function () {
+        uploadImage(this.files[0]);
+    });
 
-function highlight() {
-    dropArea.classList.add('highlight');
-}
+    function uploadImage(file) {
+        const reader = new FileReader();
 
-function unhighlight() {
-    dropArea.classList.remove('highlight');
-}
+        reader.onload = function (e) {
+            const img = new Image();
+            img.src = e.target.result;
 
-function handleDrop(e) {
-    const dt = e.dataTransfer;
-    const file = dt.files[0];
-
-    uploadImage(file);
-}
-
-clickUpload.addEventListener('click', function () {
-    logoUpload.click();
-});
-
-logoUpload.addEventListener('change', function () {
-    uploadImage(this.files[0]);
-});
-
-function uploadImage(file) {
-    const reader = new FileReader();
-
-    reader.onload = function (e) {
-        const img = new Image();
-        img.src = e.target.result;
-
-        img.onload = function () {
-            logoCanvas.width = img.width;
-            logoCanvas.height = img.height;
-            ctx.drawImage(img, 0, 0);
+            img.onload = function () {
+                logoCanvas.width = img.width;
+                logoCanvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+            };
         };
-    };
 
+        reader.readAsDataURL(file);
+    }
 
-
-
-    reader.readAsDataURL(file);
-}
     // Color picker
     logoCanvas.addEventListener('mousemove', function (e) {
         const x = e.clientX - logoCanvas.getBoundingClientRect().left;
         const y = e.clientY - logoCanvas.getBoundingClientRect().top;
         const pixel = ctx.getImageData(x, y, 1, 1).data;
         const hex = "#" + ("000000" + rgbToHex(pixel[0], pixel[1], pixel[2])).slice(-6);
-
+        
         const closestPantone = findClosestPantone(hex);
         displayResult(closestPantone);
     });
@@ -145,3 +123,4 @@ function uploadImage(file) {
         return ((r << 16) | (g << 8) | b).toString(16);
     }
 });
+
