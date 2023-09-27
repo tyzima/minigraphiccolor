@@ -5,11 +5,47 @@ document.addEventListener('DOMContentLoaded', function() {
     const ctx = canvas.getContext('2d');
     const matchedColorsDiv = document.getElementById('matchedColors');
 
-    const colorSpectrum = {
-        "White": "#FFFFFF",
-        "Scarlet Red": "#c10230",
-        // ... (add all your other colors here)
-    };
+const colorSpectrum = {
+    "White": "#FFFFFF",
+    "Scarlet Red": "#c10230",
+    "Burgundy": "#85152B",
+    "Nike Burgundy": "#7a303f",
+    "Nike Crimson": "#8a2432",
+    "Cascade Orange": "#c2502e",
+    "Nike Orange": "#f13200",
+    "Texas Orange": "#d15e14",
+    "Yellow": "#fde021",
+    "Athletic Gold": "#ffb71b",
+    "Vegas Khaki": "#d0b787",
+    "Forest Green": "#124734",
+    "True Green": "#93d500",
+    "Kelly Green": "#007934",
+    "Cascade Carolina": "#85DFFF",
+    "Carolina Nike": "#79a3dc",
+    "Hopkins Blue": "#6aaae4",
+    "Royal Blue": "#004a98",
+    "Cobalt": "#002DAD",
+    "Nike Cobalt": "#003595",
+    "Nike Navy": "#12284c",
+    "Purple": "#532e7d",
+    "Black": "#222223",
+    "Shimmer Black": "#000000", // Placeholder, replace with actual HEX
+    "Metallic Silver": "#9ea1a2",
+    "Metallic Gold": "#85714D",
+    "Grey": "#a2a9ad",
+    "Dark Grey": "#333F48",
+    "Nike Anthracite": "#373a36",
+    "Pewter": "#6E6259",
+    "Cream": "#F1E6B2",
+    "Brown": "#4c372b",
+    "Light Pink": "#F99FC9",
+    "Dark Pink": "#E31C79",
+    "Pink": "#cc5599",
+    "Volt": "#e3e829",
+    "Teal": "#005d70",
+    "Mint": "#8CE2D0"
+};
+
 
     logoUpload.addEventListener('change', function(e) {
         const file = e.target.files[0];
