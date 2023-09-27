@@ -65,18 +65,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
         reader.readAsDataURL(file);
     }
+// ... (previous parts of the code remain the same)
 
-    // Color picker
-    logoCanvas.addEventListener('mousemove', function (e) {
-        const x = e.clientX - logoCanvas.getBoundingClientRect().left;
-        const y = e.clientY - logoCanvas.getBoundingClientRect().top;
-        const pixel = ctx.getImageData(x, y, 1, 1).data;
-        const hex = "#" + ("000000" + rgbToHex(pixel[0], pixel[1], pixel[2])).slice(-6);
+// Color picker
+logoCanvas.addEventListener('mousemove', function (e) {
+    const x = e.clientX - logoCanvas.getBoundingClientRect().left;
+    const y = e.clientY - logoCanvas.getBoundingClientRect().top;
+    
+    // Make sure to scale the coordinates relative to the original image dimensions
+    const scaledX = Math.floor(x * (logoCanvas.width / logoCanvas.clientWidth));
+    const scaledY = Math.floor(y * (logoCanvas.height / logoCanvas.clientHeight));
+    
+    const pixel = ctx.getImageData(scaledX, scaledY, 1, 1).data;
+    const hex = "#" + ("000000" + rgbToHex(pixel[0], pixel[1], pixel[2])).slice(-6);
 
-        const closestPantone = findClosestPantone(hex);
-        const closestCompanyColor = findClosestCompanyColor(hex);
-        displayResult(closestPantone, closestCompanyColor);
-    });
+    const closestPantone = findClosestPantone(hex);
+    const closestCompanyColor = findClosestCompanyColor(hex);
+    displayResult(closestPantone, closestCompanyColor);
+});
+
+// ... (rest of the code remains the same, including findClosestPantone, findClosestCompanyColor, and displayResult functions)
+
 
     function findClosestPantone(hex) {
         let closestDistance = Infinity;
