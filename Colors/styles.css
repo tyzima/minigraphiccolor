@@ -6,6 +6,13 @@ body {
   background-color: #f1f1f1;
 }
 
+.container .svg-placeholder{
+ padding-top:7px;
+ padding-bottom:0px;
+ transform:scale(0.8);
+}
+
+
 #searchBarContainer {
   display: flex;
   justify-content: space-between;
