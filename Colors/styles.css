@@ -271,7 +271,7 @@ body {
   #colorGrid h2 {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 
@@ -298,6 +298,13 @@ body {
     min-height: 150px;
     margin-bottom: -90px;
   }
+.color-pill.brands-pill {
+  max-width: 50px;  /* Set minimum width */
+  display: inline-block;  /* Make sure it's block-level */
+  /* ...other existing styles... */
+}
+
+  
 }
 
 @media (min-width: 768px) {
