@@ -14,6 +14,11 @@ body {
   margin: 20px;
 }
 
+.printability-icon {
+  display: none !important;
+}
+
+
   .color-pill {
     border-radius: 16px;
     background-color: #e0e0e0;
