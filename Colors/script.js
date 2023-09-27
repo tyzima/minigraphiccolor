@@ -149,7 +149,36 @@ document.getElementById('filterBrands').addEventListener('click', () => {
 document.getElementById('filterColor').addEventListener('click', () => {
   applyFilters('Color Name', 'Red');
 });
-// Place this code after your existing code
+
+function rgbToLab(r, g, b){
+  let x, y, z;
+
+  r /= 255, g /= 255, b /= 255;
+  [r, g, b] = [r, g, b].map(v => v > 0.04045 ? Math.pow((v + 0.055) / 1.055, 2.4) : v / 12.92);
+  [r, g, b] = [r * 100, g * 100, b * 100];
+  x = (r * 0.4124 + g * 0.3576 + b * 0.1805) / 95.047;
+  y = (r * 0.2126 + g * 0.7152 + b * 0.0722) / 100.000;
+  z = (r * 0.0193 + g * 0.1192 + b * 0.9505) / 108.883;
+
+  [x, y, z] = [x, y, z].map(v => v > 0.008856 ? Math.pow(v, 1/3) : (v * 903.3 + 16) / 116);
+
+  const l = (116 * y) - 16;
+  const a = (x - y) * 500;
+  const b2 = (y - z) * 200;
+
+  return [l, a, b2];
+}
+
+function cie76(color1, color2){
+  return Math.sqrt(
+    Math.pow(color1[0] - color2[0], 2) +
+    Math.pow(color1[1] - color2[1], 2) +
+    Math.pow(color1[2] - color2[2], 2)
+  );
+}
+
+// RGB to Lab conversion and CIE76 distance calculation functions
+// ... (Include the rgbToLab and cie76 functions here)
 
 // Function to Apply Filters
 function applyFilters() {
@@ -169,9 +198,24 @@ function applyFilters() {
     }
 
     if (colorValue) {
-      // Calculate color similarity here, you may use Hex values in item['Hex']
-      const colorDistance = Math.abs(parseInt(item['Hex'].replace('#', ''), 16) - parseInt(colorValue.replace('#', ''), 16));
-      if (colorDistance > 50000) { // This is a simplified example, you can use a more complex algorithm
+      // Sophisticated color similarity check
+      const selectedRgb = [
+        parseInt(colorValue.substring(1, 3), 16),
+        parseInt(colorValue.substring(3, 5), 16),
+        parseInt(colorValue.substring(5, 7), 16)
+      ];
+
+      const selectedLab = rgbToLab(...selectedRgb);
+
+      const itemRgb = [
+        parseInt(item['Hex'].substring(1, 3), 16),
+        parseInt(item['Hex'].substring(3, 5), 16),
+        parseInt(item['Hex'].substring(5, 7), 16)
+      ];
+      
+      const itemLab = rgbToLab(...itemRgb);
+
+      if (cie76(selectedLab, itemLab) > 50) { // Threshold can be adjusted
         valid = false;
       }
     }
@@ -187,4 +231,5 @@ function applyFilters() {
 document.getElementById('filterPrintability').addEventListener('change', applyFilters);
 document.getElementById('filterBrands').addEventListener('change', applyFilters);
 document.getElementById('filterColor').addEventListener('change', applyFilters);
+
 
