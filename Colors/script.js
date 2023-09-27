@@ -233,6 +233,3 @@ function cie76(color1, color2){
 document.getElementById('filterPrintability').addEventListener('change', applyFilters);
 document.getElementById('filterBrands').addEventListener('change', applyFilters);
 document.getElementById('filterColor').addEventListener('change', applyFilters);
-
-
-
