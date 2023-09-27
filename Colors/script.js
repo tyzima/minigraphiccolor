@@ -39,7 +39,12 @@ if (item['Brands']) {
   item['Brands'].split(',').forEach(b => {
     const pill = document.createElement('span');
     pill.className = 'color-pill brands-pill';
-    pill.textContent = b.trim() === '' ? '\u00A0' : b;  // Unicode for non-breaking space
+    if (b.trim() === '') {
+      pill.className += ' empty-pill'; // Add extra class for empty pill
+      pill.textContent = '\u00A0';  // Unicode for non-breaking space
+    } else {
+      pill.textContent = b;
+    }
     brandsOverlay.appendChild(pill);
   });
 } else {
@@ -50,6 +55,7 @@ if (item['Brands']) {
   brandsOverlay.appendChild(emptyPill);
 }
 middleDiv.appendChild(brandsOverlay);
+
     card.appendChild(middleDiv);
 
     const tooltipHolder = document.createElement('div');
