@@ -51,7 +51,7 @@ if (item['Brands']) {
   // If no brands data, add an empty pill to occupy space
   const emptyPill = document.createElement('span');
   emptyPill.className = 'color-pill brands-pill';
-  emptyPill.textContent = '\u00A0';  // Unicode for non-breaking space
+  emptyPill.textContent = 'Premium';  // Unicode for non-breaking space
   brandsOverlay.appendChild(emptyPill);
 }
 middleDiv.appendChild(brandsOverlay);
