@@ -33,17 +33,23 @@ function renderCards(data) {
     image.alt = item['Color Name'];
     middleDiv.appendChild(image);
 
-    const brandsOverlay = document.createElement('div');
-    brandsOverlay.className = 'brands-overlay';
-    item['Brands'].split(',').forEach(b => {
-      if (b.trim() !== '') {
-        const pill = document.createElement('span');
-        pill.className = 'color-pill brands-pill';
-        pill.textContent = b;
-        brandsOverlay.appendChild(pill);
-      }
-    });
-    middleDiv.appendChild(brandsOverlay);
+const brandsOverlay = document.createElement('div');
+brandsOverlay.className = 'brands-overlay';
+if (item['Brands']) {
+  item['Brands'].split(',').forEach(b => {
+    const pill = document.createElement('span');
+    pill.className = 'color-pill brands-pill';
+    pill.textContent = b.trim() === '' ? '\u00A0' : b;  // Unicode for non-breaking space
+    brandsOverlay.appendChild(pill);
+  });
+} else {
+  // If no brands data, add an empty pill to occupy space
+  const emptyPill = document.createElement('span');
+  emptyPill.className = 'color-pill brands-pill';
+  emptyPill.textContent = '\u00A0';  // Unicode for non-breaking space
+  brandsOverlay.appendChild(emptyPill);
+}
+middleDiv.appendChild(brandsOverlay);
     card.appendChild(middleDiv);
 
     const tooltipHolder = document.createElement('div');
