@@ -247,31 +247,41 @@ document.getElementById('filterBrands').addEventListener('change', applyFilters)
 document.getElementById('filterColor').addEventListener('change', applyFilters);
 
 
-// Define SVG data
-const svgData = {
-  'Heat Press': 'https://res.cloudinary.com/laxdotcom/image/upload/v1695849884/HPff_c2swhd.svg',
-  'Screen Print': 'https://res.cloudinary.com/laxdotcom/image/upload/v1695849878/SPff_ftlboo.svg',
-  'Embroidery': 'https://res.cloudinary.com/laxdotcom/image/upload/v1695849917/Embff_xjyfos.svg',
-  'Decals': 'https://res.cloudinary.com/laxdotcom/image/upload/v1695849891/Decalff_spgcgu.svg',
-};
-
-// Function to populate SVGs
-function populateSVGs() {
-  const svgContainer = document.getElementById('svg-container');
-  for (const [type, url] of Object.entries(svgData)) {
-    const svgElement = document.createElement('img');
-    svgElement.src = url;
-    svgElement.alt = type;
-    svgElement.className = 'printability-icon';
-    svgElement.addEventListener('click', function() {
-      document.getElementById('searchInput').value = type;  // Corrected ID
-      // Trigger search or any other functionality here
-    });
-    svgContainer.appendChild(svgElement);
-  }
-}
-
-// Make sure to call populateSVGs after the DOM has fully loaded
+// Make sure to call populateSVGs and attach event listeners after the DOM has fully loaded
 document.addEventListener("DOMContentLoaded", function() {
+  // Existing event listeners
+  if (document.getElementById('filterPrintability')) {
+    document.getElementById('filterPrintability').addEventListener('click', () => {
+      applyFilters('Printability', 'Embroidery');
+    });
+  }
+
+  if (document.getElementById('filterBrands')) {
+    document.getElementById('filterBrands').addEventListener('click', () => {
+      applyFilters('Brands', 'Nike');
+    });
+  }
+
+  if (document.getElementById('filterColor')) {
+    document.getElementById('filterColor').addEventListener('click', () => {
+      applyFilters('Color Name', 'Red');
+    });
+  }
+
+  // Existing event listeners for filter dropdowns
+  if (document.getElementById('filterPrintability')) {
+    document.getElementById('filterPrintability').addEventListener('change', applyFilters);
+  }
+
+  if (document.getElementById('filterBrands')) {
+    document.getElementById('filterBrands').addEventListener('change', applyFilters);
+  }
+
+  if (document.getElementById('filterColor')) {
+    document.getElementById('filterColor').addEventListener('change', applyFilters);
+  }
+
+  // Populate SVGs
   populateSVGs();
 });
+
