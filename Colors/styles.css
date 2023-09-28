@@ -111,6 +111,16 @@ body {
   max-width: 180px;
 }
 
+#colorGrid .middle-div .brands-overlay{
+ display:flex;
+ flex-direction:row;
+ justify-content:center;
+ flex-wrap:nowrap;
+ float:none;
+ opacity:0.51;
+}
+
+
 .container .svg-placeholder {
   min-height: 0px;
   max-height: 43px;
