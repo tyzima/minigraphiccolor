@@ -241,6 +241,34 @@ function cie76(color1, color2){
   renderCurrentPage(); // Re-render the grid
 }
 
+// Define SVG data
+const svgData = {
+  'Heat Press': 'https://res.cloudinary.com/laxdotcom/image/upload/v1695849884/HPff_c2swhd.svg',
+  'Screen Print': 'https://res.cloudinary.com/laxdotcom/image/upload/v1695849878/SPff_ftlboo.svg',
+  'Embroidery': 'https://res.cloudinary.com/laxdotcom/image/upload/v1695849917/Embff_xjyfos.svg',
+  'Decals': 'https://res.cloudinary.com/laxdotcom/image/upload/v1695849891/Decalff_spgcgu.svg',
+};
+
+// Function to populate SVGs
+function populateSVGs() {
+  const svgContainer = document.getElementById('svg-container');
+  for (const [type, url] of Object.entries(svgData)) {
+    const svgElement = document.createElement('img');
+    svgElement.src = url;
+    svgElement.alt = type;
+    svgElement.className = 'printability-icon';
+    svgElement.addEventListener('click', function() {
+      document.getElementById('searchBar').value = type;
+      // Trigger search or any other functionality here
+    });
+    svgContainer.appendChild(svgElement);
+  }
+}
+
+// Call the populateSVGs function after your DOM is fully loaded or at the end of your existing script
+populateSVGs();
+
+
 // Event Listeners for Filter Dropdowns
 document.getElementById('filterPrintability').addEventListener('change', applyFilters);
 document.getElementById('filterBrands').addEventListener('change', applyFilters);
