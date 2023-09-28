@@ -241,6 +241,12 @@ function cie76(color1, color2){
   renderCurrentPage(); // Re-render the grid
 }
 
+// Event Listeners for Filter Dropdowns
+document.getElementById('filterPrintability').addEventListener('change', applyFilters);
+document.getElementById('filterBrands').addEventListener('change', applyFilters);
+document.getElementById('filterColor').addEventListener('change', applyFilters);
+
+
 // Define SVG data
 const svgData = {
   'Heat Press': 'https://res.cloudinary.com/laxdotcom/image/upload/v1695849884/HPff_c2swhd.svg',
@@ -258,19 +264,14 @@ function populateSVGs() {
     svgElement.alt = type;
     svgElement.className = 'printability-icon';
     svgElement.addEventListener('click', function() {
-      document.getElementById('searchBar').value = type;
+      document.getElementById('searchInput').value = type;  // Corrected ID
       // Trigger search or any other functionality here
     });
     svgContainer.appendChild(svgElement);
   }
 }
 
-// Call the populateSVGs function after your DOM is fully loaded or at the end of your existing script
-populateSVGs();
-
-
-// Event Listeners for Filter Dropdowns
-document.getElementById('filterPrintability').addEventListener('change', applyFilters);
-document.getElementById('filterBrands').addEventListener('change', applyFilters);
-document.getElementById('filterColor').addEventListener('change', applyFilters);
-
+// Make sure to call populateSVGs after the DOM has fully loaded
+document.addEventListener("DOMContentLoaded", function() {
+  populateSVGs();
+});
