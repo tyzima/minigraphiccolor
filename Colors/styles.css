@@ -291,6 +291,7 @@ body {
 
   #colorGrid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
   }
   
   .container .svg-placeholder {
