@@ -10,7 +10,13 @@ body {
     padding: 0;
   }
   
-
+  .rainbow-text {
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline;
+  }
+  
 
 
 /* Back Button Styles */
