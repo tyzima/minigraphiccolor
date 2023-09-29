@@ -216,7 +216,7 @@ body {
   
   /* Media Queries */
   /* For Screens larger than 1280px (approximate size for MacBook Pro 13 and up) */
-  @media only screen and (min-width: 1280px) {
+  @media only screen and (min-width: 1180px) {
     .container {
       width: 100%;
       margin: auto;
