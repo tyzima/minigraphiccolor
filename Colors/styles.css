@@ -180,11 +180,7 @@ body {
 }
 
 
-.container .button-container{
-  display:block;
-  height:80px;
-  transform:translatex(334px) translatey(-5px);
- }
+
 
 .filter-button {
   background-color: white;
