@@ -238,11 +238,11 @@ body {
     }
     .back-button {
         position: fixed;  /* Fixed position */
-        bottom: 20px;  /* Bottom left corner */
-        left: 20px;
+        bottom: 10px;  /* Bottom left corner */
+        left: 10px;
         z-index: 999;  /* On top of other elements */
         background-color: #ffffff;  /* Background color */
-        padding: 10px;  /* Some padding */
+        padding: 5px;  /* Some padding */
         border-radius: 8px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);  /* Shadow for better visibility */
         text-align: center;  /* Center the content */
