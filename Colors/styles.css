@@ -167,15 +167,31 @@ body {
  opacity:0.51;
 }
 
+
+.filter-button i,
+.filter-button span {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.button-container{
+  text-align: center;
+}
+
+
 .filter-button {
   background-color: white;
+  border-radius: 12px;
   color: #333;
   border: 1px solid #ccc;
   padding: 10px 20px;
   margin: 5px;
   cursor: pointer;
-  display: inline-flex;
+  display: inline-block; /* Make sure the button is inline-block or block */
   align-items: center;
+  width: 100%; /* Optional: Set width to 100% if it's not already */
+
 }
 
 .filter-button i.material-icons {
