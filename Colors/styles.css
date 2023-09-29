@@ -183,6 +183,22 @@ body {
 }
 
 
+/* Container to hold the buttons */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  flex-direction: column;
+}
+
+/* Style for each button */
+.filter-button {
+  margin: 10px; /* Spacing between buttons */
+  border-radius: 12px; /* Rounded corners */
+}
+
+
 
 .container .svg-placeholder {
   min-height: 0px;
