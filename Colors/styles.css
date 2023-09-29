@@ -482,6 +482,32 @@ body {
   padding-top:13px;
  }
 
+ #heatPressBtn{
+  border-top-right-radius:0px;
+  border-bottom-right-radius:0px;
+ }
+ 
+ /* Embroidery */
+ #embroideryBtn{
+  border-top-left-radius:0px;
+  border-top-right-radius:0px;
+  border-bottom-left-radius:0px;
+  border-bottom-right-radius:0px;
+ }
+ 
+ /* Screen print */
+ #screenPrintBtn{
+  border-top-left-radius:0px;
+  border-top-right-radius:0px;
+  border-bottom-left-radius:0px;
+  border-bottom-right-radius:0px;
+ }
+ 
+ /* Decals */
+ #decalsBtn{
+  border-top-left-radius:0px;
+  border-bottom-left-radius:0px;
+ }
 
 
 }
