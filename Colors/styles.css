@@ -13,6 +13,32 @@ body {
 }
 
 
+/* ... existing styles ... */
+
+/* Printing Methods Button Styles */
+.print-methods-button {
+  text-align: center; /* Center-aligns the button */
+  margin-top: 20px; /* Adds some space above the button */
+}
+
+.print-methods-button a {
+  display: inline-block;
+  padding: 12px 24px; /* Adds padding around the text and icon */
+  background-color: #007bff; /* Sets the background color */
+  color: #ffffff; /* Sets the text color */
+  border-radius: 12px; /* Rounds the corners */
+  text-decoration: none; /* Removes underline */
+  font-size: 18px; /* Sets the font size */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds a light shadow */
+}
+
+.print-methods-button .material-icons {
+  vertical-align: middle; /* Aligns the icon with the text */
+  font-size: 24px; /* Sets the icon size */
+  margin-right: 8px; /* Adds some space between the icon and text */
+}
+
+
 #searchBarContainer {
   display: flex;
   justify-content: space-between;
