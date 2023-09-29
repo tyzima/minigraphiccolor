@@ -139,6 +139,29 @@ body {
     transform: translate(-50%, -50%);
   }
 
+
+
+  /* For Desktop */
+.method-container {
+    width: calc(21.25% - 40px); /* Adjusted for 85% screen coverage */
+    float: left;
+    margin: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* For Screens larger than 1280px (approximate size for MacBook Pro 13 and up) */
+  @media only screen and (min-width: 1280px) {
+    .container {
+      width: 85%;
+      margin: auto;
+    }
+  
+    .method-container {
+      width: calc(25% - 40px);
+    }
+  }
+  
+
   
   /* Responsive Design */
   @media only screen and (max-width: 768px) {
@@ -147,8 +170,8 @@ body {
     }
   
     .method-container {
-      margin: 10px;
-      padding: 15px;
+        width: 90%;
+        margin: 10px 0;
     }
   
     h1 {
