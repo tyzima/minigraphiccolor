@@ -1,7 +1,7 @@
 // Initialize Airtable API
 
 async function fetchData() {
-  const response = await fetch("/.netlify/functions/fetchAirtableData");
+  const response = await fetch("/.netlify/functions/fetchtoAirtable");
   const data = await response.json();
   return data;
 }
