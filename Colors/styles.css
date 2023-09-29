@@ -13,6 +13,14 @@ body {
 }
 
 
+
+
+ 
+ /* Print methods button */
+ .container .svg-placeholder2 .print-methods-button{
+  transform:scale(0.78);
+ }
+ 
 /* ... existing styles ... */
 
 /* Printing Methods Button Styles */
@@ -173,6 +181,8 @@ body {
   display: inline-block;
   transform: translateX(0px) translateY(0px) !important;
   height: 37px;
+  padding-top:4px;
+  margin-top:13px;
 }
 
 /* Heading */
