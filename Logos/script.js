@@ -1,6 +1,4 @@
 // Initialize Airtable API
-const API_URL = `https://api.airtable.com/v0/appVZNtd4jkDSXdkN/Logos?view=NumbersOnly`;
-const API_HEADERS = { Authorization: "patsp21BuUz9bikDr.35da5db96c161fafba8f2d507daa7c02a25e2826556728ea6bffb8ec8a499af4" };
 
 async function fetchData() {
   const response = await fetch("/.netlify/functions/fetchAirtableData");
