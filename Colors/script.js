@@ -150,13 +150,18 @@ document.getElementById('searchInput').addEventListener('input', (e) => {
 
 
   
-  document.addEventListener("DOMContentLoaded", function() {
-    function populateSearch(event) {
-      const filterText = event.target.getAttribute("data-filter");
-      const searchBar = document.getElementById("searchInput");
-      searchBar.value = filterText;
-      filterData(filterText);
-    }
+document.addEventListener("DOMContentLoaded", function() {
+  function populateSearch(event) {
+    // Find the closest button element to the clicked element
+    const buttonElement = event.target.closest("button");
+
+    // Get the data-filter attribute from the button element
+    const filterText = buttonElement.getAttribute("data-filter");
+
+    const searchBar = document.getElementById("searchInput");
+    searchBar.value = filterText;  // This line replaces the current text in the search bar
+    filterData(filterText);
+  }
   
     document.getElementById("heatPressBtn").addEventListener("click", populateSearch);
     document.getElementById("screenPrintBtn").addEventListener("click", populateSearch);
