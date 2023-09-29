@@ -239,9 +239,9 @@ body {
     .back-button {
         font-size: 10px;
         margin-bottom:10px;
-        padding-right:18px;
+        padding-right:10px;
         transform:scale(0.8);
-        padding-left:10px;
+        padding-left: 7px;
         position: fixed;  /* Fixed position */
         bottom: 5px;  /* Bottom left corner */
         left: 10px;
