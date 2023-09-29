@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Predominant Color Fetcher for Multiple Images</title>
+</head>
+<body>
+
+  <input type="file" id="csvFile" accept=".csv" />
+  <button id="fetchColors">Fetch Predominant Colors</button>
+  <a id="downloadLink" style="display:none">Download Result</a>
+
+  <script>
+    document.getElementById('csvFile').addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.readAsText(file);
+
+      reader.onload = function(event) {
+        const csvData = event.target.result;
+        const lines = csvData.split('\n');
+        const publicIds = lines.map(line => line.trim());
+
+        fetchColors(publicIds);
+      };
+    });
+
+    async function fetchColors(publicIds) {
+      const results = [];
+
+      for (const publicId of publicIds) {
+        const cloudinaryUrl = `https://res.cloudinary.com/laxdotcom/image/upload/fl_colors/colors/${publicId}.json`; // Replace 'your-cloud-name'
+        
+        try {
+          const response = await fetch(cloudinaryUrl);
+          const data = await response.json();
+          const predominantColor = data.predominant.google[0][0];
+          results.push(`${publicId},${predominantColor}`);
+        } catch (error) {
+          console.error('Error fetching color:', error);
+          results.push(`${publicId},Error`);
+        }
+      }
+
+      const resultCsv = results.join('\n');
+      const blob = new Blob([resultCsv], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+
+      const downloadLink = document.getElementById('downloadLink');
+      downloadLink.href = url;
+      downloadLink.download = 'predominant_colors.csv';
+      downloadLink.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
