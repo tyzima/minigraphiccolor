@@ -469,6 +469,14 @@ body {
  text-align:center;
 }
 
+.copyright-footer {
+  font-size: 8px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
 .container .button-container{
   display:flex;
   flex-direction:row;
