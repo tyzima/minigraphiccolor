@@ -185,14 +185,21 @@ body {
   border-radius: 12px;
   color: #333;
   border: 1px solid #ccc;
-  padding: 10px 20px;
-  margin: 5px;
-  cursor: pointer;
-  display: inline-block; /* Make sure the button is inline-block or block */
+  margin: 10px;
+  border-radius: 12px;
+  display: inline-flex;
   align-items: center;
-  width: 100%; /* Optional: Set width to 100% if it's not already */
+  justify-content: center;
+  padding: 10px 20px;
 
 }
+
+
+/* Center buttons on the page */
+.container-for-buttons {
+  text-align: center;
+}
+
 
 .filter-button i.material-icons {
   margin-right: 8px;
