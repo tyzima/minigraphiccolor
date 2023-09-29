@@ -241,13 +241,12 @@ function cie76(color1, color2){
   renderCurrentPage(); // Re-render the grid
 }
 
-// Make sure to call populateSVGs and attach event listeners after the DOM has fully loaded
 document.addEventListener("DOMContentLoaded", function() {
   
   // Function to populate search based on button click
   function populateSearch(event) {
     const filterText = event.target.getAttribute("data-filter");
-    const searchBar = document.getElementById("searchInput"); // Your search bar's ID is 'searchInput'
+    const searchBar = document.getElementById("searchInput");
     searchBar.value = filterText;
   
     // Trigger your existing filter function here
@@ -261,6 +260,10 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("embroideryBtn").addEventListener("click", populateSearch);
 
   // Populate SVGs (if you have this function)
-  populateSVGs();
+  if (typeof populateSVGs === 'function') {
+    populateSVGs();
+  }
 });
 
+// Add search input event listener
+docu
