@@ -1,4 +1,7 @@
 /* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+
 body {
     font-family: 'Helvetica', sans-serif;
     text-align: center;
@@ -47,6 +50,33 @@ body {
     padding-bottom:0px;
   }
   
+ 
+#team-custom {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  background: linear-gradient(90deg, #4696ec, lighter-shade-of-blue);
+  background-size: 200% auto;
+  color: #fff;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradient-animation 3s infinite linear;
+}
+
+#printing-methods {
+  font-family: 'Helvetica', sans-serif;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+
+
   .method-container {
     background-color: #ffffff;
     border-radius: 12px;
