@@ -24,7 +24,7 @@ body {
 .print-methods-button a {
   display: inline-block;
   padding: 12px 24px; /* Adds padding around the text and icon */
-  background-color: #007bff; /* Sets the background color */
+  background-color: #4696ec; /* Sets the background color */
   color: #ffffff; /* Sets the text color */
   border-radius: 12px; /* Rounds the corners */
   text-decoration: none; /* Removes underline */
@@ -64,7 +64,14 @@ body {
  padding-bottom:18px;
 }
 
-
+.svg-placeholder2 a{
+  margin-bottom:1px;
+  transform:scale(0.58);
+  padding-top:12px;
+  margin-top:-14px;
+ }
+ 
+ 
 
 .filter-button {
   background-color: #6200ea;
