@@ -183,7 +183,7 @@ body {
 .container .button-container{
   display:block;
   height:80px;
-width: max-content;
+  transform:translatex(334px) translatey(-5px);
  }
 
 .filter-button {
