@@ -469,8 +469,7 @@ body {
 }
 
 .container .button-container{
-  transform:scale(0.55) translatex(-187px) translatey(-11px);
-  display:inline-flex;
+  display:inline-block;
   flex-direction:row;
   float:none;
   flex-wrap:nowrap;
