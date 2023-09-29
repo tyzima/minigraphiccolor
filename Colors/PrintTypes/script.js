@@ -13,3 +13,18 @@ function hideLightbox(id) {
     lightbox.style.display = 'none';
   }, 300);
 }
+
+
+// Add this code to close Lightbox when clicking outside
+document.addEventListener('DOMContentLoaded', function() {
+  const lightboxes = document.querySelectorAll('.lightbox');
+  lightboxes.forEach((lightbox) => {
+    lightbox.addEventListener('click', function(event) {
+      if (event.target === lightbox) { // Check if click is outside of content
+        hideLightbox(lightbox.id);
+      }
+    });
+  });
+});
+
+
