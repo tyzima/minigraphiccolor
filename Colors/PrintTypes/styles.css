@@ -67,6 +67,41 @@ body {
     padding: 20px;
     border-radius: 12px;
   }
+
+
+  .info-box {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px 0;
+  }
+  
+  .pros .material-icons, .cons .material-icons {
+    vertical-align: middle;
+  }
+  
+  .lightbox {
+    /* ...existing styles */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .lightbox.show {
+    opacity: 1;
+  }
+  
+  .lightbox-content {
+    /* ...existing styles */
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translate(-50%, -60%);
+  }
+  
+  .lightbox.show .lightbox-content {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
   
   /* Responsive Design */
   @media only screen and (max-width: 768px) {
@@ -90,4 +125,5 @@ body {
       margin-bottom: 15px;
     }
   }
+
   
