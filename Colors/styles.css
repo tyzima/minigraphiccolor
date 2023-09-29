@@ -74,7 +74,7 @@ body {
 
 .svg-placeholder2 a{
   margin-bottom:1px;
-  transform:scale(0.58);
+  transform:scale(0.68);
   padding-top:12px;
   margin-top:-14px;
  }
@@ -82,7 +82,7 @@ body {
  
 
 .filter-button {
-  background-color: #6200ea;
+  background-color: #0052ea;
   color: white;
   border: none;
   padding: 10px 20px;
