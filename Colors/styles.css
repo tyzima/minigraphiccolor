@@ -469,15 +469,16 @@ body {
 }
 
 .container .button-container{
-  display:inline-block;
-  flex-direction:row;
+  display:inline-grid;
+  grid-template-columns:auto 1fr 1fr 1fr !important;
+  column-gap:9px;
+  transform:scale(0.75) translatex(-50px) translatey(-13px);
+  justify-content:normal;
+  align-content:center;
   float:none;
-  flex-wrap:nowrap;
-  align-items:normal;
-  justify-content:flex-start;
-  height:70px;
-  padding-left:0px;
+  margin-bottom:20px;
  }
+ 
 
 
 
