@@ -8,6 +8,8 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    margin-bottom:9px;
+
   }
   
   .rainbow-text {
@@ -151,6 +153,30 @@ body {
     opacity: 1;
   }
   
+  #printing-methods{
+    margin-top:11px;
+    min-height:35px;
+   }
+   
+   /* Container */
+   .container{
+    transform:translatex(0px) translatey(0px);
+    height:59px;
+   }
+   
+
+   
+   /* Team custom */
+   #team-custom{
+    margin-bottom:10px;
+   }
+   
+   
+    
+
+
+
+
   .lightbox-content {
     position: absolute;
     top: 50%;
@@ -194,9 +220,14 @@ body {
     .container {
       width: 100%;
       margin: auto;
-    }
+         /* Method container */
+   
   }
-  
+
+  .container .method-container{
+    min-height:420px;
+}
+}
   /* For Mobile */
   @media only screen and (max-width: 768px) {
     .method-container {
