@@ -58,6 +58,43 @@ body {
     z-index: 1000;
   }
   
+/* ...existing CSS above */
+
+/* For Desktop */
+.method-container {
+    width: calc(25% - 40px);
+    float: left;
+    margin: 10px;
+  }
+  
+  /* For Mobile */
+  @media only screen and (max-width: 768px) {
+    .method-container {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+  
+  /* Horizontal Layout for Pros and Cons */
+  .info-box-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .info-box {
+    flex: 0 0 calc(50% - 10px);
+  }
+  
+  /* Make icons more defined */
+  .material-icons {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* ...existing CSS below */
+  
+
+
   .lightbox-content {
     position: absolute;
     top: 50%;
