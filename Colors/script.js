@@ -241,46 +241,10 @@ function cie76(color1, color2){
   renderCurrentPage(); // Re-render the grid
 }
 
-// Event Listeners for Filter Dropdowns
-document.getElementById('filterPrintability').addEventListener('change', applyFilters);
-document.getElementById('filterBrands').addEventListener('change', applyFilters);
-document.getElementById('filterColor').addEventListener('change', applyFilters);
-
-
 // Make sure to call populateSVGs and attach event listeners after the DOM has fully loaded
 document.addEventListener("DOMContentLoaded", function() {
-  // Existing event listeners
-  if (document.getElementById('filterPrintability')) {
-    document.getElementById('filterPrintability').addEventListener('click', () => {
-      applyFilters('Printability', 'Embroidery');
-    });
-  }
-
-  if (document.getElementById('filterBrands')) {
-    document.getElementById('filterBrands').addEventListener('click', () => {
-      applyFilters('Brands', 'Nike');
-    });
-  }
-
-  if (document.getElementById('filterColor')) {
-    document.getElementById('filterColor').addEventListener('click', () => {
-      applyFilters('Color Name', 'Red');
-    });
-  }
-
-  // Existing event listeners for filter dropdowns
-  if (document.getElementById('filterPrintability')) {
-    document.getElementById('filterPrintability').addEventListener('change', applyFilters);
-  }
-
-  if (document.getElementById('filterBrands')) {
-    document.getElementById('filterBrands').addEventListener('change', applyFilters);
-  }
-
-  if (document.getElementById('filterColor')) {
-    document.getElementById('filterColor').addEventListener('change', applyFilters);
-  }
-
+  
+  // Function to populate search based on button click
   function populateSearch(event) {
     const filterText = event.target.getAttribute("data-filter");
     const searchBar = document.getElementById("searchInput"); // Your search bar's ID is 'searchInput'
@@ -289,17 +253,14 @@ document.addEventListener("DOMContentLoaded", function() {
     // Trigger your existing filter function here
     filterData(filterText);
   }
-  
 
-  // Add event listeners to buttons
-document.getElementById("heatPressBtn").addEventListener("click", populateSearch);
-document.getElementById("screenPrintBtn").addEventListener("click", populateSearch);
-document.getElementById("decalsBtn").addEventListener("click", populateSearch);
-document.getElementById("embroideryBtn").addEventListener("click", populateSearch);
+  // Add event listeners to new buttons
+  document.getElementById("heatPressBtn").addEventListener("click", populateSearch);
+  document.getElementById("screenPrintBtn").addEventListener("click", populateSearch);
+  document.getElementById("decalsBtn").addEventListener("click", populateSearch);
+  document.getElementById("embroideryBtn").addEventListener("click", populateSearch);
 
-
-
-  // Populate SVGs
+  // Populate SVGs (if you have this function)
   populateSVGs();
 });
 
