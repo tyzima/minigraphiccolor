@@ -90,8 +90,7 @@ body {
  #heatPressBtn{
   max-width:120px;
   min-width:120px;
-  padding: left -10px !important;
-  margin-right:0px;
+  margin-right: -10px !important;
   
  }
  
