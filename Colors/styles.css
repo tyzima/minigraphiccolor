@@ -183,7 +183,7 @@ body {
 .container .button-container{
   display:block;
   height:80px;
-  transform:scale(0.66);
+width: max-content;
  }
 
 .filter-button {
