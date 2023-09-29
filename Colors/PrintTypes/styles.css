@@ -2,11 +2,14 @@ body {
     font-family: 'Helvetica', sans-serif;
     text-align: center;
     background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
   }
   
   .container {
     max-width: 800px;
     margin: auto;
+    padding: 20px;
   }
   
   .method-container {
@@ -29,5 +32,28 @@ body {
   
   h2 {
     margin-bottom: 20px;
+  }
+  
+  /* Responsive Design */
+  @media only screen and (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .method-container {
+      margin: 10px;
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 24px;
+      margin-top: 15px;
+      margin-bottom: 30px;
+    }
+  
+    h2 {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
   }
   
