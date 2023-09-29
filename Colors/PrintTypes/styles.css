@@ -41,9 +41,7 @@ body {
     font-size: 18px; /* Sets the font size */
   }
 
-  #heatPressBtn{
-    margin-left:0px;
-   }
+
   
   .back-button .material-icons {
     vertical-align: middle; /* Aligns the icon with the text */
