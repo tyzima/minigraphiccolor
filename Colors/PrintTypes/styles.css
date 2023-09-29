@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Helvetica', sans-serif;
     text-align: center;
@@ -7,7 +8,7 @@ body {
   }
   
   .container {
-    max-width: 800px;
+    max-width: 100%;
     margin: auto;
     padding: 20px;
   }
@@ -16,8 +17,11 @@ body {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px;
+    margin: 10px;
     padding: 20px;
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+    float: left;
   }
   
   .method-container img {
@@ -47,6 +51,7 @@ body {
     text-decoration: underline;
   }
   
+  /* Lightbox Styles */
   .lightbox {
     display: none;
     position: fixed;
@@ -56,69 +61,6 @@ body {
     height: 100%;
     background-color: rgba(0,0,0,0.7);
     z-index: 1000;
-  }
-  
-/* ...existing CSS above */
-
-/* For Desktop */
-.method-container {
-    width: calc(25% - 40px);
-    float: left;
-    margin: 10px;
-  }
-  
-  /* For Mobile */
-  @media only screen and (max-width: 768px) {
-    .method-container {
-      width: 100%;
-      margin: 10px 0;
-    }
-  }
-  
-  /* Horizontal Layout for Pros and Cons */
-  .info-box-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .info-box {
-    flex: 0 0 calc(50% - 10px);
-  }
-  
-  /* Make icons more defined */
-  .material-icons {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  /* ...existing CSS below */
-  
-
-
-  .lightbox-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 12px;
-  }
-
-
-  .info-box {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    padding: 10px;
-    margin: 5px 0;
-  }
-  
-  .pros .material-icons, .cons .material-icons {
-    vertical-align: middle;
-  }
-  
-  .lightbox {
-    /* ...existing styles */
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -128,62 +70,56 @@ body {
   }
   
   .lightbox-content {
-    /* ...existing styles */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    transform: translate(-50%, -60%);
   }
   
   .lightbox.show .lightbox-content {
     opacity: 1;
     transform: translate(-50%, -50%);
   }
-
-
-
-  /* For Desktop */
-.method-container {
-    width: calc(21.25% - 40px); /* Adjusted for 85% screen coverage */
-    float: left;
-    margin: 10px;
-    box-sizing: border-box;
+  
+  /* Info Boxes for Pros and Cons */
+  .info-box {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px 0;
+    flex: 0 0 calc(50% - 10px);
   }
   
+  .info-box-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .pros .material-icons, .cons .material-icons {
+    vertical-align: middle;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Media Queries */
   /* For Screens larger than 1280px (approximate size for MacBook Pro 13 and up) */
   @media only screen and (min-width: 1280px) {
     .container {
       width: 85%;
       margin: auto;
     }
-  
-    .method-container {
-      width: calc(25% - 40px);
-    }
   }
   
-
-  
-  /* Responsive Design */
+  /* For Mobile */
   @media only screen and (max-width: 768px) {
-    .container {
-      padding: 10px;
-    }
-  
     .method-container {
-        width: 90%;
-        margin: 10px 0;
-    }
-  
-    h1 {
-      font-size: 24px;
-      margin-top: 15px;
-      margin-bottom: 30px;
-    }
-  
-    h2 {
-      font-size: 18px;
-      margin-bottom: 15px;
+      width: 90%;
+      margin: 10px auto;
     }
   }
-
   
