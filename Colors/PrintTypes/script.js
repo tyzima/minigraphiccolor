@@ -27,4 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-
+document.addEventListener("DOMContentLoaded", function() {
+  const teamCustom = document.getElementById("team-custom");
+  const text = teamCustom.textContent || teamCustom.innerText;
+  teamCustom.setAttribute("data-text", text);
+});

@@ -50,18 +50,42 @@ body {
     padding-bottom:0px;
   }
   
- 
-#team-custom {
-  font-family: 'Tourney', sans-serif;
-  font-weight: 700;
-  background: linear-gradient(90deg, #4696ec, lighter-shade-of-blue);
-  background-size: 200% auto;
-  color: #fff;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: gradient-animation 3s infinite linear;
-}
-
+  #team-custom {
+    position: relative;
+    font-family: 'Tourney', sans-serif;
+    font-weight: 700;
+    color: transparent;
+  }
+  
+  #team-custom .text {
+    position: relative;
+    z-index: 1;
+  }
+  
+  #team-custom::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background: linear-gradient(90deg, #4696ec, #87CEFA);
+    background-size: 200% 100%;
+    animation: gradient-animation 3s linear infinite;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  
 #printing-methods {
   font-family: 'Helvetica', sans-serif;
 }
