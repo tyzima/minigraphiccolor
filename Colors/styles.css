@@ -180,6 +180,12 @@ body {
 }
 
 
+.container .button-container{
+  display:block;
+  height:80px;
+  transform:scale(0.66);
+ }
+
 .filter-button {
   background-color: white;
   border-radius: 12px;
