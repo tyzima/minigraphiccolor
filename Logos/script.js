@@ -1,9 +1,16 @@
 // Initialize Airtable API
 
 async function fetchData() {
-  const response = await fetch("/.netlify/functions/fetchtoAirtable");
-  const data = await response.json();
-  return data;
+  try {
+    const response = await fetch("/.netlify/functions/fetchtoAirtable");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Fetch failed:", error);
+  }
 }
 
 // Populate dropdown and logo container
