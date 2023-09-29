@@ -237,8 +237,9 @@ body {
       margin: 10px auto;
     }
     .back-button {
+        font-size: 10px;
         position: fixed;  /* Fixed position */
-        bottom: 10px;  /* Bottom left corner */
+        bottom: 5px;  /* Bottom left corner */
         left: 10px;
         z-index: 999;  /* On top of other elements */
         background-color: #ffffff79;  /* Background color */
