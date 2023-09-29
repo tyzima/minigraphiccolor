@@ -2,11 +2,10 @@
 const API_URL = `https://api.airtable.com/v0/appVZNtd4jkDSXdkN/Logos?view=NumbersOnly`;
 const API_HEADERS = { Authorization: "patsp21BuUz9bikDr.35da5db96c161fafba8f2d507daa7c02a25e2826556728ea6bffb8ec8a499af4" };
 
-// Fetch data from Airtable
 async function fetchData() {
-  const response = await fetch(API_URL, { headers: API_HEADERS });
+  const response = await fetch("/.netlify/functions/fetchAirtableData");
   const data = await response.json();
-  return data.records;
+  return data;
 }
 
 // Populate dropdown and logo container
