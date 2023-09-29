@@ -82,7 +82,7 @@ body {
  
 
 .filter-button {
-  background-color: #0052ea;
+  background-color: #4696ec;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -94,7 +94,7 @@ body {
 }
 
 .filter-button:hover {
-  background-color: #2571ff;
+  background-color: #4696ec;
 }
 
 
