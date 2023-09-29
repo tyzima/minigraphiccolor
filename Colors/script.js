@@ -148,24 +148,21 @@ document.getElementById('searchInput').addEventListener('input', (e) => {
 });
 
 
-document.addEventListener("DOMContentLoaded", function() {
-  
-  // Function to populate search based on button click
-  function populateSearch(event) {
-    const filterText = event.target.getAttribute("data-filter");
-    const searchBar = document.getElementById("searchInput");
-    searchBar.value = filterText;
-  
-    // Trigger your existing filter function here
-    filterData(filterText);
-  }
 
-  // Add event listeners to new buttons
-  document.getElementById("heatPressBtn").addEventListener("click", populateSearch);
-  document.getElementById("screenPrintBtn").addEventListener("click", populateSearch);
-  document.getElementById("decalsBtn").addEventListener("click", populateSearch);
-  document.getElementById("embroideryBtn").addEventListener("click", populateSearch);
-
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    function populateSearch(event) {
+      const filterText = event.target.getAttribute("data-filter");
+      const searchBar = document.getElementById("searchInput");
+      searchBar.value = filterText;
+      filterData(filterText);
+    }
+  
+    document.getElementById("heatPressBtn").addEventListener("click", populateSearch);
+    document.getElementById("screenPrintBtn").addEventListener("click", populateSearch);
+    document.getElementById("decalsBtn").addEventListener("click", populateSearch);
+    document.getElementById("embroideryBtn").addEventListener("click", populateSearch);
+  
   // Populate SVGs (if you have this function)
   if (typeof populateSVGs === 'function') {
     populateSVGs();
