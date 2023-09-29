@@ -80,6 +80,12 @@ body {
  }
  
  
+ .container .button-container{
+  display:block;
+  height:82px;
+ }
+ 
+ 
 
 .filter-button {
   background-color: #4696ec;
