@@ -4,47 +4,49 @@
   <meta charset="UTF-8">
   <title>Lax.com - Printing Methods</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Add Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
   <div class="container">
     <h1>Custom Team Gear Printing Methods</h1>
-    
+
     <!-- Screen Print Section -->
     <div class="method-container">
       <h2>Screen Print</h2>
       <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="Screen Print">
-      <p class="pros">Pros: Placeholder text</p>
-      <p class="cons">Cons: Placeholder text</p>
-      <p class="use">Used for: Placeholder text</p>
-    </div>
-    
-    <!-- Heat Press Section -->
-    <div class="method-container">
-      <h2>Heat Press</h2>
-      <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="Heat Press">
-      <p class="pros">Pros: Placeholder text</p>
-      <p class="cons">Cons: Placeholder text</p>
+      <p class="pros"><span class="material-icons green">add</span> Pros: <span class="clickable" onclick="showLightbox('screen_pro')">Placeholder text</span></p>
+      <p class="cons"><span class="material-icons red">remove</span> Cons: <span class="clickable" onclick="showLightbox('screen_con')">Placeholder text</span></p>
       <p class="use">Used for: Placeholder text</p>
     </div>
 
-    <!-- Decals Section -->
-    <div class="method-container">
-      <h2>Decals</h2>
-      <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="Decals">
-      <p class="pros">Pros: Placeholder text</p>
-      <p class="cons">Cons: Placeholder text</p>
-      <p class="use">Used for: Placeholder text</p>
-    </div>
-
-    <!-- Embroidery Section -->
-    <div class="method-container">
-      <h2>Embroidery</h2>
-      <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="Embroidery">
-      <p class="pros">Pros: Placeholder text</p>
-      <p class="cons">Cons: Placeholder text</p>
-      <p class="use">Used for: Placeholder text</p>
-    </div>
+    <!-- ... Repeat for other methods -->
 
   </div>
+
+  <!-- Lightbox for Screen Print Pros -->
+  <div id="screen_pro" class="lightbox">
+    <div class="lightbox-content">
+      <h3>Screen Print: Pros</h3>
+      <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="Screen Print Pros">
+      <p>Explanation text here.</p>
+      <button onclick="hideLightbox('screen_pro')">Close</button>
+    </div>
+  </div>
+
+  <!-- Lightbox for Screen Print Cons -->
+  <div id="screen_con" class="lightbox">
+    <div class="lightbox-content">
+      <h3>Screen Print: Cons</h3>
+      <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="Screen Print Cons">
+      <p>Explanation text here.</p>
+      <button onclick="hideLightbox('screen_con')">Close</button>
+    </div>
+  </div>
+
+  <!-- ... Repeat Lightbox for other methods -->
+
+  <!-- Include JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
