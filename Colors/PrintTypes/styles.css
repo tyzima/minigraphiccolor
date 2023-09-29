@@ -144,7 +144,7 @@ body {
   /* For Screens larger than 1280px (approximate size for MacBook Pro 13 and up) */
   @media only screen and (min-width: 1280px) {
     .container {
-      width: 85%;
+      width: 100%;
       margin: auto;
     }
   }
@@ -152,7 +152,7 @@ body {
   /* For Mobile */
   @media only screen and (max-width: 768px) {
     .method-container {
-      width: 90%;
+      width: 100%;
       margin: 10px auto;
     }
   }
