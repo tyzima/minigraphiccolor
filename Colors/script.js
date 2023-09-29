@@ -281,6 +281,22 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('filterColor').addEventListener('change', applyFilters);
   }
 
+  // Add event listeners to buttons
+document.getElementById("heatPressBtn").addEventListener("click", populateSearch);
+document.getElementById("screenPrintBtn").addEventListener("click", populateSearch);
+document.getElementById("decalsBtn").addEventListener("click", populateSearch);
+document.getElementById("embroideryBtn").addEventListener("click", populateSearch);
+
+function populateSearch(event) {
+  const filterText = event.target.getAttribute("data-filter");
+  const searchBar = document.getElementById("searchInput"); // Your search bar's ID is 'searchInput'
+  searchBar.value = filterText;
+
+  // Trigger your existing filter function here
+  filterData(filterText);
+}
+
+
   // Populate SVGs
   populateSVGs();
 });
