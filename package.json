@@ -1,3 +1,5 @@
-"dependencies": {
-    "airtable": "^latest_version"
+{
+  "dependencies": {
+    "airtable": "latest"
+  }
 }
