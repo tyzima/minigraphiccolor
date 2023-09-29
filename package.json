@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "mkdir -p build && cp -r *.html *.css *.js build/"
+    "build": "mkdir -p build && find . -name '*.html' -exec cp {} build/ \\; && find . -name '*.css' -exec cp {} build/ \\; && find . -name '*.js' -exec cp {} build/ \\;"
   },
   "dependencies": {
     "airtable": "latest"
