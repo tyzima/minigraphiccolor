@@ -52,7 +52,7 @@ body {
   
   #team-custom {
     position: relative;
-    font-family: 'Tourney', Helvetica, sans-serif;
+    font-family: 'Tourney', cursive;
     font-weight: 700;
     color: transparent;
   }
@@ -70,36 +70,22 @@ body {
     right: 0;
     bottom: 0;
     z-index: 0;
-    background: linear-gradient(90deg, #4696ec, #87CEFA);
-    background-size: 300% 100%;  /* Increased background size for a more subtle effect */
-    animation: gradient-animation 5s linear infinite;  /* Slowed down the animation */
+    background: linear-gradient(90deg, #4696ec, #87CEFA, #4696ec);
+    background-size: 200% 100%;
+    animation: gradient-animation 5s linear infinite;
     -webkit-background-clip: text;
     color: transparent;
   }
   
   @keyframes gradient-animation {
     0% {
-      background-position: 300% 0;
+      background-position: 200% 0;
     }
     100% {
-      background-position: -300% 0;
+      background-position: -200% 0;
     }
   }
   
-  
-#printing-methods {
-  font-family: 'Helvetica', sans-serif;
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
 
 
   .method-container {
