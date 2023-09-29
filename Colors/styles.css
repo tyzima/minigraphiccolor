@@ -425,6 +425,20 @@ width: max-content;
  text-align:center;
 }
 
+.filter-button {
+  width: calc(50% - 10px); /* Two buttons per line, accounting for 10px margin */
+  border-radius: 12px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  /* Other existing styles */
+}
+
+/* Clear the right margin for every 2nd button */
+.filter-button:nth-child(2n) {
+  margin-right: 0;
+}
 
 
   
