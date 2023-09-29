@@ -243,7 +243,7 @@ body {
         z-index: 999;  /* On top of other elements */
         background-color: #ffffff;  /* Background color */
         padding: 10px;  /* Some padding */
-        border-radius: 50%;  /* Rounded corners */
+        border-radius: 8px;  /* Minor rounded corners */
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);  /* Shadow for better visibility */
         text-align: center;  /* Center the content */
       }
