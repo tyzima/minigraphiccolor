@@ -167,6 +167,22 @@ body {
  opacity:0.51;
 }
 
+.filter-button {
+  background-color: white;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.filter-button i.material-icons {
+  margin-right: 8px;
+}
+
+
 
 .container .svg-placeholder {
   min-height: 0px;
