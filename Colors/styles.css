@@ -83,7 +83,48 @@ body {
  .container .button-container{
   display:block;
   height:82px;
+  transform:translatex(0px) translatey(0px);
  }
+ 
+ /* Heat press */
+ #heatPressBtn{
+  max-width:120px;
+  min-width:120px;
+  padding-left:20px;
+  margin-right:0px;
+ }
+ 
+ /* Screen print */
+ #screenPrintBtn{
+  min-width:120px;
+  max-width:120px;
+  margin-right:0px;
+  margin-left:0px;
+ }
+ 
+ /* Embroidery */
+ #embroideryBtn{
+  min-width:120px;
+  max-width:120px;
+  margin-left:0px;
+  margin-right:0px;
+ }
+ 
+ /* Decals */
+ #decalsBtn{
+  min-width:120px;
+  max-width:120px;
+  margin-left:0px;
+  margin-right:0px;
+ }
+ 
+ /* Print methods button */
+ .container .svg-placeholder2 .print-methods-button{
+  margin-top:3px;
+  padding-bottom:0px;
+  padding-top:13px;
+ }
+ 
  
  
 
