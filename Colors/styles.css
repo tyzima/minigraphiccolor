@@ -475,6 +475,11 @@ body {
   transform:scale(0.66);
  }
  
+ /* Search bar container */
+ #searchBarContainer{
+  height:52px;
+  padding-top:13px;
+ }
 
 
 
