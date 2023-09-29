@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build": "mkdir -p build && cp -r *.html *.css *.js build/"
+  },
   "dependencies": {
     "airtable": "latest"
   }
