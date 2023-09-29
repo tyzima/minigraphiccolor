@@ -7,6 +7,27 @@ body {
     padding: 0;
   }
   
+/* ... existing styles ... */
+
+/* Back Button Styles */
+.back-button {
+    text-align: left; /* Aligns the button to the left */
+    margin-bottom: 20px; /* Adds some space below the button */
+  }
+  
+  .back-button a {
+    color: #000; /* Sets the text color */
+    text-decoration: none; /* Removes underline */
+    font-size: 18px; /* Sets the font size */
+  }
+  
+  .back-button .material-icons {
+    vertical-align: middle; /* Aligns the icon with the text */
+    font-size: 24px; /* Sets the icon size */
+    margin-right: 8px; /* Adds some space between the icon and text */
+  }
+  
+
   .container {
     max-width: 100%;
     margin: auto;
