@@ -52,6 +52,7 @@ body {
   
   #team-custom {
     position: relative;
+    font-size:54px;
     font-family: 'Tourney', cursive;
     font-weight: 700;
     color: transparent;
