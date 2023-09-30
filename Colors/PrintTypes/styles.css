@@ -349,7 +349,8 @@ body {
 
 
 #screen_pro .lightbox-content{
-  max-width:86%;
+  width:90% !important;
+  height:auto;
  }
  
  /* Image */
