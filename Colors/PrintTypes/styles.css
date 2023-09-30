@@ -177,6 +177,18 @@ body {
     cursor: pointer;
     text-decoration: underline;
   }
+
+  .pill3 {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 2px solid #007bff;
+    border-radius: 25px;
+    background-color: #007bff;
+    color: white;
+    font-family: 'Helvetica', sans-serif;
+    font-weight: bold;
+    margin: 4px;
+  }
   
   /* Lightbox Styles */
   .lightbox {
