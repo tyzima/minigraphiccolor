@@ -253,7 +253,7 @@ body {
   }
   
   .container .use span{
-    background-color:#939393;
+    background-color:#9393932a;
     background-size:auto;
     padding-left:10px;
     padding-right:10px;
@@ -266,7 +266,7 @@ body {
     font-weight:300;
     font-size:13px;
     line-height:23.1px;
-    color:#ffffff;
+    color:#242424;
    }
 
   .lightbox.show {
