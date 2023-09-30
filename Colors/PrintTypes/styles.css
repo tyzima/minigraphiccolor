@@ -253,7 +253,7 @@ body {
   }
   
   .container .use span{
-    background-color:#9393932a;
+    background-color:#f9f9f9;
     background-size:auto;
     padding-left:10px;
     padding-right:10px;
@@ -322,7 +322,7 @@ body {
   
   /* Info Boxes for Pros and Cons */
   .info-box {
-    background-color: #f9f9f9;
+    background-color: transparent;
     border-radius: 8px;
     padding: 10px;
     margin: 5px 0;
