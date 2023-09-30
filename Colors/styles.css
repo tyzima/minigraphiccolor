@@ -171,6 +171,7 @@ body {
 
 .color-pill.brands-pill {
   min-width: 50px; 
+  text-align: center;
   font-size: 9px; /* Set minimum width */
   min-height: 20px;  /* Set minimum height */
   display: inline-block;  /* Make sure it's block-level */

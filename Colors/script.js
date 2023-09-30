@@ -65,10 +65,10 @@ middleDiv.appendChild(brandsOverlay);
     printability.className = 'icon-container';
 
     const iconMap = {
-      'Heat Press': 'https://res.cloudinary.com/laxdotcom/image/upload/v1695849884/HPff_c2swhd.svg',
-      'Screen Print': 'https://res.cloudinary.com/laxdotcom/image/upload/v1695849878/SPff_ftlboo.svg',
-      'Embroidery': 'https://res.cloudinary.com/laxdotcom/image/upload/v1695849917/Embff_xjyfos.svg',
-      'Decals': 'https://res.cloudinary.com/laxdotcom/image/upload/v1695849891/Decalff_spgcgu.svg'
+      'Heat Press': 'https://res.cloudinary.com/laxdotcom/image/upload/v1696036182/fire-solid_fkq9ga.svg',
+      'Screen Print': 'https://res.cloudinary.com/laxdotcom/image/upload/v1696036193/fill-drip-solid_mzutgg.svg',
+      'Embroidery': 'https://res.cloudinary.com/laxdotcom/image/upload/v1696036188/xmarks-lines-solid_vgpzxs.svg',
+      'Decals': 'https://res.cloudinary.com/laxdotcom/image/upload/v1696036199/dochub_wvd0gm.svg'
     };
 
 
