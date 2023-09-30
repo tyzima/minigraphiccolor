@@ -107,6 +107,7 @@ body {
     font-weight: 700;
     color: transparent;
     margin-bottom:26px;
+    min-height:76px;
   }
   
   #team-custom .text {
