@@ -460,20 +460,12 @@ body {
   
   
 
-#footer footer{
-  text-align:center;
-  line-height:0px;
-  font-size:12px;
-  font-weight:600;
-  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
-  text-transform:uppercase;
-  letter-spacing:1.3px;
- }
+
  
  .copyright-footer {
   text-align:center;
   line-height:0px;
-  font-size:12px;
+  font-size:8px;
   font-weight:600;
   font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
   text-transform:uppercase;
