@@ -3,7 +3,7 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: transparent;
+  background-color: #f1f1f1;
 }
 
 .container .svg-placeholder{
@@ -469,14 +469,6 @@ body {
  text-align:center;
 }
 
-.copyright-footer {
-  font-size: 8px;
-  font-weight: 700;
-  text-align: center;
-  margin-top: 20px;
-}
-
-
 .container .button-container{
   display:flex;
   flex-direction:row;
@@ -490,32 +482,6 @@ body {
   padding-top:13px;
  }
 
- #heatPressBtn{
-  border-top-right-radius:0px;
-  border-bottom-right-radius:0px;
- }
- 
- /* Embroidery */
- #embroideryBtn{
-  border-top-left-radius:0px;
-  border-top-right-radius:0px;
-  border-bottom-left-radius:0px;
-  border-bottom-right-radius:0px;
- }
- 
- /* Screen print */
- #screenPrintBtn{
-  border-top-left-radius:0px;
-  border-top-right-radius:0px;
-  border-bottom-left-radius:0px;
-  border-bottom-right-radius:0px;
- }
- 
- /* Decals */
- #decalsBtn{
-  border-top-left-radius:0px;
-  border-bottom-left-radius:0px;
- }
 
 
 }
