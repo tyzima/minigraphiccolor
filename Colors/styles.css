@@ -308,8 +308,8 @@ body {
 }
 
 .printability-icon {
-  max-width: 25px;
-  max-height: 25px;
+  width: 25px;
+  height: 25px;
   margin: 0 5px;
   cursor: pointer;
   filter: grayscale(100%); /* Make it grey */
