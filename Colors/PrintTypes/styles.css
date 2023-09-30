@@ -11,6 +11,21 @@ body {
     margin-bottom:9px;
 
   }
+
+  .icon {
+    filter: brightness(0) saturate(100%) hue-rotate(210deg); /* Change the color to light blue */
+}
+
+
+.brand-logos {
+  display: flex;
+  justify-content: center; /* Horizontally center the logos */
+}
+
+.brand-logos img {
+  margin: 0 15px; /* 30px gap between logos (15px on each side) */
+}
+
   
   .rainbow-text {
     background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
