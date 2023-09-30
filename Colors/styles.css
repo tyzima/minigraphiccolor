@@ -308,8 +308,9 @@ body {
 }
 
 .printability-icon {
-  width: 30px;
-  height: 30px;
+  color:#4696ec;
+  height: 20px;
+  width: auto;
   margin: 0 5px;
   cursor: pointer;
 }
