@@ -470,6 +470,16 @@ body {
   letter-spacing:1.3px;
  }
  
+ .copyright-footer {
+  text-align:center;
+  line-height:0px;
+  font-size:12px;
+  font-weight:600;
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:1.3px;
+
+ }
 
   .container .svg-placeholder {
     max-height: 150px;
