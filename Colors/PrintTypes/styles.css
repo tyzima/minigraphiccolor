@@ -39,6 +39,7 @@ body {
 }
 
 
+
 .brand-logos {
   display: flex;
   justify-content: center; /* Horizontally center the logos */
@@ -273,6 +274,21 @@ body {
       width: 100%;
       margin: 10px auto;
     }
+
+
+#screen_pro .lightbox-content{
+  max-width:86%;
+ }
+ 
+ /* Image */
+ #screen_pro img{
+  justify-content:center;
+  align-items:center;
+  width:649px;
+ }
+ 
+}
+
     .back-button {
         font-size: 10px;
         margin-bottom:10px;
