@@ -65,16 +65,16 @@ middleDiv.appendChild(brandsOverlay);
     printability.className = 'icon-container';
 
     const iconMap = {
-      'Heat Press': 'https://res.cloudinary.com/laxdotcom/image/upload/v1695849884/HPff_c2swhd.svg',
-      'Screen Print': 'https://res.cloudinary.com/laxdotcom/image/upload/v1695849878/SPff_ftlboo.svg',
-      'Embroidery': 'https://res.cloudinary.com/laxdotcom/image/upload/v1695849917/Embff_xjyfos.svg',
-      'Decals': 'https://res.cloudinary.com/laxdotcom/image/upload/v1695849891/Decalff_spgcgu.svg'
+      'Heat Press': 'fa-solid fa-fire',
+      'Screen Print': 'fa-solid fa-fill-drip',
+      'Embroidery': 'fa-solid fa-xmarks-lines',
+      'Decals': 'fa-brands fa-dochub'
     };
 
     item['Printability'].split(',').forEach(p => {
       if (p.trim() !== '') {
         const icon = document.createElement('img');
-        icon.className = 'printability-icon';
+        icon.className = 'printability-icon ' + iconMap[p.trim()]; // Add the FontAwesome class names
         icon.src = iconMap[p.trim()];
         icon.alt = p.trim();
 
