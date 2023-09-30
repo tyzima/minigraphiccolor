@@ -251,6 +251,40 @@ body {
     color: white;
     margin: 2px;
   }
+
+  /* Span Tag */
+#screen_pro p span{
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:5px;
+  padding-bottom:5px;
+ }
+ 
+ /* Cons */
+ #screen_pro .pros-cons .cons{
+  text-align:left;
+ }
+ 
+ /* Pros */
+ #screen_pro .pros-cons .pros{
+  text-align:left;
+ }
+ 
+ /* Heading */
+ .pros-cons .pros h3{
+  text-align:left;
+  margin-left:35px;
+ }
+ 
+ /* Heading */
+ .pros-cons .cons h3{
+  text-align:left;
+ }
+ 
+ /* List */
+ .pros-cons .cons ul{
+  padding-left:11px;
+ }
   
   .container .use span{
     background-color:#f9f9f9;
