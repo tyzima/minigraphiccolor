@@ -242,7 +242,7 @@ body {
     border-radius: 8px;
     padding: 10px;
     margin: 5px 0;
-    flex: 0 0 calc(50% - 10px);
+    flex: 90%;
   }
   
   .info-box-container {
