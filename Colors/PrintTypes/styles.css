@@ -187,7 +187,17 @@ body {
     color: white;
     font-family: 'Helvetica', sans-serif;
     font-weight: bold;
+    font-size: 12px;
     margin: 4px;
+  }
+
+  .pros-cons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .pros, .cons {
+    width: 45%; /* Divide the width approximately equally between Pros and Cons */
   }
   
   /* Lightbox Styles */
