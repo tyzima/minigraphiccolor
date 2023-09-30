@@ -14,7 +14,7 @@ body {
 
   }
 
-  #screen_pro, #emb_pro, #heat_pro, #decal_pro button{
+  #screen_pro #emb_pro #heat_pro #decal_pro button{
     background-color:#e5e5e5;
     visibility:visible;
     opacity:1;
