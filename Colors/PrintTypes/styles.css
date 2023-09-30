@@ -12,6 +12,28 @@ body {
 
   }
 
+
+/* Brand logos */
+.container .brand-logos{
+  width:100%;
+ }
+ 
+ /* Image */
+ .container .brand-logos img{
+  width:61px;
+  height:52px;
+  flex:0 1 auto;
+  position:relative;
+  top:-12px;
+ }
+ 
+ /* Printing methods */
+ #printing-methods{
+  margin-bottom:32px;
+  min-height:45px;
+ }
+ 
+
   .icon {
     filter: brightness(0) saturate(100%) hue-rotate(210deg); /* Change the color to light blue */
 }
