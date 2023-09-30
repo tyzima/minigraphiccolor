@@ -461,7 +461,41 @@ body {
     gap: 4px;
   }
   
-  
+  /* Embroidery */
+ #embroideryBtn{
+  border-top-left-radius:0px;
+  border-top-right-radius:0px;
+  border-bottom-left-radius:0px;
+  border-bottom-right-radius:0px;
+  border-right-width:1px;
+  border-left-width:0px;
+ }
+ 
+ /* Screen print */
+ #screenPrintBtn{
+  border-top-left-radius:0px;
+  border-top-right-radius:0px;
+  border-bottom-left-radius:0px;
+  border-bottom-right-radius:0px;
+  border-right-width:0px;
+  border-left-width:0px;
+ }
+ 
+ /* Decals */
+ #decalsBtn{
+  border-top-left-radius:0px;
+  border-bottom-right-radius:12px;
+  border-bottom-left-radius:0px;
+  border-left-width:1px;
+ }
+ 
+ /* Heat press */
+ #heatPressBtn{
+  border-bottom-right-radius:0px;
+  border-top-right-radius:0px;
+  border-right-width:1px;
+ }
+ 
 
 
  
