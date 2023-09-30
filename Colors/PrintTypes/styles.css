@@ -14,7 +14,7 @@ body {
 
   }
 
-  #screen_pro button{
+  #screen_pro, #emb_pro, #heat_pro, #decal_pro button{
     background-color:#e5e5e5;
     visibility:visible;
     opacity:1;
@@ -33,64 +33,6 @@ body {
     line-height:22.3px;
    }
 
-   
-   #emb_pro button{
-    background-color:#e5e5e5;
-    visibility:visible;
-    opacity:1;
-    border-width:0px;
-    border-top-left-radius:100%;
-    border-top-right-radius:100%;
-    border-bottom-left-radius:100%;
-    border-bottom-right-radius:100%;
-    padding-left:11px;
-    padding-right:11px;
-    padding-top:9px;
-    padding-bottom:8px;
-    color:#ffffff;
-    text-shadow:rgba(0, 0, 0, 0.3) 0px 1px 1px;
-    font-size:23px;
-    line-height:22.3px;
-   }
-
-   #decal_pro button{
-    background-color:#e5e5e5;
-    visibility:visible;
-    opacity:1;
-    border-width:0px;
-    border-top-left-radius:100%;
-    border-top-right-radius:100%;
-    border-bottom-left-radius:100%;
-    border-bottom-right-radius:100%;
-    padding-left:11px;
-    padding-right:11px;
-    padding-top:9px;
-    padding-bottom:8px;
-    color:#ffffff;
-    text-shadow:rgba(0, 0, 0, 0.3) 0px 1px 1px;
-    font-size:23px;
-    line-height:22.3px;
-   }
-   
-   #heat_pro button{
-    background-color:#e5e5e5;
-    visibility:visible;
-    opacity:1;
-    border-width:0px;
-    border-top-left-radius:100%;
-    border-top-right-radius:100%;
-    border-bottom-left-radius:100%;
-    border-bottom-right-radius:100%;
-    padding-left:11px;
-    padding-right:11px;
-    padding-top:9px;
-    padding-bottom:8px;
-    color:#ffffff;
-    text-shadow:rgba(0, 0, 0, 0.3) 0px 1px 1px;
-    font-size:23px;
-    line-height:22.3px;
-   }
-   
    
 
 
