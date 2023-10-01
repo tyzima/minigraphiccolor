@@ -1,22 +1,23 @@
 const canvas = document.getElementById("logoCanvas");
 const ctx = canvas.getContext("2d");
 
-// Initialize variables
 let logos = [];
 let dragging = false;
 let scaling = false;
 let dragOffset = { x: 0, y: 0 };
 let selectedLogo = null;
+let resizing = false;
+let tooltip = null;
 
 const sizes = {
   small: { width: 11 * 20, height: 12.5 * 20 },
   medium: { width: 22.5 * 20, height: 12.5 * 20 },
   large: { width: 22.5 * 20, height: 25 * 20 },
-  xlarge: { width: 22.5 * 20, height: 60 * 20 },
+  xlarge: { width: 22.5 * 20, height: 60 * 20 }
 };
 
-// Set the initial canvas size
 setSize('small');
+initTooltip();
 
 function setSize(size) {
   const newSize = sizes[size];
@@ -32,32 +33,45 @@ function setSize(size) {
   render();
 }
 
-async function addToSheet() {
-  const logoID = document.getElementById("logoID").value;
-  const qty = parseInt(document.getElementById("qty").value);
-  const width = parseInt(document.getElementById("width").value);
-
-  const imgUrl = `https://res.cloudinary.com/laxdotcom/image/upload/Logos/${logoID}.svg`;
-
-  const img = new Image();
-  img.crossOrigin = "anonymous";
-
-  img.onload = function() {
-    for (let i = 0; i < qty; i++) {
-      const logo = {
-        img: img,
-        x: 0,
-        y: 0,
-        width: width,
-        height: (width * img.height) / img.width
-      };
-      logos.push(logo);
-    }
-    render();
-  };
-
-  img.src = imgUrl;
+function initTooltip() {
+  tooltip = document.createElement('div');
+  tooltip.style.position = 'fixed';
+  tooltip.style.backgroundColor = '#333';
+  tooltip.style.color = 'white';
+  tooltip.style.padding = '5px';
+  tooltip.style.borderRadius = '5px';
+  tooltip.style.display = 'none';
+  document.body.appendChild(tooltip);
 }
+
+
+async function addToSheet() {
+    const logoID = document.getElementById("logoID").value;
+    const qty = parseInt(document.getElementById("qty").value);
+    const width = parseInt(document.getElementById("width").value);
+  
+    const imgUrl = `https://res.cloudinary.com/laxdotcom/image/upload/Logos/${logoID}.svg`;
+  
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+  
+    img.onload = function() {
+      for (let i = 0; i < qty; i++) {
+        const logo = {
+          img: img,
+          x: 0,
+          y: 0,
+          width: width,
+          height: (width * img.height) / img.width
+        };
+        logos.push(logo);
+      }
+      render();
+    };
+  
+    img.src = imgUrl;
+  }
+  
 
 function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -80,6 +94,11 @@ canvas.addEventListener('mousedown', function(e) {
   if (selectedLogo) {
     dragging = true;
     dragOffset = { x: x - selectedLogo.x, y: y - selectedLogo.y };
+    
+    if (Math.abs(x - (selectedLogo.x + selectedLogo.width)) < 10 && 
+        Math.abs(y - (selectedLogo.y + selectedLogo.height)) < 10) {
+      resizing = true;
+    }
   }
 });
 
@@ -94,10 +113,30 @@ canvas.addEventListener('mousemove', function(e) {
 
     render();
   }
+  
+  if (resizing && selectedLogo) {
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    selectedLogo.width = x - selectedLogo.x;
+    selectedLogo.height = y - selectedLogo.y;
+
+    tooltip.style.left = e.clientX + 'px';
+    tooltip.style.top = e.clientY + 'px';
+    tooltip.style.display = 'block';
+    tooltip.textContent = `${selectedLogo.width.toFixed(2)} x ${selectedLogo.height.toFixed(2)}`;
+
+    render();
+  }
 });
 
 canvas.addEventListener('mouseup', function(e) {
   dragging = false;
+  resizing = false;
+  if (tooltip) {
+    tooltip.style.display = 'none';
+  }
 });
 
 document.addEventListener('keydown', function(e) {
@@ -109,7 +148,7 @@ document.addEventListener('keydown', function(e) {
       }
       render();
     } else if (e.key === 'c' && e.ctrlKey) {
-      logos.push({ ...selectedLogo });
+      logos.push(JSON.parse(JSON.stringify(selectedLogo)));
       render();
     } else if (e.key === 'v' && e.ctrlKey) {
       logos.push({ ...selectedLogo, x: selectedLogo.x + 10, y: selectedLogo.y + 10 });
@@ -118,10 +157,9 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
-function downloadPDF() {
-  // We'll tackle this part later
-}
-
 function downloadPNG() {
-  // We'll tackle this part later
+  const link = document.createElement('a');
+  link.download = 'logos.png';
+  link.href = canvas.toDataURL('image/png');
+  link.click();
 }
