@@ -34,7 +34,7 @@ function setSize(size) {
 }
 
 function initTooltip() {
-  tooltip = document.createElement('div');
+    tooltip = document.getElementById("tooltip");
   tooltip.style.position = 'fixed';
   tooltip.style.backgroundColor = '#333';
   tooltip.style.color = 'white';
