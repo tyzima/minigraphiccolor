@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
   <meta charset="UTF-8">
-  <title>Logo PDF Generator</title>
+  <title>Logo PDF Creator</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <h1>Logo PDF Generator</h1>
     <div class="canvas-container">
-      <canvas id="logoCanvas"></canvas>
+      <canvas id="canvas" width="500" height="500"></canvas>
     </div>
-
     <div class="info-box">
-      <button class="size-button" onclick="setSize('small')">Small</button>
-      <button class="size-button" onclick="setSize('medium')">Medium</button>
-      <button class="size-button" onclick="setSize('large')">Large</button>
-      <button class="size-button" onclick="setSize('xlarge')">Extra Large</button>
-<br>
+      <button class="size-btn" onclick="changeCanvasSize('small')">Small</button>
+      <button class="size-btn" onclick="changeCanvasSize('medium')">Medium</button>
+      <button class="size-btn" onclick="changeCanvasSize('large')">Large</button>
+      <button class="size-btn" onclick="changeCanvasSize('xlarge')">Extra Large</button>
       <input type="text" id="logoID" placeholder="Logo ID">
       <input type="number" id="qty" placeholder="Qty of Logos">
       <input type="number" id="width" placeholder="Size of Logo (Width)">
-
       <button onclick="addToSheet()">Add to Sheet</button>
-    </div>
-    <div id="tooltip"></div>
-
-    <div class="download-box">
       <button onclick="downloadPDF()">Download PDF</button>
       <button onclick="downloadPNG()">Download PNG</button>
     </div>
   </div>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.7.0/fabric.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
