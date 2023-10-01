@@ -1,5 +1,5 @@
-// vectorize.js
-const request = require('request');
+const axios = require('axios');
+const FormData = require('form-data');
 
 exports.handler = async function(event, context) {
   if (event.httpMethod !== 'POST' || !event.body) {
@@ -13,36 +13,28 @@ exports.handler = async function(event, context) {
   const API_ID = process.env.VECTORIZE_USER;
   const API_SECRET = process.env.VECTORIZE_PASS;
 
-  return new Promise((resolve, reject) => {
-    request.post({
-      url: 'https://vectorizer.ai/api/v1/vectorize',
-      formData: {
-        'image.base64': base64Image,
-        'processing.max_colors': colors
+  const form = new FormData();
+  form.append('image.base64', base64Image);
+  form.append('processing.max_colors', colors);
+
+  try {
+    const response = await axios.post('https://vectorizer.ai/api/v1/vectorize', form, {
+      headers: {
+        ...form.getHeaders(),
+        'Authorization': `Basic ${Buffer.from(`${API_ID}:${API_SECRET}`).toString('base64')}`
       },
-      auth: { user: API_ID, pass: API_SECRET },
-      followAllRedirects: true,
-      encoding: null
-    }, function(error, response, body) {
-      if (error) {
-        return reject({
-          statusCode: 500,
-          body: 'Internal Server Error'
-        });
-      }
-
-      if (response && response.statusCode !== 200) {
-        return reject({
-          statusCode: 500,
-          body: 'Internal Server Error'
-        });
-      }
-
-      resolve({
-        statusCode: 200,
-        headers: { 'Content-Type': 'image/svg+xml' },
-        body: body.toString('utf8')
-      });
+      responseType: 'text'
     });
-  });
+
+    return {
+      statusCode: 200,
+      headers: { 'Content-Type': 'image/svg+xml' },
+      body: response.data
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: 'Internal Server Error'
+    };
+  }
 };
