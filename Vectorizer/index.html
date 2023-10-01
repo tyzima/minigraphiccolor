@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logo Vectorizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Logo Vectorizer</h1>
+        <div class="input-section">
+            <input type="file" id="imageInput" accept="image/*">
+            <input type="number" id="colorInput" placeholder="Number of Colors">
+            <button id="vectorizeButton">Vectorize</button>
+        </div>
+        <div class="preview-section">
+            <div id="imagePreview" class="preview-box"></div>
+            <div id="svgPreview" class="preview-box"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
