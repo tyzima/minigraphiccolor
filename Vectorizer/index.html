@@ -4,43 +4,56 @@
     <meta charset="UTF-8">
     <title>Image Vectorizer</title>
     <style>
-        /* Modern styling as you like it */
+        /* Apply modern styling */
         .container {
             border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            text-align: center;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+        /* Center items */
+        .center-items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Upload an Image to Vectorize</h1>
-        <input type="file" id="imageInput">
-        <button onclick="handleUpload()">Upload</button>
-        <div id="result"></div>
+
+    <div class="container center-items">
+        <input type="file" id="imageFile" accept="image/*">
+        <label for="colors">Number of colors:</label>
+        <input type="number" id="colors">
+        <button onclick="previewImage()">Preview</button>
+        <button onclick="uploadImage()">Upload and Vectorize</button>
     </div>
 
+    <div id="beforePreview" class="container center-items"></div>
+    <div id="afterPreview" class="container center-items"></div>
+
     <script>
-        async function handleUpload() {
-            const input = document.getElementById('imageInput');
-            const file = input.files[0];
-            if (!file) {
-                alert('Please select an image.');
-                return;
-            }
-            
-            // Convert the image to base64
+        async function previewImage() {
+            const fileInput = document.getElementById('imageFile');
+            const file = fileInput.files[0];
             const reader = new FileReader();
-            reader.onload = async function(event) {
-                const base64Image = event.target.result.split(',')[1];
-                
-                // Call the Netlify function
+            reader.readAsDataURL(file);
+            reader.onloadend = function() {
+                const img = new Image();
+                img.src = reader.result;
+                document.getElementById('beforePreview').appendChild(img);
+            }
+        }
+
+        async function uploadImage() {
+            const fileInput = document.getElementById('imageFile');
+            const file = fileInput.files[0];
+            const colors = document.getElementById('colors').value;
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onloadend = async function() {
+                const base64Image = reader.result.split(',')[1];
                 const response = await fetch('/.netlify/functions/vectorize', {
                     method: 'POST',
-                    body: JSON.stringify({ image: base64Image }),
+                    body: JSON.stringify({ image: base64Image, colors }),
                     headers: {
                         'Content-Type': 'application/json'
                     }
@@ -48,14 +61,14 @@
                 
                 if (response.ok) {
                     const svg = await response.text();
-                    // Insert the SVG into the DOM
-                    document.getElementById('result').innerHTML = svg;
+                    const svgElement = new DOMParser().parseFromString(svg, 'image/svg+xml').documentElement;
+                    document.getElementById('afterPreview').appendChild(svgElement);
                 } else {
                     console.error('Upload failed');
                 }
-            };
-            reader.readAsDataURL(file);
+            }
         }
     </script>
+
 </body>
 </html>

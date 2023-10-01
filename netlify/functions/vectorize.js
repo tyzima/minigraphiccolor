@@ -1,3 +1,4 @@
+// vectorize.js
 const request = require('request');
 
 exports.handler = async function(event, context) {
@@ -8,22 +9,18 @@ exports.handler = async function(event, context) {
     };
   }
 
-  const { image: base64Image } = JSON.parse(event.body);
-
-  // Using environment variables for API credentials
+  const { image: base64Image, colors } = JSON.parse(event.body);
   const API_ID = process.env.VECTORIZE_USER;
   const API_SECRET = process.env.VECTORIZE_PASS;
-  
+
   return new Promise((resolve, reject) => {
     request.post({
       url: 'https://vectorizer.ai/api/v1/vectorize',
       formData: {
         'image.base64': base64Image,
+        'processing.max_colors': colors
       },
-      auth: {
-        user: API_ID, 
-        pass: API_SECRET
-      },
+      auth: { user: API_ID, pass: API_SECRET },
       followAllRedirects: true,
       encoding: null
     }, function(error, response, body) {
