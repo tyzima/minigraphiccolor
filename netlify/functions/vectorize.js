@@ -1,50 +1,51 @@
-const axios = require('axios');
-const FormData = require('form-data');
-const fs = require('fs').promises;
-const USER = process.env.VECTORIZE_USER;
-const PASS = process.env.VECTORIZE_PASS;
-
+const request = require('request');
 
 exports.handler = async function(event, context) {
-  // Read the API key from environment variable
-  const API_KEY = process.env.VECTORIZE_API;
-
-  // Parse the incoming request data
-  const body = JSON.parse(event.body);
-
-  try {
-    // Initialize form data
-    const form = new FormData();
-    form.append('image', body.image, { filename: 'logo.png' });
-    form.append('processing.max_colors', body.max_colors);
-    form.append('mode', 'production'); // You can set this dynamically based on your needs
-
-    // Make the API request to vectorize the image
-    const response = await axios.post('https://api.vectorizer.ai/api/v1/vectorize', form, {
-        headers: {
-          ...form.getHeaders()
-        },
-        auth: {
-          username: USER,
-          password: PASS
-        }
-      });
-
-    // Send back the vectorized SVG
+  if (event.httpMethod !== 'POST' || !event.body) {
     return {
-      statusCode: 200,
-      body: JSON.stringify({
-        svg: response.data
-      })
-    };
-
-  } catch (error) {
-    console.error('Error vectorizing image:', error);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        error: 'Failed to vectorize image'
-      })
+      statusCode: 400,
+      body: 'You must POST an image'
     };
   }
+
+  const { image: base64Image } = JSON.parse(event.body);
+
+  // Using environment variables for API credentials
+  const API_ID = process.env.VECTORIZE_USER;
+  const API_SECRET = process.env.VECTORIZE_PASS;
+  
+  return new Promise((resolve, reject) => {
+    request.post({
+      url: 'https://vectorizer.ai/api/v1/vectorize',
+      formData: {
+        'image.base64': base64Image,
+      },
+      auth: {
+        user: API_ID, 
+        pass: API_SECRET
+      },
+      followAllRedirects: true,
+      encoding: null
+    }, function(error, response, body) {
+      if (error) {
+        return reject({
+          statusCode: 500,
+          body: 'Internal Server Error'
+        });
+      }
+
+      if (response && response.statusCode !== 200) {
+        return reject({
+          statusCode: 500,
+          body: 'Internal Server Error'
+        });
+      }
+
+      resolve({
+        statusCode: 200,
+        headers: { 'Content-Type': 'image/svg+xml' },
+        body: body.toString('utf8')
+      });
+    });
+  });
 };

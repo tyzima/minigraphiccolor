@@ -2,22 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Logo Vectorizer</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Image Vectorizer</title>
+    <style>
+        /* Modern styling as you like it */
+        .container {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Logo Vectorizer</h1>
-        <div class="input-section">
-            <input type="file" id="imageInput" accept="image/*">
-            <input type="number" id="colorInput" placeholder="Number of Colors">
-            <button id="vectorizeButton">Vectorize</button>
-        </div>
-        <div class="preview-section">
-            <div id="imagePreview" class="preview-box"></div>
-            <div id="svgPreview" class="preview-box"></div>
-        </div>
+        <h1>Upload an Image to Vectorize</h1>
+        <input type="file" id="imageInput">
+        <button onclick="handleUpload()">Upload</button>
+        <div id="result"></div>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        async function handleUpload() {
+            const input = document.getElementById('imageInput');
+            const file = input.files[0];
+            if (!file) {
+                alert('Please select an image.');
+                return;
+            }
+            
+            // Convert the image to base64
+            const reader = new FileReader();
+            reader.onload = async function(event) {
+                const base64Image = event.target.result.split(',')[1];
+                
+                // Call the Netlify function
+                const response = await fetch('/.netlify/functions/vectorize', {
+                    method: 'POST',
+                    body: JSON.stringify({ image: base64Image }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    const svg = await response.text();
+                    // Insert the SVG into the DOM
+                    document.getElementById('result').innerHTML = svg;
+                } else {
+                    console.error('Upload failed');
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+    </script>
 </body>
 </html>
