@@ -1,0 +1,25 @@
+body {
+    background-color: lightgrey;
+  }
+  
+  .container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .canvas-container, .info-box, .download-box {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .size-button {
+    margin: 10px;
+  }
+  
+  #logoCanvas {
+    border: 1px solid black;
+  }
+  
