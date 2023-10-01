@@ -37,7 +37,7 @@ async function addToSheet() {
   const qty = parseInt(document.getElementById("qty").value);
   const width = parseInt(document.getElementById("width").value);
 
-  const imgUrl = `https://res.cloudinary.com/laxdotcom/image/upload/logos/${logoID}.svg`;
+  const imgUrl = `https://res.cloudinary.com/laxdotcom/image/upload/Logos/${logoID}.svg`;
 
   const img = new Image();
   img.crossOrigin = "anonymous";
