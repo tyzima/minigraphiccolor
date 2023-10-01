@@ -48,28 +48,19 @@ function initTooltip() {
 async function addToSheet() {
     const logoID = document.getElementById("logoID").value;
     const qty = parseInt(document.getElementById("qty").value);
-    const width = parseInt(document.getElementById("width").value);
-  
-    const imgUrl = `https://res.cloudinary.com/laxdotcom/image/upload/Logos/${logoID}.svg`;
-  
+    const widthRatio = parseInt(document.getElementById("width").value) / canvas.width;
     const img = new Image();
     img.crossOrigin = "anonymous";
-  
-    img.onload = function() {
-      for (let i = 0; i < qty; i++) {
-        const logo = {
-          img: img,
-          x: 0,
-          y: 0,
-          width: width,
-          height: (width * img.height) / img.width
-        };
-        logos.push(logo);
-      }
-      render();
-    };
-  
-    img.src = imgUrl;
+    img.src = `https://res.cloudinary.com/laxdotcom/image/upload/Logos/${logoID}.svg`;
+    await img.decode();
+    
+    for (let i = 0; i < qty; i++) {
+      const width = canvas.width * widthRatio;
+      const height = (width * img.height) / img.width;
+      const logo = { img, x: 0, y: 0, width, height };
+      logos.push(logo);
+    }
+    render();
   }
   
 
@@ -115,18 +106,14 @@ canvas.addEventListener('mousemove', function(e) {
   }
   
   if (resizing && selectedLogo) {
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
+    const x = e.clientX - canvas.getBoundingClientRect().left;
+    const y = e.clientY - canvas.getBoundingClientRect().top;
+
     selectedLogo.width = x - selectedLogo.x;
     selectedLogo.height = y - selectedLogo.y;
 
-    tooltip.style.left = e.clientX + 'px';
-    tooltip.style.top = e.clientY + 'px';
-    tooltip.style.display = 'block';
-    tooltip.textContent = `${selectedLogo.width.toFixed(2)} x ${selectedLogo.height.toFixed(2)}`;
-
+    // Update tooltip
+    tooltip.textContent = `Width: ${selectedLogo.width.toFixed(2)}, Height: ${selectedLogo.height.toFixed(2)}`;
     render();
   }
 });
@@ -140,26 +127,34 @@ canvas.addEventListener('mouseup', function(e) {
 });
 
 document.addEventListener('keydown', function(e) {
-  if (selectedLogo) {
     if (e.key === 'Delete') {
       const index = logos.indexOf(selectedLogo);
       if (index > -1) {
         logos.splice(index, 1);
       }
       render();
-    } else if (e.key === 'c' && e.ctrlKey) {
-      logos.push(JSON.parse(JSON.stringify(selectedLogo)));
+    } else if (e.ctrlKey && e.key === 'c') {
+      logos.push({ ...selectedLogo });
       render();
-    } else if (e.key === 'v' && e.ctrlKey) {
+    } else if (e.ctrlKey && e.key === 'v') {
       logos.push({ ...selectedLogo, x: selectedLogo.x + 10, y: selectedLogo.y + 10 });
       render();
     }
-  }
-});
+  });
+  
 
 function downloadPNG() {
-  const link = document.createElement('a');
-  link.download = 'logos.png';
-  link.href = canvas.toDataURL('image/png');
-  link.click();
-}
+    const tempCanvas = document.createElement('canvas');
+    tempCanvas.width = canvas.width * 4; // 4x for higher resolution
+    tempCanvas.height = canvas.height * 4;
+    const tempCtx = tempCanvas.getContext('2d');
+    tempCtx.scale(4, 4);
+    logos.forEach(logo => {
+      tempCtx.drawImage(logo.img, logo.x, logo.y, logo.width, logo.height);
+    });
+  
+    const link = document.createElement('a');
+    link.download = 'logos.png';
+    link.href = tempCanvas.toDataURL('image/png');
+    link.click();
+  }
