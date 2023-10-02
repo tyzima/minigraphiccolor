@@ -1,0 +1,5074 @@
+[
+    {
+      "ColorName": ".Scarlet Red",
+      "HexCode": "#c10230"
+    },
+    {
+      "ColorName": ".Burgundy",
+      "HexCode": "#85152B"
+    },
+    {
+      "ColorName": ".Nike Burgundy",
+      "HexCode": "#7a303f"
+    },
+    {
+      "ColorName": ".Crimson",
+      "HexCode": "#8a2432"
+    },
+    {
+      "ColorName": ".Orange",
+      "HexCode": "#c2502e"
+    },
+    {
+      "ColorName": ".Nike Orange",
+      "HexCode": "#f13200"
+    },
+    {
+      "ColorName": ".Yellow",
+      "HexCode": "#fde021"
+    },
+    {
+      "ColorName": ".Athletic Gold",
+      "HexCode": "#ffb71b"
+    },
+    {
+      "ColorName": ".Vegas Khaki Gold",
+      "HexCode": "#d0b787"
+    },
+    {
+      "ColorName": ".Forest Green",
+      "HexCode": "#124734"
+    },
+    {
+      "ColorName": ".True Lime Green",
+      "HexCode": "#93d500"
+    },
+    {
+      "ColorName": ".Kelly Green",
+      "HexCode": "#007934"
+    },
+    {
+      "ColorName": ".Cascade Carolina Blue",
+      "HexCode": "#85DFFF"
+    },
+    {
+      "ColorName": ".Carolina Blue",
+      "HexCode": "#79a3dc"
+    },
+    {
+      "ColorName": ".Hopkins Blue",
+      "HexCode": "#6aaae4"
+    },
+    {
+      "ColorName": ".Royal Blue",
+      "HexCode": "#004a98"
+    },
+    {
+      "ColorName": ".Cobalt Blue",
+      "HexCode": "#002DAD"
+    },
+    {
+      "ColorName": ".Nike Cobalt Blue",
+      "HexCode": "#003595"
+    },
+    {
+      "ColorName": ".Navy Blue",
+      "HexCode": "#12284c"
+    },
+    {
+      "ColorName": ".Purple",
+      "HexCode": "#532e7d"
+    },
+    {
+      "ColorName": ".Black",
+      "HexCode": "#222223"
+    },
+    {
+      "ColorName": ".Metallic Silver",
+      "HexCode": "#9ea1a2"
+    },
+    {
+      "ColorName": ".Metallic Vegas Gold",
+      "HexCode": "#85714D"
+    },
+    {
+      "ColorName": ".Grey",
+      "HexCode": "#a2a9ad"
+    },
+    {
+      "ColorName": ".Dark Grey",
+      "HexCode": "#333F48"
+    },
+    {
+      "ColorName": ".Nike Anthracite",
+      "HexCode": "#373a36"
+    },
+    {
+      "ColorName": ".Pewter",
+      "HexCode": "#6E6259"
+    },
+    {
+      "ColorName": ".Cream",
+      "HexCode": "#F1E6B2"
+    },
+    {
+      "ColorName": ".Brown",
+      "HexCode": "#4c372b"
+    },
+    {
+      "ColorName": ".Light Pink",
+      "HexCode": "#F99FC9"
+    },
+    {
+      "ColorName": ".Dark Pink",
+      "HexCode": "#E31C79"
+    },
+    {
+      "ColorName": ".Pink",
+      "HexCode": "#cc5599"
+    },
+    {
+      "ColorName": ".Volt",
+      "HexCode": "#e3e829"
+    },
+    {
+      "ColorName": ".Teal",
+      "HexCode": "#005d70"
+    },
+    {
+      "ColorName": ".Mint",
+      "HexCode": "#8CE2D0"
+    },
+    {
+      "ColorName": ".Chrome",
+      "HexCode": "#8A8D8F"
+    },
+    {
+      "ColorName": ".Red Chrome",
+      "HexCode": "#C8102E"
+    },
+    {
+      "ColorName": ".Blue Chrome",
+      "HexCode": "#005EB8"
+    },
+    {
+      "ColorName": ".Gold Chrome",
+      "HexCode": "#B9975B"
+    },
+    {
+      "ColorName": ".Green Chrome",
+      "HexCode": "#00B140"
+    },
+    {
+      "ColorName": ".Purple Chrome",
+      "HexCode": "#5F259F"
+    },
+    {
+      "ColorName": ".Orange Chrome",
+      "HexCode": "#FF6900"
+    },
+    {
+      "ColorName": "100 C",
+      "HexCode": "#F6EB61"
+    },
+    {
+      "ColorName": "101 C",
+      "HexCode": "#F7EA48"
+    },
+    {
+      "ColorName": "102 C",
+      "HexCode": "#FCE300"
+    },
+    {
+      "ColorName": "103 C",
+      "HexCode": "#C5A900"
+    },
+    {
+      "ColorName": "104 C",
+      "HexCode": "#AF9800"
+    },
+    {
+      "ColorName": "105 C",
+      "HexCode": "#897A27"
+    },
+    {
+      "ColorName": "106 C",
+      "HexCode": "#F9E547"
+    },
+    {
+      "ColorName": "107 C",
+      "HexCode": "#FBE122"
+    },
+    {
+      "ColorName": "108 C",
+      "HexCode": "#FEDB00"
+    },
+    {
+      "ColorName": "109 C",
+      "HexCode": "#FFD100"
+    },
+    {
+      "ColorName": "110 C",
+      "HexCode": "#DAAA00"
+    },
+    {
+      "ColorName": "111 C",
+      "HexCode": "#AA8A00"
+    },
+    {
+      "ColorName": "112 C",
+      "HexCode": "#9C8412"
+    },
+    {
+      "ColorName": "113 C",
+      "HexCode": "#FAE053"
+    },
+    {
+      "ColorName": "115 C",
+      "HexCode": "#FDDA24"
+    },
+    {
+      "ColorName": "116 C",
+      "HexCode": "#FFCD00"
+    },
+    {
+      "ColorName": "117 C",
+      "HexCode": "#C99700"
+    },
+    {
+      "ColorName": "118 C",
+      "HexCode": "#AC8400"
+    },
+    {
+      "ColorName": "119 C",
+      "HexCode": "#897322"
+    },
+    {
+      "ColorName": "120 C",
+      "HexCode": "#FBDB65"
+    },
+    {
+      "ColorName": "121 C",
+      "HexCode": "#FDD757"
+    },
+    {
+      "ColorName": "122 C",
+      "HexCode": "#FED141"
+    },
+    {
+      "ColorName": "123 C",
+      "HexCode": "#FFC72C"
+    },
+    {
+      "ColorName": "124 C",
+      "HexCode": "#EAAA00"
+    },
+    {
+      "ColorName": "125 C",
+      "HexCode": "#B58500"
+    },
+    {
+      "ColorName": "126 C",
+      "HexCode": "#9A7611"
+    },
+    {
+      "ColorName": "127 C",
+      "HexCode": "#F3DD6D"
+    },
+    {
+      "ColorName": "128 C",
+      "HexCode": "#F3D54E"
+    },
+    {
+      "ColorName": "129 C",
+      "HexCode": "#F3D03E"
+    },
+    {
+      "ColorName": "130 C",
+      "HexCode": "#F2A900"
+    },
+    {
+      "ColorName": "131 C",
+      "HexCode": "#CC8A00"
+    },
+    {
+      "ColorName": "132 C",
+      "HexCode": "#A07400"
+    },
+    {
+      "ColorName": "133 C",
+      "HexCode": "#6C571B"
+    },
+    {
+      "ColorName": "134 C",
+      "HexCode": "#FDD26E"
+    },
+    {
+      "ColorName": "135 C",
+      "HexCode": "#FFC658"
+    },
+    {
+      "ColorName": "136 C",
+      "HexCode": "#FFBF3F"
+    },
+    {
+      "ColorName": "137 C",
+      "HexCode": "#FFA300"
+    },
+    {
+      "ColorName": "138 C",
+      "HexCode": "#DE7C00"
+    },
+    {
+      "ColorName": "139 C",
+      "HexCode": "#AF6D04"
+    },
+    {
+      "ColorName": "140 C",
+      "HexCode": "#74531C"
+    },
+    {
+      "ColorName": "141 C",
+      "HexCode": "#F2C75C"
+    },
+    {
+      "ColorName": "142 C",
+      "HexCode": "#F1BE48"
+    },
+    {
+      "ColorName": "143 C",
+      "HexCode": "#F1B434"
+    },
+    {
+      "ColorName": "144 C",
+      "HexCode": "#ED8B00"
+    },
+    {
+      "ColorName": "145 C",
+      "HexCode": "#CF7F00"
+    },
+    {
+      "ColorName": "146 C",
+      "HexCode": "#A76D11"
+    },
+    {
+      "ColorName": "147 C",
+      "HexCode": "#715C2A"
+    },
+    {
+      "ColorName": "148 C",
+      "HexCode": "#FECB8B"
+    },
+    {
+      "ColorName": "149 C",
+      "HexCode": "#FFC27B"
+    },
+    {
+      "ColorName": "150 C",
+      "HexCode": "#FFB25B"
+    },
+    {
+      "ColorName": "151 C",
+      "HexCode": "#FF8200"
+    },
+    {
+      "ColorName": "152 C",
+      "HexCode": "#E57200"
+    },
+    {
+      "ColorName": "153 C",
+      "HexCode": "#BE6A14"
+    },
+    {
+      "ColorName": "154 C",
+      "HexCode": "#9B5A1A"
+    },
+    {
+      "ColorName": "155 C",
+      "HexCode": "#EFD19F"
+    },
+    {
+      "ColorName": "156 C",
+      "HexCode": "#EFBE7D"
+    },
+    {
+      "ColorName": "157 C",
+      "HexCode": "#ECA154"
+    },
+    {
+      "ColorName": "158 C",
+      "HexCode": "#E87722"
+    },
+    {
+      "ColorName": ".Texas Orange",
+      "HexCode": "#d15e14"
+    },
+    {
+      "ColorName": "160 C",
+      "HexCode": "#A1561C"
+    },
+    {
+      "ColorName": "161 C",
+      "HexCode": "#603D20"
+    },
+    {
+      "ColorName": "162 C",
+      "HexCode": "#FFBE9F"
+    },
+    {
+      "ColorName": "163 C",
+      "HexCode": "#FF9D6E"
+    },
+    {
+      "ColorName": "164 C",
+      "HexCode": "#FF7F41"
+    },
+    {
+      "ColorName": "165 C",
+      "HexCode": "#FF671F"
+    },
+    {
+      "ColorName": "166 C",
+      "HexCode": "#E35205"
+    },
+    {
+      "ColorName": "167 C",
+      "HexCode": "#BE531C"
+    },
+    {
+      "ColorName": "168 C",
+      "HexCode": "#73381D"
+    },
+    {
+      "ColorName": "169 C",
+      "HexCode": "#FFB3AB"
+    },
+    {
+      "ColorName": "170 C",
+      "HexCode": "#FF8674"
+    },
+    {
+      "ColorName": "171 C",
+      "HexCode": "#FF5C39"
+    },
+    {
+      "ColorName": "172 C",
+      "HexCode": "#FA4616"
+    },
+    {
+      "ColorName": "173 C",
+      "HexCode": "#CF4520"
+    },
+    {
+      "ColorName": "174 C",
+      "HexCode": "#963821"
+    },
+    {
+      "ColorName": "175 C",
+      "HexCode": "#6B3529"
+    },
+    {
+      "ColorName": "176 C",
+      "HexCode": "#FFB1BB"
+    },
+    {
+      "ColorName": "177 C",
+      "HexCode": "#FF808B"
+    },
+    {
+      "ColorName": "178 C",
+      "HexCode": "#FF585D"
+    },
+    {
+      "ColorName": "179 C",
+      "HexCode": "#E03C31"
+    },
+    {
+      "ColorName": "180 C",
+      "HexCode": "#BE3A34"
+    },
+    {
+      "ColorName": "181 C",
+      "HexCode": "#81312F"
+    },
+    {
+      "ColorName": "182 C",
+      "HexCode": "#FABBCB"
+    },
+    {
+      "ColorName": "183 C",
+      "HexCode": "#FC9BB3"
+    },
+    {
+      "ColorName": "184 C",
+      "HexCode": "#F65275"
+    },
+    {
+      "ColorName": "186 C",
+      "HexCode": "#E4002B"
+    },
+    {
+      "ColorName": "187 C",
+      "HexCode": "#A6192E"
+    },
+    {
+      "ColorName": "188 C",
+      "HexCode": "#76232F"
+    },
+    {
+      "ColorName": "189 C",
+      "HexCode": "#F8A3BC"
+    },
+    {
+      "ColorName": "190 C",
+      "HexCode": "#F67599"
+    },
+    {
+      "ColorName": "191 C",
+      "HexCode": "#EF426F"
+    },
+    {
+      "ColorName": "192 C",
+      "HexCode": "#E40046"
+    },
+    {
+      "ColorName": "193 C",
+      "HexCode": "#BF0D3E"
+    },
+    {
+      "ColorName": "194 C",
+      "HexCode": "#9B2743"
+    },
+    {
+      "ColorName": "196 C",
+      "HexCode": "#ECC7CD"
+    },
+    {
+      "ColorName": "197 C",
+      "HexCode": "#E89CAE"
+    },
+    {
+      "ColorName": "198 C",
+      "HexCode": "#DF4661"
+    },
+    {
+      "ColorName": "199 C",
+      "HexCode": "#D50032"
+    },
+    {
+      "ColorName": "200 C",
+      "HexCode": "#BA0C2F"
+    },
+    {
+      "ColorName": "201 C",
+      "HexCode": "#9D2235"
+    },
+    {
+      "ColorName": "202 C",
+      "HexCode": "#862633"
+    },
+    {
+      "ColorName": "203 C",
+      "HexCode": "#ECB3CB"
+    },
+    {
+      "ColorName": "204 C",
+      "HexCode": "#E782A9"
+    },
+    {
+      "ColorName": "205 C",
+      "HexCode": "#E0457B"
+    },
+    {
+      "ColorName": "206 C",
+      "HexCode": "#CE0037"
+    },
+    {
+      "ColorName": "207 C",
+      "HexCode": "#A50034"
+    },
+    {
+      "ColorName": "208 C",
+      "HexCode": "#861F41"
+    },
+    {
+      "ColorName": "209 C",
+      "HexCode": "#6F263D"
+    },
+    {
+      "ColorName": "210 C",
+      "HexCode": "#F99FC9"
+    },
+    {
+      "ColorName": "214 C",
+      "HexCode": "#CE0F69"
+    },
+    {
+      "ColorName": "215 C",
+      "HexCode": "#AC145A"
+    },
+    {
+      "ColorName": "216 C",
+      "HexCode": "#7D2248"
+    },
+    {
+      "ColorName": "217 C",
+      "HexCode": "#EABEDB"
+    },
+    {
+      "ColorName": "218 C",
+      "HexCode": "#E56DB1"
+    },
+    {
+      "ColorName": "219 C",
+      "HexCode": "#DA1884"
+    },
+    {
+      "ColorName": "220 C",
+      "HexCode": "#A50050"
+    },
+    {
+      "ColorName": "221 C",
+      "HexCode": "#910048"
+    },
+    {
+      "ColorName": "222 C",
+      "HexCode": "#6C1D45"
+    },
+    {
+      "ColorName": "223 C",
+      "HexCode": "#EF95CF"
+    },
+    {
+      "ColorName": "224 C",
+      "HexCode": "#EB6FBD"
+    },
+    {
+      "ColorName": "225 C",
+      "HexCode": "#DF1995"
+    },
+    {
+      "ColorName": "226 C",
+      "HexCode": "#D0006F"
+    },
+    {
+      "ColorName": "227 C",
+      "HexCode": "#AA0061"
+    },
+    {
+      "ColorName": "228 C",
+      "HexCode": "#890C58"
+    },
+    {
+      "ColorName": "229 C",
+      "HexCode": "#672146"
+    },
+    {
+      "ColorName": "230 C",
+      "HexCode": "#F4A6D7"
+    },
+    {
+      "ColorName": "231 C",
+      "HexCode": "#F277C6"
+    },
+    {
+      "ColorName": "232 C",
+      "HexCode": "#E93CAC"
+    },
+    {
+      "ColorName": "233 C",
+      "HexCode": "#C6007E"
+    },
+    {
+      "ColorName": "234 C",
+      "HexCode": "#A20067"
+    },
+    {
+      "ColorName": "235 C",
+      "HexCode": "#840B55"
+    },
+    {
+      "ColorName": "236 C",
+      "HexCode": "#F1A7DC"
+    },
+    {
+      "ColorName": "237 C",
+      "HexCode": "#EC86D0"
+    },
+    {
+      "ColorName": "238 C",
+      "HexCode": "#E45DBF"
+    },
+    {
+      "ColorName": "239 C",
+      "HexCode": "#DB3EB1"
+    },
+    {
+      "ColorName": "240 C",
+      "HexCode": "#C5299B"
+    },
+    {
+      "ColorName": "241 C",
+      "HexCode": "#AF1685"
+    },
+    {
+      "ColorName": "242 C",
+      "HexCode": "#80225F"
+    },
+    {
+      "ColorName": "243 C",
+      "HexCode": "#EAB8E4"
+    },
+    {
+      "ColorName": "244 C",
+      "HexCode": "#E59BDC"
+    },
+    {
+      "ColorName": "245 C",
+      "HexCode": "#DD7FD3"
+    },
+    {
+      "ColorName": "246 C",
+      "HexCode": "#C724B1"
+    },
+    {
+      "ColorName": "247 C",
+      "HexCode": "#BB16A3"
+    },
+    {
+      "ColorName": "248 C",
+      "HexCode": "#A51890"
+    },
+    {
+      "ColorName": "249 C",
+      "HexCode": "#80276C"
+    },
+    {
+      "ColorName": "250 C",
+      "HexCode": "#E7BAE4"
+    },
+    {
+      "ColorName": "251 C",
+      "HexCode": "#DD9CDF"
+    },
+    {
+      "ColorName": "252 C",
+      "HexCode": "#C964CF"
+    },
+    {
+      "ColorName": "253 C",
+      "HexCode": "#AD1AAC"
+    },
+    {
+      "ColorName": "254 C",
+      "HexCode": "#981D97"
+    },
+    {
+      "ColorName": "255 C",
+      "HexCode": "#72246C"
+    },
+    {
+      "ColorName": "256 C",
+      "HexCode": "#D6BFDD"
+    },
+    {
+      "ColorName": "257 C",
+      "HexCode": "#C6A1CF"
+    },
+    {
+      "ColorName": "258 C",
+      "HexCode": "#8C4799"
+    },
+    {
+      "ColorName": "259 C",
+      "HexCode": "#6D2077"
+    },
+    {
+      "ColorName": "260 C",
+      "HexCode": "#642667"
+    },
+    {
+      "ColorName": "261 C",
+      "HexCode": "#5D285F"
+    },
+    {
+      "ColorName": "262 C",
+      "HexCode": "#51284F"
+    },
+    {
+      "ColorName": "263 C",
+      "HexCode": "#D7C6E6"
+    },
+    {
+      "ColorName": "264 C",
+      "HexCode": "#C1A7E2"
+    },
+    {
+      "ColorName": "265 C",
+      "HexCode": "#9063CD"
+    },
+    {
+      "ColorName": "266 C",
+      "HexCode": "#753BBD"
+    },
+    {
+      "ColorName": "267 C",
+      "HexCode": "#5F259F"
+    },
+    {
+      "ColorName": "269 C",
+      "HexCode": "#512D6D"
+    },
+    {
+      "ColorName": "270 C",
+      "HexCode": "#B4B5DF"
+    },
+    {
+      "ColorName": "271 C",
+      "HexCode": "#9595D2"
+    },
+    {
+      "ColorName": "272 C",
+      "HexCode": "#7474C1"
+    },
+    {
+      "ColorName": "273 C",
+      "HexCode": "#24135F"
+    },
+    {
+      "ColorName": "274 C",
+      "HexCode": "#211551"
+    },
+    {
+      "ColorName": "275 C",
+      "HexCode": "#201747"
+    },
+    {
+      "ColorName": "276 C",
+      "HexCode": "#221C35"
+    },
+    {
+      "ColorName": "277 C",
+      "HexCode": "#ABCAE9"
+    },
+    {
+      "ColorName": "278 C",
+      "HexCode": "#8BB8E8"
+    },
+    {
+      "ColorName": "282 C",
+      "HexCode": "#00205B"
+    },
+    {
+      "ColorName": "283 C",
+      "HexCode": "#92C1E9"
+    },
+    {
+      "ColorName": "284 C",
+      "HexCode": "#6CACE4"
+    },
+    {
+      "ColorName": "285 C",
+      "HexCode": "#0072CE"
+    },
+    {
+      "ColorName": "288 C",
+      "HexCode": "#002D72"
+    },
+    {
+      "ColorName": "289 C",
+      "HexCode": "#0C2340"
+    },
+    {
+      "ColorName": "290 C",
+      "HexCode": "#B9D9EB"
+    },
+    {
+      "ColorName": "291 C",
+      "HexCode": "#9BCBEB"
+    },
+    {
+      "ColorName": "293 C",
+      "HexCode": "#003DA5"
+    },
+    {
+      "ColorName": "294 C",
+      "HexCode": "#002F6C"
+    },
+    {
+      "ColorName": "297 C",
+      "HexCode": "#71C5E8"
+    },
+    {
+      "ColorName": "298 C",
+      "HexCode": "#41B6E6"
+    },
+    {
+      "ColorName": "299 C",
+      "HexCode": "#00A3E0"
+    },
+    {
+      "ColorName": "300 C",
+      "HexCode": "#005EB8"
+    },
+    {
+      "ColorName": "301 C",
+      "HexCode": "#004B87"
+    },
+    {
+      "ColorName": "302 C",
+      "HexCode": "#003B5C"
+    },
+    {
+      "ColorName": "303 C",
+      "HexCode": "#002A3A"
+    },
+    {
+      "ColorName": "304 C",
+      "HexCode": "#9ADBE8"
+    },
+    {
+      "ColorName": "305 C",
+      "HexCode": "#59CBE8"
+    },
+    {
+      "ColorName": "306 C",
+      "HexCode": "#00B5E2"
+    },
+    {
+      "ColorName": "307 C",
+      "HexCode": "#006BA6"
+    },
+    {
+      "ColorName": "308 C",
+      "HexCode": "#00587C"
+    },
+    {
+      "ColorName": "309 C",
+      "HexCode": "#003B49"
+    },
+    {
+      "ColorName": "310 C",
+      "HexCode": "#6AD1E3"
+    },
+    {
+      "ColorName": "311 C",
+      "HexCode": "#05C3DE"
+    },
+    {
+      "ColorName": "312 C",
+      "HexCode": "#00A9CE"
+    },
+    {
+      "ColorName": "313 C",
+      "HexCode": "#0092BC"
+    },
+    {
+      "ColorName": "314 C",
+      "HexCode": "#007FA3"
+    },
+    {
+      "ColorName": "315 C",
+      "HexCode": "#00677F"
+    },
+    {
+      "ColorName": "317 C",
+      "HexCode": "#B1E4E3"
+    },
+    {
+      "ColorName": "318 C",
+      "HexCode": "#88DBDF"
+    },
+    {
+      "ColorName": "319 C",
+      "HexCode": "#2DCCD3"
+    },
+    {
+      "ColorName": "321 C",
+      "HexCode": "#008C95"
+    },
+    {
+      "ColorName": "323 C",
+      "HexCode": "#005F61"
+    },
+    {
+      "ColorName": "324 C",
+      "HexCode": "#9CDBD9"
+    },
+    {
+      "ColorName": "325 C",
+      "HexCode": "#64CCC9"
+    },
+    {
+      "ColorName": "326 C",
+      "HexCode": "#00B2A9"
+    },
+    {
+      "ColorName": "329 C",
+      "HexCode": "#00685E"
+    },
+    {
+      "ColorName": "330 C",
+      "HexCode": "#00534C"
+    },
+    {
+      "ColorName": "331 C",
+      "HexCode": "#A7E6D7"
+    },
+    {
+      "ColorName": "333 C",
+      "HexCode": "#3CDBC0"
+    },
+    {
+      "ColorName": "335 C",
+      "HexCode": "#007B5F"
+    },
+    {
+      "ColorName": "336 C",
+      "HexCode": "#00664F"
+    },
+    {
+      "ColorName": "337 C",
+      "HexCode": "#8FD6BD"
+    },
+    {
+      "ColorName": "338 C",
+      "HexCode": "#6ECEB2"
+    },
+    {
+      "ColorName": "339 C",
+      "HexCode": "#00B388"
+    },
+    {
+      "ColorName": "340 C",
+      "HexCode": "#00965E"
+    },
+    {
+      "ColorName": "341 C",
+      "HexCode": "#007A53"
+    },
+    {
+      "ColorName": "343 C",
+      "HexCode": "#115740"
+    },
+    {
+      "ColorName": "344 C",
+      "HexCode": "#A0DAB3"
+    },
+    {
+      "ColorName": "345 C",
+      "HexCode": "#91D6AC"
+    },
+    {
+      "ColorName": "346 C",
+      "HexCode": "#71CC98"
+    },
+    {
+      "ColorName": "347 C",
+      "HexCode": "#009A44"
+    },
+    {
+      "ColorName": "349 C",
+      "HexCode": "#046A38"
+    },
+    {
+      "ColorName": "350 C",
+      "HexCode": "#2C5234"
+    },
+    {
+      "ColorName": "351 C",
+      "HexCode": "#A2E4B8"
+    },
+    {
+      "ColorName": "352 C",
+      "HexCode": "#8FE2B0"
+    },
+    {
+      "ColorName": "353 C",
+      "HexCode": "#80E0A7"
+    },
+    {
+      "ColorName": "354 C",
+      "HexCode": "#00B140"
+    },
+    {
+      "ColorName": "356 C",
+      "HexCode": "#007A33"
+    },
+    {
+      "ColorName": "357 C",
+      "HexCode": "#215732"
+    },
+    {
+      "ColorName": "358 C",
+      "HexCode": "#ADDC91"
+    },
+    {
+      "ColorName": "359 C",
+      "HexCode": "#A1D884"
+    },
+    {
+      "ColorName": "360 C",
+      "HexCode": "#6CC24A"
+    },
+    {
+      "ColorName": "361 C",
+      "HexCode": "#43B02A"
+    },
+    {
+      "ColorName": "362 C",
+      "HexCode": "#509E2F"
+    },
+    {
+      "ColorName": "363 C",
+      "HexCode": "#4C8C2B"
+    },
+    {
+      "ColorName": "364 C",
+      "HexCode": "#4A7729"
+    },
+    {
+      "ColorName": "365 C",
+      "HexCode": "#C2E189"
+    },
+    {
+      "ColorName": "366 C",
+      "HexCode": "#B7DD79"
+    },
+    {
+      "ColorName": "367 C",
+      "HexCode": "#A4D65E"
+    },
+    {
+      "ColorName": "368 C",
+      "HexCode": "#78BE20"
+    },
+    {
+      "ColorName": "369 C",
+      "HexCode": "#64A70B"
+    },
+    {
+      "ColorName": "370 C",
+      "HexCode": "#658D1B"
+    },
+    {
+      "ColorName": "371 C",
+      "HexCode": "#546223"
+    },
+    {
+      "ColorName": "372 C",
+      "HexCode": "#D4EB8E"
+    },
+    {
+      "ColorName": "373 C",
+      "HexCode": "#CDEA80"
+    },
+    {
+      "ColorName": "374 C",
+      "HexCode": "#C5E86C"
+    },
+    {
+      "ColorName": "375 C",
+      "HexCode": "#97D700"
+    },
+    {
+      "ColorName": "376 C",
+      "HexCode": "#84BD00"
+    },
+    {
+      "ColorName": "377 C",
+      "HexCode": "#7A9A01"
+    },
+    {
+      "ColorName": "378 C",
+      "HexCode": "#59621D"
+    },
+    {
+      "ColorName": "379 C",
+      "HexCode": "#E2E868"
+    },
+    {
+      "ColorName": "380 C",
+      "HexCode": "#DBE442"
+    },
+    {
+      "ColorName": "381 C",
+      "HexCode": "#CEDC00"
+    },
+    {
+      "ColorName": "382 C",
+      "HexCode": "#C4D600"
+    },
+    {
+      "ColorName": "383 C",
+      "HexCode": "#A8AD00"
+    },
+    {
+      "ColorName": "384 C",
+      "HexCode": "#949300"
+    },
+    {
+      "ColorName": "385 C",
+      "HexCode": "#787121"
+    },
+    {
+      "ColorName": "386 C",
+      "HexCode": "#E9EC6B"
+    },
+    {
+      "ColorName": "387 C",
+      "HexCode": "#E3E935"
+    },
+    {
+      "ColorName": "388 C",
+      "HexCode": "#E0E721"
+    },
+    {
+      "ColorName": "389 C",
+      "HexCode": "#D0DF00"
+    },
+    {
+      "ColorName": "390 C",
+      "HexCode": "#B5BD00"
+    },
+    {
+      "ColorName": "391 C",
+      "HexCode": "#9A9500"
+    },
+    {
+      "ColorName": "392 C",
+      "HexCode": "#827A04"
+    },
+    {
+      "ColorName": "393 C",
+      "HexCode": "#F0EC74"
+    },
+    {
+      "ColorName": "394 C",
+      "HexCode": "#EDE939"
+    },
+    {
+      "ColorName": "395 C",
+      "HexCode": "#ECE81A"
+    },
+    {
+      "ColorName": "396 C",
+      "HexCode": "#E1E000"
+    },
+    {
+      "ColorName": "397 C",
+      "HexCode": "#BFB800"
+    },
+    {
+      "ColorName": "398 C",
+      "HexCode": "#ADA400"
+    },
+    {
+      "ColorName": "399 C",
+      "HexCode": "#A09200"
+    },
+    {
+      "ColorName": "400 C",
+      "HexCode": "#C4BFB6"
+    },
+    {
+      "ColorName": "401 C",
+      "HexCode": "#AFA9A0"
+    },
+    {
+      "ColorName": "402 C",
+      "HexCode": "#9D968D"
+    },
+    {
+      "ColorName": "403 C",
+      "HexCode": "#8C857B"
+    },
+    {
+      "ColorName": "405 C",
+      "HexCode": "#696158"
+    },
+    {
+      "ColorName": "406 C",
+      "HexCode": "#C4BCB7"
+    },
+    {
+      "ColorName": "407 C",
+      "HexCode": "#B2A8A2"
+    },
+    {
+      "ColorName": "408 C",
+      "HexCode": "#978C87"
+    },
+    {
+      "ColorName": "409 C",
+      "HexCode": "#857874"
+    },
+    {
+      "ColorName": "410 C",
+      "HexCode": "#746661"
+    },
+    {
+      "ColorName": "411 C",
+      "HexCode": "#5E514D"
+    },
+    {
+      "ColorName": "412 C",
+      "HexCode": "#382F2D"
+    },
+    {
+      "ColorName": "413 C",
+      "HexCode": "#BABBB1"
+    },
+    {
+      "ColorName": "414 C",
+      "HexCode": "#A8A99E"
+    },
+    {
+      "ColorName": "415 C",
+      "HexCode": "#919388"
+    },
+    {
+      "ColorName": "416 C",
+      "HexCode": "#7E7F74"
+    },
+    {
+      "ColorName": "417 C",
+      "HexCode": "#65665C"
+    },
+    {
+      "ColorName": "418 C",
+      "HexCode": "#51534A"
+    },
+    {
+      "ColorName": "419 C",
+      "HexCode": "#212322"
+    },
+    {
+      "ColorName": "420 C",
+      "HexCode": "#C7C9C7"
+    },
+    {
+      "ColorName": "421 C",
+      "HexCode": "#B2B4B2"
+    },
+    {
+      "ColorName": "424 C",
+      "HexCode": "#707372"
+    },
+    {
+      "ColorName": "425 C",
+      "HexCode": "#54585A"
+    },
+    {
+      "ColorName": "426 C",
+      "HexCode": "#25282A"
+    },
+    {
+      "ColorName": "427 C",
+      "HexCode": "#D0D3D4"
+    },
+    {
+      "ColorName": "428 C",
+      "HexCode": "#C1C6C8"
+    },
+    {
+      "ColorName": "429 C",
+      "HexCode": "#A2AAAD"
+    },
+    {
+      "ColorName": "430 C",
+      "HexCode": "#7C878E"
+    },
+    {
+      "ColorName": "431 C",
+      "HexCode": "#5B6770"
+    },
+    {
+      "ColorName": "433 C",
+      "HexCode": "#1D252D"
+    },
+    {
+      "ColorName": "434 C",
+      "HexCode": "#D0C4C5"
+    },
+    {
+      "ColorName": "435 C",
+      "HexCode": "#C1B2B6"
+    },
+    {
+      "ColorName": "436 C",
+      "HexCode": "#AB989D"
+    },
+    {
+      "ColorName": "437 C",
+      "HexCode": "#7B6469"
+    },
+    {
+      "ColorName": "438 C",
+      "HexCode": "#584446"
+    },
+    {
+      "ColorName": "439 C",
+      "HexCode": "#453536"
+    },
+    {
+      "ColorName": "440 C",
+      "HexCode": "#382E2C"
+    },
+    {
+      "ColorName": "441 C",
+      "HexCode": "#BEC6C4"
+    },
+    {
+      "ColorName": "442 C",
+      "HexCode": "#A2ACAB"
+    },
+    {
+      "ColorName": "443 C",
+      "HexCode": "#919D9D"
+    },
+    {
+      "ColorName": "444 C",
+      "HexCode": "#717C7D"
+    },
+    {
+      "ColorName": "445 C",
+      "HexCode": "#505759"
+    },
+    {
+      "ColorName": "446 C",
+      "HexCode": "#3F4444"
+    },
+    {
+      "ColorName": "447 C",
+      "HexCode": "#373A36"
+    },
+    {
+      "ColorName": "448 C",
+      "HexCode": "#4A412A"
+    },
+    {
+      "ColorName": "449 C",
+      "HexCode": "#524727"
+    },
+    {
+      "ColorName": "450 C",
+      "HexCode": "#594A25"
+    },
+    {
+      "ColorName": "451 C",
+      "HexCode": "#9B945F"
+    },
+    {
+      "ColorName": "452 C",
+      "HexCode": "#B0AA7E"
+    },
+    {
+      "ColorName": "453 C",
+      "HexCode": "#BFBB98"
+    },
+    {
+      "ColorName": "454 C",
+      "HexCode": "#CAC7A7"
+    },
+    {
+      "ColorName": "455 C",
+      "HexCode": "#695B24"
+    },
+    {
+      "ColorName": "456 C",
+      "HexCode": "#A28E2A"
+    },
+    {
+      "ColorName": "457 C",
+      "HexCode": "#B89D18"
+    },
+    {
+      "ColorName": "458 C",
+      "HexCode": "#D9C756"
+    },
+    {
+      "ColorName": "459 C",
+      "HexCode": "#DECD63"
+    },
+    {
+      "ColorName": "460 C",
+      "HexCode": "#E4D77E"
+    },
+    {
+      "ColorName": "461 C",
+      "HexCode": "#E9DF97"
+    },
+    {
+      "ColorName": "462 C",
+      "HexCode": "#5C462B"
+    },
+    {
+      "ColorName": "463 C",
+      "HexCode": "#744F28"
+    },
+    {
+      "ColorName": "464 C",
+      "HexCode": "#8B5B29"
+    },
+    {
+      "ColorName": "465 C",
+      "HexCode": "#B9975B"
+    },
+    {
+      "ColorName": "466 C",
+      "HexCode": "#C6AA76"
+    },
+    {
+      "ColorName": "467 C",
+      "HexCode": "#D3BC8D"
+    },
+    {
+      "ColorName": "468 C",
+      "HexCode": "#DDCBA4"
+    },
+    {
+      "ColorName": "469 C",
+      "HexCode": "#693F23"
+    },
+    {
+      "ColorName": "470 C",
+      "HexCode": "#A45A2A"
+    },
+    {
+      "ColorName": "471 C",
+      "HexCode": "#B86125"
+    },
+    {
+      "ColorName": "472 C",
+      "HexCode": "#E59E6D"
+    },
+    {
+      "ColorName": "473 C",
+      "HexCode": "#F0BF9B"
+    },
+    {
+      "ColorName": "474 C",
+      "HexCode": "#F1C6A7"
+    },
+    {
+      "ColorName": "475 C",
+      "HexCode": "#F3CFB3"
+    },
+    {
+      "ColorName": "476 C",
+      "HexCode": "#4E3629"
+    },
+    {
+      "ColorName": "477 C",
+      "HexCode": "#623B2A"
+    },
+    {
+      "ColorName": "478 C",
+      "HexCode": "#703F2A"
+    },
+    {
+      "ColorName": "479 C",
+      "HexCode": "#AA8066"
+    },
+    {
+      "ColorName": "480 C",
+      "HexCode": "#C6A992"
+    },
+    {
+      "ColorName": "481 C",
+      "HexCode": "#D3BBA8"
+    },
+    {
+      "ColorName": "482 C",
+      "HexCode": "#DBC8B6"
+    },
+    {
+      "ColorName": "483 C",
+      "HexCode": "#653024"
+    },
+    {
+      "ColorName": "484 C",
+      "HexCode": "#9A3324"
+    },
+    {
+      "ColorName": "485 C",
+      "HexCode": "#DA291C"
+    },
+    {
+      "ColorName": "486 C",
+      "HexCode": "#E8927C"
+    },
+    {
+      "ColorName": "487 C",
+      "HexCode": "#EAA794"
+    },
+    {
+      "ColorName": "488 C",
+      "HexCode": "#ECBAA8"
+    },
+    {
+      "ColorName": "489 C",
+      "HexCode": "#ECC3B2"
+    },
+    {
+      "ColorName": "490 C",
+      "HexCode": "#5D2A2C"
+    },
+    {
+      "ColorName": "491 C",
+      "HexCode": "#7F3035"
+    },
+    {
+      "ColorName": "492 C",
+      "HexCode": "#8F3237"
+    },
+    {
+      "ColorName": "493 C",
+      "HexCode": "#DC8699"
+    },
+    {
+      "ColorName": "494 C",
+      "HexCode": "#E9A2B2"
+    },
+    {
+      "ColorName": "495 C",
+      "HexCode": "#F1BDC8"
+    },
+    {
+      "ColorName": "496 C",
+      "HexCode": "#F2C6CF"
+    },
+    {
+      "ColorName": "497 C",
+      "HexCode": "#512F2E"
+    },
+    {
+      "ColorName": "498 C",
+      "HexCode": "#6A3735"
+    },
+    {
+      "ColorName": "499 C",
+      "HexCode": "#7A3E3A"
+    },
+    {
+      "ColorName": "500 C",
+      "HexCode": "#C6858F"
+    },
+    {
+      "ColorName": "501 C",
+      "HexCode": "#DAA5AD"
+    },
+    {
+      "ColorName": "502 C",
+      "HexCode": "#E5BAC1"
+    },
+    {
+      "ColorName": "503 C",
+      "HexCode": "#E9C4C7"
+    },
+    {
+      "ColorName": "504 C",
+      "HexCode": "#572932"
+    },
+    {
+      "ColorName": "505 C",
+      "HexCode": "#6F2C3F"
+    },
+    {
+      "ColorName": "506 C",
+      "HexCode": "#84344E"
+    },
+    {
+      "ColorName": "507 C",
+      "HexCode": "#D592AA"
+    },
+    {
+      "ColorName": "508 C",
+      "HexCode": "#E4A9BB"
+    },
+    {
+      "ColorName": "509 C",
+      "HexCode": "#E8B3C3"
+    },
+    {
+      "ColorName": "510 C",
+      "HexCode": "#EBBECB"
+    },
+    {
+      "ColorName": "511 C",
+      "HexCode": "#612C51"
+    },
+    {
+      "ColorName": "512 C",
+      "HexCode": "#833177"
+    },
+    {
+      "ColorName": "513 C",
+      "HexCode": "#93328E"
+    },
+    {
+      "ColorName": "514 C",
+      "HexCode": "#D48BC8"
+    },
+    {
+      "ColorName": "515 C",
+      "HexCode": "#E2ACD7"
+    },
+    {
+      "ColorName": "516 C",
+      "HexCode": "#E6BEDD"
+    },
+    {
+      "ColorName": "517 C",
+      "HexCode": "#EBC6DF"
+    },
+    {
+      "ColorName": "518 C",
+      "HexCode": "#4B3048"
+    },
+    {
+      "ColorName": "519 C",
+      "HexCode": "#59315F"
+    },
+    {
+      "ColorName": "520 C",
+      "HexCode": "#642F6C"
+    },
+    {
+      "ColorName": "521 C",
+      "HexCode": "#A57FB2"
+    },
+    {
+      "ColorName": "522 C",
+      "HexCode": "#BA9CC5"
+    },
+    {
+      "ColorName": "523 C",
+      "HexCode": "#C9B1D0"
+    },
+    {
+      "ColorName": "524 C",
+      "HexCode": "#D5C2D8"
+    },
+    {
+      "ColorName": "525 C",
+      "HexCode": "#572C5F"
+    },
+    {
+      "ColorName": "526 C",
+      "HexCode": "#702F8A"
+    },
+    {
+      "ColorName": "527 C",
+      "HexCode": "#8031A7"
+    },
+    {
+      "ColorName": "528 C",
+      "HexCode": "#B580D1"
+    },
+    {
+      "ColorName": "529 C",
+      "HexCode": "#CAA2DD"
+    },
+    {
+      "ColorName": "530 C",
+      "HexCode": "#D7B9E4"
+    },
+    {
+      "ColorName": "531 C",
+      "HexCode": "#DFC8E7"
+    },
+    {
+      "ColorName": "532 C",
+      "HexCode": "#1C1F2A"
+    },
+    {
+      "ColorName": "533 C",
+      "HexCode": "#1F2A44"
+    },
+    {
+      "ColorName": "534 C",
+      "HexCode": "#1B365D"
+    },
+    {
+      "ColorName": "535 C",
+      "HexCode": "#8E9FBC"
+    },
+    {
+      "ColorName": "536 C",
+      "HexCode": "#A2B2C8"
+    },
+    {
+      "ColorName": "537 C",
+      "HexCode": "#BBC7D6"
+    },
+    {
+      "ColorName": "538 C",
+      "HexCode": "#C5CFDA"
+    },
+    {
+      "ColorName": "539 C",
+      "HexCode": "#00263A"
+    },
+    {
+      "ColorName": "541 C",
+      "HexCode": "#003C71"
+    },
+    {
+      "ColorName": "542 C",
+      "HexCode": "#7BAFD4"
+    },
+    {
+      "ColorName": "543 C",
+      "HexCode": "#A4C8E1"
+    },
+    {
+      "ColorName": "544 C",
+      "HexCode": "#BDD6E6"
+    },
+    {
+      "ColorName": "545 C",
+      "HexCode": "#C6DAE7"
+    },
+    {
+      "ColorName": "546 C",
+      "HexCode": "#072B31"
+    },
+    {
+      "ColorName": "547 C",
+      "HexCode": "#00313C"
+    },
+    {
+      "ColorName": "548 C",
+      "HexCode": "#003D4C"
+    },
+    {
+      "ColorName": "549 C",
+      "HexCode": "#6BA4B8"
+    },
+    {
+      "ColorName": "550 C",
+      "HexCode": "#8DB9CA"
+    },
+    {
+      "ColorName": "551 C",
+      "HexCode": "#A3C7D2"
+    },
+    {
+      "ColorName": "552 C",
+      "HexCode": "#B9D3DC"
+    },
+    {
+      "ColorName": "553 C",
+      "HexCode": "#284734"
+    },
+    {
+      "ColorName": "554 C",
+      "HexCode": "#205C40"
+    },
+    {
+      "ColorName": "555 C",
+      "HexCode": "#28724F"
+    },
+    {
+      "ColorName": "556 C",
+      "HexCode": "#6FA287"
+    },
+    {
+      "ColorName": "557 C",
+      "HexCode": "#85B09A"
+    },
+    {
+      "ColorName": "558 C",
+      "HexCode": "#9ABEAA"
+    },
+    {
+      "ColorName": "559 C",
+      "HexCode": "#ADCAB8"
+    },
+    {
+      "ColorName": "560 C",
+      "HexCode": "#1D3C34"
+    },
+    {
+      "ColorName": "561 C",
+      "HexCode": "#00594C"
+    },
+    {
+      "ColorName": "562 C",
+      "HexCode": "#006F62"
+    },
+    {
+      "ColorName": "563 C",
+      "HexCode": "#6BBBAE"
+    },
+    {
+      "ColorName": "564 C",
+      "HexCode": "#86C8BC"
+    },
+    {
+      "ColorName": "565 C",
+      "HexCode": "#A1D6CA"
+    },
+    {
+      "ColorName": "566 C",
+      "HexCode": "#B9DCD2"
+    },
+    {
+      "ColorName": "567 C",
+      "HexCode": "#173F35"
+    },
+    {
+      "ColorName": "568 C",
+      "HexCode": "#006C5B"
+    },
+    {
+      "ColorName": "569 C",
+      "HexCode": "#00816D"
+    },
+    {
+      "ColorName": "570 C",
+      "HexCode": "#6BCABA"
+    },
+    {
+      "ColorName": "571 C",
+      "HexCode": "#98DBCE"
+    },
+    {
+      "ColorName": "572 C",
+      "HexCode": "#A5DFD3"
+    },
+    {
+      "ColorName": "573 C",
+      "HexCode": "#B5E3D8"
+    },
+    {
+      "ColorName": "574 C",
+      "HexCode": "#4E5B31"
+    },
+    {
+      "ColorName": "575 C",
+      "HexCode": "#67823A"
+    },
+    {
+      "ColorName": "576 C",
+      "HexCode": "#789D4A"
+    },
+    {
+      "ColorName": "577 C",
+      "HexCode": "#A9C47F"
+    },
+    {
+      "ColorName": "578 C",
+      "HexCode": "#B7CE95"
+    },
+    {
+      "ColorName": "579 C",
+      "HexCode": "#BCD19B"
+    },
+    {
+      "ColorName": "580 C",
+      "HexCode": "#C4D6A4"
+    },
+    {
+      "ColorName": "581 C",
+      "HexCode": "#625D20"
+    },
+    {
+      "ColorName": "582 C",
+      "HexCode": "#8E8C13"
+    },
+    {
+      "ColorName": "583 C",
+      "HexCode": "#B7BF10"
+    },
+    {
+      "ColorName": "584 C",
+      "HexCode": "#D2D755"
+    },
+    {
+      "ColorName": "585 C",
+      "HexCode": "#DBDE70"
+    },
+    {
+      "ColorName": "586 C",
+      "HexCode": "#E0E27C"
+    },
+    {
+      "ColorName": "587 C",
+      "HexCode": "#E3E48D"
+    },
+    {
+      "ColorName": "600 C",
+      "HexCode": "#F1EB9C"
+    },
+    {
+      "ColorName": "601 C",
+      "HexCode": "#F0E991"
+    },
+    {
+      "ColorName": "602 C",
+      "HexCode": "#F0E87B"
+    },
+    {
+      "ColorName": "603 C",
+      "HexCode": "#EDE04B"
+    },
+    {
+      "ColorName": "604 C",
+      "HexCode": "#EADA24"
+    },
+    {
+      "ColorName": "605 C",
+      "HexCode": "#E1CD00"
+    },
+    {
+      "ColorName": "606 C",
+      "HexCode": "#CFB500"
+    },
+    {
+      "ColorName": "607 C",
+      "HexCode": "#EBE49A"
+    },
+    {
+      "ColorName": "608 C",
+      "HexCode": "#E9E186"
+    },
+    {
+      "ColorName": "609 C",
+      "HexCode": "#E6DE77"
+    },
+    {
+      "ColorName": "610 C",
+      "HexCode": "#E1D555"
+    },
+    {
+      "ColorName": "611 C",
+      "HexCode": "#D7C826"
+    },
+    {
+      "ColorName": "612 C",
+      "HexCode": "#C4B000"
+    },
+    {
+      "ColorName": "613 C",
+      "HexCode": "#B39B00"
+    },
+    {
+      "ColorName": "614 C",
+      "HexCode": "#DCD59A"
+    },
+    {
+      "ColorName": "615 C",
+      "HexCode": "#D6CF8D"
+    },
+    {
+      "ColorName": "616 C",
+      "HexCode": "#D0C883"
+    },
+    {
+      "ColorName": "617 C",
+      "HexCode": "#C0B561"
+    },
+    {
+      "ColorName": "618 C",
+      "HexCode": "#AC9F3C"
+    },
+    {
+      "ColorName": "619 C",
+      "HexCode": "#9F912A"
+    },
+    {
+      "ColorName": "620 C",
+      "HexCode": "#8A7B19"
+    },
+    {
+      "ColorName": "621 C",
+      "HexCode": "#D1E0D7"
+    },
+    {
+      "ColorName": "622 C",
+      "HexCode": "#B7CDC2"
+    },
+    {
+      "ColorName": "623 C",
+      "HexCode": "#9AB9AD"
+    },
+    {
+      "ColorName": "624 C",
+      "HexCode": "#789F90"
+    },
+    {
+      "ColorName": "625 C",
+      "HexCode": "#507F70"
+    },
+    {
+      "ColorName": "626 C",
+      "HexCode": "#285C4D"
+    },
+    {
+      "ColorName": "627 C",
+      "HexCode": "#13322B"
+    },
+    {
+      "ColorName": "628 C",
+      "HexCode": "#B8DDE1"
+    },
+    {
+      "ColorName": "629 C",
+      "HexCode": "#9BD3DD"
+    },
+    {
+      "ColorName": "630 C",
+      "HexCode": "#77C5D5"
+    },
+    {
+      "ColorName": "631 C",
+      "HexCode": "#3EB1C8"
+    },
+    {
+      "ColorName": "632 C",
+      "HexCode": "#0093B2"
+    },
+    {
+      "ColorName": "634 C",
+      "HexCode": "#005F83"
+    },
+    {
+      "ColorName": "635 C",
+      "HexCode": "#A4DBE8"
+    },
+    {
+      "ColorName": "636 C",
+      "HexCode": "#8BD3E6"
+    },
+    {
+      "ColorName": "637 C",
+      "HexCode": "#4EC3E0"
+    },
+    {
+      "ColorName": "638 C",
+      "HexCode": "#00AFD7"
+    },
+    {
+      "ColorName": "639 C",
+      "HexCode": "#0095C8"
+    },
+    {
+      "ColorName": "640 C",
+      "HexCode": "#0082BA"
+    },
+    {
+      "ColorName": "641 C",
+      "HexCode": "#0067A0"
+    },
+    {
+      "ColorName": "642 C",
+      "HexCode": "#D1DDE6"
+    },
+    {
+      "ColorName": "643 C",
+      "HexCode": "#C6D6E3"
+    },
+    {
+      "ColorName": "644 C",
+      "HexCode": "#9BB8D3"
+    },
+    {
+      "ColorName": "645 C",
+      "HexCode": "#7DA1C4"
+    },
+    {
+      "ColorName": "646 C",
+      "HexCode": "#5E8AB4"
+    },
+    {
+      "ColorName": "647 C",
+      "HexCode": "#236192"
+    },
+    {
+      "ColorName": "648 C",
+      "HexCode": "#002E5D"
+    },
+    {
+      "ColorName": "649 C",
+      "HexCode": "#DBE2E9"
+    },
+    {
+      "ColorName": "650 C",
+      "HexCode": "#CED9E5"
+    },
+    {
+      "ColorName": "651 C",
+      "HexCode": "#A7BCD6"
+    },
+    {
+      "ColorName": "652 C",
+      "HexCode": "#7D9BC1"
+    },
+    {
+      "ColorName": "653 C",
+      "HexCode": "#326295"
+    },
+    {
+      "ColorName": "654 C",
+      "HexCode": "#003A70"
+    },
+    {
+      "ColorName": "656 C",
+      "HexCode": "#DDE5ED"
+    },
+    {
+      "ColorName": "657 C",
+      "HexCode": "#C8D8EB"
+    },
+    {
+      "ColorName": "658 C",
+      "HexCode": "#B1C9E8"
+    },
+    {
+      "ColorName": "660 C",
+      "HexCode": "#407EC9"
+    },
+    {
+      "ColorName": "662 C",
+      "HexCode": "#001A70"
+    },
+    {
+      "ColorName": "663 C",
+      "HexCode": "#E5E1E6"
+    },
+    {
+      "ColorName": "664 C",
+      "HexCode": "#E0DBE3"
+    },
+    {
+      "ColorName": "665 C",
+      "HexCode": "#C6BCD0"
+    },
+    {
+      "ColorName": "666 C",
+      "HexCode": "#A192B2"
+    },
+    {
+      "ColorName": "667 C",
+      "HexCode": "#7C6992"
+    },
+    {
+      "ColorName": "668 C",
+      "HexCode": "#614B79"
+    },
+    {
+      "ColorName": "669 C",
+      "HexCode": "#3F2A56"
+    },
+    {
+      "ColorName": "670 C",
+      "HexCode": "#EAD3E2"
+    },
+    {
+      "ColorName": "671 C",
+      "HexCode": "#E6BCD8"
+    },
+    {
+      "ColorName": "672 C",
+      "HexCode": "#DFA0C9"
+    },
+    {
+      "ColorName": "673 C",
+      "HexCode": "#D986BA"
+    },
+    {
+      "ColorName": "675 C",
+      "HexCode": "#AE2573"
+    },
+    {
+      "ColorName": "676 C",
+      "HexCode": "#960051"
+    },
+    {
+      "ColorName": "677 C",
+      "HexCode": "#E5CEDB"
+    },
+    {
+      "ColorName": "678 C",
+      "HexCode": "#E3C8D8"
+    },
+    {
+      "ColorName": "679 C",
+      "HexCode": "#DEBED2"
+    },
+    {
+      "ColorName": "680 C",
+      "HexCode": "#C996B6"
+    },
+    {
+      "ColorName": "681 C",
+      "HexCode": "#B06C96"
+    },
+    {
+      "ColorName": "682 C",
+      "HexCode": "#994878"
+    },
+    {
+      "ColorName": "683 C",
+      "HexCode": "#7C2855"
+    },
+    {
+      "ColorName": "684 C",
+      "HexCode": "#E4C6D4"
+    },
+    {
+      "ColorName": "685 C",
+      "HexCode": "#DCB6C9"
+    },
+    {
+      "ColorName": "686 C",
+      "HexCode": "#D0A1BA"
+    },
+    {
+      "ColorName": "687 C",
+      "HexCode": "#BE84A3"
+    },
+    {
+      "ColorName": "688 C",
+      "HexCode": "#A76389"
+    },
+    {
+      "ColorName": "689 C",
+      "HexCode": "#893B67"
+    },
+    {
+      "ColorName": "690 C",
+      "HexCode": "#612141"
+    },
+    {
+      "ColorName": "691 C",
+      "HexCode": "#E9CDD0"
+    },
+    {
+      "ColorName": "692 C",
+      "HexCode": "#E4BEC3"
+    },
+    {
+      "ColorName": "693 C",
+      "HexCode": "#D7A3AB"
+    },
+    {
+      "ColorName": "694 C",
+      "HexCode": "#C48490"
+    },
+    {
+      "ColorName": "695 C",
+      "HexCode": "#B46B7A"
+    },
+    {
+      "ColorName": "696 C",
+      "HexCode": "#984856"
+    },
+    {
+      "ColorName": "697 C",
+      "HexCode": "#893C47"
+    },
+    {
+      "ColorName": "698 C",
+      "HexCode": "#F2D4D7"
+    },
+    {
+      "ColorName": "699 C",
+      "HexCode": "#F4C3CC"
+    },
+    {
+      "ColorName": "700 C",
+      "HexCode": "#F2ACB9"
+    },
+    {
+      "ColorName": "701 C",
+      "HexCode": "#E68699"
+    },
+    {
+      "ColorName": "702 C",
+      "HexCode": "#D25B73"
+    },
+    {
+      "ColorName": "703 C",
+      "HexCode": "#B83A4B"
+    },
+    {
+      "ColorName": "704 C",
+      "HexCode": "#9E2A2F"
+    },
+    {
+      "ColorName": "705 C",
+      "HexCode": "#F5DADF"
+    },
+    {
+      "ColorName": "706 C",
+      "HexCode": "#F7CED7"
+    },
+    {
+      "ColorName": "707 C",
+      "HexCode": "#F9B5C4"
+    },
+    {
+      "ColorName": "708 C",
+      "HexCode": "#F890A5"
+    },
+    {
+      "ColorName": "709 C",
+      "HexCode": "#EF6079"
+    },
+    {
+      "ColorName": "710 C",
+      "HexCode": "#E03E52"
+    },
+    {
+      "ColorName": "711 C",
+      "HexCode": "#CB2C30"
+    },
+    {
+      "ColorName": "712 C",
+      "HexCode": "#FCC89B"
+    },
+    {
+      "ColorName": "713 C",
+      "HexCode": "#FDBE87"
+    },
+    {
+      "ColorName": "714 C",
+      "HexCode": "#FDAA63"
+    },
+    {
+      "ColorName": "715 C",
+      "HexCode": "#F68D2E"
+    },
+    {
+      "ColorName": "716 C",
+      "HexCode": "#EA7600"
+    },
+    {
+      "ColorName": "717 C",
+      "HexCode": "#D45D00"
+    },
+    {
+      "ColorName": "718 C",
+      "HexCode": "#BE4D00"
+    },
+    {
+      "ColorName": "719 C",
+      "HexCode": "#EDC8A3"
+    },
+    {
+      "ColorName": "720 C",
+      "HexCode": "#E7B78A"
+    },
+    {
+      "ColorName": "721 C",
+      "HexCode": "#DDA46F"
+    },
+    {
+      "ColorName": "722 C",
+      "HexCode": "#C88242"
+    },
+    {
+      "ColorName": "723 C",
+      "HexCode": "#B36924"
+    },
+    {
+      "ColorName": "724 C",
+      "HexCode": "#934D11"
+    },
+    {
+      "ColorName": "725 C",
+      "HexCode": "#7D3F16"
+    },
+    {
+      "ColorName": "726 C",
+      "HexCode": "#E0C09F"
+    },
+    {
+      "ColorName": "727 C",
+      "HexCode": "#D9B48F"
+    },
+    {
+      "ColorName": "728 C",
+      "HexCode": "#CDA077"
+    },
+    {
+      "ColorName": "729 C",
+      "HexCode": "#B58150"
+    },
+    {
+      "ColorName": "730 C",
+      "HexCode": "#9E652E"
+    },
+    {
+      "ColorName": "731 C",
+      "HexCode": "#774212"
+    },
+    {
+      "ColorName": "732 C",
+      "HexCode": "#623412"
+    },
+    {
+      "ColorName": "801 C",
+      "HexCode": "#009ACE"
+    },
+    {
+      "ColorName": "803 C",
+      "HexCode": "#FFE900"
+    },
+    {
+      "ColorName": "804 C",
+      "HexCode": "#FFAA4D"
+    },
+    {
+      "ColorName": "805 C",
+      "HexCode": "#FF7276"
+    },
+    {
+      "ColorName": "806 C",
+      "HexCode": "#FF3EB5"
+    },
+    {
+      "ColorName": "807 C",
+      "HexCode": "#EA27C2"
+    },
+    {
+      "ColorName": "871 C",
+      "HexCode": "#84754E"
+    },
+    {
+      "ColorName": "873 C",
+      "HexCode": "#866D4B"
+    },
+    {
+      "ColorName": "874 C",
+      "HexCode": "#8B6F4E"
+    },
+    {
+      "ColorName": "875 C",
+      "HexCode": "#87674F"
+    },
+    {
+      "ColorName": "876 C",
+      "HexCode": "#8B634B"
+    },
+    {
+      "ColorName": "1205 C",
+      "HexCode": "#F8E08E"
+    },
+    {
+      "ColorName": "1215 C",
+      "HexCode": "#FBD872"
+    },
+    {
+      "ColorName": "1225 C",
+      "HexCode": "#FFC845"
+    },
+    {
+      "ColorName": "1245 C",
+      "HexCode": "#C69214"
+    },
+    {
+      "ColorName": "1255 C",
+      "HexCode": "#AD841F"
+    },
+    {
+      "ColorName": "1265 C",
+      "HexCode": "#886B25"
+    },
+    {
+      "ColorName": "1345 C",
+      "HexCode": "#FDD086"
+    },
+    {
+      "ColorName": "1355 C",
+      "HexCode": "#FFC56E"
+    },
+    {
+      "ColorName": "1365 C",
+      "HexCode": "#FFB549"
+    },
+    {
+      "ColorName": "1375 C",
+      "HexCode": "#FF9E1B"
+    },
+    {
+      "ColorName": "1385 C",
+      "HexCode": "#D57800"
+    },
+    {
+      "ColorName": "1395 C",
+      "HexCode": "#996017"
+    },
+    {
+      "ColorName": "1405 C",
+      "HexCode": "#6E4C1E"
+    },
+    {
+      "ColorName": "1485 C",
+      "HexCode": "#FFAE62"
+    },
+    {
+      "ColorName": "1495 C",
+      "HexCode": "#FF8F1C"
+    },
+    {
+      "ColorName": "1505 C",
+      "HexCode": "#FF6900"
+    },
+    {
+      "ColorName": "1525 C",
+      "HexCode": "#B94700"
+    },
+    {
+      "ColorName": "1535 C",
+      "HexCode": "#94450B"
+    },
+    {
+      "ColorName": "1545 C",
+      "HexCode": "#653819"
+    },
+    {
+      "ColorName": "1555 C",
+      "HexCode": "#FFB990"
+    },
+    {
+      "ColorName": "1565 C",
+      "HexCode": "#FFA06A"
+    },
+    {
+      "ColorName": "1575 C",
+      "HexCode": "#FF7F32"
+    },
+    {
+      "ColorName": "1585 C",
+      "HexCode": "#FF6A13"
+    },
+    {
+      "ColorName": "1595 C",
+      "HexCode": "#D86018"
+    },
+    {
+      "ColorName": "1605 C",
+      "HexCode": "#A65523"
+    },
+    {
+      "ColorName": "1615 C",
+      "HexCode": "#8B4720"
+    },
+    {
+      "ColorName": "1625 C",
+      "HexCode": "#FFA38B"
+    },
+    {
+      "ColorName": "1635 C",
+      "HexCode": "#FF8D6D"
+    },
+    {
+      "ColorName": "1645 C",
+      "HexCode": "#FF6A39"
+    },
+    {
+      "ColorName": "1665 C",
+      "HexCode": "#DC4405"
+    },
+    {
+      "ColorName": "1675 C",
+      "HexCode": "#A9431E"
+    },
+    {
+      "ColorName": "1685 C",
+      "HexCode": "#833921"
+    },
+    {
+      "ColorName": "1765 C",
+      "HexCode": "#FFA3B5"
+    },
+    {
+      "ColorName": "1767 C",
+      "HexCode": "#FCAFC0"
+    },
+    {
+      "ColorName": "1775 C",
+      "HexCode": "#FF8DA1"
+    },
+    {
+      "ColorName": "1777 C",
+      "HexCode": "#FB637E"
+    },
+    {
+      "ColorName": "1785 C",
+      "HexCode": "#F8485E"
+    },
+    {
+      "ColorName": "1787 C",
+      "HexCode": "#F4364C"
+    },
+    {
+      "ColorName": "1788 C",
+      "HexCode": "#EE2737"
+    },
+    {
+      "ColorName": "1795 C",
+      "HexCode": "#D22630"
+    },
+    {
+      "ColorName": "1797 C",
+      "HexCode": "#CB333B"
+    },
+    {
+      "ColorName": "1805 C",
+      "HexCode": "#AF272F"
+    },
+    {
+      "ColorName": "1807 C",
+      "HexCode": "#A4343A"
+    },
+    {
+      "ColorName": "1815 C",
+      "HexCode": "#7C2529"
+    },
+    {
+      "ColorName": "1817 C",
+      "HexCode": "#643335"
+    },
+    {
+      "ColorName": "1895 C",
+      "HexCode": "#F5B6CD"
+    },
+    {
+      "ColorName": "1905 C",
+      "HexCode": "#F59BBB"
+    },
+    {
+      "ColorName": "1915 C",
+      "HexCode": "#EF4A81"
+    },
+    {
+      "ColorName": "1925 C",
+      "HexCode": "#E0004D"
+    },
+    {
+      "ColorName": "1935 C",
+      "HexCode": "#C5003E"
+    },
+    {
+      "ColorName": "1945 C",
+      "HexCode": "#A6093D"
+    },
+    {
+      "ColorName": "1955 C",
+      "HexCode": "#8A1538"
+    },
+    {
+      "ColorName": "2365 C",
+      "HexCode": "#EFBAE1"
+    },
+    {
+      "ColorName": "2375 C",
+      "HexCode": "#E277CD"
+    },
+    {
+      "ColorName": "2385 C",
+      "HexCode": "#D539B5"
+    },
+    {
+      "ColorName": "2395 C",
+      "HexCode": "#C800A1"
+    },
+    {
+      "ColorName": "2405 C",
+      "HexCode": "#B0008E"
+    },
+    {
+      "ColorName": "2415 C",
+      "HexCode": "#9E007E"
+    },
+    {
+      "ColorName": "2425 C",
+      "HexCode": "#830065"
+    },
+    {
+      "ColorName": "2562 C",
+      "HexCode": "#D7A9E3"
+    },
+    {
+      "ColorName": "2563 C",
+      "HexCode": "#CBA3D8"
+    },
+    {
+      "ColorName": "2567 C",
+      "HexCode": "#C1A0DA"
+    },
+    {
+      "ColorName": "2572 C",
+      "HexCode": "#C98BDB"
+    },
+    {
+      "ColorName": "2573 C",
+      "HexCode": "#B884CB"
+    },
+    {
+      "ColorName": "2577 C",
+      "HexCode": "#A77BCA"
+    },
+    {
+      "ColorName": "2582 C",
+      "HexCode": "#AC4FC6"
+    },
+    {
+      "ColorName": "2583 C",
+      "HexCode": "#A05EB5"
+    },
+    {
+      "ColorName": "2587 C",
+      "HexCode": "#8246AF"
+    },
+    {
+      "ColorName": "2592 C",
+      "HexCode": "#9B26B6"
+    },
+    {
+      "ColorName": "2593 C",
+      "HexCode": "#84329B"
+    },
+    {
+      "ColorName": "2597 C",
+      "HexCode": "#5C068C"
+    },
+    {
+      "ColorName": "2602 C",
+      "HexCode": "#87189D"
+    },
+    {
+      "ColorName": "2603 C",
+      "HexCode": "#702082"
+    },
+    {
+      "ColorName": "2607 C",
+      "HexCode": "#500778"
+    },
+    {
+      "ColorName": "2612 C",
+      "HexCode": "#772583"
+    },
+    {
+      "ColorName": "2617 C",
+      "HexCode": "#470A68"
+    },
+    {
+      "ColorName": "2622 C",
+      "HexCode": "#653165"
+    },
+    {
+      "ColorName": "2623 C",
+      "HexCode": "#5F2167"
+    },
+    {
+      "ColorName": "2627 C",
+      "HexCode": "#3C1053"
+    },
+    {
+      "ColorName": "2635 C",
+      "HexCode": "#C5B4E3"
+    },
+    {
+      "ColorName": "2645 C",
+      "HexCode": "#AD96DC"
+    },
+    {
+      "ColorName": "2655 C",
+      "HexCode": "#9678D3"
+    },
+    {
+      "ColorName": "2665 C",
+      "HexCode": "#7D55C7"
+    },
+    {
+      "ColorName": "2685 C",
+      "HexCode": "#330072"
+    },
+    {
+      "ColorName": "2695 C",
+      "HexCode": "#2E1A47"
+    },
+    {
+      "ColorName": "2705 C",
+      "HexCode": "#A7A4E0"
+    },
+    {
+      "ColorName": "2706 C",
+      "HexCode": "#CBD3EB"
+    },
+    {
+      "ColorName": "2707 C",
+      "HexCode": "#C3D7EE"
+    },
+    {
+      "ColorName": "2708 C",
+      "HexCode": "#B8CCEA"
+    },
+    {
+      "ColorName": "2715 C",
+      "HexCode": "#8B84D7"
+    },
+    {
+      "ColorName": "2716 C",
+      "HexCode": "#9FAEE5"
+    },
+    {
+      "ColorName": "2717 C",
+      "HexCode": "#A7C6ED"
+    },
+    {
+      "ColorName": "2718 C",
+      "HexCode": "#5C88DA"
+    },
+    {
+      "ColorName": "2725 C",
+      "HexCode": "#685BC7"
+    },
+    {
+      "ColorName": "2726 C",
+      "HexCode": "#485CC7"
+    },
+    {
+      "ColorName": "2727 C",
+      "HexCode": "#307FE2"
+    },
+    {
+      "ColorName": "2728 C",
+      "HexCode": "#0047BB"
+    },
+    {
+      "ColorName": "2735 C",
+      "HexCode": "#2E008B"
+    },
+    {
+      "ColorName": "2736 C",
+      "HexCode": "#1E22AA"
+    },
+    {
+      "ColorName": "2738 C",
+      "HexCode": "#06038D"
+    },
+    {
+      "ColorName": "2745 C",
+      "HexCode": "#280071"
+    },
+    {
+      "ColorName": "2746 C",
+      "HexCode": "#171C8F"
+    },
+    {
+      "ColorName": "2747 C",
+      "HexCode": "#001A72"
+    },
+    {
+      "ColorName": "2756 C",
+      "HexCode": "#151F6D"
+    },
+    {
+      "ColorName": "2765 C",
+      "HexCode": "#201547"
+    },
+    {
+      "ColorName": "2766 C",
+      "HexCode": "#141B4D"
+    },
+    {
+      "ColorName": "2767 C",
+      "HexCode": "#13294B"
+    },
+    {
+      "ColorName": "2768 C",
+      "HexCode": "#071D49"
+    },
+    {
+      "ColorName": "2905 C",
+      "HexCode": "#8DC8E8"
+    },
+    {
+      "ColorName": "2915 C",
+      "HexCode": "#62B5E5"
+    },
+    {
+      "ColorName": "2925 C",
+      "HexCode": "#009CDE"
+    },
+    {
+      "ColorName": "2935 C",
+      "HexCode": "#0057B8"
+    },
+    {
+      "ColorName": "2945 C",
+      "HexCode": "#004C97"
+    },
+    {
+      "ColorName": "2965 C",
+      "HexCode": "#00263E"
+    },
+    {
+      "ColorName": "2975 C",
+      "HexCode": "#99D6EA"
+    },
+    {
+      "ColorName": "2985 C",
+      "HexCode": "#5BC2E7"
+    },
+    {
+      "ColorName": "2995 C",
+      "HexCode": "#00A9E0"
+    },
+    {
+      "ColorName": "3005 C",
+      "HexCode": "#0077C8"
+    },
+    {
+      "ColorName": "3015 C",
+      "HexCode": "#00629B"
+    },
+    {
+      "ColorName": "3025 C",
+      "HexCode": "#004F71"
+    },
+    {
+      "ColorName": "3105 C",
+      "HexCode": "#68D2DF"
+    },
+    {
+      "ColorName": "3115 C",
+      "HexCode": "#00C1D5"
+    },
+    {
+      "ColorName": "3125 C",
+      "HexCode": "#00AEC7"
+    },
+    {
+      "ColorName": "3135 C",
+      "HexCode": "#008EAA"
+    },
+    {
+      "ColorName": "3145 C",
+      "HexCode": "#00778B"
+    },
+    {
+      "ColorName": "3165 C",
+      "HexCode": "#004F59"
+    },
+    {
+      "ColorName": "3242 C",
+      "HexCode": "#71DBD4"
+    },
+    {
+      "ColorName": "3245 C",
+      "HexCode": "#7CE0D3"
+    },
+    {
+      "ColorName": "3248 C",
+      "HexCode": "#6DCDB8"
+    },
+    {
+      "ColorName": "3252 C",
+      "HexCode": "#2AD2C9"
+    },
+    {
+      "ColorName": "3255 C",
+      "HexCode": "#2CD5C4"
+    },
+    {
+      "ColorName": "3258 C",
+      "HexCode": "#49C5B1"
+    },
+    {
+      "ColorName": "3262 C",
+      "HexCode": "#00BFB3"
+    },
+    {
+      "ColorName": "3265 C",
+      "HexCode": "#00C7B1"
+    },
+    {
+      "ColorName": "3268 C",
+      "HexCode": "#00AB8E"
+    },
+    {
+      "ColorName": "3272 C",
+      "HexCode": "#00A499"
+    },
+    {
+      "ColorName": "3275 C",
+      "HexCode": "#00B398"
+    },
+    {
+      "ColorName": "3278 C",
+      "HexCode": "#009B77"
+    },
+    {
+      "ColorName": "3292 C",
+      "HexCode": "#00594F"
+    },
+    {
+      "ColorName": "3298 C",
+      "HexCode": "#006A52"
+    },
+    {
+      "ColorName": "3302 C",
+      "HexCode": "#004C45"
+    },
+    {
+      "ColorName": "3375 C",
+      "HexCode": "#7AE1BF"
+    },
+    {
+      "ColorName": "3385 C",
+      "HexCode": "#47D7AC"
+    },
+    {
+      "ColorName": "3395 C",
+      "HexCode": "#00C389"
+    },
+    {
+      "ColorName": "3405 C",
+      "HexCode": "#00AF66"
+    },
+    {
+      "ColorName": "3935 C",
+      "HexCode": "#F3EA5D"
+    },
+    {
+      "ColorName": "3945 C",
+      "HexCode": "#F3E500"
+    },
+    {
+      "ColorName": "3955 C",
+      "HexCode": "#EFDF00"
+    },
+    {
+      "ColorName": "3965 C",
+      "HexCode": "#EEDC00"
+    },
+    {
+      "ColorName": "3975 C",
+      "HexCode": "#BBA600"
+    },
+    {
+      "ColorName": "3985 C",
+      "HexCode": "#9A8700"
+    },
+    {
+      "ColorName": "3995 C",
+      "HexCode": "#685C20"
+    },
+    {
+      "ColorName": "4485 C",
+      "HexCode": "#614F25"
+    },
+    {
+      "ColorName": "4495 C",
+      "HexCode": "#8C7732"
+    },
+    {
+      "ColorName": "4505 C",
+      "HexCode": "#998542"
+    },
+    {
+      "ColorName": "4515 C",
+      "HexCode": "#B3A369"
+    },
+    {
+      "ColorName": "4535 C",
+      "HexCode": "#CFC493"
+    },
+    {
+      "ColorName": "4545 C",
+      "HexCode": "#D5CB9F"
+    },
+    {
+      "ColorName": "4635 C",
+      "HexCode": "#946037"
+    },
+    {
+      "ColorName": "4645 C",
+      "HexCode": "#AD7C59"
+    },
+    {
+      "ColorName": "4655 C",
+      "HexCode": "#BF9474"
+    },
+    {
+      "ColorName": "4665 C",
+      "HexCode": "#CDA788"
+    },
+    {
+      "ColorName": "4675 C",
+      "HexCode": "#DCBFA6"
+    },
+    {
+      "ColorName": "4685 C",
+      "HexCode": "#E0C6AD"
+    },
+    {
+      "ColorName": "4705 C",
+      "HexCode": "#7C4D3A"
+    },
+    {
+      "ColorName": "4715 C",
+      "HexCode": "#956C58"
+    },
+    {
+      "ColorName": "4725 C",
+      "HexCode": "#AE8A79"
+    },
+    {
+      "ColorName": "4735 C",
+      "HexCode": "#C0A392"
+    },
+    {
+      "ColorName": "4745 C",
+      "HexCode": "#CDB5A7"
+    },
+    {
+      "ColorName": "4755 C",
+      "HexCode": "#D7C4B7"
+    },
+    {
+      "ColorName": "4975 C",
+      "HexCode": "#3F2021"
+    },
+    {
+      "ColorName": "4985 C",
+      "HexCode": "#874B52"
+    },
+    {
+      "ColorName": "4995 C",
+      "HexCode": "#9C6169"
+    },
+    {
+      "ColorName": "5005 C",
+      "HexCode": "#B07C83"
+    },
+    {
+      "ColorName": "5015 C",
+      "HexCode": "#CCA1A6"
+    },
+    {
+      "ColorName": "5025 C",
+      "HexCode": "#DBB7BB"
+    },
+    {
+      "ColorName": "5035 C",
+      "HexCode": "#DFC2C3"
+    },
+    {
+      "ColorName": "5115 C",
+      "HexCode": "#512A44"
+    },
+    {
+      "ColorName": "5125 C",
+      "HexCode": "#693C5E"
+    },
+    {
+      "ColorName": "5135 C",
+      "HexCode": "#7E5475"
+    },
+    {
+      "ColorName": "5145 C",
+      "HexCode": "#9B7793"
+    },
+    {
+      "ColorName": "5155 C",
+      "HexCode": "#BFA5B8"
+    },
+    {
+      "ColorName": "5165 C",
+      "HexCode": "#D3C0CD"
+    },
+    {
+      "ColorName": "5175 C",
+      "HexCode": "#D8C8D1"
+    },
+    {
+      "ColorName": "5185 C",
+      "HexCode": "#4A3041"
+    },
+    {
+      "ColorName": "5195 C",
+      "HexCode": "#66435A"
+    },
+    {
+      "ColorName": "5205 C",
+      "HexCode": "#86647A"
+    },
+    {
+      "ColorName": "5215 C",
+      "HexCode": "#AF95A6"
+    },
+    {
+      "ColorName": "5225 C",
+      "HexCode": "#C6B0BC"
+    },
+    {
+      "ColorName": "5235 C",
+      "HexCode": "#D0BEC7"
+    },
+    {
+      "ColorName": "5245 C",
+      "HexCode": "#DBCDD3"
+    },
+    {
+      "ColorName": "5255 C",
+      "HexCode": "#1E1A34"
+    },
+    {
+      "ColorName": "5265 C",
+      "HexCode": "#403A60"
+    },
+    {
+      "ColorName": "5275 C",
+      "HexCode": "#595478"
+    },
+    {
+      "ColorName": "5285 C",
+      "HexCode": "#8D89A5"
+    },
+    {
+      "ColorName": "5295 C",
+      "HexCode": "#B3B0C4"
+    },
+    {
+      "ColorName": "5305 C",
+      "HexCode": "#C6C4D2"
+    },
+    {
+      "ColorName": "5315 C",
+      "HexCode": "#D8D7DF"
+    },
+    {
+      "ColorName": "5395 C",
+      "HexCode": "#081F2C"
+    },
+    {
+      "ColorName": "5405 C",
+      "HexCode": "#4F758B"
+    },
+    {
+      "ColorName": "5415 C",
+      "HexCode": "#5B7F95"
+    },
+    {
+      "ColorName": "5425 C",
+      "HexCode": "#7A99AC"
+    },
+    {
+      "ColorName": "5435 C",
+      "HexCode": "#A6BBC8"
+    },
+    {
+      "ColorName": "5445 C",
+      "HexCode": "#B7C9D3"
+    },
+    {
+      "ColorName": "5455 C",
+      "HexCode": "#BFCED6"
+    },
+    {
+      "ColorName": "5463 C",
+      "HexCode": "#07272D"
+    },
+    {
+      "ColorName": "5467 C",
+      "HexCode": "#18332F"
+    },
+    {
+      "ColorName": "5477 C",
+      "HexCode": "#3E5D58"
+    },
+    {
+      "ColorName": "5483 C",
+      "HexCode": "#4F868E"
+    },
+    {
+      "ColorName": "5487 C",
+      "HexCode": "#5D7975"
+    },
+    {
+      "ColorName": "5493 C",
+      "HexCode": "#7FA9AE"
+    },
+    {
+      "ColorName": "5497 C",
+      "HexCode": "#829995"
+    },
+    {
+      "ColorName": "5503 C",
+      "HexCode": "#94B7BB"
+    },
+    {
+      "ColorName": "5507 C",
+      "HexCode": "#9DB0AC"
+    },
+    {
+      "ColorName": "5513 C",
+      "HexCode": "#ABC7CA"
+    },
+    {
+      "ColorName": "5517 C",
+      "HexCode": "#B1C0BC"
+    },
+    {
+      "ColorName": "5523 C",
+      "HexCode": "#B6CFD0"
+    },
+    {
+      "ColorName": "5527 C",
+      "HexCode": "#BCC9C5"
+    },
+    {
+      "ColorName": "5535 C",
+      "HexCode": "#183028"
+    },
+    {
+      "ColorName": "5545 C",
+      "HexCode": "#43695B"
+    },
+    {
+      "ColorName": "5555 C",
+      "HexCode": "#5C7F71"
+    },
+    {
+      "ColorName": "5565 C",
+      "HexCode": "#7F9C90"
+    },
+    {
+      "ColorName": "5575 C",
+      "HexCode": "#92ACA0"
+    },
+    {
+      "ColorName": "5585 C",
+      "HexCode": "#A7BDB1"
+    },
+    {
+      "ColorName": "5595 C",
+      "HexCode": "#BFCEC2"
+    },
+    {
+      "ColorName": "5605 C",
+      "HexCode": "#22372B"
+    },
+    {
+      "ColorName": "5615 C",
+      "HexCode": "#5E7461"
+    },
+    {
+      "ColorName": "5625 C",
+      "HexCode": "#708573"
+    },
+    {
+      "ColorName": "5635 C",
+      "HexCode": "#94A596"
+    },
+    {
+      "ColorName": "5645 C",
+      "HexCode": "#A3B2A4"
+    },
+    {
+      "ColorName": "5655 C",
+      "HexCode": "#B0BDB0"
+    },
+    {
+      "ColorName": "5665 C",
+      "HexCode": "#BAC5B9"
+    },
+    {
+      "ColorName": "5743 C",
+      "HexCode": "#3E4827"
+    },
+    {
+      "ColorName": "5747 C",
+      "HexCode": "#3D441E"
+    },
+    {
+      "ColorName": "5753 C",
+      "HexCode": "#5E6738"
+    },
+    {
+      "ColorName": "5757 C",
+      "HexCode": "#6D712E"
+    },
+    {
+      "ColorName": "5763 C",
+      "HexCode": "#737B4C"
+    },
+    {
+      "ColorName": "5767 C",
+      "HexCode": "#8A8D4A"
+    },
+    {
+      "ColorName": "5773 C",
+      "HexCode": "#899064"
+    },
+    {
+      "ColorName": "5777 C",
+      "HexCode": "#A2A569"
+    },
+    {
+      "ColorName": "5783 C",
+      "HexCode": "#A3AA83"
+    },
+    {
+      "ColorName": "5787 C",
+      "HexCode": "#BABD8B"
+    },
+    {
+      "ColorName": "5793 C",
+      "HexCode": "#B3B995"
+    },
+    {
+      "ColorName": "5797 C",
+      "HexCode": "#C6C89B"
+    },
+    {
+      "ColorName": "5803 C",
+      "HexCode": "#C3C6A8"
+    },
+    {
+      "ColorName": "5807 C",
+      "HexCode": "#D0D1AB"
+    },
+    {
+      "ColorName": "5815 C",
+      "HexCode": "#555025"
+    },
+    {
+      "ColorName": "5825 C",
+      "HexCode": "#89813D"
+    },
+    {
+      "ColorName": "5835 C",
+      "HexCode": "#A09958"
+    },
+    {
+      "ColorName": "5845 C",
+      "HexCode": "#AFA96E"
+    },
+    {
+      "ColorName": "5855 C",
+      "HexCode": "#C0BB87"
+    },
+    {
+      "ColorName": "5865 C",
+      "HexCode": "#CBC793"
+    },
+    {
+      "ColorName": "5875 C",
+      "HexCode": "#D2CE9E"
+    },
+    {
+      "ColorName": "7401 C",
+      "HexCode": "#F5E1A4"
+    },
+    {
+      "ColorName": "7402 C",
+      "HexCode": "#ECD898"
+    },
+    {
+      "ColorName": "7403 C",
+      "HexCode": "#EED484"
+    },
+    {
+      "ColorName": "7404 C",
+      "HexCode": "#F4DA40"
+    },
+    {
+      "ColorName": "7405 C",
+      "HexCode": "#F2CD00"
+    },
+    {
+      "ColorName": "7406 C",
+      "HexCode": "#F1C400"
+    },
+    {
+      "ColorName": "7407 C",
+      "HexCode": "#CBA052"
+    },
+    {
+      "ColorName": "7408 C",
+      "HexCode": "#F6BE00"
+    },
+    {
+      "ColorName": "7409 C",
+      "HexCode": "#F0B323"
+    },
+    {
+      "ColorName": "7410 C",
+      "HexCode": "#FEAD77"
+    },
+    {
+      "ColorName": "7411 C",
+      "HexCode": "#E6A65D"
+    },
+    {
+      "ColorName": "7412 C",
+      "HexCode": "#D38235"
+    },
+    {
+      "ColorName": "7413 C",
+      "HexCode": "#DC8633"
+    },
+    {
+      "ColorName": "7414 C",
+      "HexCode": "#C16C18"
+    },
+    {
+      "ColorName": "7415 C",
+      "HexCode": "#E6BAA8"
+    },
+    {
+      "ColorName": "7416 C",
+      "HexCode": "#E56A54"
+    },
+    {
+      "ColorName": "7417 C",
+      "HexCode": "#E04E39"
+    },
+    {
+      "ColorName": "7418 C",
+      "HexCode": "#CD545B"
+    },
+    {
+      "ColorName": "7419 C",
+      "HexCode": "#B04A5A"
+    },
+    {
+      "ColorName": "7420 C",
+      "HexCode": "#9B2242"
+    },
+    {
+      "ColorName": "7422 C",
+      "HexCode": "#F4CDD4"
+    },
+    {
+      "ColorName": "7423 C",
+      "HexCode": "#E06287"
+    },
+    {
+      "ColorName": "7424 C",
+      "HexCode": "#E24585"
+    },
+    {
+      "ColorName": "7425 C",
+      "HexCode": "#B52555"
+    },
+    {
+      "ColorName": "7426 C",
+      "HexCode": "#A4123F"
+    },
+    {
+      "ColorName": "7427 C",
+      "HexCode": "#971B2F"
+    },
+    {
+      "ColorName": "7428 C",
+      "HexCode": "#6A2C3E"
+    },
+    {
+      "ColorName": "7429 C",
+      "HexCode": "#E2BCCB"
+    },
+    {
+      "ColorName": "7430 C",
+      "HexCode": "#DCA9BF"
+    },
+    {
+      "ColorName": "7431 C",
+      "HexCode": "#C9809E"
+    },
+    {
+      "ColorName": "7432 C",
+      "HexCode": "#B55C80"
+    },
+    {
+      "ColorName": "7433 C",
+      "HexCode": "#A73A64"
+    },
+    {
+      "ColorName": "7434 C",
+      "HexCode": "#9B3259"
+    },
+    {
+      "ColorName": "7435 C",
+      "HexCode": "#872651"
+    },
+    {
+      "ColorName": "7436 C",
+      "HexCode": "#EEDAEA"
+    },
+    {
+      "ColorName": "7437 C",
+      "HexCode": "#CCAED0"
+    },
+    {
+      "ColorName": "7438 C",
+      "HexCode": "#D59ED7"
+    },
+    {
+      "ColorName": "7439 C",
+      "HexCode": "#B288B9"
+    },
+    {
+      "ColorName": "7440 C",
+      "HexCode": "#A277A6"
+    },
+    {
+      "ColorName": "7441 C",
+      "HexCode": "#9F5CC0"
+    },
+    {
+      "ColorName": "7442 C",
+      "HexCode": "#963CBD"
+    },
+    {
+      "ColorName": "7443 C",
+      "HexCode": "#DDDAE8"
+    },
+    {
+      "ColorName": "7444 C",
+      "HexCode": "#B6B8DC"
+    },
+    {
+      "ColorName": "7445 C",
+      "HexCode": "#A7A2C3"
+    },
+    {
+      "ColorName": "7446 C",
+      "HexCode": "#8986CA"
+    },
+    {
+      "ColorName": "7447 C",
+      "HexCode": "#5D4777"
+    },
+    {
+      "ColorName": "7448 C",
+      "HexCode": "#4B384C"
+    },
+    {
+      "ColorName": "7449 C",
+      "HexCode": "#41273B"
+    },
+    {
+      "ColorName": "7450 C",
+      "HexCode": "#BDC5DB"
+    },
+    {
+      "ColorName": "7451 C",
+      "HexCode": "#89ABE3"
+    },
+    {
+      "ColorName": "7452 C",
+      "HexCode": "#8094DD"
+    },
+    {
+      "ColorName": "7453 C",
+      "HexCode": "#7BA6DE"
+    },
+    {
+      "ColorName": "7454 C",
+      "HexCode": "#5F8FB4"
+    },
+    {
+      "ColorName": "7455 C",
+      "HexCode": "#3A5DAE"
+    },
+    {
+      "ColorName": "7456 C",
+      "HexCode": "#606EB2"
+    },
+    {
+      "ColorName": "7457 C",
+      "HexCode": "#BBDDE6"
+    },
+    {
+      "ColorName": "7458 C",
+      "HexCode": "#71B2C9"
+    },
+    {
+      "ColorName": "7459 C",
+      "HexCode": "#4298B5"
+    },
+    {
+      "ColorName": "7460 C",
+      "HexCode": "#0086BF"
+    },
+    {
+      "ColorName": "7461 C",
+      "HexCode": "#007DBA"
+    },
+    {
+      "ColorName": "7462 C",
+      "HexCode": "#00558C"
+    },
+    {
+      "ColorName": "7463 C",
+      "HexCode": "#002B49"
+    },
+    {
+      "ColorName": "7464 C",
+      "HexCode": "#A0D1CA"
+    },
+    {
+      "ColorName": "7465 C",
+      "HexCode": "#40C1AC"
+    },
+    {
+      "ColorName": "7466 C",
+      "HexCode": "#00B0B9"
+    },
+    {
+      "ColorName": "7467 C",
+      "HexCode": "#00A3AD"
+    },
+    {
+      "ColorName": "7469 C",
+      "HexCode": "#005F86"
+    },
+    {
+      "ColorName": "7470 C",
+      "HexCode": "#005A70"
+    },
+    {
+      "ColorName": "7471 C",
+      "HexCode": "#7EDDD3"
+    },
+    {
+      "ColorName": "7472 C",
+      "HexCode": "#5CB8B2"
+    },
+    {
+      "ColorName": "7473 C",
+      "HexCode": "#279989"
+    },
+    {
+      "ColorName": "7475 C",
+      "HexCode": "#487A7B"
+    },
+    {
+      "ColorName": "7476 C",
+      "HexCode": "#0D5257"
+    },
+    {
+      "ColorName": "7477 C",
+      "HexCode": "#244C5A"
+    },
+    {
+      "ColorName": "7478 C",
+      "HexCode": "#9BE3BF"
+    },
+    {
+      "ColorName": "7479 C",
+      "HexCode": "#26D07C"
+    },
+    {
+      "ColorName": "7480 C",
+      "HexCode": "#00BF6F"
+    },
+    {
+      "ColorName": "7481 C",
+      "HexCode": "#00B74F"
+    },
+    {
+      "ColorName": "7482 C",
+      "HexCode": "#009F4D"
+    },
+    {
+      "ColorName": "7483 C",
+      "HexCode": "#275D38"
+    },
+    {
+      "ColorName": "7484 C",
+      "HexCode": "#00573F"
+    },
+    {
+      "ColorName": "7485 C",
+      "HexCode": "#D0DEBB"
+    },
+    {
+      "ColorName": "7486 C",
+      "HexCode": "#BCE194"
+    },
+    {
+      "ColorName": "7487 C",
+      "HexCode": "#8EDD65"
+    },
+    {
+      "ColorName": "7488 C",
+      "HexCode": "#78D64B"
+    },
+    {
+      "ColorName": "7489 C",
+      "HexCode": "#74AA50"
+    },
+    {
+      "ColorName": "7490 C",
+      "HexCode": "#719949"
+    },
+    {
+      "ColorName": "7491 C",
+      "HexCode": "#79863C"
+    },
+    {
+      "ColorName": "7492 C",
+      "HexCode": "#BFCC80"
+    },
+    {
+      "ColorName": "7493 C",
+      "HexCode": "#BBC592"
+    },
+    {
+      "ColorName": "7494 C",
+      "HexCode": "#9CAF88"
+    },
+    {
+      "ColorName": "7495 C",
+      "HexCode": "#8F993E"
+    },
+    {
+      "ColorName": "7496 C",
+      "HexCode": "#76881D"
+    },
+    {
+      "ColorName": "7497 C",
+      "HexCode": "#7A7256"
+    },
+    {
+      "ColorName": "7498 C",
+      "HexCode": "#5B6236"
+    },
+    {
+      "ColorName": "7499 C",
+      "HexCode": "#F1E6B2"
+    },
+    {
+      "ColorName": "7500 C",
+      "HexCode": "#DFD1A7"
+    },
+    {
+      "ColorName": "7502 C",
+      "HexCode": "#CEB888"
+    },
+    {
+      "ColorName": "7503 C",
+      "HexCode": "#A89968"
+    },
+    {
+      "ColorName": "7504 C",
+      "HexCode": "#94795D"
+    },
+    {
+      "ColorName": "7505 C",
+      "HexCode": "#816040"
+    },
+    {
+      "ColorName": "7506 C",
+      "HexCode": "#EFDBB2"
+    },
+    {
+      "ColorName": "7507 C",
+      "HexCode": "#FCD299"
+    },
+    {
+      "ColorName": "7508 C",
+      "HexCode": "#E1B87F"
+    },
+    {
+      "ColorName": "7509 C",
+      "HexCode": "#D6A461"
+    },
+    {
+      "ColorName": "7510 C",
+      "HexCode": "#C6893F"
+    },
+    {
+      "ColorName": "7511 C",
+      "HexCode": "#B77729"
+    },
+    {
+      "ColorName": "7512 C",
+      "HexCode": "#A6631B"
+    },
+    {
+      "ColorName": "7513 C",
+      "HexCode": "#E1B7A7"
+    },
+    {
+      "ColorName": "7514 C",
+      "HexCode": "#D5A286"
+    },
+    {
+      "ColorName": "7515 C",
+      "HexCode": "#C58B68"
+    },
+    {
+      "ColorName": "7516 C",
+      "HexCode": "#99552B"
+    },
+    {
+      "ColorName": "7517 C",
+      "HexCode": "#85431E"
+    },
+    {
+      "ColorName": "7518 C",
+      "HexCode": "#6D4F47"
+    },
+    {
+      "ColorName": "7519 C",
+      "HexCode": "#5E4B3C"
+    },
+    {
+      "ColorName": "7520 C",
+      "HexCode": "#EABEB0"
+    },
+    {
+      "ColorName": "7521 C",
+      "HexCode": "#C09C83"
+    },
+    {
+      "ColorName": "7522 C",
+      "HexCode": "#B46A55"
+    },
+    {
+      "ColorName": "7523 C",
+      "HexCode": "#AB5C57"
+    },
+    {
+      "ColorName": "7524 C",
+      "HexCode": "#A45248"
+    },
+    {
+      "ColorName": "7525 C",
+      "HexCode": "#9A6A4F"
+    },
+    {
+      "ColorName": "7526 C",
+      "HexCode": "#8A391B"
+    },
+    {
+      "ColorName": "7527 C",
+      "HexCode": "#D6D2C4"
+    },
+    {
+      "ColorName": "7528 C",
+      "HexCode": "#C5B9AC"
+    },
+    {
+      "ColorName": "7529 C",
+      "HexCode": "#B7A99A"
+    },
+    {
+      "ColorName": "7530 C",
+      "HexCode": "#A39382"
+    },
+    {
+      "ColorName": "7531 C",
+      "HexCode": "#7A6855"
+    },
+    {
+      "ColorName": "7532 C",
+      "HexCode": "#63513D"
+    },
+    {
+      "ColorName": "7533 C",
+      "HexCode": "#473729"
+    },
+    {
+      "ColorName": "7534 C",
+      "HexCode": "#D1CCBD"
+    },
+    {
+      "ColorName": "7535 C",
+      "HexCode": "#B7B09C"
+    },
+    {
+      "ColorName": "7536 C",
+      "HexCode": "#A69F88"
+    },
+    {
+      "ColorName": "7537 C",
+      "HexCode": "#A7ACA2"
+    },
+    {
+      "ColorName": "7538 C",
+      "HexCode": "#949A90"
+    },
+    {
+      "ColorName": "7539 C",
+      "HexCode": "#8E9089"
+    },
+    {
+      "ColorName": "7540 C",
+      "HexCode": "#4B4F54"
+    },
+    {
+      "ColorName": "7541 C",
+      "HexCode": "#D9E1E2"
+    },
+    {
+      "ColorName": "7542 C",
+      "HexCode": "#A4BCC2"
+    },
+    {
+      "ColorName": "7543 C",
+      "HexCode": "#98A4AE"
+    },
+    {
+      "ColorName": "7544 C",
+      "HexCode": "#768692"
+    },
+    {
+      "ColorName": "7545 C",
+      "HexCode": "#425563"
+    },
+    {
+      "ColorName": "7546 C",
+      "HexCode": "#253746"
+    },
+    {
+      "ColorName": "7548 C",
+      "HexCode": "#FFC600"
+    },
+    {
+      "ColorName": "7549 C",
+      "HexCode": "#FFB500"
+    },
+    {
+      "ColorName": "7550 C",
+      "HexCode": "#D19000"
+    },
+    {
+      "ColorName": "7551 C",
+      "HexCode": "#B47E00"
+    },
+    {
+      "ColorName": "7552 C",
+      "HexCode": "#73531D"
+    },
+    {
+      "ColorName": "7553 C",
+      "HexCode": "#5A4522"
+    },
+    {
+      "ColorName": "7554 C",
+      "HexCode": "#4B3D2A"
+    },
+    {
+      "ColorName": "7555 C",
+      "HexCode": "#D29F13"
+    },
+    {
+      "ColorName": "7556 C",
+      "HexCode": "#B78B20"
+    },
+    {
+      "ColorName": "7557 C",
+      "HexCode": "#9F7D23"
+    },
+    {
+      "ColorName": "7558 C",
+      "HexCode": "#967126"
+    },
+    {
+      "ColorName": "7559 C",
+      "HexCode": "#8F6A2A"
+    },
+    {
+      "ColorName": "7560 C",
+      "HexCode": "#7D622E"
+    },
+    {
+      "ColorName": "7561 C",
+      "HexCode": "#6C5D34"
+    },
+    {
+      "ColorName": "7562 C",
+      "HexCode": "#BD9B60"
+    },
+    {
+      "ColorName": "7563 C",
+      "HexCode": "#D69A2D"
+    },
+    {
+      "ColorName": "7564 C",
+      "HexCode": "#DB8A06"
+    },
+    {
+      "ColorName": "7565 C",
+      "HexCode": "#CD7925"
+    },
+    {
+      "ColorName": "7566 C",
+      "HexCode": "#AD6433"
+    },
+    {
+      "ColorName": "7567 C",
+      "HexCode": "#89532F"
+    },
+    {
+      "ColorName": "7568 C",
+      "HexCode": "#775135"
+    },
+    {
+      "ColorName": "7569 C",
+      "HexCode": "#D78825"
+    },
+    {
+      "ColorName": "7570 C",
+      "HexCode": "#D3832B"
+    },
+    {
+      "ColorName": "7571 C",
+      "HexCode": "#C67D30"
+    },
+    {
+      "ColorName": "7572 C",
+      "HexCode": "#B67233"
+    },
+    {
+      "ColorName": "7573 C",
+      "HexCode": "#A7662B"
+    },
+    {
+      "ColorName": "7574 C",
+      "HexCode": "#9E6A38"
+    },
+    {
+      "ColorName": "7575 C",
+      "HexCode": "#835D32"
+    },
+    {
+      "ColorName": "7576 C",
+      "HexCode": "#DB864E"
+    },
+    {
+      "ColorName": "7577 C",
+      "HexCode": "#E07E3C"
+    },
+    {
+      "ColorName": "7578 C",
+      "HexCode": "#DC6B2F"
+    },
+    {
+      "ColorName": "7579 C",
+      "HexCode": "#DC582A"
+    },
+    {
+      "ColorName": "7580 C",
+      "HexCode": "#C05131"
+    },
+    {
+      "ColorName": "7581 C",
+      "HexCode": "#864A33"
+    },
+    {
+      "ColorName": "7582 C",
+      "HexCode": "#674736"
+    },
+    {
+      "ColorName": "7583 C",
+      "HexCode": "#C4622D"
+    },
+    {
+      "ColorName": "7584 C",
+      "HexCode": "#BA5826"
+    },
+    {
+      "ColorName": "7585 C",
+      "HexCode": "#AF5C37"
+    },
+    {
+      "ColorName": "7586 C",
+      "HexCode": "#9E5330"
+    },
+    {
+      "ColorName": "7587 C",
+      "HexCode": "#924C2E"
+    },
+    {
+      "ColorName": "7588 C",
+      "HexCode": "#7B4D35"
+    },
+    {
+      "ColorName": "7589 C",
+      "HexCode": "#5C4738"
+    },
+    {
+      "ColorName": "7590 C",
+      "HexCode": "#D4B59E"
+    },
+    {
+      "ColorName": "7591 C",
+      "HexCode": "#C07D59"
+    },
+    {
+      "ColorName": "7592 C",
+      "HexCode": "#B15533"
+    },
+    {
+      "ColorName": "7593 C",
+      "HexCode": "#9D432C"
+    },
+    {
+      "ColorName": "7594 C",
+      "HexCode": "#7C3A2D"
+    },
+    {
+      "ColorName": "7595 C",
+      "HexCode": "#6B3D2E"
+    },
+    {
+      "ColorName": "7596 C",
+      "HexCode": "#5C3D31"
+    },
+    {
+      "ColorName": "7597 C",
+      "HexCode": "#D14124"
+    },
+    {
+      "ColorName": "7598 C",
+      "HexCode": "#BD472A"
+    },
+    {
+      "ColorName": "7599 C",
+      "HexCode": "#B33D26"
+    },
+    {
+      "ColorName": "7600 C",
+      "HexCode": "#8D3F2B"
+    },
+    {
+      "ColorName": "7601 C",
+      "HexCode": "#83412C"
+    },
+    {
+      "ColorName": "7602 C",
+      "HexCode": "#7B4931"
+    },
+    {
+      "ColorName": "7603 C",
+      "HexCode": "#674230"
+    },
+    {
+      "ColorName": "7604 C",
+      "HexCode": "#E4D5D3"
+    },
+    {
+      "ColorName": "7605 C",
+      "HexCode": "#E1BBB4"
+    },
+    {
+      "ColorName": "7606 C",
+      "HexCode": "#D6938A"
+    },
+    {
+      "ColorName": "7607 C",
+      "HexCode": "#C26E60"
+    },
+    {
+      "ColorName": "7608 C",
+      "HexCode": "#A4493D"
+    },
+    {
+      "ColorName": "7609 C",
+      "HexCode": "#823B34"
+    },
+    {
+      "ColorName": "7610 C",
+      "HexCode": "#683431"
+    },
+    {
+      "ColorName": "7611 C",
+      "HexCode": "#DDBCB0"
+    },
+    {
+      "ColorName": "7612 C",
+      "HexCode": "#CA9A8E"
+    },
+    {
+      "ColorName": "7613 C",
+      "HexCode": "#BC8A7E"
+    },
+    {
+      "ColorName": "7614 C",
+      "HexCode": "#A37F74"
+    },
+    {
+      "ColorName": "7615 C",
+      "HexCode": "#866761"
+    },
+    {
+      "ColorName": "7616 C",
+      "HexCode": "#6B4C4C"
+    },
+    {
+      "ColorName": "7617 C",
+      "HexCode": "#583D3E"
+    },
+    {
+      "ColorName": "7618 C",
+      "HexCode": "#C66E4E"
+    },
+    {
+      "ColorName": "7619 C",
+      "HexCode": "#C04C36"
+    },
+    {
+      "ColorName": "7620 C",
+      "HexCode": "#B7312C"
+    },
+    {
+      "ColorName": "7621 C",
+      "HexCode": "#AB2328"
+    },
+    {
+      "ColorName": "7622 C",
+      "HexCode": "#93272C"
+    },
+    {
+      "ColorName": "7623 C",
+      "HexCode": "#8A2A2B"
+    },
+    {
+      "ColorName": "7624 C",
+      "HexCode": "#802F2D"
+    },
+    {
+      "ColorName": "7625 C",
+      "HexCode": "#E1523D"
+    },
+    {
+      "ColorName": "7626 C",
+      "HexCode": "#C63527"
+    },
+    {
+      "ColorName": "7627 C",
+      "HexCode": "#A72B2A"
+    },
+    {
+      "ColorName": "7628 C",
+      "HexCode": "#9E2A2B"
+    },
+    {
+      "ColorName": "7629 C",
+      "HexCode": "#6D3332"
+    },
+    {
+      "ColorName": "7630 C",
+      "HexCode": "#633231"
+    },
+    {
+      "ColorName": "7631 C",
+      "HexCode": "#572D2D"
+    },
+    {
+      "ColorName": "7632 C",
+      "HexCode": "#D6C9CA"
+    },
+    {
+      "ColorName": "7633 C",
+      "HexCode": "#C4A4A7"
+    },
+    {
+      "ColorName": "7634 C",
+      "HexCode": "#C16784"
+    },
+    {
+      "ColorName": "7635 C",
+      "HexCode": "#C63663"
+    },
+    {
+      "ColorName": "7636 C",
+      "HexCode": "#BC204B"
+    },
+    {
+      "ColorName": "7637 C",
+      "HexCode": "#912F46"
+    },
+    {
+      "ColorName": "7638 C",
+      "HexCode": "#7E2D40"
+    },
+    {
+      "ColorName": "7639 C",
+      "HexCode": "#936D73"
+    },
+    {
+      "ColorName": "7640 C",
+      "HexCode": "#934054"
+    },
+    {
+      "ColorName": "7641 C",
+      "HexCode": "#8E2C48"
+    },
+    {
+      "ColorName": "7642 C",
+      "HexCode": "#732E4A"
+    },
+    {
+      "ColorName": "7644 C",
+      "HexCode": "#582D40"
+    },
+    {
+      "ColorName": "7645 C",
+      "HexCode": "#502B3A"
+    },
+    {
+      "ColorName": "7646 C",
+      "HexCode": "#A56E87"
+    },
+    {
+      "ColorName": "7647 C",
+      "HexCode": "#A83D72"
+    },
+    {
+      "ColorName": "7649 C",
+      "HexCode": "#8A1B61"
+    },
+    {
+      "ColorName": "7650 C",
+      "HexCode": "#722257"
+    },
+    {
+      "ColorName": "7651 C",
+      "HexCode": "#6A2A5B"
+    },
+    {
+      "ColorName": "7652 C",
+      "HexCode": "#5E2751"
+    },
+    {
+      "ColorName": "7653 C",
+      "HexCode": "#948794"
+    },
+    {
+      "ColorName": "7654 C",
+      "HexCode": "#A2789C"
+    },
+    {
+      "ColorName": "7655 C",
+      "HexCode": "#A15A95"
+    },
+    {
+      "ColorName": "7656 C",
+      "HexCode": "#8E3A80"
+    },
+    {
+      "ColorName": "7657 C",
+      "HexCode": "#6E2B62"
+    },
+    {
+      "ColorName": "7658 C",
+      "HexCode": "#6A3460"
+    },
+    {
+      "ColorName": "7659 C",
+      "HexCode": "#5D3754"
+    },
+    {
+      "ColorName": "7660 C",
+      "HexCode": "#9991A4"
+    },
+    {
+      "ColorName": "7661 C",
+      "HexCode": "#8D6E97"
+    },
+    {
+      "ColorName": "7662 C",
+      "HexCode": "#7A4183"
+    },
+    {
+      "ColorName": "7663 C",
+      "HexCode": "#6B3077"
+    },
+    {
+      "ColorName": "7664 C",
+      "HexCode": "#653279"
+    },
+    {
+      "ColorName": "7665 C",
+      "HexCode": "#5E366E"
+    },
+    {
+      "ColorName": "7666 C",
+      "HexCode": "#5C4E63"
+    },
+    {
+      "ColorName": "7667 C",
+      "HexCode": "#6E7CA0"
+    },
+    {
+      "ColorName": "7668 C",
+      "HexCode": "#686E9F"
+    },
+    {
+      "ColorName": "7669 C",
+      "HexCode": "#615E9B"
+    },
+    {
+      "ColorName": "7670 C",
+      "HexCode": "#565294"
+    },
+    {
+      "ColorName": "7671 C",
+      "HexCode": "#514689"
+    },
+    {
+      "ColorName": "7672 C",
+      "HexCode": "#4C4184"
+    },
+    {
+      "ColorName": "7673 C",
+      "HexCode": "#535486"
+    },
+    {
+      "ColorName": "7674 C",
+      "HexCode": "#878CB4"
+    },
+    {
+      "ColorName": "7675 C",
+      "HexCode": "#7C7FAB"
+    },
+    {
+      "ColorName": "7676 C",
+      "HexCode": "#7566A0"
+    },
+    {
+      "ColorName": "7677 C",
+      "HexCode": "#6F5091"
+    },
+    {
+      "ColorName": "7678 C",
+      "HexCode": "#68478D"
+    },
+    {
+      "ColorName": "7679 C",
+      "HexCode": "#563D82"
+    },
+    {
+      "ColorName": "7680 C",
+      "HexCode": "#523178"
+    },
+    {
+      "ColorName": "7681 C",
+      "HexCode": "#94A9CB"
+    },
+    {
+      "ColorName": "7682 C",
+      "HexCode": "#6787B7"
+    },
+    {
+      "ColorName": "7683 C",
+      "HexCode": "#426DA9"
+    },
+    {
+      "ColorName": "7684 C",
+      "HexCode": "#385E9D"
+    },
+    {
+      "ColorName": "7685 C",
+      "HexCode": "#2C5697"
+    },
+    {
+      "ColorName": "7686 C",
+      "HexCode": "#1D4F91"
+    },
+    {
+      "ColorName": "7687 C",
+      "HexCode": "#1D428A"
+    },
+    {
+      "ColorName": "7688 C",
+      "HexCode": "#4698CB"
+    },
+    {
+      "ColorName": "7689 C",
+      "HexCode": "#298FC2"
+    },
+    {
+      "ColorName": "7690 C",
+      "HexCode": "#0076A8"
+    },
+    {
+      "ColorName": "7694 C",
+      "HexCode": "#01426A"
+    },
+    {
+      "ColorName": "7695 C",
+      "HexCode": "#7BA7BC"
+    },
+    {
+      "ColorName": "7696 C",
+      "HexCode": "#6399AE"
+    },
+    {
+      "ColorName": "7697 C",
+      "HexCode": "#4E87A0"
+    },
+    {
+      "ColorName": "7698 C",
+      "HexCode": "#41748D"
+    },
+    {
+      "ColorName": "7699 C",
+      "HexCode": "#34657F"
+    },
+    {
+      "ColorName": "7700 C",
+      "HexCode": "#165C7D"
+    },
+    {
+      "ColorName": "7702 C",
+      "HexCode": "#48A9C5"
+    },
+    {
+      "ColorName": "7703 C",
+      "HexCode": "#009CBD"
+    },
+    {
+      "ColorName": "7704 C",
+      "HexCode": "#0085AD"
+    },
+    {
+      "ColorName": "7706 C",
+      "HexCode": "#006A8E"
+    },
+    {
+      "ColorName": "7707 C",
+      "HexCode": "#00617F"
+    },
+    {
+      "ColorName": "7709 C",
+      "HexCode": "#63B1BC"
+    },
+    {
+      "ColorName": "7710 C",
+      "HexCode": "#00A7B5"
+    },
+    {
+      "ColorName": "7711 C",
+      "HexCode": "#0097A9"
+    },
+    {
+      "ColorName": "7712 C",
+      "HexCode": "#00859B"
+    },
+    {
+      "ColorName": "7713 C",
+      "HexCode": "#007D8A"
+    },
+    {
+      "ColorName": "7716 C",
+      "HexCode": "#00968F"
+    },
+    {
+      "ColorName": "7717 C",
+      "HexCode": "#00857D"
+    },
+    {
+      "ColorName": "7719 C",
+      "HexCode": "#006D68"
+    },
+    {
+      "ColorName": "7720 C",
+      "HexCode": "#00635B"
+    },
+    {
+      "ColorName": "7721 C",
+      "HexCode": "#005E5D"
+    },
+    {
+      "ColorName": "7723 C",
+      "HexCode": "#50A684"
+    },
+    {
+      "ColorName": "7724 C",
+      "HexCode": "#00966C"
+    },
+    {
+      "ColorName": "7726 C",
+      "HexCode": "#007B4B"
+    },
+    {
+      "ColorName": "7727 C",
+      "HexCode": "#006F44"
+    },
+    {
+      "ColorName": "7730 C",
+      "HexCode": "#4B9560"
+    },
+    {
+      "ColorName": "7731 C",
+      "HexCode": "#228848"
+    },
+    {
+      "ColorName": "7732 C",
+      "HexCode": "#007A3E"
+    },
+    {
+      "ColorName": "7734 C",
+      "HexCode": "#286140"
+    },
+    {
+      "ColorName": "7735 C",
+      "HexCode": "#36573B"
+    },
+    {
+      "ColorName": "7736 C",
+      "HexCode": "#395542"
+    },
+    {
+      "ColorName": "7737 C",
+      "HexCode": "#6BA539"
+    },
+    {
+      "ColorName": "7738 C",
+      "HexCode": "#48A23F"
+    },
+    {
+      "ColorName": "7739 C",
+      "HexCode": "#319B42"
+    },
+    {
+      "ColorName": "7740 C",
+      "HexCode": "#3A913F"
+    },
+    {
+      "ColorName": "7741 C",
+      "HexCode": "#44883E"
+    },
+    {
+      "ColorName": "7742 C",
+      "HexCode": "#4A773C"
+    },
+    {
+      "ColorName": "7743 C",
+      "HexCode": "#44693D"
+    },
+    {
+      "ColorName": "7744 C",
+      "HexCode": "#BABC16"
+    },
+    {
+      "ColorName": "7745 C",
+      "HexCode": "#ABAD23"
+    },
+    {
+      "ColorName": "7746 C",
+      "HexCode": "#999B30"
+    },
+    {
+      "ColorName": "7747 C",
+      "HexCode": "#888D30"
+    },
+    {
+      "ColorName": "7748 C",
+      "HexCode": "#7C8034"
+    },
+    {
+      "ColorName": "7749 C",
+      "HexCode": "#727337"
+    },
+    {
+      "ColorName": "7750 C",
+      "HexCode": "#656635"
+    },
+    {
+      "ColorName": "7751 C",
+      "HexCode": "#CAB64B"
+    },
+    {
+      "ColorName": "7752 C",
+      "HexCode": "#CFB023"
+    },
+    {
+      "ColorName": "7753 C",
+      "HexCode": "#C1A01E"
+    },
+    {
+      "ColorName": "7754 C",
+      "HexCode": "#A08629"
+    },
+    {
+      "ColorName": "7755 C",
+      "HexCode": "#897630"
+    },
+    {
+      "ColorName": "7756 C",
+      "HexCode": "#736635"
+    },
+    {
+      "ColorName": "7758 C",
+      "HexCode": "#D4C304"
+    },
+    {
+      "ColorName": "7759 C",
+      "HexCode": "#C4B200"
+    },
+    {
+      "ColorName": "7760 C",
+      "HexCode": "#91852C"
+    },
+    {
+      "ColorName": "7761 C",
+      "HexCode": "#747136"
+    },
+    {
+      "ColorName": "7762 C",
+      "HexCode": "#5D6439"
+    },
+    {
+      "ColorName": "7763 C",
+      "HexCode": "#585C3B"
+    },
+    {
+      "ColorName": "7764 C",
+      "HexCode": "#535435"
+    },
+    {
+      "ColorName": "7765 C",
+      "HexCode": "#BBB323"
+    },
+    {
+      "ColorName": "7766 C",
+      "HexCode": "#B4A91F"
+    },
+    {
+      "ColorName": "7767 C",
+      "HexCode": "#AA9D2E"
+    },
+    {
+      "ColorName": "7768 C",
+      "HexCode": "#8F7E35"
+    },
+    {
+      "ColorName": "7769 C",
+      "HexCode": "#716135"
+    },
+    {
+      "ColorName": "7770 C",
+      "HexCode": "#635939"
+    },
+    {
+      "ColorName": "7771 C",
+      "HexCode": "#4E4934"
+    },
+    {
+      "ColorName": "Cool Gray 1 C",
+      "HexCode": "#D9D9D6"
+    },
+    {
+      "ColorName": "Cool Gray 2 C",
+      "HexCode": "#D0D0CE"
+    },
+    {
+      "ColorName": "Cool Gray 3 C",
+      "HexCode": "#C8C9C7"
+    },
+    {
+      "ColorName": "Cool Gray 4 C",
+      "HexCode": "#BBBCBC"
+    },
+    {
+      "ColorName": "Cool Gray 5 C",
+      "HexCode": "#B1B3B3"
+    },
+    {
+      "ColorName": "Cool Gray 6 C",
+      "HexCode": "#A7A8AA"
+    },
+    {
+      "ColorName": "Cool Gray 7 C",
+      "HexCode": "#97999B"
+    },
+    {
+      "ColorName": "Cool Gray 8 C",
+      "HexCode": "#888B8D"
+    },
+    {
+      "ColorName": "Cool Gray 9 C",
+      "HexCode": "#75787B"
+    },
+    {
+      "ColorName": "Cool Gray 10 C",
+      "HexCode": "#63666A"
+    },
+    {
+      "ColorName": "Cool Gray 11 C",
+      "HexCode": "#53565A"
+    },
+    {
+      "ColorName": "Process Blue C",
+      "HexCode": "#0085CA"
+    },
+    {
+      "ColorName": "Warm Gray 1 C",
+      "HexCode": "#D7D2CB"
+    },
+    {
+      "ColorName": "Warm Gray 2 C",
+      "HexCode": "#CBC4BC"
+    },
+    {
+      "ColorName": "Warm Gray 3 C",
+      "HexCode": "#BFB8AF"
+    },
+    {
+      "ColorName": "Warm Gray 4 C",
+      "HexCode": "#B6ADA5"
+    },
+    {
+      "ColorName": "Warm Gray 5 C",
+      "HexCode": "#ACA39A"
+    },
+    {
+      "ColorName": "Warm Gray 6 C",
+      "HexCode": "#A59C94"
+    },
+    {
+      "ColorName": "Warm Gray 7 C",
+      "HexCode": "#968C83"
+    },
+    {
+      "ColorName": "Warm Gray 8 C",
+      "HexCode": "#8C8279"
+    },
+    {
+      "ColorName": "Warm Gray 9 C",
+      "HexCode": "#83786F"
+    },
+    {
+      "ColorName": "Warm Gray 11 C",
+      "HexCode": "#6E6259"
+    },
+    {
+      "ColorName": "Yellow C",
+      "HexCode": "#FEDD00"
+    },
+    {
+      "ColorName": ".White",
+      "HexCode": "#FFFFFF"
+    },
+    {
+      "ColorName": ".Shimmer Black",
+      "HexCode": ""
+    },
+    {
+      "ColorName": "802 C",
+      "HexCode": "#39ff1d"
+    },
+    {
+      "ColorName": ".Burgundy Chrome",
+      "HexCode": "#FF6900"
+    }
+   ]
