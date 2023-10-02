@@ -88,9 +88,12 @@ function initApp(logos) {
     }
    
 
-    // Display Logo
     const logoImg = document.createElement('img');
-    logoImg.src = logo.PNG;
+
+    // Modify the SVG URL to PNG URL
+    let pngUrl = logo.PNG.replace('/SVG.', '/b_none/').replace('.svg', '.png');
+
+    logoImg.src = pngUrl;
     logoImg.style.maxWidth = '300px';
     logoCard.appendChild(logoImg);
 
