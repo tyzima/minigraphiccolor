@@ -10,7 +10,7 @@ function paginateItems(logos) {
   return logos.slice(startIndex, endIndex);
 }
 
-document.body.style.backgroundColor = "#f2f2f2";
+document.body.style.backgroundColor = "#ffffff";
 
 // Initialize the app
 function initApp(logos) {
@@ -49,6 +49,8 @@ function initApp(logos) {
     if (logo.VariationOf) {
       const variationOf = document.createElement('p');
       variationOf.textContent = `Variation of: ${logo.VariationOf}`;
+      variationOf.fontSize = '8px';
+      variationOf.color = 'lightgrey';
       logoCard.appendChild(variationOf);
     }
 
