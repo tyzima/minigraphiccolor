@@ -123,21 +123,44 @@ initColorPicker();
 
 
 // Search Functionality
-// Search Functionality
 const searchBox = document.getElementById('search-box');
 
 searchBox.addEventListener('input', (e) => {
   const query = e.target.value.toLowerCase();
   
-  const filteredLogos = allLogos.filter(logo => {
-    const teamName = logo['Account Name'].toLowerCase();
-    return teamName.includes(query);
-  });
+  const filteredAndSortedLogos = allLogos
+    .filter(logo => {
+      const teamName = logo['Account Name'].toLowerCase();
+      const description = logo['Description'].toLowerCase();
+      const logoID = logo['Logo ID'].toString();
+      
+      return teamName.includes(query) || description.includes(query) || logoID.includes(query);
+    })
+    .sort((a, b) => {
+      const aTeamName = a['Account Name'].toLowerCase();
+      const aDescription = a['Description'].toLowerCase();
+      const aLogoID = a['Logo ID'].toString();
+      
+      const bTeamName = b['Account Name'].toLowerCase();
+      const bDescription = b['Description'].toLowerCase();
+      const bLogoID = b['Logo ID'].toString();
+      
+      // Prioritize by number, then by team name, then by description
+      if (aLogoID.includes(query) && !bLogoID.includes(query)) return -1;
+      if (!aLogoID.includes(query) && bLogoID.includes(query)) return 1;
+      if (aTeamName.includes(query) && !bTeamName.includes(query)) return -1;
+      if (!aTeamName.includes(query) && bTeamName.includes(query)) return 1;
+      if (aDescription.includes(query) && !bDescription.includes(query)) return -1;
+      if (!aDescription.includes(query) && bDescription.includes(query)) return 1;
+
+      return 0;
+    });
   
   // Reset to the first page and re-render the grid
   currentPage = 1;
-  initApp(filteredLogos);
+  initApp(filteredAndSortedLogos);
 });
+
 
 
 // Handle pagination
