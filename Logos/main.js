@@ -128,32 +128,16 @@ const searchBox = document.getElementById('search-box');
 
 searchBox.addEventListener('input', (e) => {
   const query = e.target.value.toLowerCase();
-  const logoCards = document.querySelectorAll('.logo-card');
-
-  logoCards.forEach(card => {
-    const teamName = card.querySelectorAll('p')[1].textContent.toLowerCase(); // Assuming the Team Name is the second <p> element
-    const description = card.querySelector('img').alt.toLowerCase();
-    const logoID = card.querySelector('.logo-id').textContent;
-
-    if (
-      teamName.includes(query) ||
-      description.includes(query) ||
-      logoID.includes(query)
-    ) {
-      card.style.display = 'block';
-    } else {
-      card.style.display = 'none';
-    }
+  
+  const filteredLogos = allLogos.filter(logo => {
+    const teamName = logo['Account Name'].toLowerCase();
+    return teamName.includes(query);
   });
-
   
   // Reset to the first page and re-render the grid
   currentPage = 1;
   initApp(filteredLogos);
-document.querySelectorAll('.logo-card').forEach(card => card.classList.remove('hidden'));
-
 });
-
 
 
 // Handle pagination
