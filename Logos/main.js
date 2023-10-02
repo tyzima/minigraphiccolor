@@ -58,7 +58,7 @@ function initApp(logos) {
 
     // Display Edit Colors Button
     const editColorsBtn = document.createElement('a');
-    editColorsBtn.textContent = 'Edit Colors';
+    editColorsBtn.innerHTML = '<i class="material-icons">palette</i> Edit Colors';
     editColorsBtn.href = logo.LaxInkEditor;
     editColorsBtn.target = '_blank';
     logoCard.appendChild(editColorsBtn);

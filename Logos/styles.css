@@ -84,6 +84,21 @@ body {
    .hidden {
     display: none;
   }
+
+  a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    background-color: #007934;  /* Change this to your preferred background color */
+    margin-top: 10px;
+  }
+  
+  .material-icons {
+    vertical-align: middle;
+    margin-right: 5px;
+  }
   
    
 
