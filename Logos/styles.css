@@ -84,9 +84,7 @@ body {
     background-clip:text;
    }
    
-   #logo-grid .logo-card{
-    min-height:300px;
-   }
+   
 
    /* Paragraph */
    #logo-grid .logo-card p{
@@ -235,6 +233,11 @@ body {
     .logo-card {
       width: calc(20% - 10px);
     }
+
+    #logo-grid .logo-card{
+      min-height:300px;
+     }
+     
   }
   
   /* 2xN grid for mobile */
