@@ -238,6 +238,6 @@ body {
   /* 2xN grid for mobile */
   @media (max-width: 768px) {
     .logo-card {
-      width: calc(45%);
+      width: calc(40%);
     }
   }
