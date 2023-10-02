@@ -3,6 +3,28 @@ let currentPage = 1;
 const itemsPerPage = 80; // 5x2 grid
 let currentDisplayedLogos = []; 
 
+const urlParams = new URLSearchParams(window.location.search);
+const hideSearch = urlParams.get('hideSearch');
+const teamNameParam = urlParams.get('teamName');
+
+// Hide the search bar if the URL parameter is present
+if (hideSearch === 'true') {
+  document.getElementById('search-box').style.display = 'none';
+}
+
+// Pre-fill the search bar and trigger the search function if the URL parameter is present
+if (teamNameParam) {
+  const searchBox = document.getElementById('search-box');
+  searchBox.value = teamNameParam;
+  // Trigger your existing search logic here
+  const event = new Event('input', {
+    'bubbles': true,
+    'cancelable': true
+  });
+  searchBox.dispatchEvent(event);
+}
+
+
 // Function to handle pagination
 function paginateItems(logos) {
   const startIndex = (currentPage - 1) * itemsPerPage;
