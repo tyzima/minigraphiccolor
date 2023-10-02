@@ -151,7 +151,22 @@ fetch('./Logos.JSON')
     allLogos = data;
     // Initialize the app with paginated logo data
     initApp(paginateItems(allLogos));
+
+    // Check if there's a team name in the URL parameters
+    const teamNameParam = urlParams.get('teamName');
+    if (teamNameParam) {
+      const searchBox = document.getElementById('search-box');
+      searchBox.value = teamNameParam;
+
+      // Trigger the search logic here
+      const event = new Event('input', {
+        'bubbles': true,
+        'cancelable': true
+      });
+      searchBox.dispatchEvent(event);
+    }
   });
+
 
 // Initialize the color picker with allowed background colors
 initColorPicker();
