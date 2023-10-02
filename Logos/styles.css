@@ -275,7 +275,7 @@ body {
   /* Hide elements you don't want to print */
 
   .logo-container {
-    height: 238px !important;
+    max-height: 238px !important;
     page-break-after: always;
   }
 
@@ -293,7 +293,7 @@ body {
 
   /* Add a page break after each logo container */
   .logo-container {
-    height: 238px !important;/* Adjust this value if needed */
+    max-height: 238px !important;/* Adjust this value if needed */
     page-break-after: always;
     overflow: hidden; /* Hide overflowing content */
   }
@@ -307,5 +307,5 @@ body {
     display: none;
     visibility: hidden;
   }
-  
+
 }
