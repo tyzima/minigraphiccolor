@@ -98,28 +98,30 @@ function initApp(logos) {
 // Display Team Name
 const teamName = document.createElement('a');  // Change 'p' to 'a'
 teamName.style.fontSize = '10px';
-teamName.href = '#';  // Add this line
 let accountName = logo['Account Name'];
+const shortAccountName = accountName.slice(0, 15);  // Only take the first 15 characters
+
+// Prepare the URL
+const urlToNavigate = `https://www.lax.ink/logos/?hideSearch=true&teamName=${encodeURIComponent(shortAccountName)}`;
+
+// Update the href attribute to navigate to the page
+teamName.href = urlToNavigate;
+
 if (accountName.length > 25) {
   accountName = accountName.slice(0, 22) + '...';  // Slice to 22 characters and add ellipsis
 }
 teamName.textContent = accountName;
 
+// Add click event to copy URL
 teamName.addEventListener('click', function(event) {
-  event.preventDefault();  // Prevent the default action
-
-  const shortAccountName = accountName.slice(0, 15);  // Only take the first 15 characters
-  const urlToCopy = `https://www.lax.ink/logos/?hideSearch=true&teamName=${encodeURIComponent(shortAccountName)}`;
-
-  // Use the Clipboard API to copy the text
-  navigator.clipboard.writeText(urlToCopy).then(() => {
-    alert('URL copied to clipboard');
-  }).catch(err => {
+  // Use the Clipboard API to silently copy the text
+  navigator.clipboard.writeText(urlToNavigate).catch(err => {
     console.error('Could not copy text: ', err);
   });
 });
 
 logoCard.appendChild(teamName);
+
 
 
 
