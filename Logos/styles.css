@@ -17,7 +17,7 @@ body {
   }
 
   #pagination-controls {
-    display: flex;
+    display: none;
     justify-content: center;
     margin-top: 20px;
   }
@@ -78,7 +78,7 @@ body {
    #logo-grid .logo-card{
     min-height:300px;
    }
-   
+
    /* Paragraph */
    #logo-grid .logo-card p{
     text-align:center;
