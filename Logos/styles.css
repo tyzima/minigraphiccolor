@@ -81,6 +81,10 @@ body {
     transform:scale(0.69);
    }
    
+   .hidden {
+    display: none;
+  }
+  
    
 
   #search-box {

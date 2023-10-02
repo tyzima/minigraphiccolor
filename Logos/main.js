@@ -9,8 +9,11 @@ function paginateItems(logos) {
   return logos.slice(startIndex, endIndex);
 }
 
+document.body.style.backgroundColor = "#f2f2f2";
+
 // Initialize the app
 function initApp(logos) {
+  logoCard.classList.add('hidden');
   // Clear existing cards
   const logoGrid = document.getElementById('logo-grid');
   logoGrid.innerHTML = '';
@@ -130,11 +133,14 @@ searchBox.addEventListener('input', (e) => {
     return teamName.includes(query);
   });
   
+
   console.log(`Found ${filteredLogos.length} matching logos.`);  // Debugging line
   
   // Reset to the first page and re-render the grid
   currentPage = 1;
   initApp(filteredLogos);
+document.querySelectorAll('.logo-card').forEach(card => card.classList.remove('hidden'));
+
 });
 
 
