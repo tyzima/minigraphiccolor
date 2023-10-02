@@ -144,8 +144,16 @@ searchBox.addEventListener('input', (e) => {
       const bTeamName = b['Account Name'].toLowerCase();
       const bDescription = b['Description'].toLowerCase();
       const bLogoID = b['Logo ID'].toString();
-      
-      // Prioritize by number, then by team name, then by description
+
+      // Prioritize exact match for numbers
+      if (aLogoID === query && bLogoID !== query) return -1;
+      if (aLogoID !== query && bLogoID === query) return 1;
+
+      // Prioritize by closeness of match for numbers
+      if (aLogoID.startsWith(query) && !bLogoID.startsWith(query)) return -1;
+      if (!aLogoID.startsWith(query) && bLogoID.startsWith(query)) return 1;
+
+      // Further prioritize by number, then by team name, then by description
       if (aLogoID.includes(query) && !bLogoID.includes(query)) return -1;
       if (!aLogoID.includes(query) && bLogoID.includes(query)) return 1;
       if (aTeamName.includes(query) && !bTeamName.includes(query)) return -1;
