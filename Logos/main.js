@@ -21,12 +21,9 @@ function initApp(logos) {
   
       // Display Logo ID
       const logoID = document.createElement('div');
-      logoID.textContent = `Logo ID: ${logo['Logo ID']}`;
-      logoID.style.borderRadius = '50%';
-      logoID.style.position = 'absolute';
-      logoID.style.top = '10px';
-      logoID.style.left = '10px';
-      logoCard.appendChild(logoID);
+logoID.textContent = logo['Logo ID'];
+logoID.className = 'logo-id';  // Add this line to add the new class
+logoCard.appendChild(logoID);
   
       // Display VariationOf
       if (logo.VariationOf) {
