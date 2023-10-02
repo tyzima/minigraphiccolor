@@ -223,16 +223,14 @@ searchBox.addEventListener('input', (e) => {
 });
 
 
-document.getElementById('exportButton').addEventListener('click', () => {
+document.getElementById('exportButton').addEventListener('click', async () => {
   const logoGrid = document.getElementById('logo-grid');
   const logos = logoGrid.querySelectorAll('.logo-card');
-  const canvas = document.createElement('canvas');
-  const ctx = canvas.getContext('2d');
   const logosPerImage = 8;
   let currentImageIndex = 0;
 
   // Function to export canvas to image
-  const exportCanvasAsImage = () => {
+  const exportCanvasAsImage = (canvas) => {
     const imgData = canvas.toDataURL('image/png');
     const link = document.createElement('a');
     link.href = imgData;
@@ -241,22 +239,29 @@ document.getElementById('exportButton').addEventListener('click', () => {
     currentImageIndex++;
   };
 
-  // Loop through logos and draw them on the canvas
-  for (let i = 0; i < logos.length; i++) {
-    const logo = logos[i];
-    if (i % logosPerImage === 0 && i !== 0) {
-      // Export the current canvas as an image
-      exportCanvasAsImage();
-      // Clear the canvas for the next set of logos
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-    }
-    // Draw the logo on the canvas (you may need to adjust the x, y, width, and height)
-    ctx.drawImage(logo, 0, 0, 100, 100);
-  }
+  // Function to convert an element to canvas
+  const htmlToCanvas = (element) => {
+    return html2canvas(element);
+  };
 
-  // Export any remaining logos on the canvas
-  if (logos.length % logosPerImage !== 0) {
-    exportCanvasAsImage();
+  // Loop through logos and draw them on the canvas
+  for (let i = 0; i < logos.length; i += logosPerImage) {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    let yOffset = 0;
+
+    for (let j = 0; j < logosPerImage; j++) {
+      const index = i + j;
+      if (index >= logos.length) break;
+
+      const logo = logos[index];
+      const logoCanvas = await htmlToCanvas(logo);
+      ctx.drawImage(logoCanvas, 0, yOffset);
+      yOffset += logoCanvas.height;
+    }
+
+    // Export the current canvas as an image
+    exportCanvasAsImage(canvas);
   }
 });
 
