@@ -61,7 +61,7 @@ body {
 }
 
 #pagination-controls button:hover::before {
-    opacity: 1;  /* Opacity on hover */
+    opacity: .5;  /* Opacity on hover */
 }
 
   
