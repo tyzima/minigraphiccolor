@@ -313,6 +313,7 @@ body {
    /* Logo card */
    #logo-grid .logo-card{
     margin-left:5px;
+    min-height: 300px;
     margin-right:5px;
     transform:translatex(0px) translatey(0px);
    }
