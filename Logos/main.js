@@ -54,7 +54,7 @@ function initApp(logos) {
     // Display Team Name
     const teamName = document.createElement('p');
     teamName.style.fontSize = '12px';
-    teamName.textContent = `Team Name: ${logo['Account Name']}`;
+    teamName.textContent = `${logo['Account Name']}`;
     logoCard.appendChild(teamName);
 
     // Display Edit Colors Button
