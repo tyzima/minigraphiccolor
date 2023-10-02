@@ -54,14 +54,32 @@ function initApp(logos) {
     const logoCard = document.createElement('div');
     logoCard.classList.add('logo-card');
     logoCard.classList.add('hidden');  // Add the 'hidden' class here
+// Display Team Name
+const teamName = document.createElement('a');  // Change 'p' to 'a'
+teamName.style.fontSize = '10px';
+let accountName = logo['Account Name'];
+const shortAccountName = accountName.slice(0, 15);  // Only take the first 15 characters
 
-    // Display Edit Colors Button
-    const editColorsBtn = document.createElement('a');
-    editColorsBtn.innerHTML = '<i class="material-icons">palette</i>';
-    editColorsBtn.href = logo.LaxInkEditor;
-    editColorsBtn.target = '_blank';
-    logoCard.appendChild(editColorsBtn);
+// Prepare the URL
+const urlToNavigate = `https://www.lax.ink/logos/?hideSearch=true&teamName=${encodeURIComponent(shortAccountName)}`;
 
+// Update the href attribute to navigate to the page
+teamName.href = urlToNavigate;
+
+if (accountName.length > 25) {
+  accountName = accountName.slice(0, 22) + '...';  // Slice to 22 characters and add ellipsis
+}
+teamName.textContent = accountName;
+
+// Add click event to copy URL
+teamName.addEventListener('click', function(event) {
+  // Use the Clipboard API to silently copy the text
+  navigator.clipboard.writeText(urlToNavigate).catch(err => {
+    console.error('Could not copy text: ', err);
+  });
+});
+
+logoCard.appendChild(teamName);
 
     // Display Description
     const desc = document.createElement('p');
@@ -101,34 +119,12 @@ function initApp(logos) {
     logoCard.appendChild(logoImg);
 
 
-
-// Display Team Name
-const teamName = document.createElement('a');  // Change 'p' to 'a'
-teamName.style.fontSize = '10px';
-let accountName = logo['Account Name'];
-const shortAccountName = accountName.slice(0, 15);  // Only take the first 15 characters
-
-// Prepare the URL
-const urlToNavigate = `https://www.lax.ink/logos/?hideSearch=true&teamName=${encodeURIComponent(shortAccountName)}`;
-
-// Update the href attribute to navigate to the page
-teamName.href = urlToNavigate;
-
-if (accountName.length > 25) {
-  accountName = accountName.slice(0, 22) + '...';  // Slice to 22 characters and add ellipsis
-}
-teamName.textContent = accountName;
-
-// Add click event to copy URL
-teamName.addEventListener('click', function(event) {
-  // Use the Clipboard API to silently copy the text
-  navigator.clipboard.writeText(urlToNavigate).catch(err => {
-    console.error('Could not copy text: ', err);
-  });
-});
-
-logoCard.appendChild(teamName);
-
+    // Display Edit Colors Button
+    const editColorsBtn = document.createElement('a');
+    editColorsBtn.innerHTML = '<i class="material-icons">palette</i>';
+    editColorsBtn.href = logo.LaxInkEditor;
+    editColorsBtn.target = '_blank';
+    logoCard.appendChild(editColorsBtn);
 
 
 
