@@ -119,16 +119,18 @@ initColorPicker();
 
 
 // Search Functionality
-// Search Functionality
 const searchBox = document.getElementById('search-box');
 
 searchBox.addEventListener('input', (e) => {
   const query = e.target.value.toLowerCase();
+  console.log(`Searching for: ${query}`);  // Debugging line
   
   const filteredLogos = allLogos.filter(logo => {
     const teamName = logo['Account Name'].toLowerCase();
     return teamName.includes(query);
   });
+  
+  console.log(`Found ${filteredLogos.length} matching logos.`);  // Debugging line
   
   // Reset to the first page and re-render the grid
   currentPage = 1;
