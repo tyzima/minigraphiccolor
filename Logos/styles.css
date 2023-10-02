@@ -273,8 +273,10 @@ body {
   /* Print styles */
 @media print {
   /* Hide elements you don't want to print */
-  body * {
-    visibility: hidden;
+
+  .logo-container {
+    height: 338px;
+    page-break-after: always;
   }
 
   /* Show the logo grid and its children */
