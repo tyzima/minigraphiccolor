@@ -223,47 +223,10 @@ searchBox.addEventListener('input', (e) => {
 });
 
 
-document.getElementById('exportButton').addEventListener('click', async () => {
-  const logoGrid = document.getElementById('logo-grid');
-  const logos = logoGrid.querySelectorAll('.logo-card');
-  const logosPerImage = 8;
-  let currentImageIndex = 0;
-
-  // Function to export canvas to image
-  const exportCanvasAsImage = (canvas) => {
-    const imgData = canvas.toDataURL('image/png');
-    const link = document.createElement('a');
-    link.href = imgData;
-    link.download = `Logos_${currentImageIndex + 1}.png`;
-    link.click();
-    currentImageIndex++;
-  };
-
-  // Function to convert an element to canvas
-  const htmlToCanvas = (element) => {
-    return html2canvas(element);
-  };
-
-  // Loop through logos and draw them on the canvas
-  for (let i = 0; i < logos.length; i += logosPerImage) {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    let yOffset = 0;
-
-    for (let j = 0; j < logosPerImage; j++) {
-      const index = i + j;
-      if (index >= logos.length) break;
-
-      const logo = logos[index];
-      const logoCanvas = await htmlToCanvas(logo);
-      ctx.drawImage(logoCanvas, 0, yOffset);
-      yOffset += logoCanvas.height;
-    }
-
-    // Export the current canvas as an image
-    exportCanvasAsImage(canvas);
-  }
+document.getElementById('printButton').addEventListener('click', () => {
+  window.print();
 });
+
 
 
 
