@@ -13,7 +13,12 @@ body {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
+    border-top-left-radius:50px;
+    border-top-right-radius:50px;
+    border-bottom-left-radius:50px;
+    border-bottom-right-radius:50px;
   }
+
 
   svg {
     pointer-events: none;
@@ -172,7 +177,6 @@ body {
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
-    border-radius: 4px;
     background-color: white;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
