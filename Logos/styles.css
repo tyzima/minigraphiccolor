@@ -287,6 +287,24 @@ body {
       width: calc(40%);
     }
 
+    #color-picker{
+      justify-content:space-between;
+      flex-wrap:wrap;
+      padding-left:15px;
+      padding-right:15px;
+      padding-top:16px;
+      margin-top:-2px;
+      line-height:18.9px;
+      transform:translatex(0px) translatey(0px);
+     }
+     
+     /* Division */
+     #color-picker > div{
+      padding-left:0px;
+      margin-left:10px;
+      margin-top:3px;
+     }
+
     /* Logo grid */
  #logo-grid{
     transform:translatex(0px) translatey(0px);
@@ -299,11 +317,6 @@ body {
     transform:translatex(0px) translatey(0px);
    }
    
-   /* Color picker */
-   #color-picker{
-    justify-content:space-between;
-    flex-wrap:wrap;
-   }
    
    /* Link */
    #logo-grid .logo-card a{
