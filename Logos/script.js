@@ -90,7 +90,7 @@ function initApp(logos) {
   }
   
   // Fetch the logo data
-  fetch('./Logos.JSON')
+  fetch('./logos.json')
     .then(response => response.json())
     .then(data => {
       // Initialize the app with logo data
