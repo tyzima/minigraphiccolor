@@ -90,12 +90,12 @@ function initApp(logos) {
     const logoImg = document.createElement('img');
 
     // Modify the SVG URL to PNG URL
-    let parts = logo.PNG.split('/');
-    let pngUrl = `https://res.cloudinary.com/laxdotcom/image/upload/b_none/${parts[6]}/${parts[7].replace('.svg', '.png')}`;
+    const pngUrl = `https://res.cloudinary.com/laxdotcom/image/upload/b_none/${logo['Account ID']}/${logo['Account ID']}.${logo['Logo ID']}.png`;
 
     logoImg.src = pngUrl;
     logoImg.style.maxWidth = '300px';
     logoCard.appendChild(logoImg);
+
 
 
 // Display Team Name
