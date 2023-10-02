@@ -10,7 +10,7 @@ function paginateItems(logos) {
   return logos.slice(startIndex, endIndex);
 }
 
-document.body.style.backgroundColor = "#004a98";
+document.body.style.backgroundColor = "#f4f4f4";
 
 // Initialize the app
 function initApp(logos) {
