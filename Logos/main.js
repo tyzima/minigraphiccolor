@@ -75,6 +75,7 @@ function initApp(logos) {
     logoCard.appendChild(colorHelper);
 
     logoGrid.appendChild(logoCard);
+    currentDisplayedLogos = logos;
   });
 }
 
@@ -171,17 +172,16 @@ searchBox.addEventListener('input', (e) => {
 
 
 
-// Handle pagination
 document.getElementById('prev-page').addEventListener('click', () => {
   if (currentPage > 1) {
     currentPage--;
-    initApp(allLogos);
+    initApp(paginateItems(currentDisplayedLogos));
   }
 });
 
 document.getElementById('next-page').addEventListener('click', () => {
-  if (currentPage < Math.ceil(allLogos.length / itemsPerPage)) {
+  if (currentPage < Math.ceil(currentDisplayedLogos.length / itemsPerPage)) {
     currentPage++;
-    initApp(allLogos);
+    initApp(paginateItems(currentDisplayedLogos));
   }
 });
