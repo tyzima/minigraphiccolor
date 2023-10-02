@@ -276,6 +276,7 @@ body {
 
     #logo-grid .logo-card{
       min-height:300px;
+      position: relative;
      }
 
   }
