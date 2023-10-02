@@ -223,6 +223,45 @@ searchBox.addEventListener('input', (e) => {
 });
 
 
+document.getElementById('exportButton').addEventListener('click', () => {
+  const logoGrid = document.getElementById('logo-grid');
+  const logos = logoGrid.querySelectorAll('.logo-card');
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  const logosPerImage = 8;
+  let currentImageIndex = 0;
+
+  // Function to export canvas to image
+  const exportCanvasAsImage = () => {
+    const imgData = canvas.toDataURL('image/png');
+    const link = document.createElement('a');
+    link.href = imgData;
+    link.download = `Logos_${currentImageIndex + 1}.png`;
+    link.click();
+    currentImageIndex++;
+  };
+
+  // Loop through logos and draw them on the canvas
+  for (let i = 0; i < logos.length; i++) {
+    const logo = logos[i];
+    if (i % logosPerImage === 0 && i !== 0) {
+      // Export the current canvas as an image
+      exportCanvasAsImage();
+      // Clear the canvas for the next set of logos
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+    // Draw the logo on the canvas (you may need to adjust the x, y, width, and height)
+    ctx.drawImage(logo, 0, 0, 100, 100);
+  }
+
+  // Export any remaining logos on the canvas
+  if (logos.length % logosPerImage !== 0) {
+    exportCanvasAsImage();
+  }
+});
+
+
+
 document.addEventListener('contextmenu', function(event) {
   if (event.target.tagName === 'SVG') {
     event.preventDefault();
