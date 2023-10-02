@@ -34,27 +34,35 @@ function paginateItems(logos) {
 
 document.body.style.backgroundColor = "#f4f4f4";
 
-// Initialize the app
 function initApp(logos) {
   // Clear existing cards
   const logoGrid = document.getElementById('logo-grid');
   logoGrid.innerHTML = '';
 
   const paginatedLogos = paginateItems(logos);
-  
-  paginatedLogos.forEach(logo => {
+
+  let logoContainer = null; // New container for every 8 logos
+
+  paginatedLogos.forEach((logo, index) => {
+    // Create a new container for every 8 logos
+    if (index % 8 === 0) {
+      logoContainer = document.createElement('div');
+      logoContainer.classList.add('logo-container');
+      logoGrid.appendChild(logoContainer);
+    }
+
     const logoCard = document.createElement('div');
     logoCard.classList.add('logo-card');
     logoCard.classList.add('hidden');  // Add the 'hidden' class here
 
- // Display Edit Colors Button
- const editColorsBtn = document.createElement('a');
- editColorsBtn.innerHTML = '<i class="material-icons">palette</i>';
- editColorsBtn.href = logo.LaxInkEditor;
- editColorsBtn.target = '_blank';
- logoCard.appendChild(editColorsBtn);
-    
+    // Display Edit Colors Button
+    const editColorsBtn = document.createElement('a');
+    editColorsBtn.innerHTML = '<i class="material-icons">palette</i>';
+    editColorsBtn.href = logo.LaxInkEditor;
+    editColorsBtn.target = '_blank';
+    logoCard.appendChild(editColorsBtn);
 
+    
     // Display Description
     const desc = document.createElement('p');
     desc.style.fontSize = '9px';
