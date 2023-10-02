@@ -162,10 +162,10 @@ body {
 
    #logo-grid .logo-card .logo-id{
     background-color:transparent;
-    color:#000000;
-    text-shadow:rgba(0, 0, 0, 0.3) 0px 1px 1px;
+    color:rgba(150,150,150,0.42);
     text-align:left;
-    letter-spacing:-1.1px;
+    letter-spacing:.1px;
+    
    }
    
    /* Link */
