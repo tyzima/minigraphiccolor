@@ -79,7 +79,7 @@ function initApp(logos) {
     if (logo.VariationOf) {
       const variationOf = document.createElement('p');
       variationOf.style.position = 'absolute';  // Position it absolutely
-      variationOf.style.bottom = '-5px';  // Move it down by 5 pixels
+      variationOf.style.bottom = '-10px';  // Move it down by 5 pixels
       variationOf.style.left = '0';  // Align it to the left
       variationOf.style.right = '0';  // Stretch it to the right
       variationOf.style.fontSize = '12px';
