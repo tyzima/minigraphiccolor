@@ -172,10 +172,13 @@ body {
    /* Link */
    #logo-grid .logo-card a{
     transform:scale(0.69);
-    background-color:#2c3e50;
+    background-color: rgba(255, 255, 255, 0.5);  /* White with 50% opacity */
+    color: black;  /* Black text */
     align-items:center;
     justify-content:center;
    }
+
+  
    
    /* Logo card */
    #logo-grid .logo-card{

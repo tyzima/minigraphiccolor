@@ -105,11 +105,11 @@ if (accountName.length > 25) {
 }
 teamName.textContent = accountName;
 
-// Add click event to copy URL
 teamName.addEventListener('click', function(event) {
   event.preventDefault();  // Prevent the default action
 
-  const urlToCopy = `https://www.lax.ink/logos/?hideSearch=true&teamName=${encodeURIComponent(accountName)}`;
+  const shortAccountName = accountName.slice(0, 15);  // Only take the first 15 characters
+  const urlToCopy = `https://www.lax.ink/logos/?hideSearch=true&teamName=${encodeURIComponent(shortAccountName)}`;
 
   // Use the Clipboard API to copy the text
   navigator.clipboard.writeText(urlToCopy).then(() => {
