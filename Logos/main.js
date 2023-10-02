@@ -1,6 +1,7 @@
 // Global variables for pagination
 let currentPage = 1;
 const itemsPerPage = 8; // 5x2 grid
+let currentDisplayedLogos = []; 
 
 // Function to handle pagination
 function paginateItems(logos) {
