@@ -1,6 +1,5 @@
 body {
     font-family: Helvetica, sans-serif, sans-serif;
-    background-color:#efefef !important;
   }
   
   .container {
@@ -111,7 +110,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #fefefe;
   }
 
   .container .svg-placeholder{
