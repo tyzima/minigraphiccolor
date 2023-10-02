@@ -55,6 +55,7 @@ function initApp(logos) {
     logoCard.classList.add('logo-card');
     logoCard.classList.add('hidden');  // Add the 'hidden' class here
 // Display Team Name
+
 const teamName = document.createElement('a');  // Change 'p' to 'a'
 teamName.style.fontSize = '10px';
 let accountName = logo['Account Name'];
