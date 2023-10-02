@@ -51,6 +51,12 @@ body {
   position:relative;
   top:-12px;
  }
+
+ .container .clickable{
+  visibility:hidden;
+ }
+ 
+ 
  
  /* Printing methods */
  #printing-methods{
