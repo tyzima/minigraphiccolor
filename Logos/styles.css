@@ -290,8 +290,8 @@ body {
     #color-picker{
       justify-content:space-between;
       flex-wrap:wrap;
-      padding-left:15px;
-      padding-right:15px;
+      padding-left:0px;
+      padding-right:0px;
       padding-top:16px;
       margin-top:-2px;
       line-height:18.9px;

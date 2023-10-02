@@ -153,7 +153,7 @@ function initColorPicker() {
     "#85DFFF", "#79a3dc", "#6aaae4", "#004a98", "#002DAD", "#003595",
     "#12284c", "#532e7d", "#222223", "#9ea1a2", "#85714D", "#ffffff",
     "#333F48", "#373a36", "#6E6259", "#F1E6B2", "#4c372b", "#F99FC9",
-    "#E31C79", "#cc5599", "#e3e829", "#005d70"
+    "#E31C79", "#cc5599", "#005d70"
   ];
 
   allowedColors.forEach(hexCode => {
