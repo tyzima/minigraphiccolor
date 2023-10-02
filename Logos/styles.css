@@ -21,19 +21,30 @@ body {
     justify-content: center;
     margin-top: 20px;
   }
-  
   #pagination-controls button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    border: none;
-    background-color: #f2f2f2;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  #pagination-controls button:hover {
-    background-color: #ddd;
-  }
+    background-color: #dfdfdf;  /* Background color */
+    color: white;  /* Text color */
+    padding: 12px 24px;  /* Padding around text */
+    font-size: 16px;  /* Font size */
+    border: none;  /* Remove border */
+    border-radius: 15px;  /* Rounded corners */
+    cursor: pointer;  /* Cursor style */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* Drop shadow */
+    transition: background-color 0.3s ease;  /* Transition effect */
+    display: flex;  /* Flex layout to align icon and text */
+    align-items: center;  /* Align items vertically */
+}
+
+#pagination-controls button i.material-icons {
+    vertical-align: middle;  /* Align icon vertically */
+    margin-right: 8px;  /* Margin between icon and text */
+}
+
+#pagination-controls button:hover {
+    background-color: #003350;  /* Background color on hover */
+    color: #ffffff;
+}
+
   
   
   #logo-grid .logo-card .logo-id{
