@@ -275,7 +275,7 @@ body {
   /* Hide elements you don't want to print */
 
   .logo-container {
-    height: 338px;
+    height: 238px;
     page-break-after: always;
   }
 
