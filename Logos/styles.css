@@ -75,6 +75,10 @@ body {
     background-clip:text;
    }
    
+   #logo-grid .logo-card{
+    min-height:300px;
+   }
+   
    /* Paragraph */
    #logo-grid .logo-card p{
     text-align:center;
