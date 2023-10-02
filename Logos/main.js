@@ -49,9 +49,9 @@ function initApp(logos) {
     // Display VariationOf
     if (logo.VariationOf) {
       const variationOf = document.createElement('p');
+      variationOf.style.fontSize = '10px';
+      variationOf.style.color = 'black';
       variationOf.textContent = `Variation of: ${logo.VariationOf}`;
-      variationOf.fontSize = '8px';
-      variationOf.color = 'lightgrey';
       logoCard.appendChild(variationOf);
     }
 
