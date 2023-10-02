@@ -56,14 +56,6 @@ function initApp(logos) {
       variationOf.textContent = `Variation of: ${logo.VariationOf}`;
       logoCard.appendChild(variationOf);
     }
-    
-
-    // Display Team Name
-    const teamName = document.createElement('p');
-    teamName.style.fontSize = '12px';
-    teamName.textContent = `${logo['Account Name']}`;
-    logoCard.appendChild(teamName);
-
    
 
     // Display Logo
@@ -71,6 +63,14 @@ function initApp(logos) {
     logoImg.src = logo.PNG;
     logoImg.style.maxWidth = '300px';
     logoCard.appendChild(logoImg);
+
+
+    // Display Team Name
+    const teamName = document.createElement('p');
+    teamName.style.fontSize = '12px';
+    teamName.textContent = `${logo['Account Name']}`;
+    logoCard.appendChild(teamName);
+
 
     // Display Color Helper
     const colorHelper = document.createElement('div');
