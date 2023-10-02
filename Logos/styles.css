@@ -231,13 +231,13 @@ body {
   
   @media (min-width: 1024px) {
     .logo-card {
-      width: calc(20% - 20px);
+      width: calc(20% - 10px);
     }
   }
   
   /* 2xN grid for mobile */
   @media (max-width: 768px) {
     .logo-card {
-      width: calc(30%);
+      width: calc(45%);
     }
   }
