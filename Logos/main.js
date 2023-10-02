@@ -116,29 +116,31 @@ fetch('./Logos.JSON')
 // Initialize the color picker with allowed background colors
 initColorPicker();
 
+
 // Search Functionality
 const searchBox = document.getElementById('search-box');
 
 searchBox.addEventListener('input', (e) => {
   const query = e.target.value.toLowerCase();
-  const logoCards = document.querySelectorAll('.logo-card');
 
-  logoCards.forEach(card => {
-    const teamName = card.querySelector('p').textContent.toLowerCase();
-    const description = card.querySelector('img').alt.toLowerCase();
-    const logoID = card.querySelector('.logo-id').textContent;
+  // Filter all logos based on the search query
+  const filteredLogos = allLogos.filter(logo => {
+    const teamName = logo['Account Name'].toLowerCase();
+    const description = logo.Description.toLowerCase();
+    const logoID = String(logo['Logo ID']);
 
-    if (
+    return (
       teamName.includes(query) ||
       description.includes(query) ||
       logoID.includes(query)
-    ) {
-      card.style.display = 'block';
-    } else {
-      card.style.display = 'none';
-    }
+    );
   });
+
+  // Reset to the first page and re-initiate the display and pagination
+  currentPage = 1;
+  initApp(filteredLogos);
 });
+
 
 // Handle pagination
 document.getElementById('prev-page').addEventListener('click', () => {
