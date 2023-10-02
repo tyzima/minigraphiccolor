@@ -46,14 +46,17 @@ function initApp(logos) {
     logoID.className = 'logo-id';
     logoCard.appendChild(logoID);
 
-    // Display VariationOf
     if (logo.VariationOf) {
       const variationOf = document.createElement('p');
       variationOf.style.fontSize = '10px';
       variationOf.style.color = 'black';
+      variationOf.style.backgroundColor = 'lightgrey';
+      variationOf.style.padding = '5px 10px';  // Padding for the pill shape
+      variationOf.style.borderRadius = '15px';  // Rounded corners
       variationOf.textContent = `Variation of: ${logo.VariationOf}`;
       logoCard.appendChild(variationOf);
     }
+    
 
     // Display Team Name
     const teamName = document.createElement('p');
