@@ -44,6 +44,21 @@ body {
     justify-content: center;
   }
 
+  .container .svg-placeholder{
+    width:100% !important;
+    height:61px;
+   }
+   
+   /* Svg */
+   #a{
+    position:relative;
+    top:4px;
+    left:30% !important;
+    transform:scale(0.69);
+   }
+   
+   
+
   #search-box {
     width: 100%;
     padding: 12px 20px;
@@ -55,6 +70,14 @@ body {
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
   }
+
+  /* CSS */
+.svg-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
   
   #search-box:focus {
     outline: none;
