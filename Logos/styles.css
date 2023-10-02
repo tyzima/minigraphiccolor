@@ -52,12 +52,12 @@ body {
     opacity: 0;  /* Initial opacity */
     transition: opacity 0.3s ease;  /* Transition effect */
     pointer-events: none;  /* No pointer events */
-    box-shadow: 0px 0px 15px #12adeb;  /* Glow effect */
+    box-shadow: 0px 0px 25px #12adeb;  /* Glow effect */
     border-radius: 50%;  /* Rounded corners */
 }
 
 #pagination-controls button:hover i.material-icons {
-    color: white;  /* Text color on hover */
+    color: rgb(20, 49, 92);  /* Text color on hover */
 }
 
 #pagination-controls button:hover::before {
