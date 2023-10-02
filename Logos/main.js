@@ -78,14 +78,19 @@ function initApp(logos) {
 
     if (logo.VariationOf) {
       const variationOf = document.createElement('p');
+      variationOf.style.position = 'absolute';  // Position it absolutely
+      variationOf.style.bottom = '0';  // Align it to the bottom
+      variationOf.style.left = '0';  // Align it to the left
+      variationOf.style.right = '0';  // Stretch it to the right
       variationOf.style.fontSize = '12px';
       variationOf.style.color = 'black';
       variationOf.style.backgroundColor = 'lightgrey';
-      variationOf.style.padding = '5px 10px';  // Padding for the pill shape
-      variationOf.style.borderRadius = '15px';  // Rounded corners
+      variationOf.style.padding = '5px 10px';
+      variationOf.style.borderRadius = '0 0 15px 15px';  // Rounded corners only at the bottom
       variationOf.textContent = `Variation of: ${logo.VariationOf}`;
       logoCard.appendChild(variationOf);
     }
+    
    
     const logoImg = document.createElement('img');
 
