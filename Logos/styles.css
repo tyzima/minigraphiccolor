@@ -69,9 +69,14 @@ body {
 #color-picker{
     display:flex;
     align-items:center;
-    justify-content:center;
+    justify-content:space-around;
     flex-wrap:wrap;
+    padding-top:15px;
+    padding-bottom:23px;
    }
+
+   
+   
    
   
    .logo-card {
