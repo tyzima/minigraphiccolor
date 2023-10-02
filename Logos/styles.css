@@ -270,33 +270,27 @@ body {
   }
 
 
-  @media print {
-    /* Hide elements you don't want to print */
-    body * {
-      visibility: hidden;
-    }
-  
-    /* Show the logo grid and its children */
-    #logo-grid, #logo-grid * {
-      visibility: visible;
-    }
-  
-    /* Set the logo grid to start from the top left corner */
-    #logo-grid {
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-  
-    /* Control how many logos per page */
-    .logo-card {
-      page-break-inside: avoid;
-      break-inside: avoid;
-      break-after: auto;
-    }
-  
-    /* Add a page break after every 8th logo */
-    .logo-card:nth-of-type(8n) {
-      break-after: always;
-    }
+  /* Print styles */
+@media print {
+  /* Hide elements you don't want to print */
+  body * {
+    visibility: hidden;
   }
+
+  /* Show the logo grid and its children */
+  #logo-grid, #logo-grid * {
+    visibility: visible;
+  }
+
+  /* Set the logo grid to start from the top left corner */
+  #logo-grid {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  /* Add a page break after each logo container */
+  .logo-container {
+    page-break-after: always;
+  }
+}
