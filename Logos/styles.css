@@ -132,11 +132,13 @@ body {
    /* Image */
   
    
-   /* Image */
-   .container #logo-grid .logo-card img{
-    width:100% !important;
-   }
-   
+
+   #logo-grid .logo-card img {
+    max-width: 100%;
+    max-height: 220px; /* or whatever height you want */
+    object-fit: contain;
+    margin: auto;
+  }
 
 
   #logo-grid {
