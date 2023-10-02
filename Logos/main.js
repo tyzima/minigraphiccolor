@@ -62,7 +62,7 @@ function initApp(logos) {
     editColorsBtn.target = '_blank';
     logoCard.appendChild(editColorsBtn);
 
-    
+
     // Display Description
     const desc = document.createElement('p');
     desc.style.fontSize = '9px';
@@ -95,14 +95,30 @@ function initApp(logos) {
     logoCard.appendChild(logoImg);
 
 
-   // Display Team Name
-const teamName = document.createElement('p');
+// Display Team Name
+const teamName = document.createElement('a');  // Change 'p' to 'a'
 teamName.style.fontSize = '10px';
+teamName.href = '#';  // Add this line
 let accountName = logo['Account Name'];
 if (accountName.length > 25) {
   accountName = accountName.slice(0, 22) + '...';  // Slice to 22 characters and add ellipsis
 }
 teamName.textContent = accountName;
+
+// Add click event to copy URL
+teamName.addEventListener('click', function(event) {
+  event.preventDefault();  // Prevent the default action
+
+  const urlToCopy = `https://www.lax.ink/logos/?hideSearch=true&teamName=${encodeURIComponent(accountName)}`;
+
+  // Use the Clipboard API to copy the text
+  navigator.clipboard.writeText(urlToCopy).then(() => {
+    alert('URL copied to clipboard');
+  }).catch(err => {
+    console.error('Could not copy text: ', err);
+  });
+});
+
 logoCard.appendChild(teamName);
 
 
