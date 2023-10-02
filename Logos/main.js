@@ -35,7 +35,7 @@ function initApp(logos) {
 
     // Display Description
     const desc = document.createElement('p');
-    desc.style.fontSize = '8px';
+    desc.style.fontSize = '9px';
     desc.style.color = 'lightgrey';
     desc.textContent = logo.Description.toUpperCase();
     logoCard.appendChild(desc);
@@ -48,7 +48,7 @@ function initApp(logos) {
 
     if (logo.VariationOf) {
       const variationOf = document.createElement('p');
-      variationOf.style.fontSize = '10px';
+      variationOf.style.fontSize = '12px';
       variationOf.style.color = 'black';
       variationOf.style.backgroundColor = 'lightgrey';
       variationOf.style.padding = '5px 10px';  // Padding for the pill shape
@@ -65,11 +65,16 @@ function initApp(logos) {
     logoCard.appendChild(logoImg);
 
 
-    // Display Team Name
-    const teamName = document.createElement('p');
-    teamName.style.fontSize = '12px';
-    teamName.textContent = `${logo['Account Name']}`;
-    logoCard.appendChild(teamName);
+   // Display Team Name
+const teamName = document.createElement('p');
+teamName.style.fontSize = '10px';
+let accountName = logo['Account Name'];
+if (accountName.length > 25) {
+  accountName = accountName.slice(0, 22) + '...';  // Slice to 22 characters and add ellipsis
+}
+teamName.textContent = accountName;
+logoCard.appendChild(teamName);
+
 
 
     // Display Color Helper
