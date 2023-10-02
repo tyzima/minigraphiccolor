@@ -25,12 +25,13 @@ function initApp(logos) {
     logoCard.classList.add('logo-card');
     logoCard.classList.add('hidden');  // Add the 'hidden' class here
 
-
-    // Display Logo
-    const logoImg = document.createElement('img');
-    logoImg.src = logo.PNG;
-    logoImg.style.maxWidth = '300px';
-    logoCard.appendChild(logoImg);
+ // Display Edit Colors Button
+ const editColorsBtn = document.createElement('a');
+ editColorsBtn.innerHTML = '<i class="material-icons">palette</i> Edit Colors';
+ editColorsBtn.href = logo.LaxInkEditor;
+ editColorsBtn.target = '_blank';
+ logoCard.appendChild(editColorsBtn);
+    
 
     // Display Description
     const desc = document.createElement('p');
@@ -60,12 +61,13 @@ function initApp(logos) {
     teamName.textContent = `${logo['Account Name']}`;
     logoCard.appendChild(teamName);
 
-    // Display Edit Colors Button
-    const editColorsBtn = document.createElement('a');
-    editColorsBtn.innerHTML = '<i class="material-icons">palette</i> Edit Colors';
-    editColorsBtn.href = logo.LaxInkEditor;
-    editColorsBtn.target = '_blank';
-    logoCard.appendChild(editColorsBtn);
+   
+
+    // Display Logo
+    const logoImg = document.createElement('img');
+    logoImg.src = logo.PNG;
+    logoImg.style.maxWidth = '300px';
+    logoCard.appendChild(logoImg);
 
     // Display Color Helper
     const colorHelper = document.createElement('div');
