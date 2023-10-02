@@ -87,11 +87,11 @@ function initApp(logos) {
       logoCard.appendChild(variationOf);
     }
    
-
     const logoImg = document.createElement('img');
 
     // Modify the SVG URL to PNG URL
-    let pngUrl = logo.PNG.replace('/SVG.', '/b_none/').replace('.svg', '.png');
+    let parts = logo.PNG.split('/');
+    let pngUrl = `https://res.cloudinary.com/laxdotcom/image/upload/b_none/${parts[6]}/${parts[7].replace('.svg', '.png')}`;
 
     logoImg.src = pngUrl;
     logoImg.style.maxWidth = '300px';
