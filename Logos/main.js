@@ -136,6 +136,8 @@ initColorPicker();
 
 
 
+
+
 // Search Functionality
 const searchBox = document.getElementById('search-box');
 
@@ -184,6 +186,11 @@ searchBox.addEventListener('input', (e) => {
 });
 
 
+document.addEventListener('contextmenu', function(event) {
+  if (event.target.tagName === 'SVG') {
+    event.preventDefault();
+  }
+});
 
 document.getElementById('prev-page').addEventListener('click', () => {
   if (currentPage > 1) {
