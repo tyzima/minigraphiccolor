@@ -293,6 +293,8 @@ body {
 
   /* Add a page break after each logo container */
   .logo-container {
+    height: 338px; /* Adjust this value if needed */
     page-break-after: always;
+    overflow: hidden; /* Hide overflowing content */
   }
 }
