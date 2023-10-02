@@ -123,19 +123,29 @@ initColorPicker();
 
 
 // Search Functionality
+// Search Functionality
 const searchBox = document.getElementById('search-box');
 
 searchBox.addEventListener('input', (e) => {
   const query = e.target.value.toLowerCase();
-  console.log(`Searching for: ${query}`);  // Debugging line
-  
-  const filteredLogos = allLogos.filter(logo => {
-    const teamName = logo['Account Name'].toLowerCase();
-    return teamName.includes(query);
-  });
-  
+  const logoCards = document.querySelectorAll('.logo-card');
 
-  console.log(`Found ${filteredLogos.length} matching logos.`);  // Debugging line
+  logoCards.forEach(card => {
+    const teamName = card.querySelectorAll('p')[1].textContent.toLowerCase(); // Assuming the Team Name is the second <p> element
+    const description = card.querySelector('img').alt.toLowerCase();
+    const logoID = card.querySelector('.logo-id').textContent;
+
+    if (
+      teamName.includes(query) ||
+      description.includes(query) ||
+      logoID.includes(query)
+    ) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
   
   // Reset to the first page and re-render the grid
   currentPage = 1;
