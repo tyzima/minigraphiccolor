@@ -13,7 +13,6 @@ document.body.style.backgroundColor = "#f2f2f2";
 
 // Initialize the app
 function initApp(logos) {
-  logoCard.classList.add('hidden');
   // Clear existing cards
   const logoGrid = document.getElementById('logo-grid');
   logoGrid.innerHTML = '';
@@ -23,6 +22,8 @@ function initApp(logos) {
   paginatedLogos.forEach(logo => {
     const logoCard = document.createElement('div');
     logoCard.classList.add('logo-card');
+    logoCard.classList.add('hidden');  // Add the 'hidden' class here
+
 
     // Display Logo
     const logoImg = document.createElement('img');
