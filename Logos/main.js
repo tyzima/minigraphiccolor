@@ -107,7 +107,7 @@ logoCard.appendChild(logoID);
     logoCards.forEach(card => {
       const teamName = card.querySelector('p').textContent.toLowerCase();
       const description = card.querySelector('img').alt.toLowerCase();
-      const logoID = card.querySelector('div').textContent.split(': ')[1];
+      const logoID = card.querySelector('.logo-id').textContent;  // Updated this line
   
       if (
         teamName.includes(query) ||

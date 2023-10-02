@@ -16,11 +16,34 @@ body {
     margin-bottom: 20px;
   }
   
+  .logo-card { display: none; }
+
   #logo-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  #search-box {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  #search-box:focus {
+    outline: none;
+  }
+  
+  #search-box:hover {
+    box-shadow: 0px 4px 12px rgba(0, 0, 255, 0.2);
+  }
+  
 
   /* Color picker */
 #color-picker{
@@ -31,13 +54,15 @@ body {
    }
    
   
-  .logo-card {
-    width: calc(33.333% - 20px);
+   .logo-card {
+    position: relative;  /* Add this line */
+    width: calc(20% - 20px);  /* Changed for 5x2 grid */
     padding: 10px;
     margin: 10px;
     border-radius: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+  
 
   .logo-id {
     position: absolute;
@@ -48,16 +73,16 @@ body {
     border-radius: 50%;
   }
   
-  /* Responsive */
+  
+  @media (min-width: 1024px) {
+    .logo-card {
+      width: calc(20% - 20px);
+    }
+  }
+  
+  /* 2xN grid for mobile */
   @media (max-width: 768px) {
     .logo-card {
       width: calc(50% - 20px);
     }
   }
-  
-  @media (max-width: 480px) {
-    .logo-card {
-      width: calc(100% - 20px);
-    }
-  }
-  
