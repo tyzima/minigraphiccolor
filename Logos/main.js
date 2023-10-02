@@ -40,19 +40,6 @@ function initApp(logos) {
   const logoGrid = document.getElementById('logo-grid');
   logoGrid.innerHTML = '';
 
-  let logoContainer = null;
-
-  logos.forEach((logo, index) => {
-    // Create a new container for every 8 logos
-    if (index % 8 === 0) {
-      logoContainer = document.createElement('div');
-      logoContainer.classList.add('logo-container');
-      logoGrid.appendChild(logoContainer);
-    }
-
-    const logoCard = document.createElement('div');
-    logoCard.classList.add('logo-card');
-
   const paginatedLogos = paginateItems(logos);
   
   paginatedLogos.forEach(logo => {
