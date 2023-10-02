@@ -297,4 +297,15 @@ body {
     page-break-after: always;
     overflow: hidden; /* Hide overflowing content */
   }
+
+  #color-picker {
+    display: none;
+    visibility: hidden;
+  }
+  
+  #logo-grid .logo-card a {
+    display: none;
+    visibility: hidden;
+  }
+  
 }
