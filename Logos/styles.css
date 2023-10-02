@@ -240,4 +240,29 @@ body {
     .logo-card {
       width: calc(40%);
     }
+
+    /* Logo grid */
+ #logo-grid{
+    transform:translatex(0px) translatey(0px);
+   }
+   
+   /* Logo card */
+   #logo-grid .logo-card{
+    margin-left:5px;
+    margin-right:5px;
+    transform:translatex(0px) translatey(0px);
+   }
+   
+   /* Color picker */
+   #color-picker{
+    justify-content:space-between;
+    flex-wrap:wrap;
+   }
+   
+   /* Link */
+   #logo-grid .logo-card a{
+    padding-top:10px;
+    margin-top:27px;
+   }
+
   }
