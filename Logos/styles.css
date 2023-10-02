@@ -2,6 +2,44 @@ body {
     font-family: Helvetica, sans-serif, sans-serif;
   }
   
+
+
+  /* Print styles */
+@media print {
+  /* Hide elements you don't want to print */
+
+  /* Show the logo grid and its children */
+  #logo-grid, #logo-grid * {
+    visibility: visible;
+  }
+
+  /* Set the logo grid to start from the top left corner */
+  #logo-grid {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  /* Add a page break after each logo container */
+  .logo-container {
+    height: 238px !important;/* Adjust this value if needed */
+    page-break-after: always;
+    overflow: hidden; /* Hide overflowing content */
+  }
+
+  #color-picker {
+    display: none;
+    visibility: hidden;
+  }
+  
+  #logo-grid .logo-card a {
+    display: none;
+    visibility: hidden;
+  }
+
+}
+
+
   .container {
     max-width: 1200px;
     margin: auto;
@@ -237,7 +275,7 @@ body {
     #logo-grid .logo-card{
       min-height:300px;
      }
-     
+
   }
   
   /* 2xN grid for mobile */
@@ -272,43 +310,3 @@ body {
 
   }
 
-
-  /* Print styles */
-@media print {
-  /* Hide elements you don't want to print */
-
-  .logo-container {
-    max-height: 238px !important;
-    page-break-after: always;
-  }
-
-  /* Show the logo grid and its children */
-  #logo-grid, #logo-grid * {
-    visibility: visible;
-  }
-
-  /* Set the logo grid to start from the top left corner */
-  #logo-grid {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
-  /* Add a page break after each logo container */
-  .logo-container {
-    max-height: 238px !important;/* Adjust this value if needed */
-    page-break-after: always;
-    overflow: hidden; /* Hide overflowing content */
-  }
-
-  #color-picker {
-    display: none;
-    visibility: hidden;
-  }
-  
-  #logo-grid .logo-card a {
-    display: none;
-    visibility: hidden;
-  }
-
-}
