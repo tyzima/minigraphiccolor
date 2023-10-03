@@ -64,15 +64,15 @@ function populateDropdown(logosData) {
       img.src = logo['PNG'];
       img.onload = async function() {
         const aspectRatio = img.width / img.height;
-        const fixedHeight = 50;
-        const calculatedWidth = fixedHeight * aspectRatio;
+        const fixedWidth = 50;
+        const calculatedHeight = fixedWidth / aspectRatio;
         
         const imgBlob = await fetch(logo['PNG']).then(r => r.blob());
         const reader = new FileReader();
         reader.readAsDataURL(imgBlob);
         reader.onloadend = function() {
           const base64data = reader.result;
-          pdf.addImage(base64data, 'PNG', x, y, calculatedWidth, fixedHeight);
+          pdf.addImage(base64data, 'PNG', x, y, fixedWidth, calculatedHeight);
           
           if (i === selectedLogos.length - 1) {
             pdf.save(`${teamName}.pdf`);
