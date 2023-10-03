@@ -1069,11 +1069,12 @@ a:link {
  
  /* List */
  #item-default-color ul{
-  transform: translatex(272px) translatey(137px);
+  transform:translatex(279px) translatey(148px);
   z-index:539;
   position:fixed;
   left:-161px;
   width:263px;
+  padding-top:21px;
  }
  
  /* Item color list */
@@ -1107,7 +1108,7 @@ a:link {
   position:relative;
   left:-103px;
   margin-left:5px;
-  width:146px;
+  width:134px;
  }
  
  /* Reset button */
@@ -1128,12 +1129,17 @@ a:link {
  /* Svg */
  #artboard svg{
   display:inline-block;
-  transform:translatex(-36px) translatey(0px);
+  transform:translatex(-24px) translatey(0px);
  }
  
  /* Svg */
  .svg-editor .display-image #image #artboard svg{
   width:108% !important;
+ }
+ 
+ /* Download */
+ .display-image .dispaly-bottom-menu .download{
+  color:#ffffff;
  }
  
 }
@@ -1324,7 +1330,6 @@ a:link {
 <div class="dispaly-bottom-menu">
 <input id="uploadNewSVG" type="file"/>
 <div class="download">
-<div>Download</div>
 <a id="download-avg-link"><button id="download-svg" style="background: linear-gradient(135deg, #607595, #274468);">New SVG</button><button id="download-png" style="background: linear-gradient(135deg, #607595, #274468);">PNG</button></a>
 </div>
 </div>
