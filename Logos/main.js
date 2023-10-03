@@ -345,7 +345,7 @@ const firstSelectedCard = selectedCards[0];
   ctx.fillStyle = 'white';
 
   let x = 50;
-  let y = 150; // Initialize y coordinate
+  let y = 100; // Initialize y coordinate
 
   for (const [index, card] of selectedCards.entries()) {
     const logoID = card.querySelector('.logo-id').textContent;
