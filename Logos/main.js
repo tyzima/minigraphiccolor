@@ -387,11 +387,11 @@ ctx.fillText(`LOGO BOOK (${formattedDate})`, 20, 60);
 
     const pillWidth = 80;
   const pillHeight = 40;
-  const pillX = x + 50;  // Adjust these values as needed
+  const pillX = x + 55;  // Adjust these values as needed
   const pillY = y + 220;
   const radius = 10;  // Radius for the rounded corners
   
-  ctx.fillStyle = 'lightgrey';
+  ctx.fillStyle = '#fefefe';
   ctx.beginPath();
   ctx.moveTo(pillX, pillY);
   ctx.lineTo(pillX + pillWidth, pillY);
