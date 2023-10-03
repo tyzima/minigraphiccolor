@@ -308,7 +308,7 @@ document.getElementById('next-page').addEventListener('click', () => {
   }
 });
 
-document.getElementById('exportToJpg').addEventListener('click', function() {
+document.getElementById('exportToJpg').addEventListener('click', async function() {
   const selectedCards = document.querySelectorAll('.logo-card.selected');
   if (selectedCards.length === 0) {
     alert('No cards selected.');
@@ -328,26 +328,39 @@ document.getElementById('exportToJpg').addEventListener('click', function() {
   // Set text color to white
   ctx.fillStyle = 'white';
 
+  let x = 50;
   let y = 50; // Initialize y coordinate
 
-  selectedCards.forEach((card, index) => {
+  for (const [index, card] of selectedCards.entries()) {
     const logoID = card.querySelector('.logo-id').textContent;
     const accountName = card.querySelector('a').textContent;
     const description = card.querySelector('p').textContent;
+    const logoImg = card.querySelector('img');
+    
+    // Draw the image
+    const img = new Image();
+    img.src = logoImg.src;
+    await new Promise((resolve) => img.onload = resolve);
+    ctx.drawImage(img, x, y, 200, 200);
 
     // Add Logo ID
     ctx.font = '16px Arial';
-    ctx.fillText(`Logo ID: ${logoID}`, 10, y);
+    ctx.fillText(`Logo ID: ${logoID}`, x, y + 220);
 
     // Add Account Name
     ctx.font = '12px Arial';
-    ctx.fillText(`Account Name: ${accountName}`, 10, y + 30);
+    ctx.fillText(`Account Name: ${accountName}`, x, y + 240);
 
     // Add Description
-    ctx.fillText(`Description: ${description}`, 10, y + 50);
+    ctx.fillText(`Description: ${description}`, x, y + 260);
 
-    y += 100; // Move y coordinate down for the next card
-  });
+    // Update x and y coordinates
+    x += 250;
+    if ((index + 1) % 3 === 0) {
+      x = 50;
+      y += 300;
+    }
+  }
 
   // Convert canvas to JPEG and download
   const imgData = canvas.toDataURL('image/jpeg');
