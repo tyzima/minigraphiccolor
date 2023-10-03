@@ -28,10 +28,6 @@ if (teamNameParam) {
   searchBox.dispatchEvent(event);
 }
 
-if (favlogos) {
-  allLogos = allLogos.filter(logo => logo.Favorite === favlogos);
-}
-
 
 // Function to handle pagination
 function paginateItems(logos) {
@@ -277,9 +273,6 @@ searchBox.addEventListener('input', (e) => {
       return bLogoID - aLogoID;
     });
     
-    if (favlogos) {
-      filteredAndSortedLogos = filteredAndSortedLogos.filter(logo => logo.Favorite === favlogos);
-    }
   
   // Reset to the first page and re-render the grid
   currentPage = 1;
