@@ -187,7 +187,7 @@ img.onload = async function() {
     logoWidth = containerHeight * aspectRatio;
   }
   
-  const centerX = x + 5 + (containerWidth - logoWidth) / 2;  // 10 is the left padding
+  const centerX = x + 4.5 + (containerWidth - logoWidth) / 2;  // 10 is the left padding
   const centerY = y - 4 + (containerHeight - logoHeight) / 2;  // 10 is the top padding
   
   const imgBlob = await fetch(logo['PNG']).then(r => r.blob());
