@@ -391,7 +391,7 @@ ctx.fillText(`LOGO BOOK (${formattedDate})`, 20, 60);
   const pillY = y + 220;
   const radius = 10;  // Radius for the rounded corners
   
-  ctx.fillStyle = 'grey';
+  ctx.fillStyle = 'lightgrey';
   ctx.beginPath();
   ctx.moveTo(pillX, pillY);
   ctx.lineTo(pillX + pillWidth, pillY);
