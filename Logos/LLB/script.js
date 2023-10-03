@@ -1,3 +1,4 @@
+
 // Fetch logos data from '../logos.json'
 fetch('../logos.json')
   .then(response => response.json())
@@ -7,6 +8,7 @@ fetch('../logos.json')
 function populateDropdown(logosData) {
   const dropdown = document.getElementById('logoDropdown');
   const selectedLogosDiv = document.getElementById('selectedLogos');
+  const savePDFButton = document.getElementById('savePDF');
   const choices = new Choices(dropdown, {
     removeItemButton: true,
     duplicateItemsAllowed: false,
@@ -31,7 +33,10 @@ function populateDropdown(logosData) {
   });
 
   // Save PDF
-  document.getElementById('savePDF').addEventListener('click', async function() {
+  savePDFButton.addEventListener('click', async function() {
+    savePDFButton.disabled = true; // Disable the button to prevent multiple clicks
+    savePDFButton.textContent = "Generating PDF..."; // Show loading text
+
     const selectedIndices = choices.getValue(true).map(value => parseInt(value));
     const selectedLogos = selectedIndices.map(index => logosData[index]);
     const teamName = document.getElementById('teamName').value.toUpperCase();
@@ -42,6 +47,7 @@ function populateDropdown(logosData) {
     
     pdf.setFontSize(22);
     pdf.text(teamName, 10, 10);
+    
     
     const imagePromises = selectedLogos.map((logo, i) => {
       return new Promise(async (resolve) => {
@@ -91,5 +97,8 @@ function populateDropdown(logosData) {
     
     await Promise.all(imagePromises);
     pdf.save(`${teamName}.pdf`);
+
+    savePDFButton.disabled = false; // Re-enable the button
+    savePDFButton.textContent = "Save PDF"; // Reset button text
   });
 }
