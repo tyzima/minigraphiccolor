@@ -171,24 +171,34 @@ function populateDropdown(logosData) {
         
         // Fetch the image and add it to the PDF
         const img = new Image();
-        img.src = logo['PNG'];
-        img.onload = async function() {
-          const aspectRatio = img.width / img.height;
-          const fixedWidth = 50;
-          const calculatedHeight = fixedWidth / aspectRatio;
-          
-          const centerX = x + (fixedWidth - fixedWidth) / 2;  // fixedWidth is used here for centerX calculation
-          const centerY = y + (54 - calculatedHeight) / 2;  // 54 is the height of the container
-          
-          const imgBlob = await fetch(logo['PNG']).then(r => r.blob());
-          const reader = new FileReader();
-          reader.readAsDataURL(imgBlob);
-          reader.onloadend = function() {
-            const base64data = reader.result;
-            pdf.addImage(base64data, 'PNG', centerX, centerY, fixedWidth, calculatedHeight);
-            resolve();
-          };
-        };
+img.src = logo['PNG'];
+img.onload = async function() {
+  const aspectRatio = img.width / img.height;
+  const containerWidth = 54 - 10; // 54 is the width of the grey box, 20 is the total padding (10px on each side)
+  const containerHeight = 54 - 10; // 54 is the height of the grey box, 20 is the total padding (10px on each side)
+  
+  let logoWidth, logoHeight;
+
+  if (aspectRatio > 1) {
+    logoWidth = containerWidth;
+    logoHeight = containerWidth / aspectRatio;
+  } else {
+    logoHeight = containerHeight;
+    logoWidth = containerHeight * aspectRatio;
+  }
+  
+  const centerX = x + 5 + (containerWidth - logoWidth) / 2;  // 10 is the left padding
+  const centerY = y + 5 + (containerHeight - logoHeight) / 2;  // 10 is the top padding
+  
+  const imgBlob = await fetch(logo['PNG']).then(r => r.blob());
+  const reader = new FileReader();
+  reader.readAsDataURL(imgBlob);
+  reader.onloadend = function() {
+    const base64data = reader.result;
+    pdf.addImage(base64data, 'PNG', centerX, centerY, logoWidth, logoHeight);
+    resolve();
+  };
+};
 
 
 
