@@ -346,7 +346,8 @@ body {
     visibility:visible;
     flex:0 1 auto;
     padding-bottom:0px;
-    height:150px;
+    min-height: 150px;
+    max-height:150px;
     box-shadow:none;
     border: #525050;
     border-width: 1px;
