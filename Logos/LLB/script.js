@@ -9,17 +9,6 @@ function populateDropdown(logosData) {
   const choices = new Choices(dropdown, {
     removeItemButton: true,
     duplicateItemsAllowed: false,
-    callbackOnCreateTemplates: function(template) {
-      return {
-        item: (data) => {
-          return template(`
-            <div class="choices__item" data-item data-id="${data.id}" data-value="${data.value}" aria-selected="true">
-              ${data.label} <img src="${logosData[data.value].PNG}" width="50" height="50">
-            </div>
-          `);
-        },
-      };
-    },
   });
 
   const logoChoices = logosData.map((logo, index) => ({
@@ -66,21 +55,13 @@ function populateDropdown(logosData) {
       reader.readAsDataURL(img);
       reader.onloadend = function() {
         const base64data = reader.result;
-        const img = new Image();
-        img.src = base64data;
-        img.onload = function() {
-          const aspectRatio = img.width / img.height;
-          const imgWidth = 50;
-          const imgHeight = imgWidth / aspectRatio;
-          pdf.addImage(base64data, 'PNG', x, y, imgWidth, imgHeight);
-          
-          if (i === selectedLogos.length - 1) {
-            pdf.save(`${teamName}.pdf`);
-          }
-        };
+        pdf.addImage(base64data, 'PNG', x, y, 50, 50);
+        
+        if (i === selectedLogos.length - 1) {
+          pdf.save(`${teamName}.pdf`);
+        }
       };
     }
   });
 }
-
 
