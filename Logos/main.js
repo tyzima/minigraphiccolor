@@ -329,10 +329,6 @@ document.getElementById('exportToJpg').addEventListener('click', async function(
   ctx.fillStyle = '#808080';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  const imgSVG = new Image();
-  imgSVG.crossOrigin = 'anonymous';  // Important for CORS
-  imgSVG.src = 'https://res.cloudinary.com/laxdotcom/image/upload/v1696372938/Asset_2ldcLogos_bh2swo.svg';
-  await new Promise((resolve) => imgSVG.onload = resolve);
 
   // Draw team name
   const firstSelected = selectedCards[0];
