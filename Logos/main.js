@@ -235,28 +235,30 @@ searchBox.addEventListener('input', (e) => {
       const aTeamName = a['Account Name'].toLowerCase();
       const aDescription = a['Description'].toLowerCase();
       const aLogoID = parseInt(a['Logo ID'], 10);  // Convert to integer for numerical comparison
-      const aVariationOf = a['VariationOf'];
+      const aVariationOf = a['VariationOf'] || aLogoID;  // Use Logo ID if VariationOf is not set
       
       const bTeamName = b['Account Name'].toLowerCase();
       const bDescription = b['Description'].toLowerCase();
       const bLogoID = parseInt(b['Logo ID'], 10);  // Convert to integer for numerical comparison
-      const bVariationOf = b['VariationOf'];
+      const bVariationOf = b['VariationOf'] || bLogoID;  // Use Logo ID if VariationOf is not set
     
       // Prioritize exact match for numbers
-      if (aLogoID === query && bLogoID !== query) return -1;
-      if (aLogoID !== query && bLogoID === query) return 1;
+      if (aLogoID.toString() === query && bLogoID.toString() !== query) return -1;
+      if (aLogoID.toString() !== query && bLogoID.toString() === query) return 1;
     
       // Prioritize by closeness of match for numbers
       if (aLogoID.toString().startsWith(query) && !bLogoID.toString().startsWith(query)) return -1;
       if (!aLogoID.toString().startsWith(query) && bLogoID.toString().startsWith(query)) return 1;
     
       // Group variations together
-      if (aVariationOf && bVariationOf) {
-        if (aVariationOf === bVariationOf) return bLogoID - aLogoID;  // Sort by highest Logo ID within the same variation
+      if (aVariationOf !== bVariationOf) {
         return aVariationOf - bVariationOf;
       }
-      if (aVariationOf) return aVariationOf - bLogoID;
-      if (bVariationOf) return aLogoID - bVariationOf;
+    
+      // Within the same group, sort by highest Logo ID first
+      if (aVariationOf === bVariationOf) {
+        return bLogoID - aLogoID;
+      }
     
       // Further prioritize by number, then by team name, then by description
       if (aLogoID.toString().includes(query) && !bLogoID.toString().includes(query)) return -1;
@@ -266,7 +268,7 @@ searchBox.addEventListener('input', (e) => {
       if (aDescription.includes(query) && !bDescription.includes(query)) return -1;
       if (!aDescription.includes(query) && bDescription.includes(query)) return 1;
     
-      // Sort by highest Logo ID if all else is equal
+      // Default sort by highest Logo ID if all else is equal
       return bLogoID - aLogoID;
     });
     
