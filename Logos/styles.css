@@ -4,49 +4,6 @@ body {
   
 
 
-  /* Print styles */
-@media print {
-
-  p {
-    display: none !important;
-  }
-  /* Hide elements you don't want to print */
-  .svg-placeholder {
-    display: none !important;
-  }
-
-  /* Show the logo grid and its children */
-  #logo-grid, #logo-grid * {
-    visibility: visible;
-  }
-
-  /* Set the logo grid to start from the top left corner */
-  #logo-grid {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
-  /* Add a page break after each logo container */
-  .logo-container {
-    height: 238px !important;/* Adjust this value if needed */
-    overflow: hidden; /* Hide overflowing content */
-  }
-
-  #color-picker {
-    display: none;
-    visibility: hidden;
-  }
-  
-  #logo-grid .logo-card a {
-    display: none;
-    visibility: hidden;
-  }
-
-
-  
-}
-
 
 
  
@@ -344,4 +301,48 @@ body {
    }
 
   }
+
+
+    /* Print styles */
+@media print {
+
+  p {
+    display: none !important;
+  }
+  /* Hide elements you don't want to print */
+  .svg-placeholder {
+    display: none !important;
+  }
+
+  /* Show the logo grid and its children */
+  #logo-grid, #logo-grid * {
+    visibility: visible;
+  }
+
+  /* Set the logo grid to start from the top left corner */
+  #logo-grid {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  /* Add a page break after each logo container */
+  .logo-container {
+    height: 238px !important;/* Adjust this value if needed */
+    overflow: hidden; /* Hide overflowing content */
+  }
+
+  #color-picker {
+    display: none;
+    visibility: hidden;
+  }
+  
+  #logo-grid .logo-card a {
+    display: none;
+    visibility: hidden;
+  }
+
+
+  
+}
 
