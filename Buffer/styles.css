@@ -8,8 +8,8 @@ body {
   }
   
   #password-section {
-    display: flex;
-    align-items: center;
+    flex-direction:column;
+    padding-bottom:0px;
   }
   
   #password-input {
@@ -24,13 +24,33 @@ body {
   #password-input:hover {
     box-shadow: 0 0 10px blue;
   }
-  
-  #enter-button {
+
+
+   
+   /* Enter button */
+   #enter-button{
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
     margin-left: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
+    position:relative;
+    top:21px;
+    border-top-left-radius:50px;
+    border-top-right-radius:50px;
+    border-bottom-left-radius:50px;
+    border-bottom-right-radius:50px;
+    display:inline-block;
+    transform:translatex(0px) translatey(0px) !important;
+   }
+   
+   /* Svg */
+   #a{
+    transform:scale(0.47);
+    position:relative;
+    left:4px;
+    bottom:-4px;
+    top:0px;
+   }
+   
