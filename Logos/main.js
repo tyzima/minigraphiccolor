@@ -308,18 +308,19 @@ document.getElementById('next-page').addEventListener('click', () => {
   }
 });
 
-document.getElementById('exportToPdf').addEventListener('click', function() {
-  console.log("Button clicked"); // Debug log
-
+document.getElementById('exportToJpg').addEventListener('click', function() {
   const selectedCards = document.querySelectorAll('.logo-card.selected');
-  console.log("Selected cards:", selectedCards.length); // Debug log
-
   if (selectedCards.length === 0) {
     alert('No cards selected.');
     return;
   }
 
-  const pdf = new jsPDF();
+  // Create a canvas element
+  const canvas = document.createElement('canvas');
+  canvas.width = 800; // 8 inches * 100 pixels/inch
+  canvas.height = 1100; // 11 inches * 100 pixels/inch
+  const ctx = canvas.getContext('2d');
+
   let y = 10; // Initialize y coordinate
 
   selectedCards.forEach((card, index) => {
@@ -327,23 +328,24 @@ document.getElementById('exportToPdf').addEventListener('click', function() {
     const accountName = card.querySelector('a').textContent;
     const description = card.querySelector('p').textContent;
 
-    console.log(`Card ${index + 1}:`, logoID, accountName, description); // Debug log
-
     // Add Logo ID
-    pdf.setFontSize(16);
-    pdf.setFontType('bold');
-    pdf.text(`Logo ID: ${logoID}`, 10, y);
+    ctx.font = '16px Arial';
+    ctx.fillText(`Logo ID: ${logoID}`, 10, y);
 
     // Add Account Name
-    pdf.setFontSize(12);
-    pdf.setFontType('normal');
-    pdf.text(`Account Name: ${accountName}`, 10, y + 10);
+    ctx.font = '12px Arial';
+    ctx.fillText(`Account Name: ${accountName}`, 10, y + 30);
 
     // Add Description
-    pdf.text(`Description: ${description}`, 10, y + 20);
+    ctx.fillText(`Description: ${description}`, 10, y + 50);
 
-    y += 40; // Move y coordinate down for the next card
+    y += 100; // Move y coordinate down for the next card
   });
 
-  pdf.save('selected_cards.pdf');
+  // Convert canvas to JPEG and download
+  const imgData = canvas.toDataURL('image/jpeg');
+  const link = document.createElement('a');
+  link.href = imgData;
+  link.download = 'selected_cards.jpg';
+  link.click();
 });
