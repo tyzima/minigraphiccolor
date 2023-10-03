@@ -429,6 +429,6 @@ ctx.fillText(`LOGO BOOK (${formattedDate})`, 20, 60);
   const imgData = canvas.toDataURL('image/jpeg');
   const link = document.createElement('a');
   link.href = imgData;
-  link.download = '${accountName}.jpg';
+  link.download = 'Test.jpg';
   link.click();
 });
