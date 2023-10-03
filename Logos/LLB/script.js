@@ -1,46 +1,58 @@
-document.addEventListener("DOMContentLoaded", function() {
-  fetch("../logos.json")
-    .then(response => response.json())
-    .then(data => {
-      const logoSelect = document.getElementById("logo-select");
+// Fetch logos data from '../logos.json'
+fetch('../logos.json')
+  .then(response => response.json())
+  .then(data => populateDropdown(data));
 
-      // Sort logos by VariationOf and Logo ID
-      data.sort((a, b) => (a.VariationOf || a["Logo ID"]) - (b.VariationOf || b["Logo ID"]));
+// Populate dropdown
+function populateDropdown(logosData) {
+  const dropdown = document.getElementById('logoDropdown');
+  logosData.forEach((logo, index) => {
+    const option = document.createElement('option');
+    option.value = index;
+    option.text = `${logo['Logo ID']} - ${logo.Description}`;
+    dropdown.add(option);
+  });
 
-      data.forEach(logo => {
-        // Populate dropdown
-        const option = document.createElement("option");
-        option.value = logo["Logo ID"];
-        option.textContent = `${logo.Description} (${logo["Logo ID"]})`;
-        logoSelect.appendChild(option);
-      });
-
-      // PDF generation
-      document.getElementById("generate-pdf").addEventListener("click", () => {
-        const { jsPDF } = window.jspdf;
-        const pdf = new jsPDF();
-        const selectedLogos = Array.from(logoSelect.selectedOptions).map(option => option.value);
-
-        let x = 10;
-        let y = 10;
-        let count = 0;
-
-        selectedLogos.forEach(id => {
-          const selectedLogo = data.find(logo => logo["Logo ID"] === parseInt(id));
-          pdf.text(`Logo ID: ${selectedLogo["Logo ID"]}`, x, y);
-          y += 30;  // Move down for the next logo
-          count++;
-
-          if (count >= 9) {
-            pdf.addPage();
-            x = 10;
-            y = 10;
-            count = 0;
-          }
-        });
-
-        pdf.save("logos.pdf");
-      });
-    })
-    .catch(error => console.error("Error fetching logos:", error));
-});
+  // Save PDF
+  document.getElementById('savePDF').addEventListener('click', async function() {
+    const selectedLogos = Array.from(dropdown.selectedOptions).map(option => logosData[option.value]);
+    const teamName = document.getElementById('teamName').value.toUpperCase();
+    
+    // Create PDF
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF();
+    
+    pdf.setFontSize(22);
+    pdf.text(teamName, 10, 10);
+    
+    // Add logos to PDF
+    for (let i = 0; i < selectedLogos.length; i++) {
+      const logo = selectedLogos[i];
+      const pageIndex = Math.floor(i / 9);
+      const x = 20 + (i % 3) * 60;
+      const y = 40 + (Math.floor(i / 3) % 3) * 60;
+      
+      if (i % 9 === 0 && i !== 0) {
+        pdf.addPage();
+        pdf.setFontSize(22);
+        pdf.text(teamName, 10, 10);
+      }
+      
+      pdf.setFontSize(12);
+      pdf.text(`${logo['Logo ID']}`, x, y - 10);
+      
+      // Fetch the image and add it to the PDF
+      const img = await fetch(logo['PNG']).then(r => r.blob());
+      const reader = new FileReader();
+      reader.readAsDataURL(img);
+      reader.onloadend = function() {
+        const base64data = reader.result;
+        pdf.addImage(base64data, 'PNG', x, y, 50, 50);
+        
+        if (i === selectedLogos.length - 1) {
+          pdf.save(`${teamName}.pdf`);
+        }
+      };
+    }
+  });
+}
