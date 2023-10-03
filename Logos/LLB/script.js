@@ -60,19 +60,25 @@ function populateDropdown(logosData) {
       pdf.text(`${logo['Logo ID']}`, x, y - 10);
       
       // Fetch the image and add it to the PDF
-      const img = await fetch(logo['PNG']).then(r => r.blob());
-      const reader = new FileReader();
-      reader.readAsDataURL(img);
-      reader.onloadend = function() {
-        const base64data = reader.result;
-        pdf.addImage(base64data, 'PNG', x, y, 50, 50, '', 'FAST');
+      const img = new Image();
+      img.src = logo['PNG'];
+      img.onload = async function() {
+        const aspectRatio = img.width / img.height;
+        const fixedHeight = 50;
+        const calculatedWidth = fixedHeight * aspectRatio;
         
-        if (i === selectedLogos.length - 1) {
-          pdf.save(`${teamName}.pdf`);
-        }
+        const imgBlob = await fetch(logo['PNG']).then(r => r.blob());
+        const reader = new FileReader();
+        reader.readAsDataURL(imgBlob);
+        reader.onloadend = function() {
+          const base64data = reader.result;
+          pdf.addImage(base64data, 'PNG', x, y, calculatedWidth, fixedHeight);
+          
+          if (i === selectedLogos.length - 1) {
+            pdf.save(`${teamName}.pdf`);
+          }
+        };
       };
     }
   });
 }
-
-
