@@ -257,7 +257,12 @@ body {
     border: 2px solid transparent; /* Transparent border */
   }
 
-  
+  #exportToJpg i{
+    width:20px;
+    padding-left:2px;
+   }
+   
+   
 
   .logo-id {
     position:static;
