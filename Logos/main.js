@@ -393,8 +393,6 @@ ctx.fillText(`LOGO BOOK (${formattedDate})`, 20, 60);
     ctx.font = '12px Arial';
     ctx.fillText(`Account Name: ${accountName}`, x, y + 240);
 
-    // Add Description
-    ctx.fillText(`Description: ${description}`, x, y + 260);
 
     // Update x and y coordinates
     x += 250;
