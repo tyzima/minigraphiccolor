@@ -334,8 +334,6 @@ headerImg.src = 'BannerLogo.svg';
 await new Promise((resolve) => headerImg.onload = resolve);
 
 
-const yPos = canvas.height - scaledHeight;
-
 ctx.drawImage(headerImg, 0, 0, canvas.width, headerImg.height * (canvas.width / headerImg.width));
 
   // Set text color to white
