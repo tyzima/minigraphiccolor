@@ -389,6 +389,6 @@ document.getElementById('exportToJpg').addEventListener('click', async function(
   const imgData = canvas.toDataURL('image/jpeg');
   const link = document.createElement('a');
   link.href = imgData;
-  link.download = 'selected_cards.jpg';
+  link.download = '${accountName}.jpg';
   link.click();
 });
