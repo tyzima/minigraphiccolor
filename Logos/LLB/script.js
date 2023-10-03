@@ -13,8 +13,11 @@ function populateDropdown(logosData) {
     dropdown.add(option);
   });
 
-  // Enable multiple selection
-  dropdown.setAttribute('multiple', '');
+  // Custom multiple selection logic
+  dropdown.addEventListener('click', function(event) {
+    event.target.selected = !event.target.selected;
+    return false;
+  });
 
   // Save PDF
   document.getElementById('savePDF').addEventListener('click', async function() {
@@ -59,3 +62,4 @@ function populateDropdown(logosData) {
     }
   });
 }
+
