@@ -6,6 +6,7 @@ fetch('../logos.json')
 // Populate dropdown
 function populateDropdown(logosData) {
   const dropdown = document.getElementById('logoDropdown');
+  const selectedLogosDiv = document.getElementById('selectedLogos');
   const choices = new Choices(dropdown, {
     removeItemButton: true,
     duplicateItemsAllowed: false,
@@ -19,6 +20,15 @@ function populateDropdown(logosData) {
   }));
 
   choices.setChoices(logoChoices, 'value', 'label', false);
+
+  // Update selected logos display
+  dropdown.addEventListener('choice', function(event) {
+    const logo = logosData[event.detail.choice.value];
+    const img = document.createElement('img');
+    img.src = logo['PNG'];
+    img.height = 50;
+    selectedLogosDiv.appendChild(img);
+  });
 
   // Save PDF
   document.getElementById('savePDF').addEventListener('click', async function() {
@@ -55,7 +65,7 @@ function populateDropdown(logosData) {
       reader.readAsDataURL(img);
       reader.onloadend = function() {
         const base64data = reader.result;
-        pdf.addImage(base64data, 'PNG', x, y, 50, 50);
+        pdf.addImage(base64data, 'PNG', x, y, 50, 50, '', 'FAST');
         
         if (i === selectedLogos.length - 1) {
           pdf.save(`${teamName}.pdf`);
@@ -64,4 +74,5 @@ function populateDropdown(logosData) {
     }
   });
 }
+
 
