@@ -385,8 +385,8 @@ ctx.fillText(`LOGO BOOK (${formattedDate})`, 20, 60);
     // Draw the image proportionally and centered
     ctx.drawImage(img, x + xOffset, y + yOffset, newWidth, newHeight);
 
-    const pillWidth = 50;
-  const pillHeight = 20;
+    const pillWidth = 80;
+  const pillHeight = 40;
   const pillX = x + 80;  // Adjust these values as needed
   const pillY = y + 220;
   const radius = 10;  // Radius for the rounded corners
