@@ -2,19 +2,12 @@ document.addEventListener("DOMContentLoaded", function() {
   fetch("../logos.json")
     .then(response => response.json())
     .then(data => {
-      const logoContainer = document.getElementById("logo-container");
       const logoSelect = document.getElementById("logo-select");
 
-      data.forEach(logo => {
-        // Populate logo cards
-        const logoCard = document.createElement("div");
-        logoCard.className = "logo-card";
-        const logoImage = document.createElement("img");
-        logoImage.className = "logo-image";
-        logoImage.src = logo.PNG;
-        logoCard.appendChild(logoImage);
-        logoContainer.appendChild(logoCard);
+      // Sort logos by VariationOf and Logo ID
+      data.sort((a, b) => (a.VariationOf || a["Logo ID"]) - (b.VariationOf || b["Logo ID"]));
 
+      data.forEach(logo => {
         // Populate dropdown
         const option = document.createElement("option");
         option.value = logo["Logo ID"];
@@ -28,11 +21,22 @@ document.addEventListener("DOMContentLoaded", function() {
         const pdf = new jsPDF();
         const selectedLogos = Array.from(logoSelect.selectedOptions).map(option => option.value);
 
+        let x = 10;
         let y = 10;
+        let count = 0;
+
         selectedLogos.forEach(id => {
           const selectedLogo = data.find(logo => logo["Logo ID"] === parseInt(id));
-          pdf.text(`Logo ID: ${selectedLogo["Logo ID"]}`, 10, y);
-          y += 20;  // Move down for the next logo
+          pdf.text(`Logo ID: ${selectedLogo["Logo ID"]}`, x, y);
+          y += 30;  // Move down for the next logo
+          count++;
+
+          if (count >= 9) {
+            pdf.addPage();
+            x = 10;
+            y = 10;
+            count = 0;
+          }
         });
 
         pdf.save("logos.pdf");
