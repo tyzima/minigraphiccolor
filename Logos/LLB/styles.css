@@ -26,11 +26,11 @@
     width:100%;
     border-style:none;
    }
-   
+
    .choices__list--dropdown, .choices__list[aria-expanded] {
     background-color: rgba(255, 255, 255, 0.5); /* 50% white background */
     backdrop-filter: blur(10px); /* Apply blur */
-    border: none; /* No border */
+    border: none !important; /* No border */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Slight drop shadow */
   }
   
