@@ -132,7 +132,7 @@ function populateDropdown(logosData) {
   // Save PDF
   savePDFButton.addEventListener('click', async function() {
     savePDFButton.disabled = true; // Disable the button to prevent multiple clicks
-    savePDFButton.textContent = "Generating PDF..."; // Show loading text
+    savePDFButton.textContent = "Generating..."; // Show loading text
 
     const selectedIndices = choices.getValue(true).map(value => parseInt(value));
     const selectedLogos = selectedIndices.map(index => logosData[index]);
@@ -166,7 +166,7 @@ function populateDropdown(logosData) {
 pdf.setFillColor(255, 255, 255); // white
 pdf.roundedRect(x, y - 10, 20, 10, 5, 5, 'F'); // Moved down by 10px (from y - 20 to y - 10)
         
-pdf.setFontSize(15);
+pdf.setFontSize(17);
 pdf.text(`${logo['Logo ID']}`, x + 5, y - 2); // Moved down by 10px (from y - 12 to y - 2)
 
         // Fetch the image and add it to the PDF
@@ -188,7 +188,7 @@ img.onload = async function() {
   }
   
   const centerX = x + 5 + (containerWidth - logoWidth) / 2;  // 10 is the left padding
-  const centerY = y - 3 + (containerHeight - logoHeight) / 2;  // 10 is the top padding
+  const centerY = y - 1 + (containerHeight - logoHeight) / 2;  // 10 is the top padding
   
   const imgBlob = await fetch(logo['PNG']).then(r => r.blob());
   const reader = new FileReader();
