@@ -315,7 +315,7 @@ document.getElementById('exportToPdf').addEventListener('click', function() {
     return;
   }
 
-  const pdf = new jsPDF();
+  const pdf = new jsPDF.jsPDF();
   let y = 10; // Initialize y coordinate
 
   selectedCards.forEach((card, index) => {
