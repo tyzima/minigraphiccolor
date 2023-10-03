@@ -42,7 +42,7 @@
     border-color:#bdc3c7;
    }
    
-   .choices {
+   .choices__list .choices__list--dropdown {
     visibility: hidden;
   }
   
