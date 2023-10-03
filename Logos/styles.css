@@ -127,6 +127,9 @@ body {
     background-color:#000000;
     color:transparent;
     background-clip:text;
+    top:261px;
+    position:absolute;
+    left:84px;
    }
    
    
@@ -271,8 +274,8 @@ body {
 
   .logo-id {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top:261px;
+    left:84px;
     background-color: white;
     padding: 5px;
     border-radius: 50%;
