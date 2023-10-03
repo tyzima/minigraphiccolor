@@ -28,16 +28,6 @@ if (teamNameParam) {
 }
 
 
-console.log("bgColorParam:", bgColorParam);  // Debug log
-if (bgColorParam) {
-  document.body.style.backgroundColor = decodeURIComponent(bgColorParam);
-  selectedBackgroundColor = decodeURIComponent(bgColorParam);  // Update the selected background color
-  console.log("Background color set to:", decodeURIComponent(bgColorParam));  // Debug log
-} else {
-  document.body.style.backgroundColor = selectedBackgroundColor;  // Use the default or previously selected color
-  console.log("Using default background color:", selectedBackgroundColor);  // Debug log
-}
-
 
 
 // Function to handle pagination
