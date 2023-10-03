@@ -95,11 +95,6 @@ logoCard.appendChild(teamName);
     desc.textContent = logo.Description.toUpperCase();
     logoCard.appendChild(desc);
 
-    // Display Logo ID
-    const logoID = document.createElement('div');
-    logoID.textContent = logo['Logo ID'];
-    logoID.className = 'logo-id';
-    logoCard.appendChild(logoID);
 
     if (logo.VariationOf) {
       const variationOf = document.createElement('p');
@@ -136,7 +131,13 @@ if (hideSearch !== 'true') {
 }
 
 
+  // Display Logo ID
+  const logoID = document.createElement('div');
+  logoID.textContent = logo['Logo ID'];
+  logoID.className = 'logo-id';
+  logoCard.appendChild(logoID);
 
+  
 
     // Display Color Helper
     const colorHelper = document.createElement('div');
