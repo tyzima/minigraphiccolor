@@ -10,6 +10,7 @@ body {
   #password-section {
     flex-direction:column;
     padding-bottom:0px;
+    display:inline-flex;
   }
   
   #password-input {
