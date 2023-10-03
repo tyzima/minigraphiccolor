@@ -6,16 +6,15 @@ fetch('../logos.json')
 // Populate dropdown
 function populateDropdown(logosData) {
   const dropdown = document.getElementById('logoDropdown');
-  const choices = new Choices(dropdown, {
-    removeItemButton: true,
-    duplicateItemsAllowed: false,
+  logosData.forEach((logo, index) => {
+    const option = document.createElement('option');
+    option.value = index;
+    option.text = `${logo['Logo ID']} - ${logo.Description}`;
+    dropdown.add(option);
   });
 
-  logosData.forEach((logo, index) => {
-    choices.setChoices([
-      { value: index, label: `${logo['Logo ID']} - ${logo.Description}`, selected: false, disabled: false },
-    ], 'value', 'label', true);
-  });
+  // Enable multiple selection
+  dropdown.setAttribute('multiple', '');
 
   // Save PDF
   document.getElementById('savePDF').addEventListener('click', async function() {
