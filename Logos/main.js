@@ -407,10 +407,8 @@ ctx.fillText(`LOGO BOOK (${formattedDate})`, 20, 60);
     ctx.font = '16px Arial';
     ctx.fillStyle = 'black';
     ctx.fillText(logoID, pillX + 15, pillY + 15); 
-    
-    // Add Account Name
-    ctx.font = '12px Arial';
-    ctx.fillText(`Account Name: ${accountName}`, x, y + 240);
+
+
 
 
     // Update x and y coordinates
