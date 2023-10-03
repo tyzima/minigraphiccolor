@@ -6,7 +6,14 @@ body {
 
   /* Print styles */
 @media print {
+
+  p {
+    display: none !important;
+  }
   /* Hide elements you don't want to print */
+  .svg-placeholder {
+    display: none !important;
+  }
 
   /* Show the logo grid and its children */
   #logo-grid, #logo-grid * {
@@ -23,7 +30,6 @@ body {
   /* Add a page break after each logo container */
   .logo-container {
     height: 238px !important;/* Adjust this value if needed */
-    page-break-after: always;
     overflow: hidden; /* Hide overflowing content */
   }
 
