@@ -123,7 +123,11 @@ body {
   margin-top:3px;
   padding-bottom:0px;
   padding-top:13px;
+  margin-left:-36px;
+  margin-right:-12px;
  }
+
+ 
  
  
  
@@ -411,6 +415,8 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
 }
+
+
 
 .color-card {
   border-radius: 12px;

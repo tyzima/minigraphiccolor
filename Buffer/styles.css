@@ -20,7 +20,7 @@ body {
   }
   
   #password-input:hover {
-    box-shadow: 0 0 10px blue;
+    box-shadow: 0 0 10px rgb(41, 151, 255);
   }
   
   #enter-button {
