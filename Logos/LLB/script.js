@@ -170,8 +170,7 @@ function populateDropdown(logosData) {
         pdf.setFontSize(15);
         pdf.text(`${logo['Logo ID']}`, x + 5, y - 12);
 
-        const textWidth = pdf.getTextWidth(`${logo['Logo ID']}`);
-const centeredX = x + (20 - textWidth) / 2;
+
 
 pdf.text(`${logo['Logo ID']}`, centeredX, y - 12 + 15); // y - 12 + 15 to move the text down by 15px
         
