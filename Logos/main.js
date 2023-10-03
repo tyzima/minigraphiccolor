@@ -385,10 +385,29 @@ ctx.fillText(`LOGO BOOK (${formattedDate})`, 20, 60);
     // Draw the image proportionally and centered
     ctx.drawImage(img, x + xOffset, y + yOffset, newWidth, newHeight);
 
-    // Add Logo ID
+    const pillWidth = 50;
+    const pillHeight = 20;
+    const pillX = x + 80;  // Adjust these values as needed
+    const pillY = y + 220;
+    ctx.fillStyle = 'grey';
+    ctx.beginPath();
+    ctx.moveTo(pillX, pillY);
+    ctx.lineTo(pillX + pillWidth, pillY);
+    ctx.quadraticCurveTo(pillX + pillWidth + 10, pillY, pillX + pillWidth + 10, pillY + pillHeight / 2);
+    ctx.lineTo(pillX + pillWidth + 10, pillY + pillHeight / 2 + pillHeight / 2);
+    ctx.quadraticCurveTo(pillX + pillWidth + 10, pillY + pillHeight, pillX + pillWidth, pillY + pillHeight);
+    ctx.lineTo(pillX, pillY + pillHeight);
+    ctx.quadraticCurveTo(pillX - 10, pillY + pillHeight, pillX - 10, pillY + pillHeight / 2);
+    ctx.lineTo(pillX - 10, pillY + pillHeight / 2 - pillHeight / 2);
+    ctx.quadraticCurveTo(pillX - 10, pillY, pillX, pillY);
+    ctx.closePath();
+    ctx.fill();
+  
+    // Add Logo ID text
     ctx.font = '16px Arial';
-    ctx.fillText(`Logo ID: ${logoID}`, x, y + 220);
-
+    ctx.fillStyle = 'black';
+    ctx.fillText(logoID, pillX + 15, pillY + 15); 
+    
     // Add Account Name
     ctx.font = '12px Arial';
     ctx.fillText(`Account Name: ${accountName}`, x, y + 240);
