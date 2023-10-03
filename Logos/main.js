@@ -2,6 +2,8 @@
 let currentPage = 1;
 const itemsPerPage = 80; // 5x2 grid
 let currentDisplayedLogos = []; 
+let selectedBackgroundColor = "#f4f4f4";  // Default background color
+
 
 const urlParams = new URLSearchParams(window.location.search);
 const hideSearch = urlParams.get('hideSearch');
@@ -62,7 +64,7 @@ let accountName = logo['Account Name'];
 const shortAccountName = accountName.slice(0, 15);  // Only take the first 15 characters
 
 // Prepare the URL
-const urlToNavigate = `https://www.lax.ink/logos/?hideSearch=true&teamName=${encodeURIComponent(shortAccountName)}`;
+const urlToNavigate = `https://www.lax.ink/logos/?hideSearch=true&teamName=${encodeURIComponent(shortAccountName)}&bgColor=${encodeURIComponent(selectedBackgroundColor)}`;
 
 // Update the href attribute to navigate to the page
 teamName.href = urlToNavigate;
@@ -167,7 +169,9 @@ function initColorPicker() {
     colorSwatch.style.backgroundColor = hexCode;
     colorSwatch.addEventListener('click', () => {
       document.body.style.backgroundColor = hexCode;
+      selectedBackgroundColor = hexCode;  
     });
+    
 
     colorPicker.appendChild(colorSwatch);
   });
@@ -196,6 +200,16 @@ fetch('./Logos.JSON')
         'bubbles': true,
         'cancelable': true
       });
+
+      const bgColorParam = urlParams.get('bgColor');
+
+if (bgColorParam) {
+  document.body.style.backgroundColor = decodeURIComponent(bgColorParam);
+  selectedBackgroundColor = decodeURIComponent(bgColorParam);  // Update the selected background color
+} else {
+  document.body.style.backgroundColor = selectedBackgroundColor;  // Use the default or previously selected color
+}
+
       searchBox.dispatchEvent(event);
     }
   });
