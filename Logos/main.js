@@ -8,7 +8,7 @@ let selectedBackgroundColor = "#f4f4f4";  // Default background color
 const urlParams = new URLSearchParams(window.location.search);
 const hideSearch = urlParams.get('hideSearch');
 const teamNameParam = urlParams.get('teamName');
-const bgColorParam = urlParams.get('bgColor');
+
 
 // Hide the search bar if the URL parameter is present
 if (hideSearch === 'true') {
@@ -172,11 +172,6 @@ function initColorPicker() {
     "#E31C79", "#cc5599", "#005d70"
   ];
 
-// Initialize the color picker with allowed background colors
-function initColorPicker() {
-  const colorPicker = document.getElementById('color-picker');
-  const allowedColors = [ /* ... */ ];
-
   allowedColors.forEach(hexCode => {
     const colorSwatch = document.createElement('div');
     colorSwatch.style.width = '20px';
@@ -187,6 +182,8 @@ function initColorPicker() {
       document.body.style.backgroundColor = hexCode;
       selectedBackgroundColor = hexCode;  
     });
+    
+
     colorPicker.appendChild(colorSwatch);
   });
 }
