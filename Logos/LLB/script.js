@@ -164,10 +164,16 @@ function populateDropdown(logosData) {
         
         // Draw pill-shaped container for Logo ID
         pdf.setFillColor(255, 255, 255); // white
-        pdf.roundedRect(x, y - 20, 20, 10, 5, 5, 'F');
+        pdf.roundedRect(x, y - 5, 20, 10, 5, 5, 'F');
         
+        pdf.setFontType('bold');
         pdf.setFontSize(15);
         pdf.text(`${logo['Logo ID']}`, x + 5, y - 12);
+
+        const textWidth = pdf.getTextWidth(`${logo['Logo ID']}`);
+const centeredX = x + (20 - textWidth) / 2;
+
+pdf.text(`${logo['Logo ID']}`, centeredX, y - 12 + 15); // y - 12 + 15 to move the text down by 15px
         
         // Fetch the image and add it to the PDF
         const img = new Image();
