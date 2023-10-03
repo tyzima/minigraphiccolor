@@ -339,6 +339,7 @@ document.getElementById('exportToJpg').addEventListener('click', async function(
     
     // Draw the image
     const img = new Image();
+    img.crossOrigin = 'anonymous';  // Add this line
     img.src = logoImg.src;
     await new Promise((resolve) => img.onload = resolve);
     ctx.drawImage(img, x, y, 200, 200);
