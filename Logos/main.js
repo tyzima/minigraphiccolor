@@ -217,7 +217,6 @@ initColorPicker();
 
 
 
-
 // Search Functionality
 const searchBox = document.getElementById('search-box');
 
@@ -235,35 +234,48 @@ searchBox.addEventListener('input', (e) => {
     .sort((a, b) => {
       const aTeamName = a['Account Name'].toLowerCase();
       const aDescription = a['Description'].toLowerCase();
-      const aLogoID = a['Logo ID'].toString();
+      const aLogoID = parseInt(a['Logo ID'], 10);  // Convert to integer for numerical comparison
+      const aVariationOf = a['VariationOf'];
       
       const bTeamName = b['Account Name'].toLowerCase();
       const bDescription = b['Description'].toLowerCase();
-      const bLogoID = b['Logo ID'].toString();
-
+      const bLogoID = parseInt(b['Logo ID'], 10);  // Convert to integer for numerical comparison
+      const bVariationOf = b['VariationOf'];
+    
       // Prioritize exact match for numbers
       if (aLogoID === query && bLogoID !== query) return -1;
       if (aLogoID !== query && bLogoID === query) return 1;
-
+    
       // Prioritize by closeness of match for numbers
-      if (aLogoID.startsWith(query) && !bLogoID.startsWith(query)) return -1;
-      if (!aLogoID.startsWith(query) && bLogoID.startsWith(query)) return 1;
-
+      if (aLogoID.toString().startsWith(query) && !bLogoID.toString().startsWith(query)) return -1;
+      if (!aLogoID.toString().startsWith(query) && bLogoID.toString().startsWith(query)) return 1;
+    
+      // Group variations together
+      if (aVariationOf && bVariationOf) {
+        if (aVariationOf === bVariationOf) return bLogoID - aLogoID;  // Sort by highest Logo ID within the same variation
+        return aVariationOf - bVariationOf;
+      }
+      if (aVariationOf) return aVariationOf - bLogoID;
+      if (bVariationOf) return aLogoID - bVariationOf;
+    
       // Further prioritize by number, then by team name, then by description
-      if (aLogoID.includes(query) && !bLogoID.includes(query)) return -1;
-      if (!aLogoID.includes(query) && bLogoID.includes(query)) return 1;
+      if (aLogoID.toString().includes(query) && !bLogoID.toString().includes(query)) return -1;
+      if (!aLogoID.toString().includes(query) && bLogoID.toString().includes(query)) return 1;
       if (aTeamName.includes(query) && !bTeamName.includes(query)) return -1;
       if (!aTeamName.includes(query) && bTeamName.includes(query)) return 1;
       if (aDescription.includes(query) && !bDescription.includes(query)) return -1;
       if (!aDescription.includes(query) && bDescription.includes(query)) return 1;
-
-      return 0;
+    
+      // Sort by highest Logo ID if all else is equal
+      return bLogoID - aLogoID;
     });
+    
   
   // Reset to the first page and re-render the grid
   currentPage = 1;
   initApp(filteredAndSortedLogos);
 });
+
 
 
 document.getElementById('printButton').addEventListener('click', () => {
