@@ -164,9 +164,9 @@ function populateDropdown(logosData) {
         
         // Draw pill-shaped container for Logo ID
         pdf.setFillColor(255, 255, 255); // white
-        pdf.roundedRect(x, y - 20, 15, 10, 5, 5, 'F');
+        pdf.roundedRect(x, y - 20, 20, 10, 5, 5, 'F');
         
-        pdf.setFontSize(12);
+        pdf.setFontSize(15);
         pdf.text(`${logo['Logo ID']}`, x + 5, y - 12);
         
         // Fetch the image and add it to the PDF
@@ -188,7 +188,7 @@ img.onload = async function() {
   }
   
   const centerX = x + 5 + (containerWidth - logoWidth) / 2;  // 10 is the left padding
-  const centerY = y - 0 + (containerHeight - logoHeight) / 2;  // 10 is the top padding
+  const centerY = y - 3 + (containerHeight - logoHeight) / 2;  // 10 is the top padding
   
   const imgBlob = await fetch(logo['PNG']).then(r => r.blob());
   const reader = new FileReader();
