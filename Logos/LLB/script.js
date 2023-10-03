@@ -3,7 +3,7 @@ fetch('../logos.json')
   .then(response => response.json())
   .then(data => populateDropdown(data));
 
-// Populate dropdown
+// Initialize Select2 dropdown
 function populateDropdown(logosData) {
   const dropdown = document.getElementById('logoDropdown');
   logosData.forEach((logo, index) => {
@@ -13,9 +13,12 @@ function populateDropdown(logosData) {
     dropdown.add(option);
   });
 
+  // Initialize Select2
+  $('#logoDropdown').select2();
+
   // Save PDF
   document.getElementById('savePDF').addEventListener('click', async function() {
-    const selectedLogos = Array.from(dropdown.selectedOptions).map(option => logosData[option.value]);
+    const selectedLogos = $('#logoDropdown').val().map(index => logosData[index]);
     const teamName = document.getElementById('teamName').value.toUpperCase();
     
     // Create PDF
@@ -56,3 +59,4 @@ function populateDropdown(logosData) {
     }
   });
 }
+
