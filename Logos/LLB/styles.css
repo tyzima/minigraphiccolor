@@ -42,6 +42,10 @@
     border-color:#bdc3c7;
    }
    
+   .choices {
+    visibility: hidden;
+  }
+  
    /* Heading */
    .container h1{
     font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
