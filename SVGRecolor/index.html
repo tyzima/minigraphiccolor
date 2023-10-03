@@ -1044,106 +1044,163 @@ a:link {
   display: block;
 }
 
-
 @media (max-width:768px){
 
-/* Display image */
-.svg-editor .display-image{
- display:inline-block;
- transform:translatex(-136px) translatey(0px);
- width:600px;
- height:499px;
- visibility:visible;
-}
+ /* Display image */
+ .svg-editor .display-image{
+  display:inline-block;
+  transform:translatex(-136px) translatey(0px);
+  width:600px;
+  height:499px;
+  visibility:visible;
+ }
+ 
+ /* Editor */
+ .svg-editor{
+  margin-bottom:37px;
+  height:690px !important;
+ }
+ 
+ /* Edit option */
+ .svg-editor .edit-option{
+  transform:translatex(83px) translatey(167px);
+  width:319px;
+ }
+ 
+ /* Selected option */
+ .svg-editor .edit-option .selectedOption{
+  transform: translatex(138px) translatey(300px);
+  width:162%;
+  display:inline-block;
+  height:221px;
+ }
+ 
+ /* Item default color */
+ #item-default-color{
+  height:202px;
+  width:80%;
+  transform:scale(0.8) translatex(202px) translatey(-256px);
+  perspective:0px;
+  border-bottom-style:none;
+ }
+ 
+ /* Change colors */
+ .edit-option .selectedOption .change-colors{
+  border-top-color:#ffffff;
+  border-bottom-color:#ffffff;
+ }
+ 
+ /* Colors */
+ .edit-option .selectedOption .colors{
+  border-bottom-style:none;
+ }
+ 
+ /* Item color list */
+ #item-color-list{
+  padding-right:0px;
+  width:34% !important;
+  margin-bottom:3px;
+  padding-top:30px;
+ }
 
-/* Editor */
-.svg-editor{
- margin-bottom:37px;
- height:690px !important;
+ * Display image */
+ .svg-editor .display-image{
+  display:inline-block;
+  transform:translatex(-136px) translatey(0px);
+  width:600px;
+  height:499px;
+  visibility:visible;
+ }
+ 
+ /* Editor */
+ .svg-editor{
+  margin-bottom:37px;
+  height:690px !important;
+ }
+ 
+ /* Edit option */
+ .svg-editor .edit-option{
+  transform:translatex(83px) translatey(167px);
+  width:319px;
+ }
+ 
+ /* Selected option */
+ .svg-editor .edit-option .selectedOption{
+  transform: translatex(140px) translatey(300px);
+  width:162%;
+  display:inline-block;
+  height:221px;
+ }
+ 
+ /* Item default color */
+ #item-default-color{
+  width:80%;
+  transform:scale(0.8) translatex(202px) translatey(-256px);
+  perspective:0px;
+  border-bottom-style:none;
+  padding-bottom:2px;
+  min-height:205px;
+  padding-top:16px;
+ }
+ 
+ /* Change colors */
+ .edit-option .selectedOption .change-colors{
+  border-top-color:#ffffff;
+  border-bottom-color:#ffffff;
+ }
+ 
+ /* Colors */
+ .edit-option .selectedOption .colors{
+  border-bottom-style:none;
+ }
+ 
+ /* Item color list */
+ #item-color-list{
+  padding-right:0px;
+  width:65% !important;
+  margin-bottom:3px;
+  padding-top:4px;
+  min-height:67px;
+  transform:translatex(53px) translatey(51px);
+  padding-bottom:19px;
+  display:flex;
+  flex-direction:column;
+  float:left;
+ }
+ 
+ /* List */
+ #item-default-color ul{
+  transform:translatex(-16px) translatey(88px);
+  padding-right:60px;
+ }
+ 
+ /* Division */
+ .svg-editor .edit-option > div{
+  visibility:visible;
+ }
+ 
+ /* Division */
+ .selectedOption .change-colors div{
+  visibility:hidden;
+ }
+ 
+ /* Download */
+ #download-svg{
+  transform:translatex(-105px) translatey(0px);
+ }
+ 
+ /* Reset menu */
+ .display-image .display-menu .reset-menu{
+  transform:translatex(83px) translatey(0px);
+ }
+ 
+ /* Logo */
+ .logo{
+  visibility:hidden;
+ }
+ 
 }
-
-/* Edit option */
-.svg-editor .edit-option{
- transform:translatex(83px) translatey(167px);
- width:319px;
-}
-
-/* Selected option */
-.svg-editor .edit-option .selectedOption{
- transform: translatex(140px) translatey(300px);
- width:162%;
- display:inline-block;
- height:221px;
-}
-
-/* Item default color */
-#item-default-color{
- width:80%;
- transform:scale(0.8) translatex(202px) translatey(-256px);
- perspective:0px;
- border-bottom-style:none;
- padding-bottom:2px;
- min-height:205px;
- padding-top:16px;
-}
-
-/* Change colors */
-.edit-option .selectedOption .change-colors{
- border-top-color:#ffffff;
- border-bottom-color:#ffffff;
-}
-
-/* Colors */
-.edit-option .selectedOption .colors{
- border-bottom-style:none;
-}
-
-/* Item color list */
-#item-color-list{
- padding-right:0px;
- width:65% !important;
- margin-bottom:3px;
- padding-top:4px;
- min-height:67px;
- transform:translatex(53px) translatey(51px);
- padding-bottom:19px;
- display:flex;
- flex-direction:column;
- float:left;
-}
-
-/* List */
-#item-default-color ul{
- transform:translatex(-16px) translatey(88px);
- padding-right:60px;
-}
-
-/* Division */
-.svg-editor .edit-option > div{
- visibility:visible;
-}
-
-/* Division */
-.selectedOption .change-colors div{
- visibility:hidden;
-}
-
-/* Download */
-#download-svg{
- transform:translatex(-105px) translatey(0px);
-}
-
-/* Reset menu */
-.display-image .display-menu .reset-menu{
- transform:translatex(83px) translatey(0px);
-}
-
-/* Logo */
-.logo{
- visibility:hidden;
-}
-
-}
+ 
 
 </style>
 <link href="./assets/svg.png" rel="icon">
