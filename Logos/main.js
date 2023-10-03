@@ -151,13 +151,13 @@ if (hideSearch !== 'true') {
 
     logoGrid.appendChild(logoCard);
     currentDisplayedLogos = logos;
-  });
 
-// Inside your initApp function, after creating each logoCard
+  // Inside your initApp function, after creating each logoCard
 logoCard.addEventListener('click', function() {
   this.classList.toggle('selected');
 });
 
+  });
 
 }
 
@@ -288,6 +288,33 @@ searchBox.addEventListener('input', (e) => {
 
 
 
+document.getElementById('printButton').addEventListener('click', () => {
+  window.print();
+});
+
+
+
+
+document.addEventListener('contextmenu', function(event) {
+  if (event.target.tagName === 'SVG') {
+    event.preventDefault();
+  }
+});
+
+document.getElementById('prev-page').addEventListener('click', () => {
+  if (currentPage > 1) {
+    currentPage--;
+    initApp(paginateItems(currentDisplayedLogos));
+  }
+});
+
+document.getElementById('next-page').addEventListener('click', () => {
+  if (currentPage < Math.ceil(currentDisplayedLogos.length / itemsPerPage)) {
+    currentPage++;
+    initApp(paginateItems(currentDisplayedLogos));
+  }
+});
+
 document.getElementById('exportToPdf').addEventListener('click', function() {
   const selectedCards = document.querySelectorAll('.logo-card.selected');
   if (selectedCards.length === 0) {
@@ -320,26 +347,4 @@ document.getElementById('exportToPdf').addEventListener('click', function() {
   });
 
   pdf.save('selected_cards.pdf');
-});
-
-
-
-document.addEventListener('contextmenu', function(event) {
-  if (event.target.tagName === 'SVG') {
-    event.preventDefault();
-  }
-});
-
-document.getElementById('prev-page').addEventListener('click', () => {
-  if (currentPage > 1) {
-    currentPage--;
-    initApp(paginateItems(currentDisplayedLogos));
-  }
-});
-
-document.getElementById('next-page').addEventListener('click', () => {
-  if (currentPage < Math.ceil(currentDisplayedLogos.length / itemsPerPage)) {
-    currentPage++;
-    initApp(paginateItems(currentDisplayedLogos));
-  }
 });
