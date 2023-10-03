@@ -46,9 +46,11 @@ function initApp(logos) {
   const logoGrid = document.getElementById('logo-grid');
   logoGrid.innerHTML = '';
 
+  let filteredLogos = logos;
   if (favlogos) {
-    logos = logos.filter(logo => logo.Favorite === favlogos);
+    filteredLogos = logos.filter(logo => logo.Favorite === favlogos);
   }
+
 
   const paginatedLogos = paginateItems(logos);
 
@@ -281,7 +283,7 @@ searchBox.addEventListener('input', (e) => {
     if (favlogos) {
       filteredAndSortedLogos = filteredAndSortedLogos.filter(logo => logo.Favorite === favlogos);
     }
-  
+    
   // Reset to the first page and re-render the grid
   currentPage = 1;
   initApp(filteredAndSortedLogos);
