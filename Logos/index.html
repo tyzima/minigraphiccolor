@@ -5,6 +5,7 @@
   <title>LAX.INK LOGOS</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
   <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
@@ -112,8 +113,10 @@
 
     <input type="text" id="search-box" placeholder="Search by Team, Description, or Logo ID">
     <div id="color-picker">
+
       <!-- Color swatches will be generated here -->
     </div>
+    <button id="exportToPdf">Export to PDF</button>
     <div id="logo-grid">
       <!-- Logo cards will be generated here -->
      

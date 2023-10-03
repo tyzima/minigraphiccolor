@@ -152,6 +152,13 @@ if (hideSearch !== 'true') {
     logoGrid.appendChild(logoCard);
     currentDisplayedLogos = logos;
   });
+
+// Inside your initApp function, after creating each logoCard
+logoCard.addEventListener('click', function() {
+  this.classList.toggle('selected');
+});
+
+
 }
 
 // Initialize the color picker for background colors
@@ -281,10 +288,39 @@ searchBox.addEventListener('input', (e) => {
 
 
 
-document.getElementById('printButton').addEventListener('click', () => {
-  window.print();
-});
+document.getElementById('exportToPdf').addEventListener('click', function() {
+  const selectedCards = document.querySelectorAll('.logo-card.selected');
+  if (selectedCards.length === 0) {
+    alert('No cards selected.');
+    return;
+  }
 
+  const pdf = new jsPDF();
+  let y = 10; // Initialize y coordinate
+
+  selectedCards.forEach((card, index) => {
+    const logoID = card.querySelector('.logo-id').textContent;
+    const accountName = card.querySelector('a').textContent;
+    const description = card.querySelector('p').textContent;
+
+    // Add Logo ID
+    pdf.setFontSize(16);
+    pdf.setFontType('bold');
+    pdf.text(`Logo ID: ${logoID}`, 10, y);
+
+    // Add Account Name
+    pdf.setFontSize(12);
+    pdf.setFontType('normal');
+    pdf.text(`Account Name: ${accountName}`, 10, y + 10);
+
+    // Add Description
+    pdf.text(`Description: ${description}`, 10, y + 20);
+
+    y += 40; // Move y coordinate down for the next card
+  });
+
+  pdf.save('selected_cards.pdf');
+});
 
 
 
