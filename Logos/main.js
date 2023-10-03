@@ -8,6 +8,7 @@ let selectedBackgroundColor = "#f4f4f4";  // Default background color
 const urlParams = new URLSearchParams(window.location.search);
 const hideSearch = urlParams.get('hideSearch');
 const teamNameParam = urlParams.get('teamName');
+const favlogos = urlParams.get('favlogos');
 
 
 // Hide the search bar if the URL parameter is present
@@ -44,6 +45,10 @@ function initApp(logos) {
   // Clear existing cards
   const logoGrid = document.getElementById('logo-grid');
   logoGrid.innerHTML = '';
+
+  if (favlogos) {
+    logos = logos.filter(logo => logo.Favorite === favlogos);
+  }
 
   const paginatedLogos = paginateItems(logos);
 
@@ -273,6 +278,9 @@ searchBox.addEventListener('input', (e) => {
       return bLogoID - aLogoID;
     });
     
+    if (favlogos) {
+      filteredAndSortedLogos = filteredAndSortedLogos.filter(logo => logo.Favorite === favlogos);
+    }
   
   // Reset to the first page and re-render the grid
   currentPage = 1;
