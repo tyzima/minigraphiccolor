@@ -6,22 +6,24 @@ fetch('../logos.json')
 // Populate dropdown
 function populateDropdown(logosData) {
   const dropdown = document.getElementById('logoDropdown');
-  logosData.forEach((logo, index) => {
-    const option = document.createElement('option');
-    option.value = index;
-    option.text = `${logo['Logo ID']} - ${logo.Description}`;
-    dropdown.add(option);
+  const choices = new Choices(dropdown, {
+    removeItemButton: true,
+    duplicateItemsAllowed: false,
   });
 
-  // Custom multiple selection logic
-  dropdown.addEventListener('click', function(event) {
-    event.target.selected = !event.target.selected;
-    return false;
-  });
+  const logoChoices = logosData.map((logo, index) => ({
+    value: index,
+    label: `${logo['Logo ID']} - ${logo.Description}`,
+    selected: false,
+    disabled: false,
+  }));
+
+  choices.setChoices(logoChoices, 'value', 'label', false);
 
   // Save PDF
   document.getElementById('savePDF').addEventListener('click', async function() {
-    const selectedLogos = Array.from(dropdown.selectedOptions).map(option => logosData[option.value]);
+    const selectedIndices = choices.getValue(true).map(value => parseInt(value));
+    const selectedLogos = selectedIndices.map(index => logosData[index]);
     const teamName = document.getElementById('teamName').value.toUpperCase();
     
     // Create PDF
