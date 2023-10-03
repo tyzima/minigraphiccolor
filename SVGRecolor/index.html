@@ -1327,9 +1327,13 @@ a:link {
 <div class="display-menu">
 <div class="reset-menu">
 <div class="show-artboard">
-<div class="checkbox" id="artboard-checkbox">
-<span style="visibility: hidden;"> check </span>
-</div>
+  <div class="checkbox-container" id="artboard-checkbox-container">
+    <div class="checkbox" id="artboard-checkbox">
+      <span style="visibility: hidden;">check</span>
+    </div>
+    <div class="text">Dark BG</div>
+  </div>
+  
 <div>Dark BG</div>
 </div>
 <div class="reset" id="reset-button">Reset</div>
@@ -1603,6 +1607,12 @@ function onDefaultColorClick(event) {
   }
 }
 
+const state = {
+  showArtboard: false,
+};
+
+const artboardCheckbox = document.getElementById('artboard-checkbox');
+
 function onToggleArtboard(event) {
   if (state.showArtboard) {
     artboardCheckbox.childNodes[1].style.visibility = "hidden";
@@ -1612,11 +1622,13 @@ function onToggleArtboard(event) {
   } else {
     artboardCheckbox.childNodes[1].style.visibility = "visible";
     document.getElementsByClassName("artboard")[0].style.visibility = "visible";
-    document.getElementsByClassName("image")[0].style.backgroundColor =
-      "#232323";
+    document.getElementsByClassName("image")[0].style.backgroundColor = "#232323";
     state.showArtboard = true;
   }
 }
+
+// Attach the function to the click event of the container
+document.getElementById('artboard-checkbox-container').addEventListener('click', onToggleArtboard);
 
 function onResetClickHandler() {
   artboard.innerHTML = initialSVG;
