@@ -336,7 +336,7 @@ ctx.drawImage(headerImg, 0, 0, canvas.width, headerImg.height * (canvas.width / 
 
 const firstSelectedCard = selectedCards[0];
   const teamName = firstSelectedCard.querySelector('a').textContent; // Using accountName as the team name
-  ctx.font = 'bold 24px Arial';
+  ctx.font = 'bold 20px Helvetica';
   ctx.fillStyle = 'lightgrey';
   ctx.fillText(teamName.toUpperCase(), 20, 40);
 
