@@ -405,7 +405,7 @@ ctx.fillText(`LOGO BOOK (${formattedDate})`, 20, 60);
 
   // Add Logo ID text
   ctx.font = 'bold 20px Helvetica';
-  ctx.fillStyle = 'black';
+  ctx.fillStyle = '#0e2345';
   
   // Measure text width to center it
   const textWidth = ctx.measureText(logoID).width;
