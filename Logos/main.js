@@ -46,12 +46,7 @@ function initApp(logos) {
   const logoGrid = document.getElementById('logo-grid');
   logoGrid.innerHTML = '';
 
-  let filteredLogos = logos;
-  if (favlogos) {
-    filteredLogos = logos.filter(logo => logo.Favorite === favlogos);
-  }
-
-
+  
   const paginatedLogos = paginateItems(logos);
 
   let logoContainer = null; // New container for every 8 logos
@@ -283,7 +278,7 @@ searchBox.addEventListener('input', (e) => {
     if (favlogos) {
       filteredAndSortedLogos = filteredAndSortedLogos.filter(logo => logo.Favorite === favlogos);
     }
-    
+  
   // Reset to the first page and re-render the grid
   currentPage = 1;
   initApp(filteredAndSortedLogos);
