@@ -332,9 +332,14 @@ document.getElementById('exportToJpg').addEventListener('click', async function(
 const headerImg = new Image();
 headerImg.src = 'BannerLogo.svg';
 await new Promise((resolve) => headerImg.onload = resolve);
-
-
 ctx.drawImage(headerImg, 0, 0, canvas.width, headerImg.height * (canvas.width / headerImg.width));
+
+const firstSelectedCard = selectedCards[0];
+  const teamName = firstSelectedCard.querySelector('a').textContent; // Using accountName as the team name
+  ctx.font = 'bold 24px Arial';
+  ctx.fillStyle = 'lightgrey';
+  ctx.fillText(teamName.toUpperCase(), 20, 40);
+
 
   // Set text color to white
   ctx.fillStyle = 'white';
