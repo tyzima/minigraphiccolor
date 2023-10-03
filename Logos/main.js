@@ -309,7 +309,6 @@ document.getElementById('next-page').addEventListener('click', () => {
 });
 
 
-
 document.getElementById('exportToJpg').addEventListener('click', async function() {
   const selectedCards = document.querySelectorAll('.logo-card.selected');
   if (selectedCards.length === 0) {
@@ -329,62 +328,54 @@ document.getElementById('exportToJpg').addEventListener('click', async function(
   ctx.fillStyle = '#808080';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-
-  // Draw team name
-  const firstSelected = selectedCards[0];
-  const teamName = firstSelected.querySelector('.team-name').textContent;
-  ctx.fillStyle = '#D3D3D3';  // Light grey
-  ctx.font = '20px Arial';
-  ctx.fillText(teamName.toUpperCase(), 50, 60);
-
   // Set text color to white
   ctx.fillStyle = 'white';
 
   let x = 50;
-  let y = 100; // Initialize y coordinate
+  let y = 50; // Initialize y coordinate
 
   for (const [index, card] of selectedCards.entries()) {
     const logoID = card.querySelector('.logo-id').textContent;
     const accountName = card.querySelector('a').textContent;
     const description = card.querySelector('p').textContent;
     const logoImg = card.querySelector('img');
-    
+
     const img = new Image();
     img.crossOrigin = 'anonymous';
     img.src = logoImg.src;
-    
+
     await new Promise((resolve, reject) => {
       img.onload = resolve;
       img.onerror = reject;
     });
-    
+
     // Calculate aspect ratio and new dimensions
     const aspectRatio = img.width / img.height;
     let newWidth = 200;
     let newHeight = newWidth / aspectRatio;
-    
+
     if (newHeight > 200) {
       newHeight = 200;
       newWidth = newHeight * aspectRatio;
     }
-    
-    // Draw the image proportionally
-    ctx.drawImage(img, x, y, newWidth, newHeight);
 
-    // Draw Logo ID inside a white container with red writing
-    ctx.fillStyle = 'white';
-    ctx.fillRect(x, y + 220, 100, 20);
-    ctx.fillStyle = 'red';
+    // Calculate x and y offsets to center the image
+    const xOffset = (200 - newWidth) / 2;
+    const yOffset = (200 - newHeight) / 2;
+
+    // Draw the image proportionally and centered
+    ctx.drawImage(img, x + xOffset, y + yOffset, newWidth, newHeight);
+
+    // Add Logo ID
     ctx.font = '16px Arial';
-    ctx.fillText(`Logo ID: ${logoID}`, x + 5, y + 235);
+    ctx.fillText(`Logo ID: ${logoID}`, x, y + 220);
 
     // Add Account Name
-    ctx.fillStyle = 'white';
     ctx.font = '12px Arial';
-    ctx.fillText(`Account Name: ${accountName}`, x, y + 260);
+    ctx.fillText(`Account Name: ${accountName}`, x, y + 240);
 
     // Add Description
-    ctx.fillText(`Description: ${description}`, x, y + 280);
+    ctx.fillText(`Description: ${description}`, x, y + 260);
 
     // Update x and y coordinates
     x += 250;
