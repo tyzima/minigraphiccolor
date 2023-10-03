@@ -340,6 +340,12 @@ const firstSelectedCard = selectedCards[0];
   ctx.fillStyle = 'lightgrey';
   ctx.fillText(teamName.toUpperCase(), 20, 40);
 
+  // Draw 'LOGO BOOK (TODAY'S DATE)' below the team name
+const today = new Date();
+const formattedDate = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
+ctx.font = 'bold 8px Arial';
+ctx.fillText(`LOGO BOOK (${formattedDate})`, 20, 60);
+
 
   // Set text color to white
   ctx.fillStyle = 'white';
