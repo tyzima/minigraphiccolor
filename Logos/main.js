@@ -321,7 +321,14 @@ document.getElementById('exportToJpg').addEventListener('click', function() {
   canvas.height = 1100; // 11 inches * 100 pixels/inch
   const ctx = canvas.getContext('2d');
 
-  let y = 10; // Initialize y coordinate
+  // Set background color to black
+  ctx.fillStyle = 'black';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Set text color to white
+  ctx.fillStyle = 'white';
+
+  let y = 50; // Initialize y coordinate
 
   selectedCards.forEach((card, index) => {
     const logoID = card.querySelector('.logo-id').textContent;
