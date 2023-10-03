@@ -309,19 +309,25 @@ document.getElementById('next-page').addEventListener('click', () => {
 });
 
 document.getElementById('exportToPdf').addEventListener('click', function() {
+  console.log("Button clicked"); // Debug log
+
   const selectedCards = document.querySelectorAll('.logo-card.selected');
+  console.log("Selected cards:", selectedCards.length); // Debug log
+
   if (selectedCards.length === 0) {
     alert('No cards selected.');
     return;
   }
 
-  const pdf = new jsPDF.jsPDF();
+  const pdf = new jsPDF();
   let y = 10; // Initialize y coordinate
 
   selectedCards.forEach((card, index) => {
     const logoID = card.querySelector('.logo-id').textContent;
     const accountName = card.querySelector('a').textContent;
     const description = card.querySelector('p').textContent;
+
+    console.log(`Card ${index + 1}:`, logoID, accountName, description); // Debug log
 
     // Add Logo ID
     pdf.setFontSize(16);
