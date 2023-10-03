@@ -8,6 +8,7 @@ let selectedBackgroundColor = "#f4f4f4";  // Default background color
 const urlParams = new URLSearchParams(window.location.search);
 const hideSearch = urlParams.get('hideSearch');
 const teamNameParam = urlParams.get('teamName');
+const bgColorParam = urlParams.get('bgColor');
 
 // Hide the search bar if the URL parameter is present
 if (hideSearch === 'true') {
@@ -26,7 +27,7 @@ if (teamNameParam) {
   searchBox.dispatchEvent(event);
 }
 
-const bgColorParam = urlParams.get('bgColor');
+
 console.log("bgColorParam:", bgColorParam);  // Debug log
 if (bgColorParam) {
   document.body.style.backgroundColor = decodeURIComponent(bgColorParam);
