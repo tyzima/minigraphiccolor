@@ -325,7 +325,7 @@ document.getElementById('exportToJpg').addEventListener('click', async function(
   ctx.scale(scaleFactor, scaleFactor);  // Apply the scale factor
 
   // Set background color to grey
-  ctx.fillStyle = '#808080';
+  ctx.fillStyle = selectedBackgroundColor;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   // Set text color to white
