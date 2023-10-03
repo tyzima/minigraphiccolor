@@ -308,65 +308,60 @@ document.getElementById('next-page').addEventListener('click', () => {
   }
 });
 
+
 document.getElementById('exportToJpg').addEventListener('click', async function() {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = 612;  // 8.5 * 72
+  canvas.height = 792;  // 11 * 72
+
+  // Make background grey
+  ctx.fillStyle = '#808080';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
   const selectedCards = document.querySelectorAll('.logo-card.selected');
   if (selectedCards.length === 0) {
     alert('No cards selected.');
     return;
   }
 
-  // Create a canvas element
-  const canvas = document.createElement('canvas');
-  canvas.width = 800; // 8 inches * 100 pixels/inch
-  canvas.height = 1100; // 11 inches * 100 pixels/inch
-  const ctx = canvas.getContext('2d');
+  let x = 10;
+  let y = 10;
 
-  // Set background color to black
-  ctx.fillStyle = 'black';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-  // Set text color to white
-  ctx.fillStyle = 'white';
-
-  let x = 50;
-  let y = 50; // Initialize y coordinate
-
-  for (const [index, card] of selectedCards.entries()) {
-    const logoID = card.querySelector('.logo-id').textContent;
-    const accountName = card.querySelector('a').textContent;
-    const description = card.querySelector('p').textContent;
+  for (const card of selectedCards) {
     const logoImg = card.querySelector('img');
-    
-    // Draw the image
     const img = new Image();
-    img.crossOrigin = 'anonymous';  // Add this line
+    img.crossOrigin = 'anonymous';
     img.src = logoImg.src;
-    await new Promise((resolve) => img.onload = resolve);
-    ctx.drawImage(img, x, y, 200, 200);
 
-    // Add Logo ID
-    ctx.font = '16px Arial';
-    ctx.fillText(`Logo ID: ${logoID}`, x, y + 220);
+    await new Promise((resolve, reject) => {
+      img.onload = resolve;
+      img.onerror = reject;
+    });
 
-    // Add Account Name
-    ctx.font = '12px Arial';
-    ctx.fillText(`Account Name: ${accountName}`, x, y + 240);
+    // Calculate aspect ratio and new dimensions
+    const aspectRatio = img.width / img.height;
+    let newWidth = 200;
+    let newHeight = newWidth / aspectRatio;
+    if (newHeight > 200) {
+      newHeight = 200;
+      newWidth = newHeight * aspectRatio;
+    }
 
-    // Add Description
-    ctx.fillText(`Description: ${description}`, x, y + 260);
+    // Draw the image
+    ctx.drawImage(img, x, y, newWidth, newHeight);
 
-    // Update x and y coordinates
-    x += 250;
-    if ((index + 1) % 3 === 0) {
-      x = 50;
-      y += 300;
+    x += 210;  // Move x coordinate to the right for the next card
+
+    if (x > 500) {
+      x = 10;  // Reset x coordinate to the left
+      y += 210;  // Move y coordinate down for the next row
     }
   }
 
-  // Convert canvas to JPEG and download
-  const imgData = canvas.toDataURL('image/jpeg');
+  // Convert canvas to JPG and download
   const link = document.createElement('a');
-  link.href = imgData;
   link.download = 'selected_cards.jpg';
+  link.href = canvas.toDataURL('image/jpeg', 1.0);
   link.click();
 });
