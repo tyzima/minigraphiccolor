@@ -307,7 +307,6 @@ document.getElementById('next-page').addEventListener('click', () => {
     initApp(paginateItems(currentDisplayedLogos));
   }
 });
-
 document.getElementById('exportToJpg').addEventListener('click', async function() {
   const selectedCards = document.querySelectorAll('.logo-card.selected');
   if (selectedCards.length === 0) {
@@ -317,11 +316,13 @@ document.getElementById('exportToJpg').addEventListener('click', async function(
 
   // Create a canvas element
   const canvas = document.createElement('canvas');
-  canvas.width = 800; // 8 inches * 100 pixels/inch
-  canvas.height = 1100; // 11 inches * 100 pixels/inch
+  const scaleFactor = 2;  // Increase the resolution
+  canvas.width = 800 * scaleFactor;
+  canvas.height = 1100 * scaleFactor;
   const ctx = canvas.getContext('2d');
+  ctx.scale(scaleFactor, scaleFactor);  // Apply the scale factor
 
-  // Set background color to black
+  // Set background color to grey
   ctx.fillStyle = '#808080';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -336,28 +337,32 @@ document.getElementById('exportToJpg').addEventListener('click', async function(
     const accountName = card.querySelector('a').textContent;
     const description = card.querySelector('p').textContent;
     const logoImg = card.querySelector('img');
-    
+
     const img = new Image();
     img.crossOrigin = 'anonymous';
     img.src = logoImg.src;
-    
+
     await new Promise((resolve, reject) => {
       img.onload = resolve;
       img.onerror = reject;
     });
-    
+
     // Calculate aspect ratio and new dimensions
     const aspectRatio = img.width / img.height;
     let newWidth = 200;
     let newHeight = newWidth / aspectRatio;
-    
+
     if (newHeight > 200) {
       newHeight = 200;
       newWidth = newHeight * aspectRatio;
     }
-    
-    // Draw the image proportionally
-    ctx.drawImage(img, x, y, newWidth, newHeight);
+
+    // Calculate x and y offsets to center the image
+    const xOffset = (200 - newWidth) / 2;
+    const yOffset = (200 - newHeight) / 2;
+
+    // Draw the image proportionally and centered
+    ctx.drawImage(img, x + xOffset, y + yOffset, newWidth, newHeight);
 
     // Add Logo ID
     ctx.font = '16px Arial';
