@@ -37,6 +37,9 @@ function paginateItems(logos) {
   return logos.slice(startIndex, endIndex);
 }
 
+document.body.style.backgroundColor = "#f4f4f4";
+
+
 function initApp(logos) {
   // Clear existing cards
   const logoGrid = document.getElementById('logo-grid');
