@@ -24,10 +24,13 @@ body {
   }
   
   #enter-button {
-    background: url('enter-icon.png') no-repeat center;  
+    width: 50px;
     height: 50px;
     border: none;
     cursor: pointer;
     margin-left: 10px;
+    font-size: 24px;
+    border-radius: 50%;  /* Rounded button */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  /* Light shadow */
   }
   
