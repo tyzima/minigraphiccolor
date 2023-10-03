@@ -328,12 +328,11 @@ document.getElementById('exportToJpg').addEventListener('click', async function(
   ctx.fillStyle = selectedBackgroundColor;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Load and draw the SVG header
-  const headerImg = new Image();
-  headerImg.src = 'https://res.cloudinary.com/laxdotcom/image/upload/Asset_2ldcLogos_bh2swo.svg';
-  await new Promise((resolve) => headerImg.onload = resolve);
-  ctx.drawImage(headerImg, 0, 0, canvas.width, headerImg.height * (canvas.width / headerImg.width));
-
+// Load and draw the SVG header
+const headerImg = new Image();
+headerImg.src = 'BannerLogo.svg';  // Update this line to point to the local SVG file
+await new Promise((resolve) => headerImg.onload = resolve);
+ctx.drawImage(headerImg, 0, 0, canvas.width, headerImg.height * (canvas.width / headerImg.width));
 
   // Set text color to white
   ctx.fillStyle = 'white';
