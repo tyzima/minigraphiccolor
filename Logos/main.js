@@ -109,7 +109,7 @@ logoCard.appendChild(teamName);
       variationOf.style.right = '0';  // Stretch it to the right
       variationOf.style.fontSize = '12px';
       variationOf.style.color = 'black';
-      variationOf.style.backgroundColor = 'lightgrey';
+      variationOf.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';  // Background color set to 50% white
       variationOf.style.padding = '5px 10px';
       variationOf.style.borderRadius = '0 0 15px 15px';  // Rounded corners only at the bottom
       variationOf.textContent = `Variation of: ${logo.VariationOf}`;
