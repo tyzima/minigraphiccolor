@@ -288,13 +288,6 @@ searchBox.addEventListener('input', (e) => {
 
 
 
-document.getElementById('printButton').addEventListener('click', () => {
-  window.print();
-});
-
-
-
-
 document.addEventListener('contextmenu', function(event) {
   if (event.target.tagName === 'SVG') {
     event.preventDefault();
