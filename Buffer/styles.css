@@ -4,10 +4,12 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-color: #f2f2f2;
   }
   
   #password-section {
-    text-align: center;
+    display: flex;
+    align-items: center;
   }
   
   #password-input {
@@ -20,30 +22,15 @@ body {
   }
   
   #password-input:hover {
-    box-shadow: 0 0 10px rgb(41, 151, 255);
+    box-shadow: 0 0 10px blue;
   }
   
   #enter-button {
-    width: 50px;
-    height: 50px;
+    background: none;
     border: none;
     cursor: pointer;
+    padding: 0;
     margin-left: 10px;
-    font-size: 24px;
-    border-radius: 50%;  /* Rounded button */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  /* Light shadow */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
-
-  body{
-    height:553px;
-    padding-top:54px;
-   }
-   
-   /* Enter button */
-   #enter-button{
-    background-color:#2c3e50;
-    color:#ffffff;
-    font-weight:700;
-    font-family:Impact,Haettenschweiler,'Franklin Gothic Bold',Charcoal,'Helvetica Inserat','Bitstream Vera Sans Bold','Arial Black','sans serif';
-   }
   
