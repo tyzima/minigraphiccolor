@@ -28,7 +28,9 @@ if (teamNameParam) {
   searchBox.dispatchEvent(event);
 }
 
-
+if (favlogos) {
+  allLogos = allLogos.filter(logo => logo.Favorite === favlogos);
+}
 
 
 // Function to handle pagination
