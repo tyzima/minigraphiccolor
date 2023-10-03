@@ -346,8 +346,8 @@ body {
     visibility:visible;
     flex:0 1 auto;
     padding-bottom:0px;
-    max-height:86px;
-    min-height:231px;
+    max-height:80px;
+    min-height:80px;
    }
 
 
