@@ -348,6 +348,9 @@ body {
     padding-bottom:0px;
     max-height:120px;
     min-height:120px;
+    box-shadow:none;
+    border: #525050;
+    border-width: 1px;
    }
 
 
