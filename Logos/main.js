@@ -386,28 +386,34 @@ ctx.fillText(`LOGO BOOK (${formattedDate})`, 20, 60);
     ctx.drawImage(img, x + xOffset, y + yOffset, newWidth, newHeight);
 
     const pillWidth = 50;
-    const pillHeight = 20;
-    const pillX = x + 80;  // Adjust these values as needed
-    const pillY = y + 220;
-    ctx.fillStyle = 'grey';
-    ctx.beginPath();
-    ctx.moveTo(pillX, pillY);
-    ctx.lineTo(pillX + pillWidth, pillY);
-    ctx.quadraticCurveTo(pillX + pillWidth + 10, pillY, pillX + pillWidth + 10, pillY + pillHeight / 2);
-    ctx.lineTo(pillX + pillWidth + 10, pillY + pillHeight / 2 + pillHeight / 2);
-    ctx.quadraticCurveTo(pillX + pillWidth + 10, pillY + pillHeight, pillX + pillWidth, pillY + pillHeight);
-    ctx.lineTo(pillX, pillY + pillHeight);
-    ctx.quadraticCurveTo(pillX - 10, pillY + pillHeight, pillX - 10, pillY + pillHeight / 2);
-    ctx.lineTo(pillX - 10, pillY + pillHeight / 2 - pillHeight / 2);
-    ctx.quadraticCurveTo(pillX - 10, pillY, pillX, pillY);
-    ctx.closePath();
-    ctx.fill();
+  const pillHeight = 20;
+  const pillX = x + 80;  // Adjust these values as needed
+  const pillY = y + 220;
+  const radius = 10;  // Radius for the rounded corners
   
-    // Add Logo ID text
-    ctx.font = '16px Arial';
-    ctx.fillStyle = 'black';
-    ctx.fillText(logoID, pillX + 15, pillY + 15); 
+  ctx.fillStyle = 'grey';
+  ctx.beginPath();
+  ctx.moveTo(pillX, pillY);
+  ctx.lineTo(pillX + pillWidth, pillY);
+  ctx.lineTo(pillX + pillWidth, pillY + pillHeight - radius);
+  ctx.quadraticCurveTo(pillX + pillWidth, pillY + pillHeight, pillX + pillWidth - radius, pillY + pillHeight);
+  ctx.lineTo(pillX + radius, pillY + pillHeight);
+  ctx.quadraticCurveTo(pillX, pillY + pillHeight, pillX, pillY + pillHeight - radius);
+  ctx.lineTo(pillX, pillY);
+  ctx.closePath();
+  ctx.fill();
 
+  // Add Logo ID text
+  ctx.font = 'bold 16px Arial';
+  ctx.fillStyle = 'black';
+  
+  // Measure text width to center it
+  const textWidth = ctx.measureText(logoID).width;
+  const centerX = pillX + (pillWidth - textWidth) / 2;
+  const centerY = pillY + (pillHeight + 8) / 2;  // The 8 is approximately half the font size
+  
+  ctx.fillText(logoID, centerX, centerY);
+  
 
 
 
