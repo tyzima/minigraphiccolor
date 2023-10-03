@@ -1606,19 +1606,19 @@ function onDefaultColorClick(event) {
 }
 
 function onToggleArtboard(event) {
-  if (state.showArtboard) {
+  if (!state.showArtboard) {
+    artboardCheckbox.childNodes[1].style.visibility = "visible";
+    document.getElementsByClassName("artboard")[0].style.visibility = "visible";
+    document.getElementsByClassName("image")[0].style.backgroundColor = "#232323";
+    state.showArtboard = true;
+  } else {
     artboardCheckbox.childNodes[1].style.visibility = "hidden";
     document.getElementsByClassName("artboard")[0].style.visibility = "hidden";
     document.getElementsByClassName("image")[0].style.backgroundColor = "white";
     state.showArtboard = false;
-  } else {
-    artboardCheckbox.childNodes[1].style.visibility = "visible";
-    document.getElementsByClassName("artboard")[0].style.visibility = "visible";
-    document.getElementsByClassName("image")[0].style.backgroundColor =
-      "#232323";
-    state.showArtboard = true;
   }
 }
+
 
 function onResetClickHandler() {
   artboard.innerHTML = initialSVG;
