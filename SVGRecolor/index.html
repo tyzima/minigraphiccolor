@@ -1375,15 +1375,7 @@ let updatedSVG = "";
 
 let colorArr = [];
 
-const artboardCheckbox = document.getElementById("artboard-checkbox");
 
-
-let state = {
-  selectedColor: null,
-  itemColorIndex: 0,
-  showArtboard: true,
-  selectedMenu: "item-color",
-};
 
 let tiles = {
   selectedTile: "none",
@@ -1605,19 +1597,36 @@ function onDefaultColorClick(event) {
   }
 }
 
-function onToggleArtboard(event) {
-  if (state.showArtboard) {
-    artboardCheckbox.childNodes[1].style.visibility = "hidden";
-    document.getElementsByClassName("artboard")[0].style.visibility = "hidden";
-    document.getElementsByClassName("image")[0].style.backgroundColor = "white";
-    state.showArtboard = false;
-  } else {
-    artboardCheckbox.childNodes[1].style.visibility = "visible";
-    document.getElementsByClassName("artboard")[0].style.visibility = "visible";
-    document.getElementsByClassName("image")[0].style.backgroundColor = "#232323";
-    state.showArtboard = true;
+document.addEventListener("DOMContentLoaded", function() {
+  // Initialize state
+  let state = {
+    selectedColor: null,
+    itemColorIndex: 0,
+    showArtboard: false,  // Initially set to false, as the dartboard is hidden
+    selectedMenu: "item-color",
+  };
+
+  // Initialize artboardCheckbox
+  const artboardCheckbox = document.getElementById('artboard-checkbox');
+
+  // Toggle function
+  function onToggleArtboard(event) {
+    if (state.showArtboard) {
+      artboardCheckbox.childNodes[1].style.visibility = "hidden";
+      document.getElementsByClassName("artboard")[0].style.visibility = "hidden";
+      document.getElementsByClassName("image")[0].style.backgroundColor = "white";
+      state.showArtboard = false;
+    } else {
+      artboardCheckbox.childNodes[1].style.visibility = "visible";
+      document.getElementsByClassName("artboard")[0].style.visibility = "visible";
+      document.getElementsByClassName("image")[0].style.backgroundColor = "#232323";
+      state.showArtboard = true;
+    }
   }
-}
+
+  // Attach event listener to the container
+  document.getElementById('artboard-checkbox-container').addEventListener('click', onToggleArtboard);
+});
 
 
 function onResetClickHandler() {
