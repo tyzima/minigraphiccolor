@@ -43,46 +43,53 @@ function populateDropdown(logosData) {
     pdf.setFontSize(22);
     pdf.text(teamName, 10, 10);
     
-    // Add logos to PDF
-    for (let i = 0; i < selectedLogos.length; i++) {
-      const logo = selectedLogos[i];
-      const pageIndex = Math.floor(i / 9);
-      const x = 20 + (i % 3) * 60;
-      const y = 40 + (Math.floor(i / 3) % 3) * 60;
-      
-      if (i % 9 === 0 && i !== 0) {
-        pdf.addPage();
-        pdf.setFontSize(22);
-        pdf.text(teamName, 10, 10);
-      }
-      
-      // Draw a light grey rectangle with rounded corners as the background
-      pdf.setFillColor(200, 200, 200); // light grey
-      pdf.roundedRect(x - 2, y - 12, 54, 54, 3, 3, 'F');
-      
-      pdf.setFontSize(12);
-      pdf.text(`${logo['Logo ID']}`, x, y - 10);
-      
-      // Fetch the image and add it to the PDF
-      const img = new Image();
-      img.src = logo['PNG'];
-      img.onload = async function() {
-        const aspectRatio = img.width / img.height;
-        const fixedWidth = 50;
-        const calculatedHeight = fixedWidth / aspectRatio;
+    const imagePromises = selectedLogos.map((logo, i) => {
+      return new Promise(async (resolve) => {
+        const pageIndex = Math.floor(i / 9);
+        const x = 20 + (i % 3) * 60;
+        const y = 40 + (Math.floor(i / 3) % 3) * 60;
         
-        const imgBlob = await fetch(logo['PNG']).then(r => r.blob());
-        const reader = new FileReader();
-        reader.readAsDataURL(imgBlob);
-        reader.onloadend = function() {
-          const base64data = reader.result;
-          pdf.addImage(base64data, 'PNG', x, y, fixedWidth, calculatedHeight);
+        if (i % 9 === 0 && i !== 0) {
+          pdf.addPage();
+          pdf.setFontSize(22);
+          pdf.text(teamName, 10, 10);
+        }
+        
+        // Draw a light grey rectangle with rounded corners as the background
+        pdf.setFillColor(200, 200, 200); // light grey
+        pdf.roundedRect(x - 2, y - 12, 54, 54, 3, 3, 'F');
+        
+        // Draw pill-shaped container for Logo ID
+        pdf.setFillColor(255, 255, 255); // white
+        pdf.roundedRect(x, y - 20, 30, 10, 5, 5, 'F');
+        
+        pdf.setFontSize(12);
+        pdf.text(`${logo['Logo ID']}`, x + 5, y - 12);
+        
+        // Fetch the image and add it to the PDF
+        const img = new Image();
+        img.src = logo['PNG'];
+        img.onload = async function() {
+          const aspectRatio = img.width / img.height;
+          const fixedWidth = 50;
+          const calculatedHeight = fixedWidth / aspectRatio;
           
-          if (i === selectedLogos.length - 1) {
-            pdf.save(`${teamName}.pdf`);
-          }
+          const centerX = x + (fixedWidth - calculatedWidth) / 2;
+          const centerY = y + (fixedWidth - calculatedHeight) / 2;
+          
+          const imgBlob = await fetch(logo['PNG']).then(r => r.blob());
+          const reader = new FileReader();
+          reader.readAsDataURL(imgBlob);
+          reader.onloadend = function() {
+            const base64data = reader.result;
+            pdf.addImage(base64data, 'PNG', centerX, centerY, fixedWidth, calculatedHeight);
+            resolve();
+          };
         };
-      };
-    }
+      });
+    });
+    
+    await Promise.all(imagePromises);
+    pdf.save(`${teamName}.pdf`);
   });
 }
