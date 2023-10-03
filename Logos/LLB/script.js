@@ -1,7 +1,7 @@
 let logos = [];
 
 async function fetchLogos() {
-  const response = await fetch('../logos.json'); // Go up one directory to fetch logos.json
+  const response = await fetch('../logos.json');
   if (response.ok) {
     const data = await response.json();
     return data;
@@ -66,9 +66,9 @@ document.getElementById('generate-pdf').addEventListener('click', async () => {
       });
     });
 
-    pdf.addImage(imgData, 'PNG', 10, y + 10, 150, 150); // Adjusted dimensions to match CSS
+    pdf.addImage(imgData, 'PNG', 10, y + 10, 150, 150);
 
-    y += 170; // Move down the page for the next logo
+    y += 170;
   }
   
   pdf.save('logos.pdf');
@@ -76,5 +76,4 @@ document.getElementById('generate-pdf').addEventListener('click', async () => {
 
 $('#logo-select').select2();
 
-// Initialize everything
 initialize();
