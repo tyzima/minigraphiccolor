@@ -326,11 +326,6 @@ body {
     top: 0;
   }
 
-  /* Add a page break after each logo container */
-  .logo-container {
-    height: 238px !important;/* Adjust this value if needed */
-    overflow: hidden; /* Hide overflowing content */
-  }
 
   #color-picker {
     display: none;
@@ -350,7 +345,6 @@ body {
     text-align:center;
     visibility:visible;
     flex:0 1 auto;
-    height:231px;
     padding-bottom:0px;
     max-height:86px;
     min-height:231px;
