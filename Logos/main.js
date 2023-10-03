@@ -26,6 +26,14 @@ if (teamNameParam) {
   searchBox.dispatchEvent(event);
 }
 
+const bgColorParam = urlParams.get('bgColor');
+if (bgColorParam) {
+  document.body.style.backgroundColor = decodeURIComponent(bgColorParam);
+  selectedBackgroundColor = decodeURIComponent(bgColorParam);  // Update the selected background color
+} else {
+  document.body.style.backgroundColor = selectedBackgroundColor;  // Use the default or previously selected color
+}
+
 
 // Function to handle pagination
 function paginateItems(logos) {
@@ -199,14 +207,6 @@ fetch('./Logos.JSON')
         'cancelable': true
       });
 
-      const bgColorParam = urlParams.get('bgColor');
-
-if (bgColorParam) {
-  document.body.style.backgroundColor = decodeURIComponent(bgColorParam);
-  selectedBackgroundColor = decodeURIComponent(bgColorParam);  // Update the selected background color
-} else {
-  document.body.style.backgroundColor = selectedBackgroundColor;  // Use the default or previously selected color
-}
 
       searchBox.dispatchEvent(event);
     }
