@@ -42,9 +42,10 @@
     border-color:#bdc3c7;
    }
    
-   .choices__list--dropdown {
-    visibility: hidden;
+   .container {
+    display: none;
   }
+  
   
    /* Heading */
    .container h1{
