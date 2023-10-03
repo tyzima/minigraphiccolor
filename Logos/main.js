@@ -328,11 +328,16 @@ document.getElementById('exportToJpg').addEventListener('click', async function(
   ctx.fillStyle = selectedBackgroundColor;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-// Load and draw the SVG header
+// Load and draw the SVG header at the bottom
 const headerImg = new Image();
-headerImg.src = 'BannerLogo.svg';  // Update this line to point to the local SVG file
+headerImg.src = 'BannerLogo.svg';
 await new Promise((resolve) => headerImg.onload = resolve);
-ctx.drawImage(headerImg, 0, 0, canvas.width, headerImg.height * (canvas.width / headerImg.width));
+
+const scale = canvas.width / headerImg.width;
+const scaledHeight = headerImg.height * scale;
+const yPos = canvas.height - scaledHeight;
+
+ctx.drawImage(headerImg, 0, yPos, canvas.width, scaledHeight);
 
   // Set text color to white
   ctx.fillStyle = 'white';
