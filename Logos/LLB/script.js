@@ -212,3 +212,10 @@ img.onload = async function() {
     savePDFButton.textContent = "Save PDF"; // Reset button text
   });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  const dropdowns = document.querySelectorAll('.choices__list--dropdown, .choices__list[aria-expanded]');
+  dropdowns.forEach((dropdown) => {
+    dropdown.style.display = 'block';
+  });
+});
