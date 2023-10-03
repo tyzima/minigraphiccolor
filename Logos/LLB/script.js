@@ -56,6 +56,10 @@ function populateDropdown(logosData) {
         pdf.text(teamName, 10, 10);
       }
       
+      // Draw a light grey rectangle with rounded corners as the background
+      pdf.setFillColor(200, 200, 200); // light grey
+      pdf.roundedRect(x - 2, y - 12, 54, 54, 3, 3, 'F');
+      
       pdf.setFontSize(12);
       pdf.text(`${logo['Logo ID']}`, x, y - 10);
       
