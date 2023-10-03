@@ -1,16 +1,22 @@
 let logos = [];
 
 async function fetchLogos() {
-    const response = await fetch('/logos/logos.json');
-    if (response.ok) {
-      const data = await response.json();
-      return data;
-    } else {
-      console.error('Failed to fetch logos:', response.status, response.statusText);
-      return [];
-    }
+  const response = await fetch('../logos.json'); // Go up one directory to fetch logos.json
+  if (response.ok) {
+    const data = await response.json();
+    return data;
+  } else {
+    console.error('Failed to fetch logos:', response.status, response.statusText);
+    return [];
   }
-  
+}
+
+async function initialize() {
+  logos = await fetchLogos();
+  populateLogoCards();
+  populateDropdown();
+}
+
 function populateLogoCards() {
   const logoContainer = document.getElementById('logo-container');
   logos.forEach((logo) => {
@@ -70,8 +76,5 @@ document.getElementById('generate-pdf').addEventListener('click', async () => {
 
 $('#logo-select').select2();
 
-fetchLogos().then(fetchedLogos => {
-  logos = fetchedLogos;
-  populateLogoCards();
-  populateDropdown();
-});
+// Initialize everything
+initialize();
