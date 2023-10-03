@@ -106,4 +106,33 @@
     display: none;
   }
   
+  /* Choices  inner */
+.container .choices .choices__inner{
+    height:50px;
+   }
+   
+   /* Heading */
+   .container h1{
+    transform:translatex(0px) translatey(0px);
+    float:none;
+    left:41px;
+    position:relative;
+    display:flex;
+    font-size:16px;
+    padding-top:17px;
+   }
+   
+   /* Team name */
+   #teamName{
+    margin-left:10px;
+    width:199px;
+    background-color:transparent;
+    padding-left:12px;
+    font-size:15px;
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    transform:translatex(0px) translatey(0px);
+    min-height:41px;
+   }
+   
+   
    
