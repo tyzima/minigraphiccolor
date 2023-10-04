@@ -361,7 +361,7 @@ ctx.fillText(`LOGO BOOK (${formattedDate})`, 20, 60);
   ctx.fillStyle = 'white';
 
   let x = 50;
-  let y = 110; // Initialize y coordinate
+  let y = 115; // Initialize y coordinate
 
   for (const [index, card] of selectedCards.entries()) {
     const logoID = card.querySelector('.logo-id').textContent;
