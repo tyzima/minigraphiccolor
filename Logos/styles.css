@@ -294,6 +294,7 @@ body {
       width: calc(40%);
     }
 
+
     #color-picker{
       justify-content:space-between;
       flex-wrap:wrap;
@@ -320,7 +321,6 @@ body {
    /* Logo card */
    #logo-grid .logo-card{
     margin-left:5px;
-    min-height: 300px;
     margin-right:5px;
     transform:translatex(0px) translatey(0px);
    }
@@ -331,6 +331,18 @@ body {
     padding-top:10px;
     margin-top:27px;
    }
+
+   .container{
+    padding-left:10px;
+    padding-right:10px;
+    transform:translatex(0px) translatey(0px);
+   }
+   
+   /* Logo card */
+   #logo-grid .logo-card{
+    min-height:334px;
+   }
+
 
   }
 
