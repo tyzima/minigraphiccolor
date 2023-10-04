@@ -340,7 +340,9 @@ body {
    /* Logo card */
    #logo-grid .logo-card{
     min-height:334px;
+    width:107px;
    }
+
 
 
   }
