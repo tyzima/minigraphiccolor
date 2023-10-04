@@ -322,7 +322,7 @@ document.getElementById('exportToJpg').addEventListener('click', async function(
   }
 
   if (selectedCards.length > 9) {
-    alert('🫸🫨🫷 9 Cards Only Please');
+    alert('🫸 9 Cards Per Page 🫷 ');
     return;
   }
 
