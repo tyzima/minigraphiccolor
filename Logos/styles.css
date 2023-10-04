@@ -334,26 +334,3 @@ body {
 
   }
 
-
-
-   /* Logo grid */
- #logo-grid{
-  padding-left:0px;
- }
- 
- /* Container */
- .container{
-  padding-left: 0px !important;
-  padding-right: 0px !important;
-  overflow:hidden;
- }
- 
-  
-  #logo-grid .logo-card a {
-    display: none;
-    visibility: hidden;
-  }
-
- 
-  
-
