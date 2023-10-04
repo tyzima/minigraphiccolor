@@ -335,34 +335,6 @@ body {
   }
 
 
-    /* Print styles */
-@media print {
-
-  p {
-    display: none !important;
-  }
-  /* Hide elements you don't want to print */
-  .svg-placeholder {
-    display: none !important;
-  }
-
-  /* Show the logo grid and its children */
-  #logo-grid, #logo-grid * {
-    visibility: visible;
-  }
-
-  /* Set the logo grid to start from the top left corner */
-  #logo-grid {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
-
-  #color-picker {
-    display: none;
-    visibility: hidden;
-  }
 
    /* Logo grid */
  #logo-grid{
@@ -382,26 +354,6 @@ body {
     visibility: hidden;
   }
 
-  #logo-grid .logo-card{
-    display:inline-block;
-    flex-direction:column;
-    align-items:center;
-    justify-content:flex-start;
-    text-align:center;
-    visibility:visible;
-    flex:0 1 auto;
-    padding-bottom:0px;
-    min-height: 160px;
-    max-height:160px;
-    box-shadow:none;
-    width:115px;
-    min-height:334px;
-    max-height:94px;
-    overflow:hidden;
-
-   }
-
-
+ 
   
-}
 
