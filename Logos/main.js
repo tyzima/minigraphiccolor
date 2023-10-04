@@ -287,6 +287,12 @@ searchBox.addEventListener('input', (e) => {
 });
 
 
+function generateFileName(accountName) {
+  const today = new Date();
+  const formattedDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+  return `${accountName}.${formattedDate}.jpg`;
+}
+
 
 document.addEventListener('contextmenu', function(event) {
   if (event.target.tagName === 'SVG') {
@@ -425,10 +431,12 @@ ctx.fillText(`LOGO BOOK (${formattedDate})`, 20, 60);
     }
   }
 
-  // Convert canvas to JPEG and download
   const imgData = canvas.toDataURL('image/jpeg');
-  const link = document.createElement('a');
-  link.href = imgData;
-  link.download = 'Test.jpg';
-  link.click();
+const link = document.createElement('a');
+link.href = imgData;
+
+// Set the download attribute using the generateFileName function
+link.download = generateFileName(teamName);
+
+link.click();
 });
