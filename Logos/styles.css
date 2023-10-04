@@ -290,10 +290,7 @@ body {
   
   /* 2xN grid for mobile */
   @media (max-width: 768px) {
-    .logo-card {
-      width: calc(40%);
-    }
-
+ 
 
     #color-picker{
       justify-content:space-between;
