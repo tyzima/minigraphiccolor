@@ -52,6 +52,9 @@ body {
     pointer-events: none;
   }
   
+  .editColorsBtn {
+    display: none;
+  }
 
   #pagination-controls {
     display: none;
