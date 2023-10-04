@@ -394,6 +394,10 @@ body {
     min-height: 160px;
     max-height:160px;
     box-shadow:none;
+    width:115px;
+    min-height:334px;
+    max-height:94px;
+    overflow:hidden;
 
    }
 
