@@ -363,6 +363,18 @@ body {
     display: none;
     visibility: hidden;
   }
+
+   /* Logo grid */
+ #logo-grid{
+  padding-left:0px;
+ }
+ 
+ /* Container */
+ .container{
+  padding-left:10px;
+  padding-right:10px;
+ }
+ 
   
   #logo-grid .logo-card a {
     display: none;
