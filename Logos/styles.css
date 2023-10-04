@@ -333,9 +333,8 @@ body {
    }
 
    .container{
-    padding-left:10px;
-    padding-right:10px;
-    transform:translatex(0px) translatey(0px);
+    padding-left:0px;
+    padding-right:0px;
    }
    
    /* Logo card */
