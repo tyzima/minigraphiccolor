@@ -315,8 +315,14 @@ document.getElementById('next-page').addEventListener('click', () => {
 
 document.getElementById('exportToJpg').addEventListener('click', async function() {
   const selectedCards = document.querySelectorAll('.logo-card.selected');
+  
   if (selectedCards.length === 0) {
     alert('No cards selected.');
+    return;
+  }
+
+  if (selectedCards.length > 9) {
+    alert('🫸🫨🫷 9 Cards Only Please');
     return;
   }
 
