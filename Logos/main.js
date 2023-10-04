@@ -425,26 +425,10 @@ ctx.fillText(`LOGO BOOK (${formattedDate})`, 20, 60);
     }
   }
 
-  const today = new Date();
-  const formattedDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
-  
-  // Get the first selected card and its account name (team name)
-  const firstSelectedCard = selectedCards[0];
-  const teamName = firstSelectedCard.querySelector('a').textContent; // Using accountName as the team name
-  
-  // Add team name to the canvas
-  ctx.font = 'bold 20px Helvetica';
-  ctx.fillStyle = 'lightgrey';
-  ctx.fillText(teamName.toUpperCase(), 20, 40);
-  
   // Convert canvas to JPEG and download
   const imgData = canvas.toDataURL('image/jpeg');
   const link = document.createElement('a');
   link.href = imgData;
-  
-  // Set the download attribute to include both the team name and today's date
-  link.download = `${teamName}.${formattedDate}.jpg`;
-  
+  link.download = 'Test.jpg';
   link.click();
-  
 });
