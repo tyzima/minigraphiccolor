@@ -121,14 +121,6 @@ logoCard.appendChild(teamName);
     logoCard.appendChild(logoImg);
 
 
- // Display Edit Colors Button only if hideSearch is not 'true'
-if (hideSearch !== 'true') {
-  const editColorsBtn = document.createElement('a');
-  editColorsBtn.innerHTML = '<i class="material-icons">palette</i>';
-  editColorsBtn.href = logo.LaxInkEditor;
-  editColorsBtn.target = '_blank';
-  logoCard.appendChild(editColorsBtn);
-}
 
 
   // Display Logo ID
