@@ -262,6 +262,7 @@ body {
   #exportToJpg i{
     width:20px;
     padding-left:2px;
+    z-index:948;
    }
    
 
