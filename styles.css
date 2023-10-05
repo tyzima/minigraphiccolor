@@ -29,6 +29,27 @@ body {
   margin-right: 8px; /* Adds some space between the icon and text */
 }
 
+.svg-placeholder2 a{
+  background-color:#3498db;
+  margin-left:5px;
+  margin-right:5px;
+  margin-top:0px;
+  padding-top:4px;
+  padding-bottom:5px;
+  font-size:9px;
+  font-family:'r';
+  font-weight:600;
+  text-decoration:none;
+  color:#ecf0f1;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  padding-left:6px;
+  padding-right:6px;
+  text-transform:uppercase;
+ }
+ 
 
 #searchBarContainer {
   display: flex;
