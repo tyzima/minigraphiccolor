@@ -129,6 +129,16 @@ logoCard.appendChild(teamName);
   logoID.className = 'logo-id';
   logoCard.appendChild(logoID);
 
+
+  // Display Edit Colors Button only if hideSearch is not 'true'
+
+if (hideSearch !== 'true') {
+  const editColorsBtn = document.createElement('a');
+  editColorsBtn.innerHTML = '<i class="material-icons">palette</i>';
+  editColorsBtn.href = logo.LaxInkEditor2;
+  editColorsBtn.target = '_blank';
+  logoCard.appendChild(editColorsBtn);
+  }
   
 
     // Display Color Helper
