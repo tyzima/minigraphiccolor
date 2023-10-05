@@ -2,7 +2,7 @@
 let currentPage = 1;
 const itemsPerPage = 80; // 5x2 grid
 let currentDisplayedLogos = []; 
-let selectedBackgroundColor = "#f4f4f4";  // Default background color
+let selectedBackgroundColor = "#f5f7fa";  // Default background color
 
 
 const urlParams = new URLSearchParams(window.location.search);
