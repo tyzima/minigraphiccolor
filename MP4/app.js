@@ -9,8 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let zip = new JSZip();
 
   function sobelEdgeDetection(imageData) {
-    const sobelData = Sobel(imageData);
-    const edgeData = sobelData.toImageData();
+    const edgeData = Sobel(imageData);
     return edgeData;
   }
 
