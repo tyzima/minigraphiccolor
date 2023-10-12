@@ -449,17 +449,12 @@ link.click();
 
 let clickCount = 0;
 
-function handleBackClick() {
-    clickCount++;
-
-    if (clickCount === 1) {
-        window.history.back();
-    } else if (clickCount === 2) {
-        window.location.href = "http://www.lax.ink/logos";
-    }
-    
-    // Reset click count after a short delay to ensure that double-clicks are intentional
-    setTimeout(() => {
-        clickCount = 0;
-    }, 2000);  // 1 second delay, adjust as needed
+function navigateBack() {
+  if (window.location.href.includes('www.lax.ink/logos')) {
+      // If the user is already on a page under www.lax.ink/logos, redirect to the base URL
+      window.location.href = "http://www.lax.ink/logos";
+  } else {
+      // Otherwise, just go back to the previous page
+      window.history.back();
+  }
 }
