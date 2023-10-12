@@ -447,7 +447,6 @@ link.download = generateFileName(teamName);
 link.click();
 });
 
-let clickCount = 0;
 
 function navigateBack() {
   if (window.location.href.includes('www.lax.ink/logos')) {
