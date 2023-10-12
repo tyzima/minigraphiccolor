@@ -447,7 +447,19 @@ link.download = generateFileName(teamName);
 link.click();
 });
 
-function goBack() {
-  window.history.back();
-}
+let clickCount = 0;
 
+function handleBackClick() {
+    clickCount++;
+
+    if (clickCount === 1) {
+        window.history.back();
+    } else if (clickCount === 2) {
+        window.location.href = "http://www.lax.ink/logos";
+    }
+    
+    // Reset click count after a short delay to ensure that double-clicks are intentional
+    setTimeout(() => {
+        clickCount = 0;
+    }, 2000);  // 1 second delay, adjust as needed
+}
