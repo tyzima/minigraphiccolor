@@ -203,6 +203,25 @@ body {
     margin-right: 5px;
   }
   
+  #backButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #333;  /* Dark background */
+    color: #FFF;             /* White text */
+    opacity: 0.8;            /* Slight transparency */
+    transition: opacity 0.3s; /* Smooth transition */
+}
+
+#backButton:hover {
+    opacity: 1;  /* Fully opaque when hovered */
+}
+
    
 
   #search-box {

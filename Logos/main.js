@@ -446,3 +446,8 @@ link.download = generateFileName(teamName);
 
 link.click();
 });
+
+function goBack() {
+  window.history.back();
+}
+
