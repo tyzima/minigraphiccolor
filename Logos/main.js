@@ -447,13 +447,7 @@ link.download = generateFileName(teamName);
 link.click();
 });
 
-
-function navigateBack() {
-  if (window.location.href.includes('www.lax.ink/logos')) {
-      // If the user is already on a page under www.lax.ink/logos, redirect to the base URL
-      window.location.href = "http://www.lax.ink/logos";
-  } else {
-      // Otherwise, just go back to the previous page
-      window.history.back();
-  }
+function goBack() {
+  window.history.back();
 }
+
