@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lacrosse SVG Editor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="controls">
+        <input type="file" id="svgInput" accept=".svg" />
+        <select id="fontSelect">
+            <option value="font1">Font 1</option>
+            <option value="font2">Font 2</option>
+            <!-- Add other font options here -->
+        </select>
+        <div class="colors">
+            <!-- Dynamically populate colors here -->
+        </div>
+        <button id="downloadBtn">Download SVG</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
