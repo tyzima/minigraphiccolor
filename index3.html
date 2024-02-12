@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Offerings</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+
+
+h3 {
+margin-bottom: 0.5rem; /* mb-2 */
+  font-size: 1 rem; /* text-xl */
+  font-weight: bold; /* font-bold */
+  line-height: 1.25; /* leading-tight */
+  color: #1e40af; /* text-blue-900 */
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .team-member {
+    text-align: center;
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+  }
+
+  .team-member {
+  display: flex; /* Enables flexbox */
+  flex-direction: column; /* Stacks items vertically */
+  align-items: center; /* Centers items horizontally in the container */
+  text-align: center; /* Centers text for <h3> and <p> */
+  margin: 20px; /* Adds some space around the team member for better spacing */
+}
+
+
+  .team-member h3 {
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  .team-member p {
+    margin: 0;
+    font-size: 1rem;
+    color: #6b7280;
+  }
+  .section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  width: 100vw; /* Limit width to viewport width */
+  max-width: 100%; /* Ensure it doesn't exceed the parent container */
+  box-sizing: border-box; /* Include padding in the element's total width */
+}
+
+  .slider::-webkit-scrollbar {
+    display: none;
+  }
+  .slider > div {
+  flex-shrink: 0;
+  width: auto; /* Let the content define the width or specify a fixed width */
+  max-width: 200px; /* Example fixed width, adjust as needed */
+  height: auto; /* Adjust height to maintain aspect ratio */
+  margin-right: 10px;
+}
+@media (min-width: 768px) {
+  .slider {
+    overflow-x: auto; /* Keep it scrollable */
+  }
+  .slider > div {
+    /* Adjust width as necessary, maybe fixed width for larger screens */
+    width: 200px; /* Example fixed width, adjust based on design */
+  }
+}
+
+
+  .brand-logo {
+    width: 100px;
+    height: 100%;
+  }
+  @media (max-width: 640px) {
+    .brand-logo {
+      width: 50px; /* Logos shrink on mobile but maintain layout */
+      height: 100%;
+    }
+  }
+
+  .image-placeholder {
+    background-color: #E5E7EB;
+    width: 100%;
+    padding-top: 80%; /* 1:1 Aspect Ratio */
+    position: relative; /* If you want text inside of it */
+    background-image: url('https://via.placeholder.com/300');
+    background-size: cover;
+    border-radius: 15px;
+    background-position: center;
+  }
+  .image-text {
+    position: absolute;
+    bottom: 10%; /* Aligning buttons to the bottom as per feedback */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+  @media (max-width: 640px) {
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    }
+  }
+
+
+
+.section-title {
+  margin-bottom: 2rem; /* Adds space between the title and the logos */
+}
+
+
+
+/* Targets the div that directly contains the logos */
+.grid > .col-start-2.col-span-6 {
+  grid-column: 2 / span 6; /* Centers the logos' container within the grid */
+}
+
+/* Responsive adjustments for different screens */
+@media (min-width: 768px) { /* Adjusts for medium screens and up */
+  .grid > .col-start-2.col-span-6 {
+    grid-template-columns: repeat(6, 1fr); /* Adjusts to a 6-column layout for logos on wider screens */
+  }
+}
+
+.brand-logo {
+  max-width: 100%; /* Ensures logos are fully responsive and fit within their containers */
+  height: auto; /* Maintains aspect ratio of the logos */
+  margin: auto; /* Centers logos within their grid cells */
+  display: block; /* Treats the image as a block element for proper margin application */
+}
+
+.real-bg {
+width: 100vw;
+  background: linear-gradient(135deg, #0a3d62, #1e6091); /* Adjust colors for the desired navy gradient */
+  color: #ffffff; /* White text color for better readability on a dark background */
+}
+
+.bg-team-sales {
+  background-image: linear-gradient(rgba(0, 31, 63, 0.7), rgba(0, 31, 63, 0.7)), url('https://www.lax.com/on/demandware.static/-/Sites/default/dw5d68b2af/images/Lacrosse-team-sales-laxdotcom.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+/* Hide text visually but keep it accessible for screen readers for SEO */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+
+.team-sales-logo {
+  width: 70%; /* Default width for mobile */
+  padding-bottom: 5%;
+  padding-top: 6%;
+}
+
+/* Medium screens (Tailwind's 'md' breakpoint is 768px by default) */
+@media (min-width: 768px) {
+  .team-sales-logo {
+    width: 40%; /* Width for desktop and above */
+  }
+}
+
+
+.image-placeholder {
+  position: relative; /* Needed to position the overlay */
+  height: 200px; /* Set a fixed height or use Tailwind's h-X classes */
+}
+
+.overlay {
+  transition: opacity 0.3s; /* Smooth transition for the overlay */
+}
+
+.image-placeholder:hover .overlay {
+  opacity: 0; /* Remove the overlay on hover */
+}
+
+
+</style>
+</head>
+
+
+<body>
+
+  <div class="bg-team-sales text-white text-center py-12 w-full">
+    <!-- Hidden Heading for SEO -->
+    <h2 class="sr-only">TEAM SALES</h2>
+    <!-- SVG Logo -->
+<img src="https://res.cloudinary.com/laxdotcom/image/upload/00000ASSETS/LaxDotWeb/LogoIcons/Asset_1teamsales_vgvozi.svg" alt="Team Sales Logo" class="team-sales-logo mx-auto my-0">
+    <!-- Subheading -->
+    <p class="mx-auto text-1xl mb-8 w-11/12 sm:w-8/12 md:w-1/2">
+      Custom Uniforms, Equipment, Field Supply & Team Stores
+    </p>
+      </div>
+  
+  <!-- Content Section -->
+  <div class="text-gray-700 text-center py-8 px-8 md:px-72 w-full">
+    <!-- Paragraph with bold parts -->
+    <p class="text-lg font-light">
+      We specialize in top-tier lacrosse gear tailored for collegiate, high school, and club teams. Our comprehensive service suite includes <strong class="font-bold">custom design</strong>, <strong class="font-bold">bulk procurement</strong>, and <strong class="font-bold">direct-to-player delivery</strong>, backed by unparalleled product insight and customer support.
+    </p>
+  </div>
+
+
+    <div class="real-bg">
+    <section class="container mx-auto px-12 py-28 navy-gradient-bg ">
+        <h1
+          class="mb-24 w-full text-center text-3xl font-extrabold dark:text-slate-5 sm:mx-auto sm:mb-20 sm:w-4/5"
+        >
+        <span class="text-blue-200">Trusted by the best</span>
+        lacrosse teams for over 75 years
+        </h1>
+        <div class="flex flex-col space-y-24 sm:flex-row sm:space-y-0 sm:space-x-8">
+          <div class="flex w-full flex-col justify-between sm:mb-0 sm:w-1/3">
+            <div class="w-full text-center">
+              <img
+                alt="Trusted and secured"
+                class="mx-auto mb-4 h-16"
+                src="https://res.cloudinary.com/laxdotcom/image/upload/v1707513020/Asset_5banner_codrhn.svg"
+              />
+              <h2
+              class="mb-2 text-xl font-bold leading-tight text-white dark:text-white md:text-xl"
+              >
+                Expert Service
+              </h2>
+              <p class="mb-4 leading-relaxed text-blue-300 ">
+                The industry's largest dedicated sales team with 75+ years experience              </p>
+            </div>
+            <div class="text-center">
+              <a
+              class="group relative mx-auto inline-block text-sm font-semibold text-gray-200 underline decoration-blue-300 decoration-2 underline-offset-8 transition hover:decoration-slate-700 dark:text-white-20 dark:hover:decoration-slate-200 sm:m-0"
+                href="#"
+              >
+                Read more
+                
+                <svg
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                  width="1.2em"
+                  height="1.2em"
+                  class="absolute bottom-0 -right-6 scale-x-0 transition group-hover:scale-x-100"
+                >
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 12h14m-4 4l4-4m-4-4l4 4"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="flex w-full flex-col justify-between sm:mb-0 sm:w-1/3">
+            <div class="w-full text-center">
+              <img
+                alt="Multi layer security"
+                class="mx-auto mb-4 h-16"
+                src="https://res.cloudinary.com/laxdotcom/image/upload/v1707513013/Asset_4banner_aoi0l9.svg"
+              />
+              <h2
+              class="mb-2 text-xl font-bold leading-tight text-white dark:text-white md:text-xl"
+              >
+                Top Offering
+              </h2>
+              <p class="mb-4 leading-relaxed text-blue-300 ">
+                We partner with leading brands to offer the finest products available.
+
+
+              </p>
+            </div>
+            <div class="text-center">
+              <a
+              class="group relative mx-auto inline-block text-sm font-semibold text-gray-200 underline decoration-blue-300 decoration-2 underline-offset-8 transition hover:decoration-slate-700 dark:text-white-20 dark:hover:decoration-slate-200 sm:m-0"
+              href="#"
+              >
+                Read more
+                
+                <svg
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                  width="1.2em"
+                  height="1.2em"
+                  class="absolute bottom-0 -right-6 scale-x-0 transition group-hover:scale-x-100"
+                >
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 12h14m-4 4l4-4m-4-4l4 4"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="flex w-full flex-col justify-between sm:mb-0 sm:w-1/3">
+            <div class="w-full text-center">
+              <img
+                alt="Meaningful insight"
+                class="mx-auto mb-4 h-16"
+                src="https://res.cloudinary.com/laxdotcom/image/upload/v1707513026/Asset_6banner_fpxbgg.svg"
+              />
+              <h2
+              class="mb-2 text-xl font-bold leading-tight text-white dark:text-white md:text-xl"
+              >
+                Quality Service
+              </h2>
+              <p class="mb-4 leading-relaxed text-blue-300 ">
+                From design to delivery, every step ensures your team is ready to win.  
+
+
+              </p>
+            </div>
+            <div class="text-center">
+              <a
+              class="group relative mx-auto inline-block text-sm font-semibold text-gray-200 underline decoration-blue-300 decoration-2 underline-offset-8 transition hover:decoration-slate-700 dark:text-white-20 dark:hover:decoration-slate-200 sm:m-0"
+              href="#"
+              >
+                Read more
+                
+                <svg
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                  width="1.2em"
+                  height="1.2em"
+                  class="absolute bottom-0 -right-6 scale-x-0 transition group-hover:scale-x-100"
+                >
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 12h14m-4 4l4-4m-4-4l4 4"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+
+
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- Custom Uniforms -->
+        <div class="image-placeholder" style="background-image: url('https://www.lax.com/on/demandware.static/-/Sites/default/dw2e491a57/images/lacrosse-team-sales-custom-jerseys-uniforms.jpeg');">
+          <div class="overlay absolute inset-0 bg-black bg-opacity-50 transition-opacity hover:bg-opacity-0"></div>
+          <div class="image-text">
+            <h2 class="text-lg text-white font-semibold mb-2"></h2>
+            <button class="bg-white text-slate font-bold px-4 py-2 rounded hover:bg-slate-300 focus:outline-none">Custom Uniforms</button>
+          </div>
+        </div>
+        <!-- Helmets & Decals -->
+        <div class="image-placeholder" style="background-image: url('https://www.lax.com/on/demandware.static/-/Sites/default/dw6d320ee7/images/lacrosse-team-sales-custom-helmets.jpeg');">
+          <div class="overlay absolute inset-0 bg-black bg-opacity-50 transition-opacity hover:bg-opacity-0"></div>
+          <div class="image-text">
+            <h2 class="text-lg text-white font-semibold mb-2"></h2>
+            <button class="bg-white text-slate font-bold px-4 py-2 rounded hover:bg-slate-300 focus:outline-none">Helmets & Decals</button>
+          </div>
+        </div>
+        <!-- Custom Gloves -->
+        <div class="image-placeholder" style="background-image: url('https://www.lax.com/on/demandware.static/-/Sites/default/dw08eae555/images/lacrosse-team-sales-custom-lacrosse-gloves.jpeg');">
+          <div class="overlay absolute inset-0 bg-black bg-opacity-50 transition-opacity hover:bg-opacity-0"></div>
+          <div class="image-text">
+            <h2 class="text-lg text-white font-semibold mb-2"></h2>
+            <button class="bg-white text-slate font-bold px-4 py-2 rounded hover:bg-slate-300 focus:outline-none">Team Gloves</button>
+          </div>
+        </div>
+        <!-- Custom Apparel & Spiritwear -->
+        <div class="image-placeholder" style="background-image: url('https://www.lax.com/on/demandware.static/-/Sites/default/dw28518cfd/images/lacrosse-team-sales-custom-apparel.jpeg');">
+          <div class="overlay absolute inset-0 bg-black bg-opacity-50 transition-opacity hover:bg-opacity-0"></div>
+          <div class="image-text">
+            <h2 class="text-lg text-white font-semibold mb-2"></h2>
+            <button class="bg-white text-slate font-bold px-4 py-2 rounded hover:bg-slate-300 focus:outline-none">Spiritwear</button>
+          </div>
+        </div>
+        <!-- Team Stores -->
+        <div class="image-placeholder" style="background-image: url('https://res.cloudinary.com/laxdotcom/image/upload/v1707544713/Minimalist_Neutral_Multi_Device_Computer_Mockup_Website_Launch_Instagram_Post-2_e352cb.png');">
+          <div class="overlay absolute inset-0 bg-black bg-opacity-50 transition-opacity hover:bg-opacity-0"></div>
+          <div class="image-text">
+            <h2 class="text-lg text-white font-semibold mb-2"></h2>
+            <button class="bg-white text-slate font-bold px-4 py-2 rounded hover:bg-slate-300 focus:outline-none">Team Stores</button>
+          </div>
+        </div>
+        <!-- Bulk Equipment & Field Supplies -->
+        <div class="image-placeholder" style="background-image: url('https://www.lax.com/on/demandware.static/-/Sites/default/dw9301f749/images/lacrosse-team-sales-bulk-equipment-field-supplies.jpeg');">
+          <div class="overlay absolute inset-0 bg-black bg-opacity-50 transition-opacity hover:bg-opacity-0"></div>
+          <div class="image-text">
+            <h2 class="text-lg text-white font-semibold mb-2"></h2>
+            <button class="bg-white text-slate font-bold px-4 py-2 rounded hover:bg-slate-300 focus:outline-none">Bulk/Field Supply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  <div class="container mx-auto px-4 py-8">
+    <h2 class="section-title">Partners</h2>
+    <div class="slider">
+      <!-- Placeholder images for logos -->
+      <div><img src="https://res.cloudinary.com/laxdotcom/image/upload/v1707515177/00000ASSETS/LaxDotWeb/Asset_21TeamLogos_zdutw7.png" alt="Partner Logo 1" class="mx-auto"></div>
+      <div><img src="https://res.cloudinary.com/laxdotcom/image/upload/v1707515237/00000ASSETS/LaxDotWeb/Asset_15TeamLogos_oil8tr.png" alt="Partner Logo 2" class="mx-auto"></div>
+      <div><img src="https://res.cloudinary.com/laxdotcom/image/upload/v1707515200/00000ASSETS/LaxDotWeb/Asset_18TeamLogos_nhnvsd.png" alt="Partner Logo 2" class="mx-auto"></div>
+      <div><img src="https://res.cloudinary.com/laxdotcom/image/upload/v1707515193/00000ASSETS/LaxDotWeb/Asset_20TeamLogos_sz9suf.png" alt="Partner Logo 2" class="mx-auto"></div>
+      <div><img src="https://res.cloudinary.com/laxdotcom/image/upload/v1707515225/00000ASSETS/LaxDotWeb/Asset_16TeamLogos_qds8xx.png" alt="Partner Logo 2" class="mx-auto"></div>
+      <div><img src="https://res.cloudinary.com/laxdotcom/image/upload/v1707515213/00000ASSETS/LaxDotWeb/Asset_17TeamLogos_mcg2or.png" alt="Partner Logo 2" class="mx-auto"></div>
+    </div>
+  </div>
+
+
+
+<div class= "real-bg">
+  <div class="container mx-auto px-4 py-8">
+    <h2 class="section-title">Brand Offering</h2>
+    <div class="grid grid-cols-8 gap-4">
+      <!-- Placeholder for SVG logos -->
+      <div class="col-start-2 col-span-6 grid grid-cols-3 md:grid-cols-6 gap-4">
+        <!-- Using solid colored rectangles as placeholders for SVG logos -->
+        <div><img src="https://res.cloudinary.com/laxdotcom/image/upload/v1707519144/00000ASSETS/LaxDotWeb/LogoIcons/Asset_13_yyypra.svg" alt="Brand Logo " class="brand-logo"></div>
+        <div><img src="https://res.cloudinary.com/laxdotcom/image/upload/v1707519023/00000ASSETS/LaxDotWeb/LogoIcons/Asset_6_yo1oe7.svg" alt="Brand Logo " class="brand-logo"></div>
+        <div><img src="https://res.cloudinary.com/laxdotcom/image/upload/v1707519042/00000ASSETS/LaxDotWeb/LogoIcons/Asset_2_cfachq.svg" alt="Brand Logo " class="brand-logo"></div>
+        <div><img src="https://res.cloudinary.com/laxdotcom/image/upload/v1707519019/00000ASSETS/LaxDotWeb/LogoIcons/Asset_7_vlm1eq.svg" alt="Brand Logo " class="brand-logo"></div>
+        <div><img src="https://res.cloudinary.com/laxdotcom/image/upload/v1707519028/00000ASSETS/LaxDotWeb/LogoIcons/Asset_4_zxx2q9.svg" alt="Brand Logo " class="brand-logo"></div>
+        <div><img src="https://res.cloudinary.com/laxdotcom/image/upload/v1707519033/00000ASSETS/LaxDotWeb/LogoIcons/Asset_5_wry0bz.svg" alt="Brand Logo " class="brand-logo"></div>
+        <div><img src="https://res.cloudinary.com/laxdotcom/image/upload/v1707519046/00000ASSETS/LaxDotWeb/LogoIcons/Asset_3_tir3rn.svg" alt="Brand Logo " class="brand-logo"></div>
+        <div><img src="https://res.cloudinary.com/laxdotcom/image/upload/v1707519068/00000ASSETS/LaxDotWeb/LogoIcons/Asset_9_zkno2i.svg" alt="Brand Logo " class="brand-logo"></div>
+        <div><img src="https://res.cloudinary.com/laxdotcom/image/upload/v1707519059/00000ASSETS/LaxDotWeb/LogoIcons/Asset_11_iak2tc.svg" alt="Brand Logo " class="brand-logo"></div>
+        <div><img src="https://res.cloudinary.com/laxdotcom/image/upload/v1707519055/00000ASSETS/LaxDotWeb/LogoIcons/Asset_10_zk3z4y.svg" alt="Brand Logo " class="brand-logo"></div>
+        <div><img src="https://res.cloudinary.com/laxdotcom/image/upload/v1707519064/00000ASSETS/LaxDotWeb/LogoIcons/Asset_8_abh1in.svg" alt="Brand Logo " class="brand-logo"></div>
+        <div><img src="https://res.cloudinary.com/laxdotcom/image/upload/v1707519051/00000ASSETS/LaxDotWeb/LogoIcons/Asset_12_hg1ype.svg" alt="Brand Logo " class="brand-logo"></div>
+
+
+     
+      </div>
+    </div>
+  </div>
+
+</div>
+  <div class="container mx-auto px-4 py-8">
+    <div class="section-title">Our Team</div>
+    <div class="team-grid">
+      <!-- Team Member 1 -->
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Sales Rep">
+        <h3>Sales Rep</h3>
+        <p>Employee Title</p>
+      </div>
+      <!-- Team Member 2 -->
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Sales Rep">
+        <h3>Sales Rep</h3>
+        <p>Employee Title</p>
+      </div>
+      <!-- Team Member 3 -->
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Sales Rep">
+        <h3>Sales Rep</h3>
+        <p>Employee Title</p>
+      </div>
+      <!-- Team Member 4 -->
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Sales Rep">
+        <h3>Sales Rep</h3>
+        <p>Employee Title</p>
+      </div>
+      <!-- Team Member 5 -->
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Sales Rep">
+        <h3>Sales Rep</h3>
+        <p>Employee Title</p>
+      </div>
+      <!-- Team Member 6 -->
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Sales Rep">
+        <h3>Sales Rep</h3>
+        <p>Employee Title</p>
+      </div>
+      <!-- Team Member 7 -->
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Sales Rep">
+        <h3>Sales Rep</h3>
+        <p>Employee Title</p>
+      </div>
+      <!-- Team Member 8 -->
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Sales Rep">
+        <h3>Sales Rep</h3>
+        <p>Employee Title</p>
+      </div>
+      <!-- Team Member 9 -->
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Sales Rep">
+        <h3>Sales Rep</h3>
+        <p>Employee Title</p>
+      </div>
+    </div>
+  </div>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.querySelector('.slider');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      slider.classList.add('active');
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 3; //scroll-fast
+      slider.scrollLeft = scrollLeft - walk;
+    });
+  });
+</script>
+
+
+</script>
+</body>
+</html>
