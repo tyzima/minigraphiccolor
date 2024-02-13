@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include a library for icons like Font Awesome for the arrow icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 20px;
+    max-height: 350px; /* Keep the max height or change to a fixed height as needed */
+}
+
+.gallery-item a {
+    display: block;
+    color: inherit; /* Ensure the text inherits the color */
+    text-decoration: none; /* Remove underlines from links */
+}
+
+.gallery-item img {
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.title {
+    color: black; /* Black text color for the title */
+    font-size: 1.5em; /* Smaller font size for the title */
+    font-weight: bold;
+    position: absolute;
+    width: 100%;
+    top: 16px; /* Adjust to position the title */
+    left: 0;
+    text-align: center; /* Center the title */
+    transition: transform 0.3s ease-in-out;
+}
+
+.hover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none; /* Prevents hover content from interfering with clicking the link */
+}
+
+.top-seller-pill {
+    background-color: #ff6b6b; /* Light red color */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px; /* Rounded pill shape */
+    font-weight: bold;
+    font-size: 0.8em;
+    display: inline-block; /* Needed for centering */
+}
+
+.arrow-circle {
+    width: 40px; /* Circle size */
+    height: 40px; /* Circle size */
+    background-color: black; /* Circle color */
+    border-radius: 50%; /* Make it round */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; /* Space between the top seller pill and arrow */
+}
+
+.fas.fa-chevron-right {
+    color: white;
+    font-size: 1em; /* Arrow size */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05); /* Zoom effect */
+}
+
+.gallery-item:hover .hover-content {
+    opacity: 1; /* Show the hover content */
+    pointer-events: auto; /* Allow interactions with the hover content */
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Adjust minmax as needed */
+    }
+
+    .gallery-item {
+        height: 300px; /* Set a fixed height */
+        position: relative;
+
+    }
+
+    .gallery-item img {
+        top: 0; /* This aligns the top of the image with the top of the gallery item */
+        transform: translateY(-130px); /* This moves the image up by 200px */
+        min-height: 100px; /* Ensures the image covers enough area */
+    }
+
+   
+
+    .gallery-item:hover img {
+        transform: translate(0, -45%); /* Move the image up on hover */
+    }
+
+    .title {
+        position: absolute;
+        bottom: 10px; /* Move the title to the bottom */
+        left: 10px; /* Give some space from the left edge */
+        width: auto; /* Adjust width as necessary */
+        font-size: 1.2em; /* Adjust font size as necessary */
+    }
+
+    .hover-content {
+        flex-direction: row; /* Align children in a row for horizontal layout */
+        justify-content: space-between; /* Distribute space between elements */
+        align-items: flex-end; /* Align items at the end of the container */
+        padding: 10px; /* Add some padding around the content */
+    }
+
+    .top-seller-pill,
+    .arrow-circle {
+        margin: 0; /* Remove any margins for alignment */
+    }
+
+    .top-seller-pill {
+        padding: 4px 8px; /* Adjust padding for smaller screen */
+        font-size: 0.7em; /* Adjust font size for smaller screen */
+    }
+
+    .arrow-circle {
+        width: 30px; /* Smaller circle size */
+        height: 30px; /* Smaller circle size */
+    }
+}
+
+</style>
+
+<body>
+    <div class="gallery">
+        <!-- Repeat this structure for each image -->
+
+
+        <div class="gallery-item">
+            <a href="#your-category-link-here">
+                <img src="https://res.cloudinary.com/laxdotcom/image/upload/00000ASSETS/LaxDotWeb/Categories/HomeCat1.jpg" alt="Gallery Image">
+                <h2 class="title">Mens Heads</h2>
+                <div class="hover-content">
+                    <div class="top-seller-pill">MENS</div>
+                    <div class="arrow-circle">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="gallery-item">
+            <a href="#your-category-link-here">
+                <img src="https://res.cloudinary.com/laxdotcom/image/upload/00000ASSETS/LaxDotWeb/Categories/HomeCat2.jpg" alt="Gallery Image">
+                <h2 class="title">Completes</h2>
+                <div class="hover-content">
+                    <div class="top-seller-pill">WOMENS</div>
+                    <div class="arrow-circle">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="gallery-item">
+            <a href="#your-category-link-here">
+                <img src="https://res.cloudinary.com/laxdotcom/image/upload/00000ASSETS/LaxDotWeb/Categories/HomeCat3.jpg" alt="Gallery Image">
+                <h2 class="title">Footwear</h2>
+                <div class="hover-content">
+                    <div class="top-seller-pill">CLEATS & TURFS</div>
+                    <div class="arrow-circle">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="#your-category-link-here">
+                <img src="https://res.cloudinary.com/laxdotcom/image/upload/00000ASSETS/LaxDotWeb/Categories/HomeCat4.jpg" alt="Gallery Image">
+                <h2 class="title">Scores & Stats</h2>
+                <div class="hover-content">
+                    <div class="top-seller-pill">+ ODDS</div>
+                    <div class="arrow-circle">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Add more .gallery-item blocks for additional images -->
+    </div>
+</body>
+</html>
