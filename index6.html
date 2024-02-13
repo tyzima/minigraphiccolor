@@ -21,8 +21,9 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 8%;
+    padding-right: 8%;
+    margin: 10px;
 }
 
 .gallery-item {
@@ -51,7 +52,7 @@ body {
     font-weight: bold;
     position: absolute;
     width: 100%;
-    top: 16px; /* Adjust to position the title */
+    top: 0px; /* Adjust to position the title */
     left: 0;
     text-align: center; /* Center the title */
     transition: transform 0.3s ease-in-out;
@@ -111,73 +112,65 @@ body {
 
 
 
-
-
 @media (max-width: 768px) {
     .gallery {
-        grid-template-columns: 2fr;
-        padding-left: 0%;
-        padding-right: 0%;
-    }
-}
-
-
-@media (max-width: 768px) {
-      .gallery {
         grid-template-columns: repeat(2, 1fr); /* This creates two columns */
         gap: 10px; /* Adjust the gap as needed */
+        padding-left: 2%;
+        padding-right: 2%;
     }
 
-
     .gallery-item {
-        height: 200px; /* Set a fixed height */
+        height: auto; /* Adjust the height as needed */
         position: relative;
-
     }
 
     .gallery-item img {
-        top: 0; /* This aligns the top of the image with the top of the gallery item */
+        top: -50px; /* Move the image up within the gallery item */
         transition: transform 0.3s ease-in-out;
-        min-height: 100px; /* Ensures the image covers enough area */
+        object-fit: cover; /* Cover the area of the item without stretching */
+        width: 100%; /* Ensure the image covers the full width */
+        height: auto; /* Adjust the height automatically */
     }
 
-   
-
     .gallery-item:hover img {
-        transition: transform 0.3s ease-in-out;
+        transform: scale(1.05); /* Maintain the zoom effect on hover */
     }
 
     .title {
         position: absolute;
-        bottom: 10px; /* Move the title to the bottom */
-        left: 10px; /* Give some space from the left edge */
+        top: 10px; /* Adjust the title to be at the top */
+        left: 50%;
+        transform: translateX(-50%); /* Center the title horizontally */
         width: auto; /* Adjust width as necessary */
         font-size: 1.2em; /* Adjust font size as necessary */
     }
 
-    .hover-content {
-        flex-direction: column; /* Align children in a row for horizontal layout */
-        justify-content: space-between; /* Distribute space between elements */
-        align-items: flex-end; /* Align items at the end of the container */
-        padding: 10px; /* Add some padding around the content */
-    }
-
-    .top-seller-pill,
-    .arrow-circle {
-        margin: 0; /* Remove any margins for alignment */
-    }
-
+    .hover-content,
     .top-seller-pill {
-        padding: 4px 8px; /* Adjust padding for smaller screen */
-        font-size: 0.7em; /* Adjust font size for smaller screen */
+        position: absolute;
+        top:30px; /* Position the top seller pill at the top */
+        left: 50%;
+        transform: translateX(-50%); /* Center horizontally */
+        opacity: 1; /* Make the top seller pill always visible */
+        pointer-events: auto; /* Make it clickable */
+        display: flex; /* Use flex to center content */
+        font-size: 6px;
+        align-items: center;
+        justify-content: center;
     }
 
     .arrow-circle {
-        width: 30px; /* Smaller circle size */
-        height: 30px; /* Smaller circle size */
+        display: none; /* Hide the arrow on mobile if not needed */
+    }
+
+    .gallery-item a {
+        display: block;
+        width: 100%; /* Ensure the link covers the entire gallery item */
+        height: 100%; /* Ensure the link covers the entire gallery item */
+        text-align: center; /* Center the text within the link */
     }
 }
-
 
 
 @media (min-width:769px){
@@ -209,7 +202,7 @@ div a h2{
         <div class="gallery-item">
             <a href="#your-category-link-here">
                 <img src="https://res.cloudinary.com/laxdotcom/image/upload/00000ASSETS/LaxDotWeb/Categories/HomeCat1.jpg" alt="Gallery Image">
-                <h2 class="title">Mens Heads</h2>
+                <h2 class="title">Heads</h2>
                 <div class="hover-content">
                     <div class="top-seller-pill">MENS</div>
                     <div class="arrow-circle">
@@ -237,7 +230,7 @@ div a h2{
                 <img src="https://res.cloudinary.com/laxdotcom/image/upload/00000ASSETS/LaxDotWeb/Categories/HomeCat3.jpg" alt="Gallery Image">
                 <h2 class="title">Footwear</h2>
                 <div class="hover-content">
-                    <div class="top-seller-pill">CLEATS & TURFS</div>
+                    <div class="top-seller-pill">CLEATS</div>
                     <div class="arrow-circle">
                         <i class="fas fa-chevron-right"></i>
                     </div>
@@ -247,7 +240,7 @@ div a h2{
         <div class="gallery-item">
             <a href="#your-category-link-here">
                 <img src="https://res.cloudinary.com/laxdotcom/image/upload/00000ASSETS/LaxDotWeb/Categories/HomeCat4.jpg" alt="Gallery Image">
-                <h2 class="title">Scores & Stats</h2>
+                <h2 class="title">Scores&Stats</h2>
                 <div class="hover-content">
                     <div class="top-seller-pill">+ ODDS</div>
                     <div class="arrow-circle">
