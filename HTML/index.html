@@ -1,0 +1,255 @@
+
+        
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Bi-directional HTML Editor with Tailwind CSS</title>
+            <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+            <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+            <style>
+                body {
+                    display: flex;
+                    height: 100vh;
+                    overflow: hidden;
+                }
+                #editor, #preview {
+                    height: 100%;
+                    overflow: auto;
+                }
+                #editor {
+                    width: 30%;
+                    background-color: #f3f4f6; /* Tailwind gray-100 */
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px;
+                }
+                #preview {
+                    width: 50%;
+                    overflow: auto;
+                    padding: 20px;
+                }
+                #divider {
+                    background-color: #9ca3af; /* Tailwind gray-400 */
+                    cursor: ew-resize;
+                    width: 5px;
+                    height: 100%;
+                }
+                textarea {
+                    flex: 1;
+                    margin-bottom: 20px;
+                    background-color: #fff;
+                    border: 1px solid #d1d5db; /* Tailwind gray-300 */
+                    padding: 10px;
+                    box-sizing: border-box;
+                    resize: none;
+                }
+
+                
+                .button-1 {
+    width: auto;
+    padding: 10px;
+    margin-right: 10px;
+    background-color: #6eaaff; /* Tailwind gray */
+    color: white;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px #9ca3af;
+    transition: transform 0.3s ease;
+}
+
+.button-1:hover {
+    transform: scale(1.05); /* Increase size by 5% */
+    box-shadow: 0 2px 4px #9ca3af; /* Enhance shadow for depth effect */
+}
+
+.button-2 {
+    width: auto;
+    padding: 10px;
+    margin-right: 10px;
+    background-color: #ffffff; /* Tailwind gray */
+    color: rgb(74, 74, 74);
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px #9ca3afb1;
+    transition: transform 0.3s ease;
+}
+
+.button-2:hover {
+    transform: scale(1.05); /* Increase size by 5% */
+    box-shadow: 0 2px 4px #9ca3af; /* Enhance shadow for depth effect */
+}
+
+            </style>
+        </head>
+        <body>
+            <div id="editor">
+              <button id="loadProductGuideButton" class="button-2">Load Product Guide</button>
+<br>
+                <textarea id="htmlInput" placeholder=" "></textarea>
+                <div>
+                    <button id="copyButton" class="button-1">Copy HTML</button>
+                    <button id="saveButton" class="button-1">Save Guide</button>
+                    <button id="duplicateSectionButton" class="button-2">Duplicate Product</button>
+
+                </div>
+            </div>
+            <div id="divider"></div>
+            <div id="preview" contenteditable="true"></div>
+        
+            <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const jsConfetti = new JSConfetti();
+
+                const loadProductGuideButton = document.getElementById('loadProductGuide');
+                const htmlInput = document.getElementById('htmlInput');
+                const preview = document.getElementById('preview');
+                const copyButton = document.getElementById('copyButton');
+                const saveButton = document.getElementById('saveButton');
+                const divider = document.getElementById('divider');
+        
+                htmlInput.addEventListener('input', () => {
+                    preview.innerHTML = htmlInput.value;
+                });
+        
+                preview.addEventListener('input', () => {
+                    htmlInput.value = preview.innerHTML;
+                });
+        
+                copyButton.addEventListener('click', () => {
+            navigator.clipboard.writeText(htmlInput.value)
+                .then(() => {
+                    // Alert moved here to ensure confetti logic executes smoothly
+                    // Trigger confetti
+                    jsConfetti.addConfetti({
+                      emojis: ['🥍', '🗞️', '🥍', '✨', '🗞️', '🥳'],
+                        emojiSize: 100,
+                        confettiNumber: 100,
+                    });
+                })
+                .catch(err => console.error('Error copying text: ', err));
+      
+        
+                });
+        
+                saveButton.addEventListener('click', () => {
+        const htmlContent = preview.innerHTML;
+        const blob = new Blob([htmlContent], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.download = 'ProductGuide_' + new Date().toISOString().slice(0,10) + '.html';
+        link.href = url;
+        link.click();
+        URL.revokeObjectURL(url);
+
+        // Trigger confetti with customizations
+        jsConfetti.addConfetti({
+            emojis: ['🥍', '🗞️', '🥍', '✨', '🗞️', '🥳'],
+            emojiSize: 100,
+            confettiNumber: 100,
+        });
+    });
+});
+
+
+loadProductGuideButton.addEventListener('click', function() {
+        fetch('ProductGuide.html') // Adjust the path as necessary
+            .then(response => response.text())
+            .then(data => {
+                // Populate the HTML editor and preview pane with the fetched content
+                htmlInput.value = data;
+                preview.innerHTML = data;
+            })
+            .catch(error => console.error('Error loading the product guide:', error));
+    });
+
+
+
+        
+
+
+        // Resizing logic
+        divider.addEventListener('mousedown', function(e) {
+            e.preventDefault();
+            document.addEventListener('mousemove', mousemove);
+            document.addEventListener('mouseup', mouseup);
+        });
+
+        function mousemove(e) {
+            const newSize = e.clientX;
+            document.getElementById('editor').style.width = newSize + 'px';
+            document.getElementById('preview').style.width = `calc(100% - ${newSize}px - 5px)`;
+        }
+
+        function mouseup() {
+            document.removeEventListener('mousemove', mousemove);
+            document.removeEventListener('mouseup', mouseup);
+        }
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const preview = document.getElementById('preview');
+
+    preview.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') {
+            const newHref = prompt('Edit the link URL:', e.target.href);
+            if (newHref !== null) {
+                e.target.href = newHref;
+                updateTextarea();
+            }
+        } else if (e.target.tagName === 'IMG') {
+            const newSrc = prompt('Edit the image URL:', e.target.src);
+            if (newSrc !== null) {
+                e.target.src = newSrc;
+                updateTextarea();
+            }
+        }
+    });
+
+    function updateTextarea() {
+        const htmlInput = document.getElementById('htmlInput');
+        htmlInput.value = preview.innerHTML;
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const duplicateButton = document.getElementById('duplicateSectionButton');
+    duplicateButton.addEventListener('click', function() {
+        // Find the section to duplicate
+        const sectionToDuplicate = document.querySelector('#preview section.my-10');
+        if (sectionToDuplicate) {
+            // Clone the section
+            const clonedSection = sectionToDuplicate.cloneNode(true);
+            
+            // Append cloned section after the original
+            sectionToDuplicate.parentNode.insertBefore(clonedSection, sectionToDuplicate.nextSibling);
+            
+            // Update the textarea with new HTML content
+            const htmlInput = document.getElementById('htmlInput');
+            htmlInput.value = document.getElementById('preview').innerHTML;
+        } else {
+            alert('No section with class "my-10" found to duplicate.');
+        }
+    });
+
+
+
+    
+});
+
+
+
+
+</script>
+        </body>
+        </html>
+        
