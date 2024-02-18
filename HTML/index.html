@@ -261,13 +261,7 @@ loadProductGuideButton.addEventListener('click', function() {
                 e.target.href = newHref;
                 updateTextarea();
             }
-        } else if (e.target.tagName === 'IMG') {
-            const newSrc = prompt('Edit the image URL:', e.target.src);
-            if (newSrc !== null) {
-                e.target.src = newSrc;
-                updateTextarea();
-            }
-        }
+        } 
     });
 
     function updateTextarea() {
