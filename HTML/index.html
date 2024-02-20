@@ -320,6 +320,9 @@ const preselectedImagesDiv = document.getElementById('preselectedImages');
 const closeModal = document.getElementById('closeModal');
 const setImage = document.getElementById('setImage');
 
+let currentSelectedImage = null; // Variable to hold the currently selected image element
+
+
 // Assuming you have images named image1.jpg, image2.jpg, etc., in your images folder
 const imageNames = ['nike.svg', 'nikesky.svg', 'nikesmoke.svg',
     'stx.svg', 'stxsky.svg', 'stxsmoke.svg',
@@ -341,6 +344,7 @@ imageNames.forEach(name => {
 
 preview.addEventListener('click', function(e) {
     if (e.target.tagName === 'IMG') {
+        currentSelectedImage = e.target; // Store reference to the clicked image
         imageSelectionModal.classList.remove('hidden');
         imageUrlInput.value = e.target.src; // Pre-fill with current image src
     }
@@ -349,21 +353,24 @@ preview.addEventListener('click', function(e) {
 // Set image source from modal
 setImage.onclick = () => {
     const selectedSrc = imageUrlInput.value;
-    if (selectedSrc) {
-        document.querySelector('#preview img').src = selectedSrc;
+    if (selectedSrc && currentSelectedImage) {
+        currentSelectedImage.src = selectedSrc; // Update src of the currently selected image
         imageSelectionModal.classList.add('hidden');
     }
 };
+
+// Function to set image source from the preselected images
+function setImageSource(src) {
+    if (currentSelectedImage) {
+        currentSelectedImage.src = src; // Set src of the currently selected image
+        imageUrlInput.value = src; // Optional: Update the input field as well
+    }
+}
 
 // Close modal without changes
 closeModal.onclick = () => {
     imageSelectionModal.classList.add('hidden');
 };
-
-function setImageSource(src) {
-    imageUrlInput.value = src; // Set image URL input to the selected image's source
-}
-
 
 
 
