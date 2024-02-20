@@ -275,24 +275,34 @@ document.addEventListener('DOMContentLoaded', function() {
     const duplicateButton = document.getElementById('duplicateSectionButton');
     duplicateButton.addEventListener('click', function() {
         // Find all sections to determine the next product number
-        const allSections = document.querySelectorAll('#preview section.my-10');
+        const allSections = document.querySelectorAll('section.my-10');
         const nextProductNumber = allSections.length + 1;
-        
+
         // Assume the first section is the template to duplicate
-        const sectionToDuplicate = document.querySelector('#preview section.my-10');
+        const sectionToDuplicate = document.querySelector('section.my-10');
         if (sectionToDuplicate) {
             // Clone the section
             const clonedSection = sectionToDuplicate.cloneNode(true);
-            
+
+            // Remove the specific <p> element from the clone
+            const pElementToRemove = clonedSection.querySelector('p.text-gray-600');
+            if (pElementToRemove) {
+                pElementToRemove.parentNode.removeChild(pElementToRemove);
+            }
+
             // Assign a unique ID to the cloned section
             clonedSection.id = `Product${nextProductNumber}`;
-            
-            // Append cloned section after the last section
+
+            // Append cloned section to the document
             sectionToDuplicate.parentNode.appendChild(clonedSection);
-            
-            // Update the textarea with new HTML content
+
+            // Optionally, update any other elements or IDs within the cloned section here
+
+            // Update the textarea with new HTML content, if needed
             const htmlInput = document.getElementById('htmlInput');
-            htmlInput.value = document.getElementById('preview').innerHTML;
+            if (htmlInput) {
+                htmlInput.value = document.getElementById('preview').innerHTML; // Assuming 'preview' is the container for these sections
+            }
         } else {
             alert('No section with class "my-10" found to duplicate.');
         }
