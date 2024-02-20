@@ -225,26 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-         readMoreLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent default link behavior
-            currentReadMoreLink = this; // Store reference to the clicked link
-            productSelectionModal.classList.remove('hidden'); // Show the modal
-        });
-    });
-
-    // Set the selected product ID as the href for the current "Read More" link
-    setReadMoreLink.addEventListener('click', () => {
-        if (currentReadMoreLink) {
-            currentReadMoreLink.href = productIDSelect.value; // Update href with selected product ID
-            productSelectionModal.classList.add('hidden'); // Hide the modal
-        }
-    });
-
-    // Close the modal without making changes
-    closeReadMoreModal.addEventListener('click', () => {
-        productSelectionModal.classList.add('hidden');
-    });
+        
 });
 
 
