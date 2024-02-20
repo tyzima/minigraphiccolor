@@ -297,8 +297,19 @@ loadProductGuideButton.addEventListener('click', function() {
         document.addEventListener('DOMContentLoaded', function() {
     const preview = document.getElementById('preview');
 
-    preview.addEventListener('click', function(e) {
-        if (e.target.tagName === 'A') {
+ preview.addEventListener('click', function(e) {
+        // Check if the clicked link is a "Read More" link for modal selection
+        if (e.target.classList.contains('read-more-link')) {
+            // Prevent the default action
+            e.preventDefault();
+
+            // Your existing modal opening logic here
+            // For example, show the modal instead of prompting
+            imageSelectionModal.classList.remove('hidden');
+            imageUrlInput.value = e.target.href; // Pre-fill with current image src
+        }
+        // Else, check if it's a link that should prompt for direct URL editing
+        else if (e.target.tagName === 'A') {
             const newHref = prompt('Edit the link URL or #Product Row on page Ex #Product2 for second row:', e.target.href);
             if (newHref !== null) {
                 e.target.href = newHref;
