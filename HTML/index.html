@@ -147,6 +147,21 @@
     </div>
 </div>
 
+<!-- Modal for selecting product ID -->
+<div id="productSelectionModal" class="hidden">
+  <div class="modal-content">
+    <span id="closeReadMoreModal" class="close">&times;</span>
+    <h2>Select Product ID</h2>
+    <select id="productIDSelect">
+      <option value="#Product1">#Product1</option>
+      <option value="#Product2">#Product2</option>
+      <option value="#Product3">#Product3</option>
+      <option value="#Product4">#Product4</option>
+      <!-- Add more options as needed -->
+    </select>
+    <button id="setReadMoreLink">Set Link</button>
+  </div>
+</div>
 
 
             <script>
@@ -160,6 +175,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const copyButton = document.getElementById('copyButton');
                 const saveButton = document.getElementById('saveButton');
                 const divider = document.getElementById('divider');
+                 const readMoreLinks = document.querySelectorAll('a[href="#"].text-blue-600');
+    const productSelectionModal = document.getElementById('productSelectionModal');
+    const closeReadMoreModal = document.getElementById('closeReadMoreModal');
+    const setReadMoreLink = document.getElementById('setReadMoreLink');
+    const productIDSelect = document.getElementById('productIDSelect');
+    let currentReadMoreLink = null;
         
                 htmlInput.addEventListener('input', () => {
                     preview.innerHTML = htmlInput.value;
@@ -201,6 +222,28 @@ document.addEventListener('DOMContentLoaded', function() {
             emojiSize: 100,
             confettiNumber: 100,
         });
+    });
+
+
+         readMoreLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default link behavior
+            currentReadMoreLink = this; // Store reference to the clicked link
+            productSelectionModal.classList.remove('hidden'); // Show the modal
+        });
+    });
+
+    // Set the selected product ID as the href for the current "Read More" link
+    setReadMoreLink.addEventListener('click', () => {
+        if (currentReadMoreLink) {
+            currentReadMoreLink.href = productIDSelect.value; // Update href with selected product ID
+            productSelectionModal.classList.add('hidden'); // Hide the modal
+        }
+    });
+
+    // Close the modal without making changes
+    closeReadMoreModal.addEventListener('click', () => {
+        productSelectionModal.classList.add('hidden');
     });
 });
 
