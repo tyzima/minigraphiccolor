@@ -341,6 +341,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+document.getElementById('setReadMoreLink').addEventListener('click', function() {
+    if (currentReadMoreLink) {
+        var selectedProductId = document.getElementById('productIDSelect').value;
+        currentReadMoreLink.href = selectedProductId;
+        productSelectionModal.classList.add('hidden');
+    }
+});
 
 
 
