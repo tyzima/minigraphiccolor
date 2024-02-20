@@ -271,6 +271,37 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
+        preview.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && e.target.classList.contains('read-more-link')) {
+        // Prevent the default action
+        e.preventDefault();
+        // Logic to open the product ID selection modal
+        productSelectionModal.classList.remove('hidden');
+        currentReadMoreLink = e.target; // Store the clicked "Read More" link
+    }
+        // Else, check if it's a link that should prompt for direct URL editing
+        else if (e.target.tagName === 'A') {
+            const newHref = prompt('Edit the link URL or #Product Row on page Ex #Product2 for second row:', e.target.href);
+            if (newHref !== null) {
+                e.target.href = newHref;
+                updateTextarea();
+            }
+        } 
+    });
+
+    function updateTextarea() {
+        const htmlInput = document.getElementById('htmlInput');
+        htmlInput.value = preview.innerHTML;
+    }
+
+
+                document.getElementById('setReadMoreLink').addEventListener('click', function() {
+    if (currentReadMoreLink) {
+        var selectedProductId = document.getElementById('productIDSelect').value;
+        currentReadMoreLink.href = selectedProductId;
+        productSelectionModal.classList.add('hidden');
+    }
+});
         
 });
 
@@ -321,43 +352,7 @@ loadProductGuideButton.addEventListener('click', function() {
         }
 
 
-        document.addEventListener('DOMContentLoaded', function() {
-    const preview = document.getElementById('preview');
-
-preview.addEventListener('click', function(e) {
-    if (e.target.tagName === 'A' && e.target.classList.contains('read-more-link')) {
-        // Prevent the default action
-        e.preventDefault();
-        // Logic to open the product ID selection modal
-        productSelectionModal.classList.remove('hidden');
-        currentReadMoreLink = e.target; // Store the clicked "Read More" link
-    }
-        // Else, check if it's a link that should prompt for direct URL editing
-        else if (e.target.tagName === 'A') {
-            const newHref = prompt('Edit the link URL or #Product Row on page Ex #Product2 for second row:', e.target.href);
-            if (newHref !== null) {
-                e.target.href = newHref;
-                updateTextarea();
-            }
-        } 
-    });
-
-    function updateTextarea() {
-        const htmlInput = document.getElementById('htmlInput');
-        htmlInput.value = preview.innerHTML;
-    }
-
-
-                document.getElementById('setReadMoreLink').addEventListener('click', function() {
-    if (currentReadMoreLink) {
-        var selectedProductId = document.getElementById('productIDSelect').value;
-        currentReadMoreLink.href = selectedProductId;
-        productSelectionModal.classList.add('hidden');
-    }
-});
-
-});
-
+  
 
 document.addEventListener('DOMContentLoaded', function() {
     const duplicateButton = document.getElementById('duplicateSectionButton');
