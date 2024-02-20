@@ -289,9 +289,36 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             alert('No section with class "my-10" found to duplicate.');
         }
+             setSectionIds();
     });
 
 
+    function setSectionIds() {
+        const sections = document.querySelectorAll('#preview section.my-10');
+        sections.forEach(section => {
+            const h2 = section.querySelector('h2.text-3xl');
+            if (h2) {
+                const id = h2.textContent.replace(/\s+/g, ''); // Remove spaces
+                section.id = id;
+            }
+        });
+    }
+
+        
+
+    // Listen for input events in the preview to update IDs as needed
+    preview.addEventListener('input', function(event) {
+        if (event.target.tagName === 'H2' && event.target.classList.contains('text-3xl')) {
+            const section = event.target.closest('section.my-10');
+            if (section) {
+                const id = event.target.textContent.replace(/\s+/g, '');
+                section.id = id;
+            }
+        }
+    });
+
+
+        
 
     const preview = document.getElementById('preview');
 const imageSelectionModal = document.getElementById('imageSelectionModal');
