@@ -256,7 +256,7 @@ loadProductGuideButton.addEventListener('click', function() {
 
     preview.addEventListener('click', function(e) {
         if (e.target.tagName === 'A') {
-            const newHref = prompt('Edit the link URL:', e.target.href);
+            const newHref = prompt('Edit the link URL or #Product Row on page Ex #Product2 for second row:', e.target.href);
             if (newHref !== null) {
                 e.target.href = newHref;
                 updateTextarea();
